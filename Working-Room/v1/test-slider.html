@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .service_steps .item {
+      flex: 0 45%;
+      background: #fff;
+      padding: 15px;
+      border-radius: 4px;
+      transition: all .3s ease;
+      font-family: "Open Sans", sans-serif;
+    }
+
+    .service_steps .item:hover {
+      -webkit-transform: translateY(calc(-1rem / 5));
+      transform: translateY(calc(-1rem / 5));
+      -webkit-box-shadow: 0 5px 10px rgba(30, 32, 37, 0.11);
+      box-shadow: 0 5px 10px rgba(30, 32, 37, 0.11);
+    }
+
+    .service_steps .item .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .service_steps .item .header .icon img {
+      width: 64px;
+    }
+
+    .service_steps .item .header .step_badge {
+      display: inline-block;
+      background: #09428a;
+      color: #e1ebfe;
+      padding: 10px 6px 20px 6px;
+      border-radius: 0 0 50px 50px;
+      position: absolute;
+      right: 5px;
+      top: -15px;
+      text-align: center;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    .service_steps .item .header .step_badge .step {
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .service_steps .item .details h4 {
+      font-size: 18px;
+      color: #0E478F;
+      margin-bottom: 10px;
+      margin-top: 0;
+    }
+
+    .service_steps .item .details p {
+      font-size: 15px;
+      color: #555555;
+      margin: 0;
+    }
+
+    @media screen and (max-width: 574px) {
+      .service_steps .item {
+        flex: 0 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="service_steps">
+    <div class="row mt-2 g-4">
+      <div class="item">
+        <div class="header">
+          <span class="icon">
+            <img src="https://static.wixstatic.com/shapes/7b1db2_801a64ce396a412fa24626c9ba985ffc.svg"
+              alt="Consultation" title="Consultation">
+          </span>
+
+          <span class="step_badge">
+            Step <br>
+            <span class="step">01</span>
+          </span>
+        </div>
+
+        <div class="details">
+          <h4>Consultation</h4>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe itaque, laudantium quisquam esse hic dolore
+            aliquid sed voluptas iure eos quis, laboriosam repudiandae soluta laborum totam. Assumenda explicabo ut
+            beatae!</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="header">
+          <span class="icon">
+            <img src="https://static.wixstatic.com/shapes/7b1db2_fcb31276cdbe47d2ab32ab4f92f43f77.svg" alt="Assessment"
+              title="Assessment">
+          </span>
+
+          <span class="step_badge">
+            Step <br>
+            <span class="step">02</span>
+          </span>
+        </div>
+
+        <div class="details">
+          <h4>Assessment</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius atque vitae porro enim perferendis aut velit
+            quia voluptas pariatur distinctio nostrum, error, optio odio sunt at nam delectus qui. Vitae.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="header">
+          <span class="icon">
+            <img src="https://static.wixstatic.com/shapes/7b1db2_c45fb4669cc5422f978d4b418e218429.svg" alt="Execution"
+              title="Execution">
+          </span>
+
+          <span class="step_badge">
+            Step <br>
+            <span class="step">03</span>
+          </span>
+        </div>
+
+        <div class="details">
+          <h4>Execution</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam molestias quos, quia suscipit inventore
+            facere voluptatem perferendis, eaque, tempore vel natus perspiciatis quas ex illum earum nesciunt! Numquam,
+            sequi repellendus!</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="header">
+          <span class="icon">
+            <img src="https://static.wixstatic.com/shapes/7b1db2_d2776b687b604414b933c50bb509881d.svg" alt="Approval"
+              title="Approval">
+          </span>
+
+          <span class="step_badge">
+            Step <br>
+            <span class="step">05</span>
+          </span>
+        </div>
+
+        <div class="details">
+          <h4>Approval</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex odio consectetur nesciunt! Distinctio iure sunt
+            animi alias ab quam! Blanditiis consequuntur officia quaerat voluptatibus fugiat est optio, laboriosam
+            commodi? Optio.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

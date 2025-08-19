@@ -1,0 +1,876 @@
+    <?php
+    // Set Meta Tags
+    $this->set('title', 'Local Roofing Company & Home Exteriors Services | Archer Exteriors');
+    $this->set('metaDescription', 'Archer Exteriors - Your trusted partner for premium roofing, siding, and exterior solutions.');
+    $this->set('metaKeywords', STATIC_KEYWORDS . ', Roofing, Siding, Windows, Doors, Decks, Gutters, 8662724398, archerexteriors.com, Archer Exteriors');
+    $this->set('ogTitle', 'Local Roofing Company & Home Exteriors Services | Archer Exteriors');
+    $this->set('ogDescription', 'Archer Exteriors - Your trusted partner for premium roofing, siding, and exterior solutions.');
+    $this->set('ogImage', DOMAIN . '/img/archerexteriors-insignia.png?' . time());
+    $this->set('ogType', 'website'); // For general info pages
+    $this->set('ogUrl', DOMAIN); // TODO: Change to the current page URL
+    ?>
+
+    <!-- banner-section -->
+    <section class="banner-section">
+      <div class="banner-carousel owl-theme owl-carousel owl-nav-none">
+        <div class="slide-item services">
+          <div class="image-layer">
+          </div>
+          <div class="auto-container">
+            <div class="row clearfix">
+              <div class="col-xl-7 col-lg-12 col-md-12 offset-xl-6 content-column">
+                <div class="content-box">
+                  <h6>Proudly Serving Our Communities</h6>
+                  <h1>Complete Home Exterior Solutions </h1>
+                  <p>Roofing, siding, windows, and more — handled by local experts with over 40 years of trusted service.</p>
+                  <div class="btn-box">
+                    <?= $this->Html->link(
+                      'Explore Our Services<i class="flaticon-login"></i>',
+                      ['controller' => 'Services', 'action' => 'index'],
+                      ['class' => 'theme-btn', 'escape' => false]
+                    ) ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide-item roofing bg-left">
+          <div class="image-layer">
+          </div>
+          <div class="auto-container">
+            <div class="row clearfix">
+              <div class="col-xl-8 col-lg-12 col-md-12 content-column">
+                <div class="content-box">
+                  <h6>Trusted by Homeowners</h6>
+                  <h1>Expert Roof Installation and Replacement</h1>
+                  <p>GAF Master Elite Contractor delivering top-quality roofs backed by strong warranties and craftsmanship.</p>
+                  <div class="btn-box">
+                    <?= $this->Html->link(
+                      'Learn More About Roofing<i class="flaticon-login"></i>',
+                      ['controller' => 'Services', 'action' => 'roofing'],
+                      ['class' => 'theme-btn', 'escape' => false]
+                    ) ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide-item siding">
+          <div class="image-layer"></div>
+          <div class="auto-container">
+            <div class="row clearfix">
+              <div class="col-xl-7 col-lg-12 col-md-12 offset-xl-6 content-column">
+                <div class="content-box">
+                  <h6>Built to Protect and Impress</h6>
+                  <h1>Durable Siding in Styles You’ll Love</h1>
+                  <p>We install vinyl, fiber cement, and stone veneer using materials from James Hardie, CertainTeed, and Alside.</p>
+                  <div class="btn-box">
+                    <?= $this->Html->link(
+                      'View Siding Options<i class="flaticon-login"></i>',
+                      ['controller' => 'Services', 'action' => 'siding'],
+                      ['class' => 'theme-btn', 'escape' => false]
+                    ) ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-item window bg-left">
+          <div class="image-layer"></div>
+          <div class="auto-container">
+            <div class="row clearfix">
+              <div class="col-xl-8 col-lg-12 col-md-12 content-column">
+                <div class="content-box">
+                  <h6>Efficiency Meets Style</h6>
+                  <h1>Energy-Efficient Windows Installed Right</h1>
+                  <p>Choose from OKNA and ProVia windows, custom-fit for your home and expertly installed for lasting comfort.</p>
+                  <div class="btn-box">
+                    <?= $this->Html->link(
+                      'Browse Window Styles<i class="flaticon-login"></i>',
+                      ['controller' => 'Services', 'action' => 'windows'],
+                      ['class' => 'theme-btn', 'escape' => false]
+                    ) ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-item door">
+          <div class="image-layer"></div>
+          <div class="auto-container">
+            <div class="row clearfix">
+              <div class="col-xl-7 col-lg-12 col-md-12 offset-xl-6 content-column">
+                <div class="content-box">
+                  <h6>Strong First Impressions</h6>
+                  <h1>Entry Doors That Blend Beauty and Security</h1>
+                  <p>We install premium front and patio doors designed for durability, curb appeal, and energy savings.</p>
+                  <div class="btn-box">
+                    <?= $this->Html->link(
+                      'See Door Options<i class="flaticon-login"></i>',
+                      ['controller' => 'Services', 'action' => 'doors'],
+                      ['class' => 'theme-btn', 'escape' => false]
+                    ) ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-item deck bg-left">
+          <div class="image-layer"></div>
+          <div class="auto-container">
+            <div class="row clearfix">
+              <div class="col-xl-8 col-lg-12 col-md-12 content-column">
+                <div class="content-box">
+                  <h6>Built for Everyday Living</h6>
+                  <h1>Custom Decks Made for Comfort and Style</h1>
+                  <p>From cozy spaces to multi-level layouts, we design and build decks that bring your outdoor vision to life.</p>
+                  <div class="btn-box">
+                    <?= $this->Html->link(
+                      'Explore Deck Services<i class="flaticon-login"></i>',
+                      ['controller' => 'Services', 'action' => 'decks'],
+                      ['class' => 'theme-btn', 'escape' => false]
+                    ) ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-item gutter">
+          <div class="image-layer"></div>
+          <div class="auto-container">
+            <div class="row clearfix">
+              <div class="col-xl-7 col-lg-12 col-md-12 offset-xl-6 content-column">
+                <div class="content-box">
+                  <h6>Small Detail, Big Protection</h6>
+                  <h1>Gutter Installation and Repair You Can Trust</h1>
+                  <p>Protect your home from water damage with properly installed, low-maintenance gutter systems.</p>
+                  <div class="btn-box">
+                    <?= $this->Html->link(
+                      'Learn About Gutters<i class="flaticon-login"></i>',
+                      ['controller' => 'Services', 'action' => 'gutters'],
+                      ['class' => 'theme-btn', 'escape' => false]
+                    ) ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- banner-section end -->
+
+    <section class="feature-section bg-color-3 pb-5">
+      <div class="container">
+        <div class="inner-content clearfix">
+          <div class="feature-block-one">
+            <div class="inner-box">
+              <div class="icon-box">
+                <i class="flaticon-cabin"></i>
+                <h3>Residential</h3>
+              </div>
+              <div class="box">
+                <div class="light-icon"><i class="flaticon-cabin"></i></div>
+                <p>Expert exterior solutions for homeowners, including roofing, siding, windows, doors, decks, and gutters.</p>
+                <?= $this->Html->link(
+                  'Read More<i class="flaticon-login"></i>',
+                  ['controller' => 'Services', 'action' => 'index'],
+                  ['escape' => false]
+                ) ?>
+              </div>
+            </div>
+          </div>
+          <div class="feature-block-one">
+            <div class="inner-box">
+              <div class="icon-box">
+                <i class="flaticon-commercial"></i>
+                <h3>Commercial</h3>
+              </div>
+              <div class="box">
+                <div class="light-icon"><i class="flaticon-commercial"></i></div>
+                <p>Reliable exterior contracting for builders and developers, specializing in large-scale and new construction projects.</p>
+                <?= $this->Html->link(
+                  'Read More<i class="flaticon-login"></i>',
+                  ['controller' => 'Companies', 'action' => 'newConstruction'],
+                  ['escape' => false]
+                ) ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Advertisement Section  -->
+    <section>
+      <div class="container">
+        <?= $this->element('advertisement') ?>
+      </div>
+    </section>
+
+    <!-- Start Project Section Start -->
+    <section class="section light our_service" id="startProject">
+      <div class="container">
+        <div class="row gx-lg-4 gy-5">
+          <div class="col-lg-7">
+            <div class="sec-title">
+              <h6><i class="flaticon-roof"></i> our services</h6>
+              <h2>What service are you <br> <span>looking for?</span></h2>
+            </div>
+
+            <div class="row justify-content-center mt-5" style="gap: 20px 0;">
+              <div class="col-lg-4 col-6">
+                <?= $this->Html->link(
+                  '<div class="icon">' .
+                    $this->Html->image('services/icons/roof.svg', [
+                      'class' => 'img-fluid svg',
+                      'alt' => 'Roofing',
+                      'title' => 'Roofing'
+                    ]) .
+                    '</div>' .
+                    '<h4 class="item_title">Roofing</h4>',
+                  ['controller' => 'Services', 'action' => 'roofing'],
+                  ['class' => 'item', 'escape' => false]
+                ) ?>
+              </div>
+              <div class="col-lg-4 col-6">
+                <?= $this->Html->link(
+                  '<div class="icon">' .
+                    $this->Html->image('services/icons/siding.svg', [
+                      'class' => 'img-fluid svg siding',
+                      'alt' => 'Siding',
+                      'title' => 'Siding'
+                    ]) .
+                    '</div>' .
+                    '<h4 class="item_title">Siding</h4>',
+                  ['controller' => 'Services', 'action' => 'siding'],
+                  ['class' => 'item', 'escape' => false]
+                ) ?>
+              </div>
+              <div class="col-lg-4 col-6">
+                <?= $this->Html->link(
+                  '<div class="icon">' .
+                    $this->Html->image('services/icons/window.svg', [
+                      'class' => 'img-fluid svg',
+                      'alt' => 'Windows',
+                      'title' => 'Windows'
+                    ]) .
+                    '</div>' .
+                    '<h4 class="item_title">Windows</h4>',
+                  ['controller' => 'Services', 'action' => 'windows'],
+                  ['class' => 'item', 'escape' => false]
+                ) ?>
+              </div>
+              <div class="col-lg-4 col-6">
+                <?= $this->Html->link(
+                  '<div class="icon">' .
+                    $this->Html->image('services/icons/door.svg', [
+                      'class' => 'img-fluid svg',
+                      'alt' => 'Doors',
+                      'title' => 'Doors'
+                    ]) .
+                    '</div>' .
+                    '<h4 class="item_title">Doors</h4>',
+                  ['controller' => 'Services', 'action' => 'doors'],
+                  ['class' => 'item', 'escape' => false]
+                ) ?>
+              </div>
+              <div class="col-lg-4 col-6">
+                <?= $this->Html->link(
+                  '<div class="icon">' .
+                    $this->Html->image('services/icons/deck.svg', [
+                      'class' => 'img-fluid svg',
+                      'alt' => 'Decks',
+                      'title' => 'Decks'
+                    ]) .
+                    '</div>' .
+                    '<h4 class="item_title">Decks</h4>',
+                  ['controller' => 'Services', 'action' => 'decks'],
+                  ['class' => 'item', 'escape' => false]
+                ) ?>
+              </div>
+              <div class="col-lg-4 col-6">
+                <?= $this->Html->link(
+                  '<div class="icon">' .
+                    $this->Html->image('services/icons/gutter.svg', [
+                      'class' => 'img-fluid svg',
+                      'alt' => 'Gutters',
+                      'title' => 'Gutters'
+                    ]) .
+                    '</div>' .
+                    '<h4 class="item_title">Gutters</h4>',
+                  ['controller' => 'Services', 'action' => 'gutters'],
+                  ['class' => 'item', 'escape' => false]
+                ) ?>
+              </div>
+              <div class="col-lg-4 col-6">
+                <?= $this->Html->link(
+                  '<div class="icon">' .
+                    $this->Html->image('services/icons/other-services.svg', [
+                      'class' => 'img-fluid svg',
+                      'alt' => 'Other Services',
+                      'title' => 'Other Services'
+                    ]) .
+                    '</div>' .
+                    '<h4 class="item_title">Other Services</h4>',
+                  ['controller' => 'Services', 'action' => 'other-services'],
+                  ['class' => 'item', 'escape' => false]
+                ) ?>
+              </div>
+              <div class="col-lg-8 col-md-12">
+                <div class="item_new_construction">
+                  <div class="contents">
+                    <h4>We also offer Premium <br> Repair Services</h4>
+                    <?= $this->Html->link(
+                      'Read More <i class="fi fi-rs-arrow-right"></i>',
+                      ['controller' => 'Services', 'action' => 'repairs'],
+                      ['escape' => false]
+                    ) ?>
+                  </div>
+                  <div class="layer"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <?= $this->element('forms/form_free_estimate') ?>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Start Project Section End -->
+
+    <!-- About Company Section Start  -->
+    <section class="about-section section">
+      <?= $this->element('about_company') ?>
+    </section>
+    <!-- About Company Section End  -->
+
+    <!-- Statistics Section Start  -->
+    <section class="funfact-section">
+      <?= $this->element('company_statistics') ?>
+    </section>
+    <!-- Statistics Section End  -->
+
+    <!-- Service Types Section Start  -->
+    <section class="service-section bg_secondary">
+      <div class="container">
+        <div class="sec-title text-center light">
+          <h6><i class="flaticon-roof"></i>Our Services</h6>
+          <h2>Expert Exterior Services <br> <span>With A Local Touch And National Presence.</span></h2>
+        </div>
+
+        <div class="service_slider_wrap">
+          <div id="serviceSlider" class="owl-carousel owl-theme service_slider">
+            <div class="service-block-item wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+              <div class="inner-box">
+                <div class="image-box">
+                  <?= $this->Html->link(
+                    $this->Html->image('services/archer-exteriors-roofing.jpg', [
+                      'alt' => 'Roofing Service',
+                      'title' => 'Roofing Service'
+                    ]),
+                    ['controller' => 'Services', 'action' => 'roofing'],
+                    ['escape' => false]
+                  ) ?>
+                </div>
+                <div class="lower-content">
+                  <div class="icon-box">
+                    <?= $this->Html->image('services/icons/roof.svg', [
+                      'class' => 'svg',
+                      'alt' => 'Roofing Service'
+                    ]) ?>
+                  </div>
+                  <div class="shap-box"></div>
+                  <h3><?= $this->Html->link('Roofing', ['controller' => 'Services', 'action' => 'roofing']) ?></h3>
+                  <p>Expert roof installation and repairs using premium materials from trusted manufacturers like GAF and CertainTeed.</p>
+                  <div class="link">
+                    <?= $this->Html->link(
+                      'Get Started<i class="flaticon-login"></i>',
+                      ['controller' => 'Services', 'action' => 'roofing'],
+                      ['escape' => false]
+                    ) ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-block-item wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+              <div class="inner-box">
+                <div class="image-box">
+                  <?= $this->Html->link(
+                    $this->Html->image('services/archer-exteriors-siding.jpg', [
+                      'alt' => 'Siding Service',
+                      'title' => 'Siding Service'
+                    ]),
+                    ['controller' => 'Services', 'action' => 'siding'],
+                    ['escape' => false]
+                  ) ?>
+                </div>
+                <div class="lower-content">
+                  <div class="icon-box">
+                    <?= $this->Html->image('services/icons/siding.svg', [
+                      'class' => 'svg siding',
+                      'alt' => 'Siding Service'
+                    ]) ?>
+                  </div>
+                  <div class="shap-box"></div>
+                  <h3><?= $this->Html->link('Siding', ['controller' => 'Services', 'action' => 'siding']) ?></h3>
+                  <p>Quality siding installation using durable materials from James Hardie, CertainTeed, and other leading brands.</p>
+                  <div class="link">
+                    <?= $this->Html->link(
+                      'Get Started<i class="flaticon-login"></i>',
+                      ['controller' => 'Services', 'action' => 'siding'],
+                      ['escape' => false]
+                    ) ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-block-item wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+              <div class="inner-box">
+                <div class="image-box">
+                  <?= $this->Html->link(
+                    $this->Html->image('services/archer-exteriors-windows.jpg', [
+                      'alt' => 'Window Service',
+                      'title' => 'Window Service'
+                    ]),
+                    ['controller' => 'Services', 'action' => 'windows'],
+                    ['escape' => false]
+                  ) ?>
+                </div>
+                <div class="lower-content">
+                  <div class="icon-box">
+                    <?= $this->Html->image('services/icons/window.svg', [
+                      'class' => 'svg',
+                      'alt' => 'Window Service'
+                    ]) ?>
+                  </div>
+                  <div class="shap-box"></div>
+                  <h3><?= $this->Html->link('Windows', ['controller' => 'Services', 'action' => 'windows']) ?></h3>
+                  <p>Energy-efficient window installation and replacement services featuring OKNA and ProVia products.</p>
+                  <div class="link">
+                    <?= $this->Html->link(
+                      'Get Started<i class="flaticon-login"></i>',
+                      ['controller' => 'Services', 'action' => 'windows'],
+                      ['escape' => false]
+                    ) ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-block-item wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+              <div class="inner-box">
+                <div class="image-box">
+                  <?= $this->Html->link(
+                    $this->Html->image('services/archer-exteriors-doors.jpg', [
+                      'alt' => 'Door Service',
+                      'title' => 'Door Service'
+                    ]),
+                    ['controller' => 'Services', 'action' => 'doors'],
+                    ['escape' => false]
+                  ) ?>
+                </div>
+                <div class="lower-content">
+                  <div class="icon-box">
+                    <?= $this->Html->image('services/icons/door.svg', [
+                      'class' => 'svg',
+                      'alt' => 'Door Service'
+                    ]) ?>
+                  </div>
+                  <div class="shap-box"></div>
+                  <h3><?= $this->Html->link('Doors', ['controller' => 'Services', 'action' => 'doors']) ?></h3>
+                  <p>Professional door installation and replacement services for entry, patio, and storm doors.</p>
+                  <div class="link">
+                    <?= $this->Html->link(
+                      'Get Started<i class="flaticon-login"></i>',
+                      ['controller' => 'Services', 'action' => 'doors'],
+                      ['escape' => false]
+                    ) ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-block-item wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+              <div class="inner-box">
+                <div class="image-box">
+                  <?= $this->Html->link(
+                    $this->Html->image('services/archer-exteriors-decks.jpg', [
+                      'alt' => 'Deck Service',
+                      'title' => 'Deck Service'
+                    ]),
+                    ['controller' => 'Services', 'action' => 'decks'],
+                    ['escape' => false]
+                  ) ?>
+                </div>
+                <div class="lower-content">
+                  <div class="icon-box">
+                    <?= $this->Html->image('services/icons/deck.svg', [
+                      'class' => 'svg',
+                      'alt' => 'Deck Service'
+                    ]) ?>
+                  </div>
+                  <div class="shap-box"></div>
+                  <h3><?= $this->Html->link('Decks', ['controller' => 'Services', 'action' => 'decks']) ?></h3>
+                  <p>Custom deck design and installation using high-quality composite and natural wood materials.</p>
+                  <div class="link">
+                    <?= $this->Html->link(
+                      'Get Started<i class="flaticon-login"></i>',
+                      ['controller' => 'Services', 'action' => 'decks'],
+                      ['escape' => false]
+                    ) ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-block-item wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+              <div class="inner-box">
+                <div class="image-box">
+                  <?= $this->Html->link(
+                    $this->Html->image('services/archer-exteriors-gutters.jpg', [
+                      'alt' => 'Gutter Service',
+                      'title' => 'Gutter Service'
+                    ]),
+                    ['controller' => 'Services', 'action' => 'gutters'],
+                    ['escape' => false]
+                  ) ?>
+                </div>
+                <div class="lower-content">
+                  <div class="icon-box">
+                    <?= $this->Html->image('services/icons/gutter.svg', [
+                      'class' => 'svg',
+                      'alt' => 'Gutter Service'
+                    ]) ?>
+                  </div>
+                  <div class="shap-box"></div>
+                  <h3><?= $this->Html->link('Gutters', ['controller' => 'Services', 'action' => 'gutters']) ?></h3>
+                  <p>Professional gutter installation and maintenance services to protect your home from water damage.</p>
+                  <div class="link">
+                    <?= $this->Html->link(
+                      'Get Started<i class="flaticon-login"></i>',
+                      ['controller' => 'Services', 'action' => 'gutters'],
+                      ['escape' => false]
+                    ) ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!-- Types Section End  -->
+
+    <!-- Why Choose Us Section Start  -->
+    <section class="chooseus-section">
+      <?= $this->element('why_choose_us') ?>
+    </section>
+    <!-- Why Choose Us Section End -->
+
+    <!-- Recent Project section Start  -->
+    <section class="section recent_project">
+      <?= $this->element('our_recent_work') ?>
+    </section>
+    <!-- Recent Project section End  -->
+
+    <!-- Working Process Section Start  -->
+    <section class="section working-section text-center">
+      <div class="large-container">
+        <div class="sec-title light">
+          <h6><i class="flaticon-roof"></i>Our Process</h6>
+          <h2>Standard <span>Working Process</span></h2>
+        </div>
+        <div class="inner-content">
+          <div class="row clearfix">
+            <div class="col-xxl-3 col-md-6 col-sm-12 process-block">
+              <div class="process-block-item">
+                <div class="inner-box">
+                  <div class="icon-box">
+                    <span class="count-box counted">01</span>
+                    <div class="icon"><i class="flaticon-consulting"></i></div>
+                  </div>
+                  <div class="lower-content">
+                    <h3>Initial Consultation</h3>
+                    <div class="pattern-layer"></div>
+                    <p>It all starts with a call to our experienced customer service team. During this conversation, we’ll discuss your needs, outline your project goals, and schedule your free estimate. To ensure we can provide accurate pricing, all homeowners and decision makers must be present at the scheduled appointment.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xxl-3 col-md-6 col-sm-12 process-block">
+              <div class="process-block-item">
+                <div class="inner-box">
+                  <div class="icon-box">
+                    <span class="count-box counted">02</span>
+                    <div class="icon"><i class="flaticon-paper"></i></div>
+                  </div>
+                  <div class="lower-content">
+                    <h3>On-Site Assessment</h3>
+                    <div class="pattern-layer"></div>
+                    <p>Our Home Exteriors Specialist will visit your property to evaluate the project, take precise measurements, and review your specific needs. We’ll walk you through product options, color selections, and more. At this stage, we provide a detailed, accurate quote with exact pricing.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xxl-3 col-md-6 col-sm-12 process-block">
+              <div class="process-block-item">
+                <div class="inner-box">
+                  <div class="icon-box">
+                    <span class="count-box counted">03</span>
+                    <div class="icon"><i class="flaticon-steel"></i></div>
+                  </div>
+                  <div class="lower-content">
+                    <h3> Project Execution</h3>
+                    <div class="pattern-layer"></div>
+                    <p>Once the plan is confirmed, your dedicated local supervisor manages the entire process. From securing materials to overseeing installation, we handle every step with attention to detail and a commitment to quality.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xxl-3 col-md-6 col-sm-12 process-block">
+              <div class="process-block-item">
+                <div class="inner-box">
+                  <div class="icon-box">
+                    <span class="count-box counted">04</span>
+                    <div class="icon"><i class="flaticon-parcel"></i></div>
+                  </div>
+                  <div class="lower-content">
+                    <h3>Final Inspection and Approval</h3>
+                    <div class="pattern-layer"></div>
+                    <p>When the work is complete, we conduct a thorough inspection to ensure everything meets your expectations. We walk you through the finished project and make sure you are fully satisfied with the results before we consider the job done.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Working Process Section End  -->
+
+    <!-- Reviews section Start  -->
+    <section class="section light reviews" style="padding-top: 255px;">
+      <?php echo $this->element('reviews') ?>
+    </section>
+    <!-- Reviews section End  -->
+
+
+    <!-- News Section Start  -->
+    <!-- <section class="news-section section">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-8">
+            <div class="sec-title mb-0">
+              <h6><i class="flaticon-roof"></i>News &amp; Updates</h6>
+              <h2>Archer <span>Exteriors Guides</span></h2>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-lg-auto text-lg-end">
+            <?= $this->Html->link(
+              'Read More<i class="flaticon-login"></i>',
+              'https://www.archerexteriors.com/guides',
+              [
+                'class' => 'theme-btn',
+                'target' => '_blank',
+                'escape' => false
+              ]
+            ) ?>
+          </div>
+        </div>
+
+        <div class="row justify-content-center mt-5 clearfix">
+          <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+            <div class="news-block-item wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+              <div class="inner-box">
+                <div class="image-box">
+                  <?= $this->Html->image('https://static.wixstatic.com/media/f5984b_413b273cc9934749b7c051a6ccfa095e~mv2.jpg', [
+                    'alt' => 'Emergency Roof Repair in South Jersey',
+                    'title' => 'Emergency Roof Repair in South Jersey'
+                  ]) ?>
+                  <?= $this->Html->link('', 'https://www.archerexteriors.com/post/emergency-roof-repairs-in-south-jersey', ['class' => 'link']) ?>
+                  <div class="category">
+                    <?= $this->Html->link(
+                      '<i class="far fa-folder"></i> Repair Services',
+                      'https://www.archerexteriors.com/guides/categories/repair-services',
+                      ['escape' => false]
+                    ) ?>
+                  </div>
+                </div>
+                <div class="lower-content">
+                  <div class="upper-box">
+                    <h3><?= $this->Html->link('Emergency Roof Repair in South Jersey', 'https://www.archerexteriors.com/post/emergency-roof-repairs-in-south-jersey') ?></h3>
+                    <ul class="post-info clearfix">
+                      <li><i class="far fa-calendar"></i>Jan 13, 2025</li>
+                      <li><i class="far fa-user"></i>Archer Team</li>
+                    </ul>
+                    <p>When your roof is damaged, every second counts. Whether it's <span>...</span></p>
+                  </div>
+                  <div class="lower-box clearfix">
+                    <div class="comment-box pull-left">
+                      <p><i class="far fa-clock"></i><?= $this->Html->link('2 min read', 'https://www.archerexteriors.com/post/emergency-roof-repairs-in-south-jersey') ?></p>
+                    </div>
+                    <div class="link-box pull-right">
+                      <?= $this->Html->link(
+                        '<span>Read More</span><i class="flaticon-login"></i>',
+                        'https://www.archerexteriors.com/post/emergency-roof-repairs-in-south-jersey',
+                        ['escape' => false]
+                      ) ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+            <div class="news-block-item wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+              <div class="inner-box">
+                <div class="image-box">
+                  <?= $this->Html->image('https://static.wixstatic.com/media/f5984b_bc80177216ee4bdca3f66e5183d28fd7~mv2.png', [
+                    'alt' => 'Archer Exteriors Blog Image',
+                    'title' => 'Archer Exteriors Blog Image'
+                  ]) ?>
+                  <?= $this->Html->link('', 'https://www.archerexteriors.com/post/soffit-fascia-and-eaves-explained', ['class' => 'link']) ?>
+                  <div class="category">
+                    <?= $this->Html->link(
+                      '<i class="far fa-folder"></i> Roofing Services',
+                      'https://www.archerexteriors.com/guides/categories/roofing-services',
+                      ['escape' => false]
+                    ) ?>
+                  </div>
+                </div>
+                <div class="lower-content">
+                  <div class="upper-box">
+                    <h3><?= $this->Html->link('Soffit, Fascia, and Eaves Explained', 'https://www.archerexteriors.com/post/soffit-fascia-and-eaves-explained') ?></h3>
+                    <ul class="post-info clearfix">
+                      <li><i class="far fa-calendar"></i>Dec 31, 2024</li>
+                      <li><i class="far fa-user"></i>Archer Team</li>
+                    </ul>
+                    <p>Understanding soffit, fascia, and eaves is essential for maintaining <span>...</span></p>
+                  </div>
+                  <div class="lower-box clearfix">
+                    <div class="comment-box pull-left">
+                      <p><i class="far fa-clock"></i><?= $this->Html->link('3 min read', 'https://www.archerexteriors.com/post/soffit-fascia-and-eaves-explained') ?></p>
+                    </div>
+                    <div class="link-box pull-right">
+                      <?= $this->Html->link(
+                        '<span>Read More</span><i class="flaticon-login"></i>',
+                        'https://www.archerexteriors.com/post/soffit-fascia-and-eaves-explained',
+                        ['escape' => false]
+                      ) ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+            <div class="news-block-item wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+              <div class="inner-box">
+                <div class="image-box">
+                  <?= $this->Html->image('https://static.wixstatic.com/media/f5984b_36c2ed0167754684ab8494ac6429eb34~mv2.jpg', [
+                    'alt' => 'Black Windows: Pros, Cons, and Costs',
+                    'title' => 'Black Windows: Pros, Cons, and Costs'
+                  ]) ?>
+                  <?= $this->Html->link(
+                    '<i class="fas fa-link"></i>',
+                    'https://www.archerexteriors.com/post/black-windows-pros-cons-and-costs',
+                    ['class' => 'link', 'escape' => false]
+                  ) ?>
+                  <div class="category">
+                    <?= $this->Html->link(
+                      '<i class="far fa-folder"></i> Window Services',
+                      'https://www.archerexteriors.com/guides/categories/window-services',
+                      ['escape' => false]
+                    ) ?>
+                  </div>
+                </div>
+                <div class="lower-content">
+                  <div class="upper-box">
+                    <h3><?= $this->Html->link('Black Windows: Pros, Cons, and Costs', 'https://www.archerexteriors.com/post/black-windows-pros-cons-and-costs') ?></h3>
+                    <ul class="post-info clearfix">
+                      <li><i class="far fa-calendar"></i>Oct 25, 2024</li>
+                      <li><i class="far fa-user"></i>Archer Team</li>
+                    </ul>
+                    <p>Upgrading to black windows is a popular choice for <span>...</span></p>
+                  </div>
+                  <div class="lower-box clearfix">
+                    <div class="comment-box pull-left">
+                      <p><i class="far fa-clock"></i><?= $this->Html->link('2 min read', 'https://www.archerexteriors.com/post/black-windows-pros-cons-and-costs') ?></p>
+                    </div>
+                    <div class="link-box pull-right">
+                      <?= $this->Html->link(
+                        '<span>Read More</span><i class="flaticon-login"></i>',
+                        'https://www.archerexteriors.com/post/black-windows-pros-cons-and-costs',
+                        ['escape' => false]
+                      ) ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- News Section End  -->
+
+    <!-- Brochure Section Start  -->
+    <section class="section brochure-section bg_secondary">
+      <?php echo $this->element('our_brochure') ?>
+    </section>
+    <!-- Brochure Section End  -->
+
+    <!-- clients-section -->
+    <section class="section clients-section text-center">
+      <?php echo $this->element('our_partners') ?>
+    </section>
+    <!-- clients-section end -->
+
+    <!-- Archie Section Start  -->
+    <section class="archie_section">
+      <?php echo $this->element('archie_section') ?>
+    </section>
+    <!-- Archie Section End  -->
+
+    <!-- Activities section Start  -->
+    <section class="section activities">
+      <?php echo $this->element('community_impact') ?>
+    </section>
+    <!-- Activities section End  -->
+
+
+    <!-- google-map-section -->
+    <!-- <section class="google-map-section">
+        <div class="google-map-area">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d240734.93271725433!2d-74.14431232743088!3d40.69728463488067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e1!3m2!1sen!2sbd!4v1746179122953!5m2!1sen!2sbd"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section> -->
+    <!-- google-map-section end -->
+
+    <!-- Elfsight Google Maps | Archer Exteriors Branch Locations -->
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <div class="elfsight-app-84c02a38-7283-40c6-ac05-f58000b7ec33" data-elfsight-app-lazy></div>

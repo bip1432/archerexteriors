@@ -1,0 +1,14 @@
+.flipBook_section{
+  position: relative;
+  height: 90vh;
+  margin-bottom: 30px;
+}
+
+.flipbook-fillPreloader img{
+  width: 60px;
+  top: -20%;
+}
+
+.flipbook-page3 .flipbook-page-preloader{
+  width: 200px !important;
+}
