@@ -1,13 +1,13 @@
 <?php
 // Set Meta Tags
-$this->set('title', 'Shane Odom | Your Trusted Exterior Home Improvement Specialist | Archer Exteriors');
+$this->set('title', 'Kenny Fowler | Your Trusted Exterior Home Improvement Specialist | Archer Exteriors');
 $this->set('metaDescription', 'Archer Exteriors - Your Trusted Exterior Home Improvement Specialist');
 $this->set('metaKeywords', STATIC_KEYWORDS . ', Roofing, Siding, Windows, Doors, Decks, Gutters, 8662724398, archerexteriors.com, Archer Exteriors');
-$this->set('ogTitle', 'Shane Odom | Your Trusted Exterior Home Improvement Specialist | Archer Exteriors');
+$this->set('ogTitle', 'Kenny Fowler | Your Trusted Exterior Home Improvement Specialist | Archer Exteriors');
 $this->set('ogDescription', 'Archer Exteriors - Your Trusted Exterior Home Improvement Specialist');
 $this->set('ogImage', DOMAIN . '/img/archerexteriors-insignia.png?' . time());
 $this->set('ogType', 'website'); // For general info pages
-$this->set('ogUrl', DOMAIN . '/shane'); // TODO: Change to the current page URL
+$this->set('ogUrl', DOMAIN . '/kenny'); // TODO: Change to the current page URL
 ?>
 
 <!-- Hero-section -->
@@ -27,71 +27,51 @@ $this->set('ogUrl', DOMAIN . '/shane'); // TODO: Change to the current page URL
           <div class="left">
             <div class="bio mb-4">
               <div class="img">
-                <?= $this->Html->image('salesmans/shane.png', [
+                <?= $this->Html->image('salesmans/kenny-fowler.png', [
                   'class' => 'img-fluid',
-                  'alt' => 'Shane Odom',
-                  'title' => 'Shane Odom'
+                  'alt' => 'Kenny Fowler',
+                  'title' => 'Kenny Fowler'
                 ]) ?>
               </div>
               <div class="desc">
-                <h2>Meet <br> <b>Shane Odom</b></h2>
+                <h2>Meet <br> <b>Kenny Fowler</b></h2>
                 <h5>Home Exterior Specialist</h5>
-                <p>I believe the best projects start with honest advice and clear choices.</p>
+                <p>Transparency That Builds More Than Homes — It Builds Trust.</p>
 
                 <ul class="social-links mt-3">
                   <li>
                     <?= $this->Html->link(
-                      '<i class="fab fa-facebook-f"></i>',
+                      $this->Html->tag('i', '', ['class' => 'fab fa-facebook-f']),
                       'http://www.facebook.com/archerexteriors',
-                      [
-                        'target' => '_blank',
-                        'title' => 'Facebook',
-                        'escape' => false
-                      ]
+                      ['escape' => false, 'target' => '_blank', 'title' => 'Facebook']
                     ) ?>
                   </li>
                   <li>
                     <?= $this->Html->link(
-                      '<i class="fab fa-instagram"></i>',
+                      $this->Html->tag('i', '', ['class' => 'fab fa-instagram']),
                       'https://www.instagram.com/archerexteriors/',
-                      [
-                        'target' => '_blank',
-                        'title' => 'Instagram',
-                        'escape' => false
-                      ]
+                      ['escape' => false, 'target' => '_blank', 'title' => 'Instagram']
                     ) ?>
                   </li>
                   <li>
                     <?= $this->Html->link(
-                      '<i class="fab fa-tiktok"></i>',
+                      $this->Html->tag('i', '', ['class' => 'fab fa-tiktok']),
                       'https://www.tiktok.com/@archerexteriors',
-                      [
-                        'target' => '_blank',
-                        'title' => 'Tiktok',
-                        'escape' => false
-                      ]
+                      ['escape' => false, 'target' => '_blank', 'title' => 'Tiktok']
                     ) ?>
                   </li>
                   <li>
                     <?= $this->Html->link(
-                      '<i class="fab fa-linkedin-in"></i>',
+                      $this->Html->tag('i', '', ['class' => 'fab fa-linkedin-in']),
                       'https://www.linkedin.com/company/archer-exteriors-inc/',
-                      [
-                        'target' => '_blank',
-                        'title' => 'Linkedin',
-                        'escape' => false
-                      ]
+                      ['escape' => false, 'target' => '_blank', 'title' => 'Linkedin']
                     ) ?>
                   </li>
                   <li>
                     <?= $this->Html->link(
-                      '<i class="fab fa-youtube"></i>',
+                      $this->Html->tag('i', '', ['class' => 'fab fa-youtube']),
                       'https://www.youtube.com/@archerexteriors',
-                      [
-                        'target' => '_blank',
-                        'title' => 'YouTube',
-                        'escape' => false
-                      ]
+                      ['escape' => false, 'target' => '_blank', 'title' => 'YouTube']
                     ) ?>
                   </li>
                 </ul>
@@ -100,13 +80,14 @@ $this->set('ogUrl', DOMAIN . '/shane'); // TODO: Change to the current page URL
 
             <h3 class="title_3 mb-4">Not Just a Quote— <br>A Real Conversation About Your Home.</h3>
 
-            <p>Hi, I'm Shane, your local home exterior specialist at Archer Exteriors. With over 30 years of experience in the home exterior industry, I bring a wealth of knowledge, professionalism, and heart to every project. I've had the privilege of working my way up from the ground level to a management role at a major building materials company. That experience has equipped me with the tools to guide homeowners in choosing the right products and plans to protect what matters most — their home.</p>
-            <p class="mt-4">I'm a proud father of four, and my family means everything to me. One of my children is autistic, and advocating for autism awareness is a cause that's deeply personal to me. When I'm not working, you'll usually find me out fishing or spending quality time with my family. It's those moments that keep me grounded and motivated to do my best for every customer I serve.</p>
+            <p>Hi, I’m Kenny, your local Home Exterior Specialist at Archer Exteriors.</p>
+            <p class="mt-4">With more than 15 years in the industry, I bring a blend of hands-on experience, professionalism, and genuine care to every project. I started my career at the ground level and worked my way into a management role at a major building materials company, gaining the knowledge and insight to help homeowners choose the right products and plans to protect what matters most — their home.</p>
+            <p class="mt-4">Beyond work, I’m a proud father of two. My family means the world to me, and when I’m not serving homeowners, you’ll likely find me coaching little league, out fishing, or spending quality time with my loved ones. Those moments keep me grounded and fuel my dedication to giving every customer the same care and attention I would give my own family.</p>
           </div>
         </div>
 
         <div class="col-lg-5">
-          <?= $this->element('forms/form_free_estimate', ['formId' => '16', 'formKey' => 'shane9e14a6c843380feb686903d4f1c51ebe']) ?>
+          <?= $this->element('forms/form_free_estimate', ['formId' => '14', 'formKey' => 'erickac99713c3638e0e2ef29c3825bbe9048']) ?>
         </div>
       </div>
     </div>
@@ -127,11 +108,11 @@ $this->set('ogUrl', DOMAIN . '/shane'); // TODO: Change to the current page URL
       <div class="col-lg-6 align-self-center">
         <div class="about-image-block">
           <div class="image-box pb-0">
-            <div class="pattern-layer" style="background-image: url('./img/shape-1.png');"></div>
+            <div class="pattern-layer" style="background-image: url(<?= $this->Url->image('shape-1.png') ?>);"></div>
             <div class="image">
               <?= $this->Html->image('salesmans/rooted-in-south-jersey.jpg', [
-                'alt' => 'Your Local Expert',
-                'title' => 'Your Local Expert'
+                'alt' => "Proudly Serving Walton to Gulf County",
+                'title' => "Proudly Serving Walton to Gulf County"
               ]) ?>
             </div>
           </div>
@@ -141,15 +122,15 @@ $this->set('ogUrl', DOMAIN . '/shane'); // TODO: Change to the current page URL
       <div class="col-lg-6 align-self-center">
         <div class="sec-title">
           <h6><i class="flaticon-roof"></i>Service Area</h6>
-          <h2>Your Local Expert Along the Emerald Coast <span>— From Alabama to Florida:</span></h2>
+          <h2>Proudly Serving Walton to Gulf County <span>— And Every Home in Between.</span></h2>
         </div>
 
-
         <ul class="check_list serving_area_list mt-3">
-          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Baldwin County (AL)</li>
-          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Escambia (FL)</li>
-          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Okaloosa (FL)</li>
-          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Santa Rosa (FL)</li>
+          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Walton County (FL)</li>
+          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Holmes County (FL)</li>
+          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Washington County (FL)</li>
+          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Bay County (FL)</li>
+          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Gulf County (FL)</li>
         </ul>
 
         <div class="mt-4">
@@ -210,8 +191,8 @@ $this->set('ogUrl', DOMAIN . '/shane'); // TODO: Change to the current page URL
               <div class="lower-content">
                 <h3>Value-Oriented <br> Guidance</h3>
                 <div class="pattern-layer"></div>
-                <p>Whether you’re repairing storm damage or planning a full exterior upgrade, I’ll walk you through
-                  your best options based on your needs, budget, and vision. I’m here to add value—not upsell.</p>
+                <p>Whether you're repairing storm damage or planning a full exterior upgrade, I'll walk you through
+                  your best options based on your needs, budget, and vision. I'm here to add value—not upsell.</p>
               </div>
             </div>
           </div>
@@ -232,7 +213,7 @@ $this->set('ogUrl', DOMAIN . '/shane'); // TODO: Change to the current page URL
                 <h3>Service with <br> Integrity</h3>
                 <div class="pattern-layer"></div>
                 <p>My goal is simple: do right by every homeowner I work with. That means honest advice, transparent
-                  pricing, and treating your home with the same care I’d give my own.</p>
+                  pricing, and treating your home with the same care I'd give my own.</p>
               </div>
             </div>
           </div>
@@ -242,7 +223,6 @@ $this->set('ogUrl', DOMAIN . '/shane'); // TODO: Change to the current page URL
   </div>
 </section>
 <!-- Working Process Section End  -->
-
 
 <!-- Why Choose Us Section Start  -->
 <section class="chooseus-section">
@@ -292,7 +272,11 @@ $this->set('ogUrl', DOMAIN . '/shane'); // TODO: Change to the current page URL
               'alt' => 'Write a Review'
             ]) . ' Write a Review',
             'https://g.page/r/CQhxOFye5mQmEBM/review',
-            ['class' => 'theme-btn sm', 'target' => '_blank', 'escape' => false]
+            [
+              'class' => 'theme-btn sm',
+              'target' => '_blank',
+              'escape' => false
+            ]
           ) ?>
         </div>
 

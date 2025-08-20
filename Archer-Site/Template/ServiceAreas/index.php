@@ -85,7 +85,7 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
       </div>
 
       <div class="col-lg-5">
-        <?= $this->element('forms/form_free_estimate') ?>
+        <?= $this->element('forms/form_free_estimate', ['formId' => '11', 'formKey' => 'servarea76788d097d18d4fab590d7da9d1e2e5f']) ?>
       </div>
     </div>
   </div>
@@ -143,7 +143,7 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
         <h4 class="text-white mb-3">Department</h4>
         <div class="find_branch">
           <div>
-            <a href="#" class="filter_btn" data-service="1" id="service-filter-1">
+            <a href="#" class="filter_btn" data-dept="1" id="service-filter-1">
               <?= $this->Html->image('service-area/icon-construction.png', [
                 'alt' => 'New Construction'
               ]) ?>
@@ -151,7 +151,7 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
             </a>
           </div>
           <div>
-            <a href="#" class="filter_btn" data-service="2" id="service-filter-2">
+            <a href="#" class="filter_btn" data-dept="2" id="service-filter-2">
               <?= $this->Html->image('service-area/icon-remodelling.png', [
                 'alt' => 'Remodeling'
               ]) ?>
@@ -399,41 +399,67 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
   let currentFilters = {
     state: '',
     county: '',
-    service: ''
+    dept: ''
   };
 
   // Initialize filters from current URL parameters
   function initializeFiltersFromUrl() {
     const urlParams = new URLSearchParams(window.location.search);
+
+    // Always get parameters from URL first
     currentFilters.state = urlParams.get('state') || '';
     currentFilters.county = urlParams.get('county') || '';
-    currentFilters.service = urlParams.get('service') || '';
+    currentFilters.dept = urlParams.get('dept') || '';
 
     // Set UI state based on current filters
-    const stateSelect = document.getElementById('service-area-state-select');
-    const countySelect = document.getElementById('service-area-county-select');
-
-    if (stateSelect && currentFilters.state) {
-      stateSelect.value = currentFilters.state;
-    }
-
-    if (countySelect && currentFilters.county) {
-      countySelect.value = currentFilters.county;
-    }
-
-    // Set active state for service buttons
-    // First clear all active states
-    const serviceButtons = document.querySelectorAll('.filter_btn[data-service]');
-    serviceButtons.forEach(btn => btn.classList.remove('active'));
-
-    // Then set active for current service
-    if (currentFilters.service) {
-      const activeButton = document.querySelector(`.filter_btn[data-service="${currentFilters.service}"]`);
-      if (activeButton) {
-        activeButton.classList.add('active');
-      }
-    }
+    updateUIState();
   }
+
+  // Department filter buttons
+  const deptButtons = document.querySelectorAll('.filter_btn[data-dept]');
+
+  deptButtons.forEach(function(button) {
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+
+      const deptValue = this.getAttribute('data-dept');
+
+      // Always update both the filter state and URL
+      if (currentFilters.dept === deptValue) {
+        // If clicking the same department, do nothing to maintain the filter
+        return;
+      }
+
+      // Remove active class from all buttons first
+      deptButtons.forEach(btn => btn.classList.remove('active'));
+
+      // Set the new department filter
+      currentFilters.dept = deptValue;
+      this.classList.add('active');
+
+      // Always update URL with current state
+      const newUrl = buildFilterUrl();
+      history.pushState(currentFilters, '', newUrl);
+
+      // Perform the search with current filters
+      performFilteredSearch();
+    });
+  });
+
+  // Handle browser back/forward
+  window.addEventListener('popstate', function(event) {
+    // Re-initialize filters from URL and maintain dept parameter
+    initializeFiltersFromUrl();
+    performFilteredSearch();
+  });
+
+  // Handle form submissions to prevent losing dept parameter
+  document.addEventListener('submit', function(event) {
+    if (event.target.matches('form')) {
+      event.preventDefault();
+      performFilteredSearch();
+    }
+  });
 
   // AJAX Pagination System
   function initializePagination() {
@@ -457,7 +483,7 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
     //console.log('Pagination event listeners attached');
   }
 
-  // AJAX Search/Filter System
+  // Initialize filters
   function initializeFilters() {
     //console.log('Initializing AJAX filters...');
 
@@ -493,26 +519,26 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
       });
     }
 
-    // Service filter buttons
-    const serviceButtons = document.querySelectorAll('.filter_btn[data-service]');
+    // Department filter buttons
+    const deptButtons = document.querySelectorAll('.filter_btn[data-dept]');
 
-    serviceButtons.forEach(function(button) {
+    deptButtons.forEach(function(button) {
       button.addEventListener('click', function(event) {
         event.preventDefault();
 
-        const serviceValue = this.getAttribute('data-service');
+        const deptValue = this.getAttribute('data-dept');
 
-        // Toggle service filter
-        if (currentFilters.service === serviceValue) {
+        // Toggle department filter
+        if (currentFilters.dept === deptValue) {
           // If already selected, deselect it
-          currentFilters.service = '';
+          currentFilters.dept = '';
           this.classList.remove('active');
         } else {
-          // Remove active class from all service buttons
-          serviceButtons.forEach(btn => btn.classList.remove('active'));
+          // Remove active class from all department buttons
+          deptButtons.forEach(btn => btn.classList.remove('active'));
 
-          // Set new service filter and add active class
-          currentFilters.service = serviceValue;
+          // Set new department filter and add active class
+          currentFilters.dept = deptValue;
           this.classList.add('active');
         }
 
@@ -520,25 +546,16 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
         performFilteredSearch();
       });
     });
-
-    //console.log('Filter event listeners attached');
   }
 
-  // Perform filtered search
+  // Perform filtered search with current filters
   function performFilteredSearch(page = 1) {
-    //console.log('Performing filtered search with filters:', currentFilters);
-
-    // Update search results message
-    updateSearchResultsMessage();
-
-    // Build URL with current filters and page
+    // Ensure we're using current filter state
     const url = buildFilterUrl(page);
-
-    // Load content with AJAX (mark as filter change for auto-scroll)
     loadPaginatedContent(url, true);
   }
 
-  // Build URL with current filters
+  // Build URL with current filters - ensure dept parameter is always included
   function buildFilterUrl(page = 1) {
     const baseUrl = '<?= $this->Url->build(['controller' => 'ServiceAreas', 'action' => 'index']) ?>';
     const params = new URLSearchParams();
@@ -548,15 +565,16 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
       params.set('page', page);
     }
 
-    // Add filter parameters
+    // Always include current filters in URL
     if (currentFilters.state) {
       params.set('state', currentFilters.state);
     }
     if (currentFilters.county) {
       params.set('county', currentFilters.county);
     }
-    if (currentFilters.service) {
-      params.set('service', currentFilters.service);
+    // Always include dept parameter if set
+    if (currentFilters.dept) {
+      params.set('dept', currentFilters.dept);
     }
 
     // Always add AJAX parameter for AJAX requests
@@ -574,7 +592,7 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
     return {
       state: params.get('state') || '',
       county: params.get('county') || '',
-      service: params.get('service') || ''
+      dept: params.get('dept') || ''
     };
   }
 
@@ -595,8 +613,8 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
     if (currentFilters.county) {
       params.set('county', currentFilters.county);
     }
-    if (currentFilters.service) {
-      params.set('service', currentFilters.service);
+    if (currentFilters.dept) {
+      params.set('dept', currentFilters.dept);
     }
 
     const queryString = params.toString();
@@ -605,7 +623,15 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
 
   // Load paginated content via AJAX
   function loadPaginatedContent(url, isFilterChange = false) {
-    //console.log('Loading paginated content from:', url);
+    // Parse current URL to maintain dept parameter
+    const currentUrl = new URL(url, window.location.origin);
+    const currentParams = currentUrl.searchParams;
+
+    // Ensure dept parameter is preserved if it exists
+    if (currentFilters.dept && !currentParams.has('dept')) {
+      currentParams.set('dept', currentFilters.dept);
+      url = currentUrl.toString();
+    }
 
     // Update current filters from the URL (for pagination links)
     const urlFilters = extractFiltersFromUrl(url);
@@ -831,12 +857,12 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
       countySelect.value = currentFilters.county || '';
     }
 
-    // Update service button active states
-    const serviceButtons = document.querySelectorAll('.filter_btn[data-service]');
-    serviceButtons.forEach(btn => btn.classList.remove('active'));
+    // Update department button active states
+    const deptButtons = document.querySelectorAll('.filter_btn[data-dept]');
+    deptButtons.forEach(btn => btn.classList.remove('active'));
 
-    if (currentFilters.service) {
-      const activeButton = document.querySelector(`.filter_btn[data-service="${currentFilters.service}"]`);
+    if (currentFilters.dept) {
+      const activeButton = document.querySelector(`.filter_btn[data-dept="${currentFilters.dept}"]`);
       if (activeButton) {
         activeButton.classList.add('active');
       }
@@ -852,7 +878,7 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
     existingMessages.forEach(message => message.remove());
 
     // Check if we have any filters
-    const hasFilters = currentFilters.state || currentFilters.county || currentFilters.service;
+    const hasFilters = currentFilters.state || currentFilters.county || currentFilters.dept;
 
     if (!hasFilters) {
       return; // No filters, no message
@@ -883,28 +909,30 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
       }
     }
 
-    // Add service information
-    const serviceNames = [];
-    if (currentFilters.service) {
-      switch (currentFilters.service) {
+    // Add department information
+    const deptNames = [];
+    if (currentFilters.dept) {
+      switch (currentFilters.dept) {
         case '1':
-          serviceNames.push('New Construction');
+          deptNames.push('New Construction');
           break;
         case '2':
-          serviceNames.push('Remodeling');
+          deptNames.push('Remodeling');
           break;
       }
     }
 
     // Build the message
-    let message = 'Showing branch listings';
+    let message = 'Showing';
 
-    if (searchParts.length > 0) {
-      message += ' for ' + searchParts.join(' in ');
+    if (deptNames.length > 0) {
+      message += ' ' + deptNames.join(' and ') + ' services';
+    } else {
+      message += ' branch listings';
     }
 
-    if (serviceNames.length > 0) {
-      message += ' offering ' + serviceNames.join(' and ') + ' services';
+    if (searchParts.length > 0) {
+      message += ' in ' + searchParts.join(', ');
     }
 
     message += '.';
@@ -922,6 +950,27 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
     // Insert before branch list container
     branchListContainer.parentNode.insertBefore(messageDiv, branchListContainer);
   }
+
+  // Clear filters button handler
+  document.querySelector('.search-clear-btn')?.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // Reset filters but maintain department if set
+    const deptValue = currentFilters.dept;
+    currentFilters = {
+      state: '',
+      county: '',
+      dept: deptValue // Maintain department filter
+    };
+
+    // Update UI state
+    updateUIState();
+
+    // Update URL and perform search
+    const newUrl = buildFilterUrl();
+    history.pushState(currentFilters, '', newUrl);
+    performFilteredSearch();
+  });
 
   // Test alert to confirm script is working
   //console.log('Script setup complete');

@@ -24,7 +24,7 @@ $this->set('ogUrl', DOMAIN . $this->request->getRequestTarget());
 ?>
 
 <!-- banner-section -->
-<section class="serviceAreaDetails_hero branch" style="background-image: url('https://archerext.com/design/v2/img/service-area/state-pages/statename-hero-banner.jpg');">
+<section class="serviceAreaDetails_hero state">
   <div class="container h-100">
     <div class="content-box">
       <h2 class="title"><?= $stateName ?></h2>
@@ -51,91 +51,46 @@ $this->set('ogUrl', DOMAIN . $this->request->getRequestTarget());
     <div class="row gx-lg-5 gy-5">
       <div class="col-lg-7">
         <div class="sec-title">
-          <h2>Serving Areas in <span><?= $stateName ?></span></h2>
+          <h2><span>Roofing, Siding, Window, Door & Gutter Replacement Services in</span> <?= $stateName ?></h2>
         </div>
 
-        <?php if (!empty($counties)): ?>
-          <div class="accordion faqServiceArea mb-5" id="faqServiceArea<?= h(preg_replace('/[^a-zA-Z0-9]/', '', $stateName)) ?>">
-            <?php
-            $isFirst = true;
-            foreach ($counties as $county):
-              $countySlug = strtolower(str_replace(' ', '-', $county->county));
-              $accordionId = "faqServiceArea" . h(preg_replace('/[^a-zA-Z0-9]/', '', $stateName)) . $county->id;
-            ?>
-              <div class="accordion-item">
-                <div class="accordion-header <?= $isFirst ? 'open' : '' ?>" id="header<?= h($county->id) ?>">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <?= $this->Html->link(
-                      h($county->county),
-                      [
-                        'controller' => 'ServiceAreas',
-                        'action' => 'dynamicGeographicCounty',
-                        $stateSlug,
-                        $countySlug
-                      ],
-                      [
-                        'class' => 'm-0 text-decoration-none county-link',
-                        'onclick' => 'event.stopPropagation();'
-                      ]
-                    ) ?>
-                    <button class="icon toggle-btn btn btn-link p-0" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#<?= h($accordionId) ?>" aria-expanded="<?= $isFirst ? 'true' : 'false' ?>" aria-controls="<?= h($accordionId) ?>">
-                      <i class="fa-solid <?= $isFirst ? 'fa-minus' : 'fa-plus' ?>"></i>
-                    </button>
-                  </div>
-                </div>
-                <div id="<?= h($accordionId) ?>" class="accordion-collapse collapse <?= $isFirst ? 'show' : '' ?>" aria-labelledby="header<?= h($county->id) ?>"
-                  data-bs-parent="#faqServiceArea<?= h(preg_replace('/[^a-zA-Z0-9]/', '', $stateName)) ?>">
-                  <div class="accordion-body">
-                    <div class="city_lists">
-                      <?php
-                      // Load cities for this county
-                      $citiesTable = \Cake\ORM\TableRegistry::getTableLocator()->get('Cities');
-                      $cities = $citiesTable->find()
-                        ->where(['county_id' => $county->id, 'status' => 1])
-                        ->order(['city' => 'ASC'])
-                        ->toArray();
+        <h4 class="title-3 mb-4">Family-Owned. Community-Focused. Built on Trust.</h4>
+        <p>With over 40 years of experience, Archer Exteriors is a trusted name in home exterior services. As a family-owned company, we take pride in delivering expert craftsmanship, clear communication, and a five-star experience from start to finish. From residential upgrades to large-scale commercial projects, we treat every home like it's our own.</p>
 
-                      foreach ($cities as $city):
-                        $citySlug = strtolower(str_replace(' ', '-', $city->city));
-                      ?>
-                        <?= $this->Html->link(
-                          h($city->city),
-                          [
-                            'controller' => 'ServiceAreas',
-                            'action' => 'dynamicGeographicCity',
-                            $stateSlug,
-                            $countySlug,
-                            $citySlug
-                          ],
-                          [
-                            'class' => 'city-link',
-                            'onclick' => 'event.stopPropagation();'
-                          ]
-                        ) ?><br />
-                      <?php endforeach; ?>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <?php
-              $isFirst = false;
-            endforeach; ?>
-          </div>
-        <?php else: ?>
-          <div class="alert alert-info text-center">
-            <h4>Service Areas</h4>
-            <p>We provide services throughout <?= h($stateName) ?>. Contact us for specific area availability.</p>
-          </div>
-        <?php endif; ?>
+        <h4 class="title-3 my-4">Other states that we serve: </h4>
+
+        <ul class="state_lists" style="display: flex;flex-wrap: wrap; gap: 8px;">
+          <li><a href="javascript:void(0)">Pennsylvania</a></li>
+          <li><a href="javascript:void(0)">Delaware</a></li>
+          <li><a href="javascript:void(0)">Maryland</a></li>
+          <li><a href="javascript:void(0)">Pennsylvania</a></li>
+          <li><a href="javascript:void(0)">Delaware</a></li>
+          <li><a href="javascript:void(0)">Maryland</a></li>
+          <li><a href="javascript:void(0)">Pennsylvania</a></li>
+          <li><a href="javascript:void(0)">Delaware</a></li>
+          <li><a href="javascript:void(0)">Maryland</a></li>
+          <li><a href="javascript:void(0)">Pennsylvania</a></li>
+          <li><a href="javascript:void(0)">Delaware</a></li>
+          <li><a href="javascript:void(0)">Maryland</a></li>
+          <li><a href="javascript:void(0)">Pennsylvania</a></li>
+          <li><a href="javascript:void(0)">Delaware</a></li>
+          <li><a href="javascript:void(0)">Maryland</a></li>
+        </ul>
+
+        <div class="mt-4">
+          <?= $this->Html->link(
+          'View all service area<i class="flaticon-login"></i>',
+          ['controller' => 'ServiceAreas', 'action' => 'index'],
+          ['class' => 'theme-btn sm', 'escape' => false]
+        ) ?>
+        </div>
 
         <div class="contact_info_box mt-5">
-          <h4 class="title_3 mb-1">Contact Information</h4>
-          <div class="item">
-            <img class="img-fluid" src="<?= DOMAIN ?>/img/service-area/map-marker.svg" alt="Location" width="20"> <a
-              class="location font_link" href="#"> 341 Harding Hwy, Pittsgrove, NJ 08318</a>
-          </div>
+          <h4 class="title_3 mb-1">Served by branches: </h4>
+          <p>SOUTHERN JERSEY & DELAWARE VALLEY</p>
+          <p>NORTHERN & CENTRAL NEW JERSEY</p>
         </div>
+
       </div>
 
       <div class="col-lg-5">
@@ -146,8 +101,93 @@ $this->set('ogUrl', DOMAIN . $this->request->getRequestTarget());
 </section>
 <!-- Serving Areas Section End  -->
 
+
+<section class="section ">
+  <div class="auto-container">
+    <div class="sec-title text-center">
+      <h2>Serving Areas in <span><?= $stateName ?></span></h2>
+    </div>
+    <div>
+      <?php if (!empty($counties)): ?>
+        <div class="accordion faqServiceArea  mb-5" id="faqServiceArea<?= h(preg_replace('/[^a-zA-Z0-9]/', '', $stateName)) ?>">
+          <?php
+          $isFirst = true;
+          foreach ($counties as $county):
+            $countySlug = strtolower(str_replace(' ', '-', $county->county));
+            $accordionId = "faqServiceArea" . h(preg_replace('/[^a-zA-Z0-9]/', '', $stateName)) . $county->id;
+          ?>
+            <div class="accordion-item">
+              <div class="accordion-header <?= $isFirst ? 'open' : '' ?>" id="header<?= h($county->id) ?>">
+                <div class="d-flex justify-content-between align-items-center">
+                  <?= $this->Html->link(
+                    h($county->county),
+                    [
+                      'controller' => 'ServiceAreas',
+                      'action' => 'dynamicGeographicCounty',
+                      $stateSlug,
+                      $countySlug
+                    ],
+                    [
+                      'class' => 'm-0 text-decoration-none county-link',
+                      'onclick' => 'event.stopPropagation();'
+                    ]
+                  ) ?>
+                  <button class="icon toggle-btn btn btn-link p-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#<?= h($accordionId) ?>" aria-expanded="<?= $isFirst ? 'true' : 'false' ?>" aria-controls="<?= h($accordionId) ?>">
+                    <i class="fa-solid <?= $isFirst ? 'fa-minus' : 'fa-plus' ?>"></i>
+                  </button>
+                </div>
+              </div>
+              <div id="<?= h($accordionId) ?>" class="accordion-collapse collapse <?= $isFirst ? 'show' : '' ?>" aria-labelledby="header<?= h($county->id) ?>"
+                data-bs-parent="#faqServiceArea<?= h(preg_replace('/[^a-zA-Z0-9]/', '', $stateName)) ?>">
+                <div class="accordion-body">
+                  <div class="city_lists four_col">
+                    <?php
+                    // Load cities for this county
+                    $citiesTable = \Cake\ORM\TableRegistry::getTableLocator()->get('Cities');
+                    $cities = $citiesTable->find()
+                      ->where(['county_id' => $county->id, 'status' => 1])
+                      ->order(['city' => 'ASC'])
+                      ->toArray();
+
+                    foreach ($cities as $city):
+                      $citySlug = strtolower(str_replace(' ', '-', $city->city));
+                    ?>
+                      <?= $this->Html->link(
+                        h($city->city),
+                        [
+                          'controller' => 'ServiceAreas',
+                          'action' => 'dynamicGeographicCity',
+                          $stateSlug,
+                          $countySlug,
+                          $citySlug
+                        ],
+                        [
+                          'class' => 'city-link',
+                          'onclick' => 'event.stopPropagation();'
+                        ]
+                      ) ?><br />
+                    <?php endforeach; ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php
+            $isFirst = false;
+          endforeach; ?>
+        </div>
+      <?php else: ?>
+        <div class="alert alert-info text-center">
+          <h4>Service Areas</h4>
+          <p>We provide services throughout <?= h($stateName) ?>. Contact us for specific area availability.</p>
+        </div>
+      <?php endif; ?>
+    </div>
+  </div>
+</section>
+
 <!-- Available Services Section Start  -->
-<section class="section available_services">
+<section class="section light available_services">
   <?= $this->element('ServiceAreas/dynamic_state_available_services') ?>
 </section>
 <!-- Available Services Section End  -->

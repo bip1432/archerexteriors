@@ -114,7 +114,7 @@ $this->set('ogUrl', DOMAIN . '/sales-team'); // TODO: Change to the current page
                             <div class="pattern-layer"></div>
 
                             <h4 class="name">Shane Odom</h4>
-                            <h6 class="designation">Home Exterior Specialist</h6>
+                            <h6 class="designation">Serving Florida/Alabama</h6>
                             <h6 class="serving"><i class="fi fi-rr-hand-back-point-right"></i> Serving South Jersey</h6>
                             <p class="desc">I believe the best projects start with honest advice and clear choices.</p>
                         </div>
