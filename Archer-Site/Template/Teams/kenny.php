@@ -1,11 +1,11 @@
 <?php
 // Set Meta Tags
-$this->set('title', 'Kenny Fowler | Your Trusted Exterior Home Improvement Specialist | Archer Exteriors');
-$this->set('metaDescription', 'Archer Exteriors - Your Trusted Exterior Home Improvement Specialist');
-$this->set('metaKeywords', STATIC_KEYWORDS . ', Roofing, Siding, Windows, Doors, Decks, Gutters, 8662724398, archerexteriors.com, Archer Exteriors');
-$this->set('ogTitle', 'Kenny Fowler | Your Trusted Exterior Home Improvement Specialist | Archer Exteriors');
-$this->set('ogDescription', 'Archer Exteriors - Your Trusted Exterior Home Improvement Specialist');
-$this->set('ogImage', DOMAIN . '/img/archerexteriors-insignia.png?' . time());
+$this->set('title', 'Kenny Fowler | Trusted Exterior Expert in Walton to Gulf County, FL');
+$this->set('metaDescription', 'Meet Kenny Fowler, your trusted Home Exterior Specialist with 15+ years’ experience. Serving Walton to Gulf County, FL with honest advice, value, and integrity.');
+$this->set('metaKeywords', STATIC_KEYWORDS . ', Kenny Fowler, Kenneth Fowler, Home Exterior Specialist Florida, Archer Exteriors Kenny Fowler, Emerald Coast exterior expert, Walton County FL exterior services, Gulf County FL home improvement, honest exterior guidance FL');
+$this->set('ogTitle', 'Kenny Fowler | Trusted Exterior Expert in Walton to Gulf County, FL');
+$this->set('ogDescription', 'Meet Kenny Fowler, your trusted Home Exterior Specialist with 15+ years’ experience. Serving Walton to Gulf County, FL with honest advice, value, and integrity.');
+$this->set('ogImage', DOMAIN . '/img/salesmans/kenny-fowler.png?' . time());
 $this->set('ogType', 'website'); // For general info pages
 $this->set('ogUrl', DOMAIN . '/kenny'); // TODO: Change to the current page URL
 ?>
@@ -19,75 +19,99 @@ $this->set('ogUrl', DOMAIN . '/kenny'); // TODO: Change to the current page URL
 <!-- Hero-section end -->
 
 <!-- Salesman Details Section Start  -->
-<section class="section light" style="padding-bottom: 255px;">
+<section class="section light">
   <div class="auto-container">
+    <div class="salesman_profile_box">
+      <div class="bio mb-4">
+        <div class="img">
+          <?= $this->Html->image('salesmans/kenny-fowler.png', [
+            'class' => 'img-fluid',
+            'alt' => 'Kenny Fowler',
+            'title' => 'Kenny Fowler'
+          ]) ?>
+        </div>
+        <div class="contents">
+          <div class="desc">
+            <h2>Meet <br> <b>Kenny Fowler</b></h2>
+            <h5>Home Exterior Specialist</h5>
+            <div class="quote">Transparency That Builds More Than Homes — It Builds Trust.</div>
+          </div>
+
+          <div class="social_wrap">
+            <p>We're Social</p>
+            <ul class="social-links">
+              <li>
+                <a href="http://www.facebook.com/archerexteriors" target="_blank" title="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li><a href="https://www.instagram.com/archerexteriors/" target="_blank" title="Instagram"><i
+                    class="fab fa-instagram"></i></a></li>
+              <li><a href="https://www.tiktok.com/@archerexteriors" target="_blank" title="Tiktok"><i
+                    class="fab fa-tiktok"></i></a>
+              </li>
+              <li><a href="https://www.linkedin.com/company/archer-exteriors-inc/" target="_blank" title="Linkedin"><i
+                    class="fab fa-linkedin-in"></i></a></li>
+              <li><a href="https://www.youtube.com/@archerexteriors" target="_blank" title="YouTube"><i
+                    class="fab fa-youtube"></i></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="profile_share">
+            <span class="profile_share_btn" id="btn-share"
+              data-modal-title="We’d Love Your Recommendation"
+              data-modal-description="Your home means the world to you—and so does your opinion to us. If you’ve had a great experience with <b>Kenny Fowler</b> and the Archer Exteriors team, we’d be honored if you recommended us to your network. "
+              data-facebook-label="Share on Facebook"
+              data-twitter-label="Share on Twitter"
+              data-twitter-text="Twitter Text"
+              data-linkedin-label="Share on LinkedIn"
+              data-linkedin-title="LinkedIn Title"
+              data-linkedin-summary="LinkedIn Summary"
+              title="We’d Love Your Recommendation">
+              <i class="fi fi-rr-arrow-up-from-square"></i> Share
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
     <div class="salesman_details_box">
       <div class="row gx-lg-4 gy-5">
         <div class="col-lg-7">
-          <div class="left">
-            <div class="bio mb-4">
-              <div class="img">
-                <?= $this->Html->image('salesmans/kenny-fowler.png', [
+          <h3 class="title_2 mb-4"><b>Not Just a Quote—</b> <br>A Real Conversation About Your Home.</h3>
+
+          <p>Hi, I’m Kenny, your local Home Exterior Specialist at Archer Exteriors. With more than 15 years in the industry, I bring a blend of hands-on experience, professionalism, and genuine care to every project. I started my career at the ground level and worked my way into a management role at a major building materials company, gaining the knowledge and insight to help homeowners choose the right products and plans to protect what matters most — their home.</p>
+          <p class="mt-4">Beyond work, I’m a proud father of two. My family means the world to me, and when I’m not serving homeowners, you’ll likely find me coaching little league, out fishing, or spending quality time with my loved ones. Those moments keep me grounded and fuel my dedication to giving every customer the same care and attention I would give my own family.</p>
+
+          <div class="salesman_serving_area_box mt-4">
+            <h2 class="title_3"><b>Proudly Serving Walton to Gulf County</b> — And Every Home in Between.</h2>
+
+            <div class="location mt-4">
+              <h4>
+                <?= $this->Html->image('service-area/map-marker.svg', [
                   'class' => 'img-fluid',
-                  'alt' => 'Kenny Fowler',
-                  'title' => 'Kenny Fowler'
+                  'alt' => 'location',
+                  'width' => '20'
                 ]) ?>
-              </div>
-              <div class="desc">
-                <h2>Meet <br> <b>Kenny Fowler</b></h2>
-                <h5>Home Exterior Specialist</h5>
-                <p>Transparency That Builds More Than Homes — It Builds Trust.</p>
+                Serving Florida
+              </h4>
 
-                <ul class="social-links mt-3">
-                  <li>
-                    <?= $this->Html->link(
-                      $this->Html->tag('i', '', ['class' => 'fab fa-facebook-f']),
-                      'http://www.facebook.com/archerexteriors',
-                      ['escape' => false, 'target' => '_blank', 'title' => 'Facebook']
-                    ) ?>
-                  </li>
-                  <li>
-                    <?= $this->Html->link(
-                      $this->Html->tag('i', '', ['class' => 'fab fa-instagram']),
-                      'https://www.instagram.com/archerexteriors/',
-                      ['escape' => false, 'target' => '_blank', 'title' => 'Instagram']
-                    ) ?>
-                  </li>
-                  <li>
-                    <?= $this->Html->link(
-                      $this->Html->tag('i', '', ['class' => 'fab fa-tiktok']),
-                      'https://www.tiktok.com/@archerexteriors',
-                      ['escape' => false, 'target' => '_blank', 'title' => 'Tiktok']
-                    ) ?>
-                  </li>
-                  <li>
-                    <?= $this->Html->link(
-                      $this->Html->tag('i', '', ['class' => 'fab fa-linkedin-in']),
-                      'https://www.linkedin.com/company/archer-exteriors-inc/',
-                      ['escape' => false, 'target' => '_blank', 'title' => 'Linkedin']
-                    ) ?>
-                  </li>
-                  <li>
-                    <?= $this->Html->link(
-                      $this->Html->tag('i', '', ['class' => 'fab fa-youtube']),
-                      'https://www.youtube.com/@archerexteriors',
-                      ['escape' => false, 'target' => '_blank', 'title' => 'YouTube']
-                    ) ?>
-                  </li>
-                </ul>
-              </div>
+              <ul>
+                <li>Walton County (FL)</li>
+                <li>Holmes County (FL)</li>
+                <li>Washington County (FL)</li>
+                <li>Bay County (FL)</li>
+                <li>Gulf County (FL)</li>
+              </ul>
             </div>
-
-            <h3 class="title_3 mb-4">Not Just a Quote— <br>A Real Conversation About Your Home.</h3>
-
-            <p>Hi, I’m Kenny, your local Home Exterior Specialist at Archer Exteriors.</p>
-            <p class="mt-4">With more than 15 years in the industry, I bring a blend of hands-on experience, professionalism, and genuine care to every project. I started my career at the ground level and worked my way into a management role at a major building materials company, gaining the knowledge and insight to help homeowners choose the right products and plans to protect what matters most — their home.</p>
-            <p class="mt-4">Beyond work, I’m a proud father of two. My family means the world to me, and when I’m not serving homeowners, you’ll likely find me coaching little league, out fishing, or spending quality time with my loved ones. Those moments keep me grounded and fuel my dedication to giving every customer the same care and attention I would give my own family.</p>
           </div>
         </div>
 
         <div class="col-lg-5">
-          <?= $this->element('forms/form_free_estimate', ['formId' => '14', 'formKey' => 'erickac99713c3638e0e2ef29c3825bbe9048']) ?>
+          <?= $this->element('forms/form_free_estimate', ['formId' => '29', 'formKey' => 'kenny60985244d6216506576a050eaf1dc39a']) ?>
         </div>
       </div>
     </div>
@@ -95,56 +119,6 @@ $this->set('ogUrl', DOMAIN . '/kenny'); // TODO: Change to the current page URL
 </section>
 <!-- Salesman Details Section End  -->
 
-<!-- Statistics Section Start  -->
-<section class="funfact-section light">
-  <?= $this->element('company_statistics') ?>
-</section>
-<!-- Statistics Section End  -->
-
-<!-- Service Area Section Start  -->
-<section class="section" style="position: relative; margin-top: -120px; padding-top: 250px;">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 align-self-center">
-        <div class="about-image-block">
-          <div class="image-box pb-0">
-            <div class="pattern-layer" style="background-image: url(<?= $this->Url->image('shape-1.png') ?>);"></div>
-            <div class="image">
-              <?= $this->Html->image('salesmans/rooted-in-south-jersey.jpg', [
-                'alt' => "Proudly Serving Walton to Gulf County",
-                'title' => "Proudly Serving Walton to Gulf County"
-              ]) ?>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-6 align-self-center">
-        <div class="sec-title">
-          <h6><i class="flaticon-roof"></i>Service Area</h6>
-          <h2>Proudly Serving Walton to Gulf County <span>— And Every Home in Between.</span></h2>
-        </div>
-
-        <ul class="check_list serving_area_list mt-3">
-          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Walton County (FL)</li>
-          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Holmes County (FL)</li>
-          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Washington County (FL)</li>
-          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Bay County (FL)</li>
-          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Gulf County (FL)</li>
-        </ul>
-
-        <div class="mt-4">
-          <?= $this->Html->link(
-            'Check Other Locations<i class="flaticon-login"></i>',
-            ['controller' => 'ServiceAreas', 'action' => 'index'],
-            ['class' => 'theme-btn sm', 'escape' => false]
-          ) ?>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Service Area Section End  -->
 
 <!-- Working Process Section Start  -->
 <section class="section working-section text-center" style="padding-bottom: 90px;">

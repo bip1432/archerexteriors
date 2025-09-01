@@ -29,28 +29,15 @@ $this->set('ogUrl', DOMAIN . '/get-estimate');
 
 
 <!-- Start Project Section Start -->
-<section class="section light get_estimate" id="getFreeEstimate">
+<section class="section light get_estimate our_service" id="getFreeEstimate">
   <div class="container">
     <div class="row gx-lg-5 gy-5">
       <div class="col-lg-7 text-md-start text-center">
-        <!-- <div class="sec-title mb-2">
-            <h2>Archer Exterior’s <span>New Construction</span></h2>
-          </div> -->
-
-        <div class="archie_circle_badge justify-content-center justify-content-md-start my-4">
-          <div class="image">
-            <?= $this->Html->image('about/about-badge.png', ['alt' => 'about-badge', 'class' => 'rotate-me']) ?>
-            <?= $this->Html->image('about/archie.png', ['alt' => 'archie', 'class' => 'archie']) ?>
-          </div>
-          <div class="content">
-            <h4><?= YEARS_OF_EXPERIENCE ?> Years of Excellence. <br> A Legacy of Trust.</h4>
-          </div>
+        <div class="sec-title mb-4">
+          <h2>Family-Owned. <span>Community-Focused. Built on Trust.</span></h2>
         </div>
 
-        <p>For over <?= YEARS_OF_EXPERIENCE ?> years, Archer Exteriors has been at the forefront of the remodeling industry, setting new
-          standards in quality, craftsmanship, and customer care. Founded on the principles of integrity, exceptional
-          work, and fair pricing, we remain committed to exceeding expectations-one project at a time.</p>
-
+        <p>With over <?= YEARS_OF_EXPERIENCE ?> years of experience, Archer Exteriors is a trusted name in home exterior services. As a family-owned company, we take pride in delivering expert craftsmanship, clear communication, and a five-star experience from start to finish. From residential upgrades to large-scale commercial projects, we treat every home like it's our own.</p>
 
         <div class="roof_badge my-4">
           <span class="img">
@@ -61,20 +48,144 @@ $this->set('ogUrl', DOMAIN . '/get-estimate');
           </div>
         </div>
 
-        <p>What started as a small roofing and siding business in South Jersey has grown into a nationwide leader in
-          home renovations. Tom Archer, our founder and visionary, built this company with a relentless dedication to
-          superior workmanship and 100% client satisfaction.</p>
+        <div class="row justify-content-center mt-4" style="gap: 15px 0;">
+          <div class="col-lg-4 col-6">
+            <?= $this->Html->link(
+              '<div class="icon">' .
+                $this->Html->image('services/icons/roof.svg', [
+                  'class' => 'img-fluid svg',
+                  'alt' => 'Roofing',
+                  'title' => 'Roofing'
+                ]) .
+                '</div>' .
+                '<h4 class="item_title">Roofing</h4>',
+              ['controller' => 'Services', 'action' => 'roofing'],
+              ['class' => 'item sm', 'escape' => false]
+            ) ?>
+          </div>
+          <div class="col-lg-4 col-6">
+            <?= $this->Html->link(
+              '<div class="icon">' .
+                $this->Html->image('services/icons/siding.svg', [
+                  'class' => 'img-fluid svg siding',
+                  'alt' => 'Siding',
+                  'title' => 'Siding'
+                ]) .
+                '</div>' .
+                '<h4 class="item_title">Siding</h4>',
+              ['controller' => 'Services', 'action' => 'siding'],
+              ['class' => 'item sm', 'escape' => false]
+            ) ?>
+          </div>
+          <div class="col-lg-4 col-6">
+            <?= $this->Html->link(
+              '<div class="icon">' .
+                $this->Html->image('services/icons/window.svg', [
+                  'class' => 'img-fluid svg',
+                  'alt' => 'Windows',
+                  'title' => 'Windows'
+                ]) .
+                '</div>' .
+                '<h4 class="item_title">Windows</h4>',
+              ['controller' => 'Services', 'action' => 'windows'],
+              ['class' => 'item sm', 'escape' => false]
+            ) ?>
+          </div>
+          <div class="col-lg-4 col-6">
+            <?= $this->Html->link(
+              '<div class="icon">' .
+                $this->Html->image('services/icons/door.svg', [
+                  'class' => 'img-fluid svg',
+                  'alt' => 'Doors',
+                  'title' => 'Doors'
+                ]) .
+                '</div>' .
+                '<h4 class="item_title">Doors</h4>',
+              ['controller' => 'Services', 'action' => 'doors'],
+              ['class' => 'item sm', 'escape' => false]
+            ) ?>
+          </div>
+          <div class="col-lg-4 col-6">
+            <?= $this->Html->link(
+              '<div class="icon">' .
+                $this->Html->image('services/icons/gutter.svg', [
+                  'class' => 'img-fluid svg',
+                  'alt' => 'Gutters',
+                  'title' => 'Gutters'
+                ]) .
+                '</div>' .
+                '<h4 class="item_title">Gutters</h4>',
+              ['controller' => 'Services', 'action' => 'gutters'],
+              ['class' => 'item sm', 'escape' => false]
+            ) ?>
+          </div>
+          <div class="col-lg-4 col-6">
+            <?= $this->Html->link(
+              '<div class="icon">' .
+                $this->Html->image('services/icons/others.svg', [
+                  'class' => 'img-fluid svg',
+                  'alt' => 'Other Services',
+                  'title' => 'Other Services'
+                ]) .
+                '</div>' .
+                '<h4 class="item_title">Others</h4>',
+              ['controller' => 'Services', 'action' => 'other-services'],
+              ['class' => 'item sm', 'escape' => false]
+            ) ?>
+          </div>
+        </div>
 
-        <p class="mt-3">His deep expertise-spanning contractors, homeowners, suppliers, and estimators-has fueled
-          Archer Exteriors' expansion, reaching communities from the mountains of Colorado to the Florida Panhandle.
-          Through decades of experience and a deep understanding of industry regulations and best practices, Tom has
-          shaped Archer Exteriors into a trusted name in roofing, siding, gutters, and remodeling. His commitment to
-          excellence drives us forward as we continue to serve homeowners with unparalleled service and expert
-          craftsmanship.</p>
+        <div class="mt-4">
+          <div class="fortyYrs_batch for_desktop">
+            <div class="inner">
+              <div class="img">
+                <?= $this->Html->image('40-years-badge/40-years.png', [
+                  'alt' => '40 Years of Excellence',
+                  'title' => '40 Years of Excellence'
+                ]) ?>
+              </div>
+              <div class="contents">
+                <div class="content_inner">
+                  <h4>Exteriors That Elevate <br> Service That Stands Out</h4>
+                  <p>Excellence in Exterior Home Remodeling. <br> Local to You. Family Owned.</p>
+                </div>
+              </div>
+            </div>
+            <div class="all_services">
+              <?= $this->Html->link(
+                '<span>Check all our services <i class="flaticon-login"></i></span>',
+                ['controller' => 'Services', 'action' => 'index'],
+                ['class' => 'theme-btn', 'escape' => false]
+              ) ?>
+            </div>
+          </div>
+
+          <div class="fortyYrs_batch for_mobile">
+            <div class="text-center">
+              <?= $this->Html->image('40-years-badge/40-years.png', [
+                'alt' => '40 Years of Excellence',
+                'title' => '40 Years of Excellence'
+              ]) ?>
+
+              <h4>Exteriors That Elevate <br> Service That Stands Out</h4>
+              <p>Excellence in Exterior Home Remodeling. <br> Local to You. Family Owned.</p>
+
+              <div class="mt-4">
+                <?= $this->Html->link(
+                  'Check all our services <i class="flaticon-login"></i>',
+                  ['controller' => 'Services', 'action' => 'index'],
+                  ['class' => 'theme-btn sm', 'escape' => false]
+                ) ?>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
       </div>
 
       <div class="col-lg-5">
-        <?= $this->element('forms/form_free_estimate') ?>
+        <?= $this->element('forms/form_free_estimate', ['formId' => '2', 'formKey' => 'getest3cf769d867492d92ea787528ef2fa269']) ?>
       </div>
     </div>
   </div>
@@ -175,7 +286,8 @@ $this->set('ogUrl', DOMAIN . '/get-estimate');
     <div class="service_types_wrap">
       <div class="row justify-content-center gy-5 mt-5">
         <div class="col-xl-4 col-md-6 col-sm-8">
-          <div class="service-block-item wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+          <div class="service-block-item wow fadeInUp animated animated" data-wow-delay="00ms"
+            data-wow-duration="1500ms">
             <div class="inner-box">
               <div class="image-box">
                 <?= $this->Html->link(
@@ -210,7 +322,8 @@ $this->set('ogUrl', DOMAIN . '/get-estimate');
         </div>
 
         <div class="col-xl-4 col-md-6 col-sm-8">
-          <div class="service-block-item wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+          <div class="service-block-item wow fadeInUp animated animated" data-wow-delay="300ms"
+            data-wow-duration="1500ms">
             <div class="inner-box">
               <div class="image-box">
                 <?= $this->Html->link(
@@ -245,7 +358,8 @@ $this->set('ogUrl', DOMAIN . '/get-estimate');
         </div>
 
         <div class="col-xl-4 col-md-6 col-sm-8">
-          <div class="service-block-item wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+          <div class="service-block-item wow fadeInUp animated animated" data-wow-delay="300ms"
+            data-wow-duration="1500ms">
             <div class="inner-box">
               <div class="image-box">
                 <?= $this->Html->link(
@@ -280,7 +394,8 @@ $this->set('ogUrl', DOMAIN . '/get-estimate');
         </div>
 
         <div class="col-xl-4 col-md-6 col-sm-8">
-          <div class="service-block-item wow fadeInUp animated" data-wow-delay="900ms" data-wow-duration="1500ms">
+          <div class="service-block-item wow fadeInUp animated animated" data-wow-delay="400ms"
+            data-wow-duration="1500ms">
             <div class="inner-box">
               <div class="image-box">
                 <?= $this->Html->link(
@@ -315,42 +430,8 @@ $this->set('ogUrl', DOMAIN . '/get-estimate');
         </div>
 
         <div class="col-xl-4 col-md-6 col-sm-8">
-          <div class="service-block-item wow fadeInUp animated" data-wow-delay="1200ms" data-wow-duration="1500ms">
-            <div class="inner-box">
-              <div class="image-box">
-                <?= $this->Html->link(
-                  $this->Html->image('services/archer-exteriors-decks.jpg', [
-                    'alt' => 'Deck Service',
-                    'title' => 'Deck Service'
-                  ]),
-                  ['controller' => 'Services', 'action' => 'decks'],
-                  ['escape' => false]
-                ) ?>
-              </div>
-              <div class="lower-content">
-                <div class="icon-box">
-                  <?= $this->Html->image('services/icons/deck.svg', [
-                    'class' => 'svg',
-                    'alt' => 'Deck Service'
-                  ]) ?>
-                </div>
-                <div class="shap-box"></div>
-                <h3><?= $this->Html->link('Decks', ['controller' => 'Services', 'action' => 'decks']) ?></h3>
-                <p>Create a beautiful, functional outdoor space with a custom-built deck. We use long-lasting, low-maintenance materials for every lifestyle. Enjoy a space made for relaxing, entertaining, and everything in between.</p>
-                <div class="link">
-                  <?= $this->Html->link(
-                    'Get Started<i class="flaticon-login"></i>',
-                    ['controller' => 'Services', 'action' => 'decks'],
-                    ['escape' => false]
-                  ) ?>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xl-4 col-md-6 col-sm-8">
-          <div class="service-block-item wow fadeInUp animated" data-wow-delay="1500ms" data-wow-duration="1500ms">
+          <div class="service-block-item wow fadeInUp animated animated" data-wow-delay="600ms"
+            data-wow-duration="1500ms">
             <div class="inner-box">
               <div class="image-box">
                 <?= $this->Html->link(
@@ -376,113 +457,6 @@ $this->set('ogUrl', DOMAIN . '/get-estimate');
                   <?= $this->Html->link(
                     'Get Started<i class="flaticon-login"></i>',
                     ['controller' => 'Services', 'action' => 'gutters'],
-                    ['escape' => false]
-                  ) ?>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-4 col-md-6 col-sm-8">
-          <div class="service-block-item wow fadeInUp  animated" data-wow-delay="700ms"
-            data-wow-duration="1500ms">
-            <div class="inner-box">
-              <div class="image-box">
-                <?= $this->Html->link(
-                  $this->Html->image('services/archer-exteriors-fascia-soffit.jpg', [
-                    'alt' => 'Fascia and Soffit',
-                    'title' => 'Fascia and Soffit'
-                  ]),
-                  ['controller' => 'Services', 'action' => 'otherServices'],
-                  ['escape' => false]
-                ) ?>
-              </div>
-              <div class="lower-content">
-                <div class="icon-box">
-                  <?= $this->Html->image('services/icons/fascia-soffit.svg', [
-                    'class' => 'svg',
-                    'alt' => 'Fascia and Soffit'
-                  ]) ?>
-                </div>
-                <div class="shap-box"></div>
-                <h3><?= $this->Html->link('Fascia and Soffit', ['controller' => 'Services', 'action' => 'otherServices']) ?></h3>
-                <p>Fascia and soffit installation protects the roof structure and improves ventilation in the attic. Fascia boards run along the roof edge and support gutters, while soffits cover the underside of roof overhangs. Together, they enhance curb appeal and defend against moisture and pests.</p>
-                <div class="link">
-                  <?= $this->Html->link(
-                    'Get Started<i class="flaticon-login"></i>',
-                    ['controller' => 'Services', 'action' => 'otherServices'],
-                    ['escape' => false]
-                  ) ?>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xl-4 col-md-6 col-sm-8">
-          <div class="service-block-item wow fadeInUp animated" data-wow-delay="800ms"
-            data-wow-duration="1500ms">
-            <div class="inner-box">
-              <div class="image-box">
-                <?= $this->Html->link(
-                  $this->Html->image('services/archer-exteriors-flashing-trim.jpg', [
-                    'alt' => 'Flashing and Trim',
-                    'title' => 'Flashing and Trim'
-                  ]),
-                  ['controller' => 'Services', 'action' => 'otherServices'],
-                  ['escape' => false]
-                ) ?>
-              </div>
-              <div class="lower-content">
-                <div class="icon-box">
-                  <?= $this->Html->image('services/icons/flashing-trim.svg', [
-                    'class' => 'svg',
-                    'alt' => 'Flashing and Trim'
-                  ]) ?>
-                </div>
-                <div class="shap-box"></div>
-                <h3><?= $this->Html->link('Flashing and Trim', ['controller' => 'Services', 'action' => 'otherServices']) ?></h3>
-                <p>Flashing and trim are essential for directing water away from critical areas of a roof, such as valleys, chimneys, and vents. Proper installation prevents leaks and prolongs the life of your roofing system. Trim adds a finished look while providing additional protection at edges and corners.</p>
-                <div class="link">
-                  <?= $this->Html->link(
-                    'Get Started<i class="flaticon-login"></i>',
-                    ['controller' => 'Services', 'action' => 'otherServices'],
-                    ['escape' => false]
-                  ) ?>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xl-4 col-md-6 col-sm-8">
-          <div class="service-block-item wow fadeInUp animated" data-wow-delay="900ms"
-            data-wow-duration="1500ms">
-            <div class="inner-box">
-              <div class="image-box">
-                <?= $this->Html->link(
-                  $this->Html->image('services/archer-exteriors-skylight.jpg', [
-                    'alt' => 'Skylight',
-                    'title' => 'Skylight'
-                  ]),
-                  ['controller' => 'Services', 'action' => 'otherServices'],
-                  ['escape' => false]
-                ) ?>
-              </div>
-              <div class="lower-content">
-                <div class="icon-box">
-                  <?= $this->Html->image('services/icons/skylight.svg', [
-                    'class' => 'svg',
-                    'alt' => 'Skylight'
-                  ]) ?>
-                </div>
-                <div class="shap-box"></div>
-                <h3><?= $this->Html->link('Skylight', ['controller' => 'Services', 'action' => 'otherServices']) ?></h3>
-                <p>Skylight installation involves cutting an opening in the roof and securely fitting a window unit to bring natural light into your space. A properly installed skylight is sealed to prevent leaks and improve energy efficiency. It enhances indoor brightness and can increase property value.</p>
-                <div class="link">
-                  <?= $this->Html->link(
-                    'Get Started<i class="flaticon-login"></i>',
-                    ['controller' => 'Services', 'action' => 'otherServices'],
                     ['escape' => false]
                   ) ?>
                 </div>

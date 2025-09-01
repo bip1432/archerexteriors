@@ -2,7 +2,7 @@
     // Set Meta Tags
     $this->set('title', 'Local Roofing Company & Home Exteriors Services | Archer Exteriors');
     $this->set('metaDescription', 'Archer Exteriors - Your trusted partner for premium roofing, siding, and exterior solutions.');
-    $this->set('metaKeywords', STATIC_KEYWORDS . ', Roofing, Siding, Windows, Doors, Gutters, 8662724398, archerexteriors.com, Archer Exteriors');
+    $this->set('metaKeywords', STATIC_KEYWORDS . ''); // TODO: Add ', ' before adding keywords
     $this->set('ogTitle', 'Local Roofing Company & Home Exteriors Services | Archer Exteriors');
     $this->set('ogDescription', 'Archer Exteriors - Your trusted partner for premium roofing, siding, and exterior solutions.');
     $this->set('ogImage', DOMAIN . '/img/archerexteriors-insignia.png?' . time());
@@ -290,6 +290,54 @@
                   ['controller' => 'Services', 'action' => 'other-services'],
                   ['class' => 'item', 'escape' => false]
                 ) ?>
+              </div>
+
+              <div class="col-12">
+                <div class="fortyYrs_batch for_desktop">
+                  <div class="inner">
+                    <div class="img">
+                      <?= $this->Html->image('40-years-badge/40-years.png', [
+                        'alt' => '40 Years of Excellence',
+                        'title' => '40 Years of Excellence'
+                      ]) ?>
+                    </div>
+                    <div class="contents">
+                      <div class="content_inner">
+                        <h4>Exteriors That Elevate <br> Service That Stands Out</h4>
+                        <p>Excellence in Exterior Home Remodeling. <br> Local to You. Family Owned.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="all_services">
+                    <?= $this->Html->link(
+                      '<span>Check all our services <i class="flaticon-login"></i></span>',
+                      ['controller' => 'Services', 'action' => 'index'],
+                      ['class' => 'theme-btn', 'escape' => false]
+                    ) ?>
+                  </div>
+                </div>
+
+                <div class="fortyYrs_batch for_mobile">
+                  <div class="text-center">
+                    <?= $this->Html->image('40-years-badge/40-years.png', [
+                      'alt' => '40 Years of Excellence',
+                      'title' => '40 Years of Excellence'
+                    ]) ?>
+
+                    <h4>Exteriors That Elevate <br> Service That Stands Out</h4>
+                    <p>Excellence in Exterior Home Remodeling. <br> Local to You. Family Owned.</p>
+
+                    <div class="mt-4">
+                      <?= $this->Html->link(
+                        'Check all our services <i class="flaticon-login"></i>',
+                        ['controller' => 'Services', 'action' => 'index'],
+                        ['class' => 'theme-btn sm', 'escape' => false]
+                      ) ?>
+                    </div>
+                  </div>
+
+                </div>
+
               </div>
 
             </div>
@@ -777,18 +825,9 @@
     </section>
     <!-- Activities section End  -->
 
-
-    <!-- google-map-section -->
-    <!-- <section class="google-map-section">
-        <div class="google-map-area">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d240734.93271725433!2d-74.14431232743088!3d40.69728463488067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e1!3m2!1sen!2sbd!4v1746179122953!5m2!1sen!2sbd"
-                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </section> -->
-    <!-- google-map-section end -->
-
-    <!-- Elfsight Google Maps | Archer Exteriors Branch Locations -->
-    <script src="https://static.elfsight.com/platform/platform.js" async></script>
-    <div class="elfsight-app-84c02a38-7283-40c6-ac05-f58000b7ec33" data-elfsight-app-lazy></div>
+    <!-- Load Map API CSS -->
+    <?= $this->Html->css('maps') ?>
+    <!-- Map Container: All Branches -->
+    <div style="margin-bottom: 0; border-radius: 0;" class="mapapi-app" data-map-slug="all-branches" data-map-domain="<?= h(DOMAIN) ?>" data-mapapi-app-lazy data-height="500px"></div>
+    <!-- Map Script - Load once at the bottom -->
+    <script src="<?= $this->Url->build('/mapapi/platform.js', ['fullBase' => true]) ?>" async></script>

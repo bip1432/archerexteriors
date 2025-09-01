@@ -2,7 +2,7 @@
 // Set Meta Tags
 $this->set('title', 'Archer Exteriors Community Impact | Giving Back Through Local Support & Service');
 $this->set('metaDescription', 'Archer Exteriors - Community Impact | Giving Back Through Local Support & Service');
-$this->set('metaKeywords', STATIC_KEYWORDS . ', Community Impact, Archer Exteriors, Giving Back Through Local Support & Service');
+$this->set('metaKeywords', STATIC_KEYWORDS . ', Community Impact');
 $this->set('ogTitle', 'Archer Exteriors Community Impact | Giving Back Through Local Support & Service');
 $this->set('ogDescription', 'Archer Exteriors - Community Impact | Giving Back Through Local Support & Service');
 $this->set('ogImage', DOMAIN . '/img/archerexteriors-insignia.png?' . time());
@@ -13,18 +13,6 @@ $this->set('ogUrl', DOMAIN . '/community-impact');
 <!-- banner-section -->
 <section class="banner-section community_impact">
   <div class="banner-carousel owl-theme owl-carousel owl-nav-none">
-    <div class="slide-item one">
-      <div class="image-layer">
-      </div>
-      <div class="auto-container">
-        <div class="content-box">
-          <h4>A Roof Over Their Heads – The Atlas Family</h4>
-          <div class="btn-box">
-            <?= $this->Html->link('Watch the Surprise<i class="flaticon-login"></i>', ['controller' => 'Communities', 'action' => 'jeremyAtlas'], ['class' => 'theme-btn', 'escape' => false]) ?>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="slide-item two">
       <div class="image-layer">
       </div>
@@ -33,6 +21,18 @@ $this->set('ogUrl', DOMAIN . '/community-impact');
           <h4>Helping Little Fighters, One Gift at a Time.</h4>
           <div class="btn-box">
             <?= $this->Html->link('CHOP Fundraiser<i class="flaticon-login"></i>', ['controller' => 'Communities', 'action' => 'helpingLittleFighters'], ['class' => 'theme-btn', 'escape' => false]) ?>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-item one">
+      <div class="image-layer">
+      </div>
+      <div class="auto-container">
+        <div class="content-box">
+          <h4>A Roof Over Their Heads – The Atlas Family</h4>
+          <div class="btn-box">
+            <?= $this->Html->link('Watch the Surprise<i class="flaticon-login"></i>', ['controller' => 'Communities', 'action' => 'jeremyAtlas'], ['class' => 'theme-btn', 'escape' => false]) ?>
           </div>
         </div>
       </div>
@@ -252,6 +252,31 @@ $this->set('ogUrl', DOMAIN . '/community-impact');
                   <p class="line_clamp_4">When Meals on Wheels of Salem County needed help honoring their incredible volunteers, we stepped in with a $1,500 donation toward their appreciation dinner. These volunteers deliver more than just meals — they deliver hope. We're proud to support their mission of care and connection.</p>
                   <div class="link">
                     <?= $this->Html->link('More Than a Meal<i class="flaticon-login"></i>', ['action' => 'salem-county-meals-on-wheels'], ['escape' => false]) ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-4 col-md-6 col-sm-8">
+            <div class="service-block-item wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+              <div class="inner-box">
+                <div class="image-box">
+                  <?= $this->Html->link(
+                    $this->Html->image('community-impact/v2/archer-exterior-ron-jaworski.jpg', [
+                      'alt' => 'Partnering with Ron Jaworski to Build Stronger Communities',
+                      'title' => 'Partnering with Ron Jaworski to Build Stronger Communities'
+                    ]),
+                    ['controller' => 'Communities', 'action' => 'pulte_golf_classic'],
+                    ['escape' => false]
+                  ) ?>
+                </div>
+                <div class="lower-content">
+                  <div class="shap-box"></div>
+                  <h3><?= $this->Html->link('Partnering with Ron Jaworski to Build Stronger Communities', ['action' => 'pulte_golf_classic']) ?></h3>
+                  <p class="line_clamp_4">At Archer Exteriors, we’re proud to support Ron Jaworski, former Philadelphia Eagles quarterback and dedicated community leader. Through his nonprofit organization, Ron works tirelessly to improve the lives of local children. Each year, we participate in and sponsor the Pulte Golf Classic, an event that raises funds to build safe and inspiring playgrounds for kids in our communities. Beyond replacing Ron’s own roof, we’re honored to stand alongside him in giving back and creating brighter futures for families.</p>
+                  <div class="link">
+                    <?= $this->Html->link('From Roofs to Playgrounds<i class="flaticon-login"></i>', ['action' => 'pulte_golf_classic'], ['escape' => false]) ?>
                   </div>
                 </div>
               </div>

@@ -1,0 +1,657 @@
+<?php
+
+use Cake\Core\Configure;
+
+// Set Meta Tags
+$this->set('title', 'Maps - Regional Service Zones | Archer Exteriors');
+$this->set('metaDescription', 'Archer Exteriors - Regional Service Zones');
+$this->set('metaKeywords', STATIC_KEYWORDS . ', Roofing, Siding, Windows, Doors, Decks, Gutters, 8662724398, archerexteriors.com, Archer Exteriors');
+$this->set('ogTitle', 'Maps - Regional Service Zones | Roofing & Siding | Archer Exteriors');
+$this->set('ogDescription', 'Archer Exteriors - Regional Service Zones');
+$this->set('ogImage', DOMAIN . '/img/archerexteriors-insignia.png?' . time());
+$this->set('ogType', 'website'); // For general info pages
+$this->set('ogUrl', DOMAIN . '/maps'); // TODO: Change to the current page URL
+
+// Get the webroot URL using CakePHP's URL helper
+$geojsonUrl = $this->Url->build('/geojson/all_branch_counties.geojson', ['fullBase' => false]);
+$markerIconUrl = $this->Url->build('/img/map/marker/icon-archer.png', ['fullBase' => true]);
+$markerIconUrlHQ = $this->Url->build('/img/map/marker/icon-archi-hq.png', ['fullBase' => true]);
+?>
+<style>
+    /* Responsive map container */
+    .map-container {
+        position: relative;
+        width: 100%;
+        height: 70vh;
+        /* Use viewport height for better responsiveness */
+        min-height: 500px;
+        /* Increased minimum height */
+        max-height: 800px;
+        /* Prevent excessive height on very large screens */
+        margin: 20px 0;
+        overflow: hidden;
+        /* Prevent any overflow issues */
+    }
+
+    #county-map {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+        .map-container {
+            height: 60vh;
+            min-height: 400px;
+            margin: 15px 0;
+        }
+    }
+
+    /* Very small screens */
+    @media (max-width: 480px) {
+        .map-container {
+            height: 50vh;
+            min-height: 350px;
+            margin: 10px 0;
+        }
+    }
+
+    /* Large screens */
+    @media (min-width: 1200px) {
+        .map-container {
+            height: 75vh;
+            max-height: 900px;
+        }
+    }
+</style>
+
+<div class="map-container">
+    <div id="county-map"></div>
+</div>
+
+<!-- Branch Legend -->
+<div class="map-legend">
+    <div class="legend-title">Regional Service Zones – Archer Exteriors</div>
+    <div class="legend-branches">
+        <div class="legend-branch" style="border-left-color: #5d04d0;">
+            <div class="branch-name">Southern Jersey & Delaware Valley</div>
+            <div class="branch-counties">
+                <!-- <div class="county-color" style="background-color: #5d04d0;"></div> -->
+                <div class="county-label">NJ: Atlantic, Burlington, Camden, Cape May, Cumberland, Gloucester, Salem, Ocean</div>
+            </div>
+            <div class="branch-counties" style="margin-top: 4px;">
+                <!-- <div class="county-color" style="background-color: #006ec4;"></div> -->
+                <div class="county-label">PA: Bucks, Chester, Delaware</div>
+            </div>
+            <div class="branch-counties" style="margin-top: 4px;">
+                <!-- <div class="county-color" style="background-color: #065465;"></div> -->
+                <div class="county-label">DE: New Castle</div>
+            </div>
+            <div class="branch-counties" style="margin-top: 4px;">
+                <!-- <div class="county-color" style="background-color: #065465;"></div> -->
+                <div class="county-label">MD: Cecil</div>
+            </div>
+        </div>
+
+        <div class="legend-branch" style="border-left-color: #bf0000;">
+            <div class="branch-name">Northern & Central New Jersey</div>
+            <div class="branch-counties">
+                <!-- <div class="county-color" style="background-color: #bf0000;"></div> -->
+                <div class="county-label">NJ: Essex, Hunterdon, Mercer, Middlesex, Warren, Monmouth, Morris, Somerset, Union</div>
+            </div>
+        </div>
+
+        <div class="legend-branch" style="border-left-color: #006400;">
+            <div class="branch-name">Alabama & Florida</div>
+            <div class="branch-counties">
+                <!-- <div class="county-color" style="background-color: #006400;"></div> -->
+                <div class="county-label">AL: Baldwin, Mobile</div>
+            </div>
+            <div class="branch-counties" style="margin-top: 4px;">
+                <!-- <div class="county-color" style="background-color: #3e968a;"></div> -->
+                <div class="county-label">FL: Escambia, Okaloosa, Santa Rosa</div>
+            </div>
+        </div>
+
+        <div class="legend-branch" style="border-left-color: #ff8503;">
+            <div class="branch-name">Florida</div>
+            <div class="branch-counties">
+                <!-- <div class="county-color" style="background-color: #ff8503;"></div> -->
+                <div class="county-label">FL: Okaloosa, Walton, Holmes, Washington, Bay, Gulf</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Load Google Maps JavaScript API -->
+<script>
+    // Store the GeoJSON URL from PHP
+    const geojsonUrl = '<?= $geojsonUrl ?>';
+
+    // Initialize map when Google Maps API is loaded
+    function initMap() {
+
+        const map = new google.maps.Map(document.getElementById("county-map"), {
+            zoom: 4,
+            center: {
+                lat: 39.8283,
+                lng: -98.5795
+            },
+            mapTypeControl: true,
+            streetViewControl: false
+        });
+
+        // Add loading indicator
+        const loadingDiv = document.createElement('div');
+        loadingDiv.className = 'map-loading';
+        loadingDiv.style.display = 'none';
+        loadingDiv.innerHTML = 'Loading counties...';
+        map.controls[google.maps.ControlPosition.TOP_CENTER].push(loadingDiv);
+
+        // Keep track of the currently open InfoWindow
+        let currentInfoWindow = null;
+
+        // Array to store all markers for bounds calculation
+        const allMarkers = [];
+        let markersProcessed = 0;
+
+        // Define all branch locations with their details
+        const branchLocations = [{
+                id: 'southern_jersey',
+                title: 'SOUTHERN JERSEY & DELAWARE VALLEY',
+                address: '341 Harding Hwy, Pittsgrove, NJ 08318',
+                color: '#5d04d0',
+                counties: 'NJ: Atlantic, Burlington, Camden, Cape May, Cumberland, Gloucester, Salem, Ocean | PA: Bucks, Chester, Delaware | DE: New Castle | MD: Cecil',
+                license: 'NJ LIC#13VH09651200, PA LIC#129503',
+                services_offered: '1,2',
+                main_branch_flag: 1
+            },
+            {
+                id: 'northern_jersey',
+                title: 'NORTHERN & CENTRAL NEW JERSEY',
+                address: '77 Pension Road, Suites 5&6, Manalapan, NJ 07726',
+                color: '#bf0000',
+                counties: 'NJ: Essex, Hunterdon, Mercer, Middlesex, Warren, Monmouth, Morris, Somerset, Union',
+                license: 'NJ LIC#13VH09651200',
+                services_offered: '1,2',
+                main_branch_flag: 0
+            },
+            {
+                id: 'alabama_florida',
+                title: 'ALABAMA & FLORIDA',
+                address: '1727 Creighton Rd, Pensacola, FL 32504',
+                color: '#006400',
+                counties: 'AL: Baldwin, Mobile | FL: Escambia, Okaloosa, Santa Rosa',
+                license: 'AL LIC#26647, FL ROOFING LIC#CCC1327720',
+                services_offered: '1,2',
+                main_branch_flag: 0
+            },
+            {
+                id: 'florida_lynn_havens',
+                title: 'LYNN HAVEN, FLORIDA',
+                address: '1120 Ohio Avenue, Lynn Haven, FL 32444',
+                color: '#ff8503',
+                counties: 'FL: Okaloosa, Walton, Holmes, Washington, Bay, Gulf',
+                license: 'FL ROOFING LIC#CCC1327720',
+                services_offered: '1,2',
+                main_branch_flag: 0
+            },
+            {
+                id: 'pittsburgh',
+                title: 'PITTSBURGH',
+                address: '279 Steuben St , Pittsburgh , PA 15205',
+                color: '#01579b',
+                counties: '',
+                license: 'PA LIC#PA082127',
+                services_offered: '1',
+                main_branch_flag: 0
+            },
+            {
+                id: 'virginia',
+                title: 'VIRGINIA',
+                address: '6290 Old Warwick Rd , Suite A , Richmond , VA 23224',
+                color: '#01579b',
+                counties: '',
+                license: 'VA LIC#2705052330',
+                services_offered: '1',
+                main_branch_flag: 0
+            },
+            {
+                id: 'new_england',
+                title: 'NEW ENGLAND',
+                address: '155 Memorial Drive , Suite B , Shrewsbury , MA 01545',
+                color: '#01579b',
+                counties: '',
+                license: 'MA LIC#158356, RI LIC#21453, CT LIC#HIC.0619633',
+                services_offered: '1',
+                main_branch_flag: 0
+            },
+            {
+                id: 'delaware',
+                title: 'DELAWARE',
+                address: '28524 DuPont Boulevard , Millsboro , DE 19966',
+                color: '#01579b',
+                counties: '',
+                license: 'DE LIC#1998205023',
+                services_offered: '1',
+                main_branch_flag: 0
+            },
+            {
+                id: 'florida_lakeland',
+                title: 'LAKELAND, FLORIDA',
+                address: '2500 Drane Field Road , Suite 108 , Lakeland , FL 33811',
+                color: '#01579b',
+                counties: '',
+                license: 'FL ROOFING LIC#CCC1327720, FL SPECIALTY LIC#SCC131151513',
+                services_offered: '1',
+                main_branch_flag: 0
+            },
+            {
+                id: 'maryland',
+                title: 'MARYLAND',
+                address: '11436 Cronridge Drive , Suite K , Owings Mills , MD 21117',
+                color: '#01579b',
+                counties: '',
+                license: 'MD LIC#22479361',
+                services_offered: '1',
+                main_branch_flag: 0
+            },
+            {
+                id: 'colorado',
+                title: 'COLORADO',
+                address: '7338 S Alton Way , Unit 16G , Centennial , CO 80112',
+                color: '#01579b',
+                counties: '',
+                license: 'CO LIC#00251915',
+                services_offered: '1',
+                main_branch_flag: 0
+            },
+            {
+                id: 'south_carolina',
+                title: 'SOUTH CAROLINA',
+                address: '625 Treeland Drive , Unit C , Ladson , SC 29456',
+                color: '#01579b',
+                counties: '',
+                license: 'SC ROOFING LIC#G119249PA, SC SPECIALTY LIC#53306',
+                services_offered: '1',
+                main_branch_flag: 0
+            },
+            {
+                id: 'georgia',
+                title: 'GEORGIA',
+                address: '1811 US Hwy 80 W , Garden City , GA 31408',
+                color: '#01579b',
+                counties: '',
+                license: 'GA LIC#31405239983',
+                services_offered: '1',
+                main_branch_flag: 0
+            },
+            {
+                id: 'ohio',
+                title: 'OHIO',
+                address: '7205 Babbert Place , Canal Winchester , OH 43110',
+                color: '#01579b',
+                counties: '',
+                license: '',
+                services_offered: '1',
+                main_branch_flag: 0
+            }
+        ];
+
+        // Function to fit map to show all markers
+        function fitMapToAllMarkers() {
+            if (allMarkers.length > 0) {
+                const bounds = new google.maps.LatLngBounds();
+                allMarkers.forEach(marker => {
+                    bounds.extend(marker.getPosition());
+                });
+                map.fitBounds(bounds, {
+                    padding: 50 // Add 50px padding around the bounds
+                });
+            }
+        }
+
+        // Add custom markers for all branch locations
+        const geocoder = new google.maps.Geocoder();
+
+        branchLocations.forEach((branch, index) => {
+            // Add delay to prevent geocoding API rate limits
+            setTimeout(() => {
+                geocoder.geocode({
+                    address: branch.address
+                }, (results, status) => {
+                    if (status === 'OK') {
+                        const location = results[0].geometry.location;
+
+                        // Create marker with custom icon
+                        const marker = new google.maps.Marker({
+                            map: map,
+                            position: location,
+                            icon: {
+                                url: branch.main_branch_flag == 1 ? '<?= $markerIconUrlHQ ?>' : '<?= $markerIconUrl ?>',
+                                scaledSize: new google.maps.Size(40, 40),
+                                origin: new google.maps.Point(0, 0),
+                                anchor: new google.maps.Point(20, 40)
+                            },
+                            animation: google.maps.Animation.DROP,
+                            optimized: true,
+                            title: branch.title
+                        });
+
+                        // Function to build services/departments HTML based on services_offered
+                        function buildDepartmentsHTML(servicesOffered) {
+                            if (!servicesOffered) return '';
+
+                            const servicesArray = servicesOffered.split(',').map(s => s.trim());
+                            let servicesHTML = '<div class="info-window-services">';
+
+                            servicesArray.forEach(serviceType => {
+                                if (serviceType === '1') {
+                                    servicesHTML += `
+                                        <div class="service-item">
+                                            <img src="<?= $this->Url->build('/img/service-area/icon-construction.png', ['fullBase' => true]) ?>" alt="New Construction" class="img-fluid">
+                                            <a href="<?= $this->Url->build(['controller' => 'Companies', 'action' => 'newConstruction'], ['fullBase' => true]) ?>" target="_blank">New Construction</a>
+                                        </div>
+                                    `;
+                                } else if (serviceType === '2') {
+                                    servicesHTML += `
+                                        <div class="service-item">
+                                            <img src="<?= $this->Url->build('/img/service-area/icon-remodelling.png', ['fullBase' => true]) ?>" alt="Remodeling" class="img-fluid">
+                                            <a href="<?= $this->Url->build(['controller' => 'Estimates', 'action' => 'index'], ['fullBase' => true]) ?>" target="_blank">Remodeling</a>
+                                        </div>
+                                    `;
+                                }
+                            });
+
+                            servicesHTML += '</div>';
+                            return servicesHTML;
+                        }
+
+                        // Create InfoWindow for the marker
+                        const markerInfo = new google.maps.InfoWindow({
+                            content: `<div class="custom-info-window">
+                                <div class="info-window-header-image">
+                                    ${branch.main_branch_flag == 1 ? ` 
+                                        <?= $this->Html->image('map/archer-head-quarter.png', [
+                                            'alt' => '${branch.title}'
+                                        ]) ?>
+                                    ` : `
+                                        <?= $this->Html->image('map/archer-archie-branch.png', [
+                                            'alt' => '${branch.title}'
+                                        ]) ?>
+                                    `}
+                                </div>
+                                <div class="info-window-content">
+                                    <div class="info-window-title">${branch.title}</div>
+                                    <div class="info-window-address">
+                                        <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(branch.address)}" target="_blank">
+                                            <?= $this->Html->image('map-marker.svg', ['class' => 'img-fluid svg', 'alt' => 'Location']) ?>
+                                            ${branch.address}
+                                        </a>
+                                    </div>
+                                    ${buildDepartmentsHTML(branch.services_offered)}
+                                    ${branch.counties ? `
+                                    <div class="info-window-counties" style="margin: 12px 0; padding: 8px; background: #f8f9fa; border-radius: 4px; font-size: 12px; color: #666;">
+                                        <strong>Service Counties:</strong><br>${branch.counties}
+                                    </div>
+                                    ` : ''}
+                                    <!-- <div class="info-window-footer">
+                                        <strong>Available Services:</strong><br>
+                                        Roofing, Siding, Windows, Doors, Gutters<br>
+                                        <div class="license-number"><strong>Licenses:</strong><br>${branch.license}</div>
+                                    </div>
+                                    <div class="other-locations">
+                                        <a href="<?= $this->Url->build(['controller' => 'Maps', 'action' => 'index']) ?>" target="_blank">See other locations</a>
+                                    </div> -->
+                                </div>
+                            </div>`,
+                            maxWidth: 350
+                        });
+
+                        // Add click listener to marker
+                        marker.addListener('click', () => {
+                            if (currentInfoWindow) {
+                                currentInfoWindow.close();
+                            }
+                            markerInfo.open(map, marker);
+                            currentInfoWindow = markerInfo;
+                        });
+
+                        // Store marker for bounds calculation
+                        allMarkers.push(marker);
+
+                        // Check if all markers have been processed
+                        markersProcessed++;
+                        if (markersProcessed === branchLocations.length) {
+                            // Calculate bounds and fit map after all markers are placed
+                            fitMapToAllMarkers();
+                        }
+                    } else {
+                        console.error(`Geocoding failed for ${branch.title}: ${status}`);
+
+                        // Still increment counter even on failure
+                        markersProcessed++;
+                        if (markersProcessed === branchLocations.length) {
+                            // Calculate bounds and fit map after all processing is complete
+                            fitMapToAllMarkers();
+                        }
+                    }
+                });
+            }, index * 200); // 200ms delay between geocoding requests
+        });
+        // End Add custom marker for Archer Exteriors location
+
+        // Function to load and display counties
+        function loadCounties() {
+            // Show loading indicator
+            loadingDiv.style.display = 'block';
+            let countiesLoaded = false;
+
+            // Add cache-busting parameter and error handling
+            fetch(geojsonUrl + '?' + new Date().getTime())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (!data.features || !Array.isArray(data.features)) {
+                        throw new Error('Invalid GeoJSON format');
+                    }
+
+                    // Set flag that counties are starting to load
+                    countiesLoaded = true;
+
+                    // Define branch-wise color mapping
+                    const branchColors = {
+                        // Branch 1: SOUTHERN JERSEY & DELAWARE VALLEY
+                        'southern_nj': '#5d04d0', // New Jersey counties - purple  
+                        'southern_pa': '#5d04d0', // Pennsylvania counties - purple
+                        'southern_de': '#5d04d0', // Delaware counties - purple
+                        'southern_md': '#5d04d0', // Maryland counties - purple
+
+                        // Branch 2: NORTHERN & CENTRAL NEW JERSEY  
+                        'northern_nj': '#bf0000', // New Jersey counties - red
+
+                        // Branch 3: ALABAMA & FLORIDA
+                        'alabama': '#006400', // Alabama counties - green
+                        'florida_branch3': '#006400', // Florida counties (Branch 3) - green
+
+                        // Branch 4: FLORIDA
+                        'florida_branch4': '#ff8503' // Florida counties (Branch 4) - orange
+                    };
+
+                    // Define county-to-branch mapping
+                    function getCountyBranch(countyName, stateCode) {
+                        // Branch 1: SOUTHERN JERSEY & DELAWARE VALLEY
+                        const southernNJCounties = ['Atlantic', 'Burlington', 'Camden', 'Cape May', 'Cumberland', 'Gloucester', 'Salem', 'Ocean'];
+                        const southernPACounties = ['Bucks', 'Chester', 'Delaware'];
+                        const southernDECounties = ['New Castle'];
+                        const southernMDCounties = ['Cecil'];
+                        // Branch 2: NORTHERN & CENTRAL NEW JERSEY
+                        const northernNJCounties = ['Essex', 'Hunterdon', 'Mercer', 'Middlesex', 'Warren', 'Monmouth', 'Morris', 'Somerset', 'Union'];
+
+                        // Branch 3: ALABAMA & FLORIDA
+                        const alabamaCounties = ['Baldwin', 'Mobile'];
+                        const floridaBranch3Counties = ['Escambia', 'Okaloosa', 'Santa Rosa'];
+
+                        // Branch 4: FLORIDA  
+                        const floridaBranch4Counties = ['Walton', 'Holmes', 'Washington', 'Bay', 'Gulf']; // Removed Okaloosa - moved to Branch 3
+
+                        if (stateCode === '34') { // New Jersey
+                            if (southernNJCounties.includes(countyName)) {
+                                return 'southern_nj';
+                            } else if (northernNJCounties.includes(countyName)) {
+                                return 'northern_nj';
+                            }
+                        } else if (stateCode === '42' && southernPACounties.includes(countyName)) { // Pennsylvania
+                            return 'southern_pa';
+                        } else if (stateCode === '10' && southernDECounties.includes(countyName)) { // Delaware
+                            return 'southern_de';
+                        } else if (stateCode === '24' && southernMDCounties.includes(countyName)) { // Maryland
+                            return 'southern_md';
+                        } else if (stateCode === '01' && alabamaCounties.includes(countyName)) { // Alabama
+                            return 'alabama';
+                        } else if (stateCode === '12') { // Florida - check both branches
+                            if (floridaBranch4Counties.includes(countyName)) {
+                                return 'florida_branch4'; // Branch 4 takes precedence for overlapping counties
+                            } else if (floridaBranch3Counties.includes(countyName)) {
+                                return 'florida_branch3';
+                            }
+                        }
+
+                        return null; // County not in any branch
+                    }
+
+                    data.features.forEach(feature => {
+                        try {
+                            const paths = feature.geometry.coordinates[0].map(coord => ({
+                                lat: coord[1],
+                                lng: coord[0]
+                            }));
+
+                            // Get state and county info
+                            const stateCode = feature.properties.STATEFP;
+                            const countyName = feature.properties.NAME;
+
+                            // Get branch-specific color
+                            const branchKey = getCountyBranch(countyName, stateCode);
+                            const color = branchKey ? branchColors[branchKey] : '#808080'; // Default gray if county not in any branch
+
+                            const polygon = new google.maps.Polygon({
+                                paths: paths,
+                                strokeColor: color,
+                                strokeOpacity: 0.8,
+                                strokeWeight: 2,
+                                fillColor: color,
+                                fillOpacity: 0.35,
+                                map: map
+                            });
+
+                            // Create InfoWindow with county and branch information
+                            const stateName = stateCode === '01' ? 'Alabama' :
+                                stateCode === '12' ? 'Florida' :
+                                stateCode === '34' ? 'New Jersey' :
+                                stateCode === '42' ? 'Pennsylvania' :
+                                stateCode === '10' ? 'Delaware' :
+                                stateCode === '24' ? 'Maryland' : 'Unknown State';
+
+                            // Get branch name for display
+                            const branchName = branchKey === 'southern_nj' || branchKey === 'southern_pa' || branchKey === 'southern_de' || branchKey === 'southern_md' ?
+                                'Southern Jersey & Delaware Valley' :
+                                branchKey === 'northern_nj' ?
+                                'Northern & Central New Jersey' :
+                                branchKey === 'alabama' || branchKey === 'florida_branch3' ?
+                                'Alabama & Florida' :
+                                branchKey === 'florida_branch4' ?
+                                'Florida' :
+                                'Not in Service Area';
+
+                            const info = new google.maps.InfoWindow({
+                                content: `<div class="custom-info-window">
+                                    <div class="info-window-title">${countyName} County</div>
+                                    <div class="info-window-address">${stateName}</div>
+                                    <div class="info-window-branch" style="margin-top: 8px; font-weight: 600; font-size: 13px;">
+                                        Branch: ${branchName}
+                                    </div>
+                                </div>`
+                            });
+
+                            // Add click listener
+                            polygon.addListener("click", (e) => {
+                                // Close the currently open InfoWindow if there is one
+                                if (currentInfoWindow) {
+                                    currentInfoWindow.close();
+                                }
+
+                                // Open the new InfoWindow
+                                info.setPosition(e.latLng);
+                                info.open(map);
+
+                                // Update the reference to the currently open InfoWindow
+                                currentInfoWindow = info;
+                            });
+
+                            // Add click listener to close InfoWindow when clicking on the map
+                            map.addListener("click", () => {
+                                if (currentInfoWindow) {
+                                    currentInfoWindow.close();
+                                    currentInfoWindow = null;
+                                }
+                            });
+
+                        } catch (err) {
+                            console.error('Error processing feature:', err, feature);
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading counties:', error);
+                    // Only show error if counties haven't loaded
+                    if (!countiesLoaded) {
+                        loadingDiv.style.backgroundColor = 'rgba(255, 200, 200, 0.9)';
+                        loadingDiv.innerHTML = `Error loading county data: ${error.message}. Please try refreshing the page.`;
+                    }
+                })
+                .finally(() => {
+                    // Hide loading indicator only if counties were loaded successfully
+                    if (countiesLoaded) {
+                        // Add a small delay to ensure all polygons are rendered
+                        setTimeout(() => {
+                            loadingDiv.style.display = 'none';
+                        }, 500);
+                    }
+                });
+        }
+
+        // Load counties when map is ready
+        loadCounties();
+    }
+
+    // Load Google Maps API
+    function loadGoogleMaps() {
+        const script = document.createElement('script');
+        script.src = 'https://maps.googleapis.com/maps/api/js?key=<?= h(Configure::read('GoogleMaps.api_key')) ?>&callback=initMap';
+        script.async = true;
+        script.onerror = function() {
+            console.error('Failed to load Google Maps API');
+            const mapDiv = document.getElementById('county-map');
+            mapDiv.innerHTML = '<div style="padding: 20px; background-color: #ffebee; border: 1px solid #ffcdd2; border-radius: 4px;">Error loading Google Maps. Please try refreshing the page.</div>';
+        };
+        document.body.appendChild(script);
+    }
+
+    // Start loading when document is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadGoogleMaps);
+    } else {
+        loadGoogleMaps();
+    }
+</script>
+</script>

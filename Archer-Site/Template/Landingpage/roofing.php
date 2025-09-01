@@ -2,7 +2,7 @@
 // Set Meta Tags
 $this->set('title', 'Expert Roofing Services | Roof Installation & Replacement | Archer Exteriors');
 $this->set('metaDescription', 'Archer Exteriors - Your trusted partner for premium roofing solutions.');
-$this->set('metaKeywords', STATIC_KEYWORDS . ', Roofing, Roofing Repairs, Roof Replacement, 8662724398, archerexteriors.com, Archer Exteriors');
+$this->set('metaKeywords', STATIC_KEYWORDS . ',Roof Replacement');
 $this->set('ogTitle', 'Expert Roofing Services | Roof Installation & Replacement | Archer Exteriors');
 $this->set('ogDescription', 'Archer Exteriors - Your trusted partner for premium roofing solutions.');
 $this->set('ogImage', DOMAIN . '/img/archerexteriors-insignia.png?' . time());
@@ -74,7 +74,7 @@ $this->set('ogUrl', DOMAIN . '/roofing-service'); // TODO: Change to the current
             <h3 class="title_3">Parts of a GAF Roofing System</h3>
             <p>A residential roofing system has multiple layers that work together to create a durable system. Explore the key layers below.</p>
             <div class="mt-3">
-              <a style="padding: 6px 20px; font-size: 16px;" class="theme-btn" href="https://www.archerexteriors.com/parts-of-a-roof" target="_blank">Learn More <i class="flaticon-login"></i></a>
+              <a style="padding: 6px 20px; font-size: 16px;" class="theme-btn" href="https://www.archerexteriors.com/parts-of-a-roof" target="_blank">How We Build Roofs - Step by Step <i class="flaticon-login"></i></a>
             </div>
           </div>
         </div>
@@ -91,8 +91,7 @@ $this->set('ogUrl', DOMAIN . '/roofing-service'); // TODO: Change to the current
           </div>
         </div>
 
-        <h3 class="title_3 mb-2">We use the best roofing products in the industry and installed by skilled roofing
-          experts.</h3>
+        <h3 class="title_3 mb-2">Replacing Your Roof Doesn’t Have to Be Overwhelming—We’ve Perfected It Over 40 Years and Thousands of Roofs.</h3>
         <p>We understand that replacing your home's roof can feel daunting. With over <?= YEARS_OF_EXPERIENCE ?> years of experience, Archer
           Exteriors is your trusted roofing contractor and roofing installer. We're here to support you every step of
           the way, from choosing the right roof system to exploring budgeting and financing options. As a family-owned

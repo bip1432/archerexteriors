@@ -1,11 +1,11 @@
 <?php
 // Set Meta Tags
-$this->set('title', 'Scott Minghenelli | Your Trusted Exterior Home Improvement Specialist | Archer Exteriors');
-$this->set('metaDescription', 'Archer Exteriors - Your Trusted Exterior Home Improvement Specialist');
-$this->set('metaKeywords', STATIC_KEYWORDS . ', Roofing, Siding, Windows, Doors, Decks, Gutters, 8662724398, archerexteriors.com, Archer Exteriors');
-$this->set('ogTitle', 'Scott Minghenelli | Your Trusted Exterior Home Improvement Specialist | Archer Exteriors');
-$this->set('ogDescription', 'Archer Exteriors - Your Trusted Exterior Home Improvement Specialist');
-$this->set('ogImage', DOMAIN . '/img/archerexteriors-insignia.png?' . time());
+$this->set('title', 'Scott Minghenelli | Home Exterior Specialist – South Jersey & PA/DE');
+$this->set('metaDescription', 'Meet Scott Minghenelli, your trusted Home Exterior Specialist with 8+ years’ experience. Serving families across South Jersey, PA & DE with honest, value-driven service.');
+$this->set('metaKeywords', STATIC_KEYWORDS . ', Scott Minghenelli, Archer Exteriors Specialist, Home Exterior Specialist South Jersey, exterior expert PA DE, honest home exterior guidance, value-oriented exterior advice, South Jersey home improvement specialist');
+$this->set('ogTitle', 'Scott Minghenelli | Home Exterior Specialist – South Jersey & PA/DE');
+$this->set('ogDescription', 'Meet Scott Minghenelli, your trusted Home Exterior Specialist with 8+ years’ experience. Serving families across South Jersey, PA & DE with honest, value-driven service.');
+$this->set('ogImage', DOMAIN . '/img/salesmans/scott-minghenelli.png?' . time());
 $this->set('ogType', 'website'); // For general info pages
 $this->set('ogUrl', DOMAIN . '/scott'); // TODO: Change to the current page URL
 ?>
@@ -19,75 +19,133 @@ $this->set('ogUrl', DOMAIN . '/scott'); // TODO: Change to the current page URL
 <!-- Hero-section end -->
 
 <!-- Salesman Details Section Start  -->
-<section class="section light" style="padding-bottom: 255px;">
+<section class="section light">
   <div class="auto-container">
+    <div class="salesman_profile_box">
+      <div class="bio mb-4">
+        <div class="img">
+          <?= $this->Html->image('salesmans/scott-minghenelli.png', [
+            'class' => 'img-fluid',
+            'alt' => 'Scott Minghenelli',
+            'title' => 'Scott Minghenelli'
+          ]) ?>
+        </div>
+        <div class="contents">
+          <div class="desc">
+            <h2>Meet <br> <b>Scott Minghenelli</b></h2>
+            <h5>Home Exterior Specialist</h5>
+            <div class="quote">More Than Exteriors — Helping Homeowners Make Smarter Decisions.</div>
+          </div>
+
+          <div class="social_wrap">
+            <p>We're Social</p>
+            <ul class="social-links">
+              <li>
+                <a href="http://www.facebook.com/archerexteriors" target="_blank" title="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li><a href="https://www.instagram.com/archerexteriors/" target="_blank" title="Instagram"><i
+                    class="fab fa-instagram"></i></a></li>
+              <li><a href="https://www.tiktok.com/@archerexteriors" target="_blank" title="Tiktok"><i
+                    class="fab fa-tiktok"></i></a>
+              </li>
+              <li><a href="https://www.linkedin.com/company/archer-exteriors-inc/" target="_blank" title="Linkedin"><i
+                    class="fab fa-linkedin-in"></i></a></li>
+              <li><a href="https://www.youtube.com/@archerexteriors" target="_blank" title="YouTube"><i
+                    class="fab fa-youtube"></i></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="profile_share">
+            <span class="profile_share_btn" id="btn-share"
+              data-modal-title="We’d Love Your Recommendation"
+              data-modal-description="Your home means the world to you—and so does your opinion to us. If you’ve had a great experience with <b>Scott Minghenelli</b> and the Archer Exteriors team, we’d be honored if you recommended us to your network. "
+              data-facebook-label="Share on Facebook"
+              data-twitter-label="Share on Twitter"
+              data-twitter-text="Twitter Text"
+              data-linkedin-label="Share on LinkedIn"
+              data-linkedin-title="LinkedIn Title"
+              data-linkedin-summary="LinkedIn Summary"
+              title="We’d Love Your Recommendation">
+              <i class="fi fi-rr-arrow-up-from-square"></i> Share
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
     <div class="salesman_details_box">
       <div class="row gx-lg-4 gy-5">
         <div class="col-lg-7">
-          <div class="left">
-            <div class="bio mb-4">
-              <div class="img">
-                <?= $this->Html->image('salesmans/scott-minghenelli.png', [
-                  'class' => 'img-fluid',
-                  'alt' => 'Scott Minghenelli',
-                  'title' => 'Scott Minghenelli'
-                ]) ?>
-              </div>
-              <div class="desc">
-                <h2>Meet <br> <b>Scott Minghenelli</b></h2>
-                <h5>Home Exterior Specialist</h5>
-                <p>More Than Exteriors — Helping Homeowners Make Smarter Decisions.</p>
+          <h3 class="title_2 mb-3"><b>Not Just a Quote—</b> <br>A Real Conversation About Your Home.</h3>
 
-                <ul class="social-links mt-3">
-                  <li>
-                    <?= $this->Html->link(
-                      $this->Html->tag('i', '', ['class' => 'fab fa-facebook-f']),
-                      'http://www.facebook.com/archerexteriors',
-                      ['escape' => false, 'target' => '_blank', 'title' => 'Facebook']
-                    ) ?>
-                  </li>
-                  <li>
-                    <?= $this->Html->link(
-                      $this->Html->tag('i', '', ['class' => 'fab fa-instagram']),
-                      'https://www.instagram.com/archerexteriors/',
-                      ['escape' => false, 'target' => '_blank', 'title' => 'Instagram']
-                    ) ?>
-                  </li>
-                  <li>
-                    <?= $this->Html->link(
-                      $this->Html->tag('i', '', ['class' => 'fab fa-tiktok']),
-                      'https://www.tiktok.com/@archerexteriors',
-                      ['escape' => false, 'target' => '_blank', 'title' => 'Tiktok']
-                    ) ?>
-                  </li>
-                  <li>
-                    <?= $this->Html->link(
-                      $this->Html->tag('i', '', ['class' => 'fab fa-linkedin-in']),
-                      'https://www.linkedin.com/company/archer-exteriors-inc/',
-                      ['escape' => false, 'target' => '_blank', 'title' => 'Linkedin']
-                    ) ?>
-                  </li>
-                  <li>
-                    <?= $this->Html->link(
-                      $this->Html->tag('i', '', ['class' => 'fab fa-youtube']),
-                      'https://www.youtube.com/@archerexteriors',
-                      ['escape' => false, 'target' => '_blank', 'title' => 'YouTube']
-                    ) ?>
-                  </li>
-                </ul>
-              </div>
+          <p>Hi, I’m Scott, your Home Exterior Specialist at Archer Exteriors. With over 8 years of experience in the window and door industry, I’ve always had a passion for giving homeowners more options to improve their homes. Today, I’m able to go beyond windows and doors, helping families design their entire exterior for both protection and beauty. At every home show, curb appeal is highlighted as one of the most important aspects of a property — and now, I get to help you build the kind of home you’re proud to showcase.</p>
+          <p class="mt-3">On a personal note, I’m married with three grown children, a wonderful granddaughter, and two more grandchildren on the way. Family means everything to me, and they’re a big part of why I love helping other families create homes they can enjoy for generations. In my spare time, I enjoy traveling, boating, and golfing — though I’ll admit I’m far better at boating than golf! Either way, both keep me grounded and remind me that life, much like a home, should be built for enjoyment.</p>
+
+          <div class="salesman_serving_area_box mt-4">
+            <h2 class="title_3"><b>Rooted in South Jersey</b> — Helping Families Across:</h2>
+
+            <div class="location mt-3">
+              <h4>
+                <?= $this->Html->image('service-area/map-marker.svg', [
+                  'class' => 'img-fluid',
+                  'alt' => 'location',
+                  'width' => '20'
+                ]) ?>
+                New Jersey (SOUTH)
+              </h4>
+
+              <ul>
+                <li>Cape May County (NJ)</li>
+                <li>Cumberland County (NJ)</li>
+                <li>Salem County (NJ)</li>
+                <li>Atlantic County (NJ)</li>
+                <li>Gloucester County (NJ)</li>
+                <li>Camden County (NJ)</li>
+                <li>Burlington County (NJ)</li>
+                <li>Ocean County (NJ)</li>
+              </ul>
             </div>
 
-            <h3 class="title_3 mb-4">Not Just a Quote— <br>A Real Conversation About Your Home.</h3>
+            <div class="location mt-3">
+              <h4>
+                <?= $this->Html->image('service-area/map-marker.svg', [
+                  'class' => 'img-fluid',
+                  'alt' => 'location',
+                  'width' => '20'
+                ]) ?>
+                Pennsylvania
+              </h4>
 
-            <p>Hi, I’m Scott, your Home Exterior Specialist at Archer Exteriors.</p>
-            <p class="mt-4">With over 8 years of experience in the window and door industry, I’ve always had a passion for giving homeowners more options to improve their homes. Today, I’m able to go beyond windows and doors, helping families design their entire exterior for both protection and beauty. At every home show, curb appeal is highlighted as one of the most important aspects of a property — and now, I get to help you build the kind of home you’re proud to showcase.</p>
-            <p class="mt-4">On a personal note, I’m married with three grown children, a wonderful granddaughter, and two more grandchildren on the way. Family means everything to me, and they’re a big part of why I love helping other families create homes they can enjoy for generations. In my spare time, I enjoy traveling, boating, and golfing — though I’ll admit I’m far better at boating than golf! Either way, both keep me grounded and remind me that life, much like a home, should be built for enjoyment.</p>
+              <ul>
+                <li>Delaware County (PA)</li>
+                <li>Chester County (PA)</li>
+                <li>Bucks County (PA)</li>
+              </ul>
+            </div>
+
+            <div class="location mt-3">
+              <h4>
+                <?= $this->Html->image('service-area/map-marker.svg', [
+                  'class' => 'img-fluid',
+                  'alt' => 'location',
+                  'width' => '20'
+                ]) ?>
+                Delaware
+              </h4>
+
+              <ul>
+                <li>New Castle County (DE)</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <div class="col-lg-5">
-          <?= $this->element('forms/form_free_estimate', ['formId' => '14', 'formKey' => 'erickac99713c3638e0e2ef29c3825bbe9048']) ?>
+          <?= $this->element('forms/form_free_estimate', ['formId' => '30', 'formKey' => 'scott74b646da514bb43b4ba365e336c2432b']) ?>
         </div>
       </div>
     </div>
@@ -95,56 +153,6 @@ $this->set('ogUrl', DOMAIN . '/scott'); // TODO: Change to the current page URL
 </section>
 <!-- Salesman Details Section End  -->
 
-<!-- Statistics Section Start  -->
-<section class="funfact-section light">
-  <?= $this->element('company_statistics') ?>
-</section>
-<!-- Statistics Section End  -->
-
-<!-- Service Area Section Start  -->
-<section class="section" style="position: relative; margin-top: -120px; padding-top: 250px;">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 align-self-center">
-        <div class="about-image-block">
-          <div class="image-box pb-0">
-            <div class="pattern-layer" style="background-image: url(<?= $this->Url->image('shape-1.png') ?>);"></div>
-            <div class="image">
-              <?= $this->Html->image('salesmans/rooted-in-south-jersey.jpg', [
-                'alt' => "Proudly Serving Walton to Gulf County",
-                'title' => "Proudly Serving Walton to Gulf County"
-              ]) ?>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-6 align-self-center">
-        <div class="sec-title">
-          <h6><i class="flaticon-roof"></i>Service Area</h6>
-          <h2><span>Rooted in South Jersey</span> — Helping Families Across:</h2>
-        </div>
-
-        <ul class="check_list serving_area_list mt-3">
-          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Walton County (FL)</li>
-          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Holmes County (FL)</li>
-          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Washington County (FL)</li>
-          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Bay County (FL)</li>
-          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Gulf County (FL)</li>
-        </ul>
-
-        <div class="mt-4">
-          <?= $this->Html->link(
-            'Check Other Locations<i class="flaticon-login"></i>',
-            ['controller' => 'ServiceAreas', 'action' => 'index'],
-            ['class' => 'theme-btn sm', 'escape' => false]
-          ) ?>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Service Area Section End  -->
 
 <!-- Working Process Section Start  -->
 <section class="section working-section text-center" style="padding-bottom: 90px;">

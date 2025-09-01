@@ -76,15 +76,11 @@
                         <?= $this->Html->link('Doors', ['controller' => 'Services', 'action' => 'doors'], ['class' => 'link']) ?>
                       </li>
                       <li>
-                        <?= $this->Html->link('Decks', ['controller' => 'Services', 'action' => 'decks'], ['class' => 'link']) ?>
-                      </li>
-                      <li>
                         <?= $this->Html->link('Gutters', ['controller' => 'Services', 'action' => 'gutters'], ['class' => 'link']) ?>
                       </li>
-                      <li><?= $this->Html->link('Other Services', ['controller' => 'Services', 'action' => 'other-services']) ?></li>
-                      <li>
-                        <?= $this->Html->link('Repairs', ['controller' => 'Services', 'action' => 'repairs'], ['class' => 'link']) ?>
-                      </li>
+                      <li><?= $this->Html->link('Fascia and Soffit', ['controller' => 'Services', 'action' => 'other-services']) ?></li>
+                      <li><?= $this->Html->link('Flashing and Trim', ['controller' => 'Services', 'action' => 'other-services']) ?></li>
+                      <li><?= $this->Html->link('Skylight', ['controller' => 'Services', 'action' => 'other-services']) ?></li>
                       <li>
                         <?= $this->Html->link('All Services', ['controller' => 'Services', 'action' => 'index'], ['class' => 'link']) ?>
                       </li>
@@ -120,10 +116,10 @@
                         <span class="date">Friday</span>
                         <span class="time">8 AM - 7 PM</span>
                       </div>
-                      <div class="item">
+                      <!-- <div class="item">
                         <span class="date">Saturday</span>
                         <span class="time">9 AM - 3 PM</span>
-                      </div>
+                      </div> -->
                     </div>
 
                     <div class="btn-wrap mt-5">

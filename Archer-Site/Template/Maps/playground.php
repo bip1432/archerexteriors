@@ -1,0 +1,61 @@
+<?php
+// Set Meta Tags
+$this->set('title', 'Playground | Map API Testing');
+$this->set('metaDescription', 'Map API Testing - Playground');
+$this->set('ogUrl', DOMAIN . '/maps/playground'); // TODO: Change to the current page URL
+
+$mapDomain = $this->Url->build('/', ['fullBase' => true]); // e.g. https://www.archerexteriors.com/
+?>
+
+<style>
+    /* Map container styles */
+    .mapapi-app {
+        margin-bottom: 30px;
+        background-color: #f5f5f5;
+        border-radius: 8px;
+        overflow: hidden;
+        min-height: 300px;
+        position: relative;
+    }
+
+    .map-error {
+        padding: 20px;
+        color: #721c24;
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    .mapapi-app iframe {
+        display: block;
+        border: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+</style>
+
+<div class="container">
+    <h1 class="mb-4">Map API Testing Playground</h1>
+
+    <!-- Map Container: Index -->
+    <div class="mapapi-app" data-map-slug="index" data-map-domain="<?= h($mapDomain) ?>" data-mapapi-app-lazy data-height="1000px"></div>
+
+    <!-- Map Container: Southern Jersey Counties -->
+    <div class="mapapi-app" data-map-slug="southern-jersey-counties" data-map-domain="<?= h($mapDomain) ?>" data-mapapi-app-lazy data-height="500px"></div>
+
+    <!-- Map Container: Northern Jersey Counties -->
+    <div class="mapapi-app" data-map-slug="northern-jersey-counties" data-map-domain="<?= h($mapDomain) ?>" data-mapapi-app-lazy data-height="500px"></div>
+
+    <!-- Map Container: Alabama Florida Counties -->
+    <div class="mapapi-app" data-map-slug="alabama-florida-counties" data-map-domain="<?= h($mapDomain) ?>" data-mapapi-app-lazy data-height="500px"></div>
+
+    <!-- Map Container: Lynn Haven Florida Counties -->
+    <div class="mapapi-app" data-map-slug="lynn-haven-florida-counties" data-map-domain="<?= h($mapDomain) ?>" data-mapapi-app-lazy data-height="500px"></div>
+</div>
+
+<!-- Map Platform Script - Load once at the bottom -->
+<script src="<?= $this->Url->build('/mapapi/platform.js', ['fullBase' => true]) ?>" async></script>

@@ -2,7 +2,7 @@
 // Set Meta Tags
 $this->set('title', 'Service Areas | Roofing & Siding | Archer Exteriors');
 $this->set('metaDescription', 'Archer Exteriors - Service Areas');
-$this->set('metaKeywords', STATIC_KEYWORDS . ', Roofing, Siding, Windows, Doors, Decks, Gutters, 8662724398, archerexteriors.com, Archer Exteriors');
+$this->set('metaKeywords', STATIC_KEYWORDS . '');
 $this->set('ogTitle', 'Service Areas | Roofing & Siding | Archer Exteriors');
 $this->set('ogDescription', 'Archer Exteriors - Service Areas');
 $this->set('ogImage', DOMAIN . '/img/archerexteriors-insignia.png?' . time());
@@ -17,10 +17,49 @@ use Cake\ORM\TableRegistry;
 $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
 ?>
 <!-- Hero-section -->
-<!-- Elfsight Google Maps | Archer Exteriors Branch Locations -->
-<script src="https://static.elfsight.com/platform/platform.js" async></script>
-<div class="elfsight-app-84c02a38-7283-40c6-ac05-f58000b7ec33" data-elfsight-app-lazy></div>
+<!-- Custom Google Maps | Archer Exteriors All Branch Locations -->
+<div style="margin-bottom: 0; border-radius: 0;" class="mapapi-app" data-map-slug="all-branches" data-map-domain="<?= h(DOMAIN) ?>" data-mapapi-app-lazy></div>
 <!-- Hero-section end -->
+
+<div class="marker-legend-stripe">
+  <div class="legend-container">
+    <div class="legend-items-wrapper">
+
+      <div class="marker-legend-item">
+        <?= $this->Html->image('map/marker/icon-archi-hq.png', [
+          'alt' => 'Archer Headquarters Marker',
+          'class' => 'marker-legend-icon'
+        ]) ?>
+        <span class="marker-legend-label">Archer Headquarters</span>
+      </div>
+
+      <div class="marker-legend-item">
+        <?= $this->Html->image('map/marker/icon-archer.png', [
+          'alt' => 'New Construction Marker',
+          'class' => 'marker-legend-icon'
+        ]) ?>
+        <span class="marker-legend-label">New Construction</span>
+      </div>
+
+      <div class="marker-legend-item">
+        <?= $this->Html->image('map/marker/icon-archer-remodeling.png', [
+          'alt' => 'Remodeling Marker',
+          'class' => 'marker-legend-icon'
+        ]) ?>
+        <span class="marker-legend-label">Remodeling</span>
+      </div>
+
+      <div class="marker-legend-item">
+        <?= $this->Html->image('map/marker/icon-archer-light.png', [
+          'alt' => 'Coming Soon Marker',
+          'class' => 'marker-legend-icon'
+        ]) ?>
+        <span class="marker-legend-label">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- Advertisement  -->
 <section>
@@ -32,21 +71,81 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
 
 <section class="section light">
   <div class="container">
-    <div class="row gx-lg-4 gy-5">
-      <div class="col-lg-7">
+    <div class="row gx-xl-4 gy-5">
+      <div class="col-xl-7 text-center text-xl-start">
         <div class="sec-title">
           <h6><i class="flaticon-roof"></i> Headquarters</h6>
-          <h2>Archer Exteriors' <br> <span>National Headquarters</span></h2>
+          <h2>Archer Exteriors <br> <span>National Headquarters</span></h2>
         </div>
 
-        <?= $this->Html->image('service-area/national-headquarters.jpg', [
-          'class' => 'img-fluid',
-          'alt' => 'National Headquarters',
-          'title' => 'National Headquarters'
-        ]) ?>
+        <div class="serviceArea_state_boxes justify-content-center justify-content-xl-between">
+          <div class="item">
+            <div class="inner-box">
+              <div class="contents">
+                <span class="number"><span class="counter"><?php echo STATES_SERVED; ?></span>+</span>
+                <h3>States</h3>
+              </div>
+
+              <div class="icon-box">
+                <?= $this->Html->image('service-area/icon-state.svg', [
+                  'class' => 'svg',
+                  'alt' => 'States',
+                  'title' => 'States'
+                ]) ?>
+
+                <div class="shap"></div>
+              </div>
+            </div>
+          </div>
+          <div class="item ">
+            <div class="inner-box">
+              <div class="contents">
+                <span class="number"><span class="counter">15</span></span>
+                <h3>Locations</h3>
+              </div>
+
+              <div class="icon-box">
+                <?= $this->Html->image('service-area/icon-location.svg', [
+                  'class' => 'svg',
+                  'alt' => 'Locations',
+                  'title' => 'Locations'
+                ]) ?>
+
+                <div class="shap"></div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="inner-box">
+              <div class="contents">
+                <span class="number"><span class="counter">1</span></span>
+                <h3>Trusted Name</h3>
+              </div>
+
+              <div class="icon-box">
+                <?= $this->Html->image('service-area/icon-archer-a.png', [
+                  'class' => 'svg',
+                  'alt' => 'Trusted Name',
+                  'title' => 'Trusted Name'
+                ]) ?>
+
+                <div class="shap"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <video class="img-fluid rad_6" autoplay loop muted playsinline>
+          <source src="<?= $this->Url->image('service-area/videos/archer-exteriors-national-headquarter.mp4') ?>" type="video/mp4">
+          <?= $this->Html->image('service-area/national-headquarters.jpg', [
+            'class' => 'img-fluid rad_6',
+            'alt' => 'Archer Exteriors National Headquarters',
+            'title' => 'Archer Exteriors National Headquarters'
+          ]) ?>
+        </video>
 
         <div class="our_service service-area">
-          <div class="row justify-content-center mt-5" style="gap: 20px 0;">
+          <div class="row justify-content-center mt-4" style="gap: 20px 0;">
             <div class="col-lg-4 col-6">
               <div class="item">
                 <div class="icon">
@@ -55,7 +154,7 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
                     'alt' => 'Headquarters Location'
                   ]) ?>
                 </div>
-                <h4 class="item_title"><?= COMPANY_ADDRESS ?></h4>
+                <h4 class="item_title"><?= COMPANY_ADDRESS1 ?><br><?= COMPANY_ADDRESS2 ?></h4>
               </div>
             </div>
             <div class="col-lg-4 col-6">
@@ -84,7 +183,7 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
         </div>
       </div>
 
-      <div class="col-lg-5">
+      <div class="col-xl-5">
         <?= $this->element('forms/form_free_estimate', ['formId' => '11', 'formKey' => 'servarea76788d097d18d4fab590d7da9d1e2e5f']) ?>
       </div>
     </div>
@@ -96,7 +195,7 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
   <div class="container">
     <div class="sec-title text-center light">
       <h6><i class="flaticon-roof"></i> Service Area</h6>
-      <h2>Archer Exteriors' <span>Branch Locations</span></h2>
+      <h2>Archer Exteriors <span>Branch Locations</span></h2>
     </div>
 
     <div class="row gy-4">
@@ -167,6 +266,10 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
 <!-- Service Area Start  -->
 <section class="section light">
   <div class="container">
+    <div class="sec-title mb-4">
+      <h2 style="font-size: 30px;">Built Local. Backed National <span>— <?= STATES_SERVED ?>+ States, 15 Locations.</span></h2>
+    </div>
+
     <?php
     // Create dynamic search result message
     $hasFilters = !empty($filters['state']) || !empty($filters['county']) || !empty($filters['service']);

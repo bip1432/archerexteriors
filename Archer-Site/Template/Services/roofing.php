@@ -1,9 +1,9 @@
 <?php
 // Set Meta Tags
-$this->set('title', 'Roof Replacement & Roofing Repairs | Archer Exteriors');
+$this->set('title', 'Roof Installation & Replacement | Archer Exteriors');
 $this->set('metaDescription', 'Archer Exteriors - Your trusted partner for premium roofing solutions.');
-$this->set('metaKeywords', STATIC_KEYWORDS . ', Roofing, Roofing Repairs, Roof Replacement, 8662724398, archerexteriors.com, Archer Exteriors');
-$this->set('ogTitle', 'Roof Replacement & Roofing Repairs | Archer Exteriors');
+$this->set('metaKeywords', STATIC_KEYWORDS . ', Roof Replacement, Roof Installation');
+$this->set('ogTitle', 'Roof Installation & Replacement | Archer Exteriors');
 $this->set('ogDescription', 'Archer Exteriors - Your trusted partner for premium roofing solutions.');
 $this->set('ogImage', DOMAIN . '/img/archerexteriors-insignia.png?' . time());
 $this->set('ogType', 'website'); // For general info pages
@@ -63,7 +63,7 @@ $this->set('ogUrl', DOMAIN . '/services/roofing'); // TODO: Change to the curren
 <!-- banner-section end -->
 
 <!-- Statistics Section Start  -->
-<section class="funfact-section pb-5 light">
+<section class="funfact-section light">
   <?= $this->element('company_statistics') ?>
 </section>
 <!-- Statistics Section End  -->
@@ -85,27 +85,60 @@ $this->set('ogUrl', DOMAIN . '/services/roofing'); // TODO: Change to the curren
           efficient, and built to last. From selecting the perfect roof to navigating financing, we're with you
           every step of the way.</p>
 
-        <div class="roof_layer_wrap mt-4 mb-5">
-          <div class="img">
-            <?= $this->Html->image('roofing-service/Roofing-Layer-GAF.png', [
-              'class' => 'img-fluid',
-              'alt' => 'Parts of a GAF Roofing System',
-              'title' => 'Parts of a GAF Roofing System'
-            ]) ?>
-          </div>
-          <div class="content">
-            <h3 class="title_3">Parts of a GAF Roofing System</h3>
-            <p>A residential roofing system has multiple layers that work together to create a durable system. Explore the key layers below.</p>
-            <div class="mt-3">
-              <a style="padding: 6px 20px; font-size: 16px;" class="theme-btn" href="https://www.archerexteriors.com/parts-of-a-roof" target="_blank">Learn More <i class="flaticon-login"></i></a>
+        <div class="service_key_points mt-4">
+          <div id="serviceKeyPoints" class="owl-carousel owl-theme our_service service_key_points_slider">
+            <div class="item">
+              <div class="icon">
+                <?= $this->Html->image('golden-ticket/roof/initial-contact.svg', [
+                  'class' => 'svg',
+                  'alt' => 'Initial Contact',
+                  'title' => 'Initial Contact'
+                ]) ?>
+              </div>
+              <h4>Initial Contact</h4>
             </div>
+
+            <div class="item">
+              <div class="icon">
+                <?= $this->Html->image('golden-ticket/roof/visualize-roof.svg', [
+                  'class' => 'svg',
+                  'alt' => 'Visualize New Roof',
+                  'title' => 'Visualize New Roof'
+                ]) ?>
+              </div>
+              <h4>Visualize New Roof</h4>
+            </div>
+
+            <div class="item">
+              <div class="icon">
+                <?= $this->Html->image('golden-ticket/roof/new-roof-1day.svg', [
+                  'class' => 'svg',
+                  'alt' => 'New Roof in One Day',
+                  'title' => 'New Roof in One Day'
+                ]) ?>
+              </div>
+              <h4>New Roof in One Day</h4>
+            </div>
+
+            <div class="item">
+              <div class="icon">
+                <?= $this->Html->image('golden-ticket/roof/best-warranty.svg', [
+                  'class' => 'svg',
+                  'alt' => 'Best Warranty Available',
+                  'title' => 'Best Warranty Available'
+                ]) ?>
+              </div>
+              <h4>Best Warranty Available</h4>
+            </div>
+
           </div>
         </div>
-        <div class="roof_badge mb-5">
+
+        <div class="our_strength my-5">
           <span class="img">
-            <?= $this->Html->image('home-white.svg', [
+            <?= $this->Html->image('roofing-service/archie-sm.png', [
               'alt' => 'Jobs Strength',
-              'class' => 'svg'
+              'class' => 'img-fluid'
             ]) ?>
           </span>
           <div class="content">
@@ -113,8 +146,8 @@ $this->set('ogUrl', DOMAIN . '/services/roofing'); // TODO: Change to the curren
           </div>
         </div>
 
-        <h3 class="title_3 mb-2">We use the best roofing products in the industry and installed by skilled roofing
-          experts.</h3>
+
+        <h3 class="title_3 mb-2">Replacing Your Roof Doesn’t Have to Be Overwhelming—We’ve Perfected It Over 40 Years and Thousands of Roofs.</h3>
         <p>We understand that replacing your home's roof can feel daunting. With over <?= YEARS_OF_EXPERIENCE ?> years of experience, Archer
           Exteriors is your trusted roofing contractor and roofing installer. We're here to support you every step of
           the way, from choosing the right roof system to exploring budgeting and financing options. As a family-owned
@@ -133,6 +166,40 @@ $this->set('ogUrl', DOMAIN . '/services/roofing'); // TODO: Change to the curren
 
       <div class="col-lg-5">
         <?= $this->element('forms/form_free_estimate', ['formId' => '3', 'formKey' => 'roofing9ae8612082376a3aed0eaf1b7b498d64']) ?>
+      </div>
+
+      <div class="col-12" style="margin-top: 60px;">
+        <div class="row gy-4 text-center text-xxl-start">
+          <div class="col-xxl-6">
+            <div class="limited_offer_banner">
+              <?= $this->Html->image('roofing-service/archer-exteriors-offer-banner-roofing.jpg', [
+                'class' => 'img-fluid rad_4',
+                'alt' => 'Roof Replacement: 25% off your new roof',
+                'title' => 'Roof Replacement: 25% off your new roof'
+              ]) ?>
+            </div>
+          </div>
+
+          <div class="col-xxl-6">
+            <div class="parts_of_roof_box">
+              <div class="img">
+                <?= $this->Html->image('roofing-service/banner-parts-of-gaf-roofing-system.jpg', [
+                  'class' => 'img-fluid',
+                  'alt' => 'Parts of a GAF Roofing System',
+                  'title' => 'Parts of a GAF Roofing System'
+                ]) ?>
+              </div>
+              <div class="content">
+                <h3 class="title_3">Parts of a GAF Roofing System</h3>
+                <p>A residential roofing system has multiple layers that work together to create a durable system. Explore the key layers below.</p>
+                <div class="mt-3">
+                  <a style="padding: 6px 20px; font-size: 16px;" class="theme-btn" href="https://www.archerexteriors.com/parts-of-a-roof" target="_blank">How We Build Roofs - Step by Step <i class="flaticon-login"></i></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -171,13 +171,6 @@
                             </li>
                             <li class="nav-item" role="presentation">
                               <?= $this->Html->link(
-                                $this->Html->image('services/icons/deck.svg', ['class' => 'icon', 'alt' => 'Deck', 'title' => 'Deck']) . ' Decks',
-                                ['controller' => 'Services', 'action' => 'decks'],
-                                ['class' => 'nav-link', 'data-tab' => 'deck', 'role' => 'tab', 'escape' => false]
-                              ) ?>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                              <?= $this->Html->link(
                                 $this->Html->image('services/icons/gutter.svg', ['class' => 'icon', 'alt' => 'Gutters', 'title' => 'Gutters']) . 'Gutters',
                                 ['controller' => 'Services', 'action' => 'gutters'],
                                 ['class' => 'nav-link', 'data-tab' => 'gutters', 'role' => 'tab', 'escape' => false]
@@ -188,13 +181,6 @@
                                 $this->Html->image('services/icons/other-services.svg', ['class' => 'icon', 'alt' => 'Other Services', 'title' => 'Other Services']) . 'Other Services',
                                 ['controller' => 'Services', 'action' => 'other-services'],
                                 ['class' => 'nav-link', 'data-tab' => 'otherServices', 'role' => 'tab', 'escape' => false]
-                              ) ?>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                              <?= $this->Html->link(
-                                $this->Html->image('services/icons/repair.svg', ['class' => 'icon', 'alt' => 'Repairs', 'title' => 'Repairs']) . ' Repairs',
-                                ['controller' => 'Services', 'action' => 'repairs'],
-                                ['class' => 'nav-link', 'data-tab' => 'repair', 'role' => 'tab', 'escape' => false]
                               ) ?>
                             </li>
                             <!-- services/icons/others.svg -->
@@ -213,6 +199,9 @@
                                 <div class="subMenu_list">
                                   <h4 class="title_4">A Solid Roof Starts with a Solid Team</h4>
                                   <p>We provide professional roof replacements, installations, and repairs using high-quality materials. Our team is trained to handle everything from storm damage to aging shingles. Get peace of mind with a roof built to last.</p>
+                                  <div class="my-auto">
+                                    <?= $this->Html->image('menu/offers/archer-exteriors-offer-banner-menu-roofing.jpg', ['class' => 'img-fluid', 'alt' => '25% OFF for all roof installation and replacement', 'title' => '25% OFF for all roof installation and replacement']) ?>
+                                  </div>
                                   <div class="mt-auto">
                                     <?= $this->Html->link(
                                       $this->Html->image('check-specials.svg', [
@@ -237,6 +226,9 @@
                                 <div class="subMenu_list">
                                   <h4 class="title_4">Built to Protect. Designed to Impress</h4>
                                   <p>Enhance your home’s curb appeal with durable, low-maintenance siding. We offer a wide selection of styles and colors to match your vision. Every siding job is installed with expert precision.</p>
+                                  <div class="my-auto">
+                                    <?= $this->Html->image('menu/offers/archer-exteriors-offer-banner-menu-siding.jpg', ['class' => 'img-fluid', 'alt' => '25% OFF for all siding installation', 'title' => '25% OFF for all siding installation']) ?>
+                                  </div>
                                   <div class="mt-auto">
                                     <?= $this->Html->link(
                                       $this->Html->image('check-specials.svg', [
@@ -261,6 +253,9 @@
                                 <div class="subMenu_list">
                                   <h4 class="title_4">Energy-Efficient Windows, Stunning Results</h4>
                                   <p>Upgrade to energy-efficient windows that look great and help lower utility bills. We custom-fit each window for a seamless installation. Choose from trusted brands like OKNA and ProVia.</p>
+                                  <div class="my-auto">
+                                    <?= $this->Html->image('menu/offers/archer-exteriors-offer-banner-menu-window.jpg', ['class' => 'img-fluid', 'alt' => '$250 OFF per window for installation and replacement', 'title' => '$250 OFF per window for installation and replacement']) ?>
+                                  </div>
                                   <div class="mt-auto">
                                     <?= $this->Html->link(
                                       $this->Html->image('check-specials.svg', [
@@ -285,30 +280,9 @@
                                 <div class="subMenu_list">
                                   <h4 class="title_4">Doors That Welcome with Style & Security</h4>
                                   <p>We install front, storm, and patio doors that combine style with security. Each door is made to withstand the elements and elevate your home’s entry. Our team ensures a clean and proper fit every time.</p>
-                                  <div class="mt-auto">
-                                    <?= $this->Html->link(
-                                      $this->Html->image('check-specials.svg', [
-                                        'style' => 'position: relative; top: -2px; margin-right: 5px;',
-                                        'alt' => 'Check Specials'
-                                      ]) . 'Check Specials',
-                                      ['controller' => 'Services', 'action' => 'roofing'],
-                                      ['class' => 'theme-btn sm', 'escape' => false]
-                                    ) ?>
+                                  <div class="my-auto">
+                                    <?= $this->Html->image('menu/offers/archer-exteriors-offer-banner-menu-door.jpg', ['class' => 'img-fluid', 'alt' => '$250 OFF per door for installation and replacement', 'title' => '$250 OFF per door for installation and replacement']) ?>
                                   </div>
-                                </div>
-                                <div class="mega_award_wrap">
-                                  <div class="banner">
-                                    <?= $this->Html->image('menu/doors-banner.jpg', ['class' => 'img-fluid', 'alt' => 'Doors That Welcome with Style & Security', 'title' => 'Doors That Welcome with Style & Security']) ?>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="tab-pane fade tab-pane-deck" data-tab-content="deck">
-                              <div class="content_inner">
-                                <div class="subMenu_list">
-                                  <h4 class="title_4">Picture It. Build It. Love It</h4>
-                                  <p>Create a beautiful, functional outdoor space with a custom-built deck. We use long-lasting, low-maintenance materials for every lifestyle. Enjoy a space made for relaxing, entertaining, and everything in between.</p>
                                   <div class="mt-auto">
                                     <?= $this->Html->link(
                                       $this->Html->image('check-specials.svg', [
@@ -322,11 +296,12 @@
                                 </div>
                                 <div class="mega_award_wrap">
                                   <div class="banner">
-                                    <?= $this->Html->image('menu/decks-banner.jpg', ['class' => 'img-fluid', 'alt' => 'Picture It. Build It. Love It', 'title' => 'Picture It. Build It. Love It']) ?>
+                                    <?= $this->Html->image('menu/doors-banner.jpg', ['class' => 'img-fluid', 'alt' => 'Doors That Welcome with Style & Security', 'title' => 'Doors That Welcome with Style & Security']) ?>
                                   </div>
                                 </div>
                               </div>
                             </div>
+
 
                             <div class="tab-pane fade tab-pane-gutter" data-tab-content="gutters">
                               <div class="content_inner">
@@ -376,36 +351,11 @@
                               </div>
                             </div>
 
-                            <div class="tab-pane fade tab-pane-repair" data-tab-content="repair">
-                              <div class="content_inner">
-                                <div class="subMenu_list">
-                                  <h4 class="title_4">Premium Repairs. Expert Replacements</h4>
-                                  <p>From missing shingles to damaged siding, we handle all types of exterior repairs. Our team responds quickly and works efficiently to fix the problem. Count on us for quality repairs that last.</p>
-                                  <div class="mt-auto">
-                                    <?= $this->Html->link(
-                                      $this->Html->image('check-specials.svg', [
-                                        'style' => 'position: relative; top: -2px; margin-right: 5px;',
-                                        'alt' => 'Check Specials'
-                                      ]) . 'Check Specials',
-                                      ['controller' => 'Offers', 'action' => 'goldenTicket'],
-                                      ['class' => 'theme-btn sm', 'escape' => false]
-                                    ) ?>
-                                  </div>
-                                </div>
-                                <div class="mega_award_wrap">
-                                  <div class="banner">
-                                    <?= $this->Html->image('menu/repair-banner.jpg', ['class' => 'img-fluid', 'alt' => 'Premium Repairs. Expert Replacements', 'title' => 'Premium Repairs. Expert Replacements']) ?>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-
                             <div class="tab-pane fade tab-pane-all-service" data-tab-content="all-service">
                               <div class="content_inner">
                                 <div class="subMenu_list">
                                   <h4 class="title_4">40 Years of Excellence. A Legacy of Trust.</h4>
-                                  <p>Archer Exteriors offers full-service solutions for your home’s exterior. We handle roofing, siding, windows, doors, gutters, decks, and more. One trusted team for everything you need.</p>
+                                  <p>Archer Exteriors offers full-service solutions for your home’s exterior. We handle roofing, siding, windows, doors, gutters and more. One trusted team for everything you need.</p>
                                   <div class="mt-auto">
                                     <?= $this->Html->link(
                                       $this->Html->image('check-specials.svg', [
@@ -433,9 +383,7 @@
                         <li><?= $this->Html->link('Siding', ['controller' => 'Services', 'action' => 'siding']) ?></li>
                         <li><?= $this->Html->link('Windows', ['controller' => 'Services', 'action' => 'windows']) ?></li>
                         <li><?= $this->Html->link('Doors', ['controller' => 'Services', 'action' => 'doors']) ?></li>
-                        <li><?= $this->Html->link('Deck', ['controller' => 'Services', 'action' => 'decks']) ?></li>
                         <li><?= $this->Html->link('Gutters', ['controller' => 'Services', 'action' => 'gutters']) ?></li>
-                        <li><?= $this->Html->link('Repairs', ['controller' => 'Services', 'action' => 'repairs']) ?></li>
                         <li><?= $this->Html->link('Other Services', ['controller' => 'Services', 'action' => 'other-services']) ?></li>
                         <li><?= $this->Html->link('All Services', ['controller' => 'Services', 'action' => 'index']) ?></li>
                       </ul>
@@ -453,6 +401,7 @@
                         <li><?= $this->Html->link('Why Choose Archer', ['controller' => 'Companies', 'action' => 'whyChooseUs']) ?></li>
                         <li><?= $this->Html->link('Reviews', ['controller' => 'Reviews', 'action' => 'index']) ?></li>
                         <li><?= $this->Html->link('See Our Recent Work', ['controller' => 'Companies', 'action' => 'recentWork']) ?></li>
+                        <li><?= $this->Html->link('Archer in Action', ['controller' => 'Offers', 'action' => 'index']) ?></li>
                         <li><?= $this->Html->link('New construction', ['controller' => 'Companies', 'action' => 'newConstruction']) ?></li>
                         <li><?= $this->Html->link('Refer & Earn', ['controller' => 'Refers', 'action' => 'index']) ?></li>
                         <li><?= $this->Html->link('Archie\'s Corner', ['controller' => 'Companies', 'action' => 'archieCorner']) ?></li>

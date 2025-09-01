@@ -1,11 +1,11 @@
 <?php
 // Set Meta Tags
-$this->set('title', 'Shane Odom | Your Trusted Exterior Home Improvement Specialist | Archer Exteriors');
-$this->set('metaDescription', 'Archer Exteriors - Your Trusted Exterior Home Improvement Specialist');
-$this->set('metaKeywords', STATIC_KEYWORDS . ', Roofing, Siding, Windows, Doors, Decks, Gutters, 8662724398, archerexteriors.com, Archer Exteriors');
-$this->set('ogTitle', 'Shane Odom | Your Trusted Exterior Home Improvement Specialist | Archer Exteriors');
-$this->set('ogDescription', 'Archer Exteriors - Your Trusted Exterior Home Improvement Specialist');
-$this->set('ogImage', DOMAIN . '/img/archerexteriors-insignia.png?' . time());
+$this->set('title', 'Shane Odom | Trusted Home Exterior Specialist – FL & AL');
+$this->set('metaDescription', 'Meet Shane Odom, your trusted Home Exterior Specialist with 30+ years’ experience. Serving the Emerald Coast across Florida and Alabama—honest advice, clear choices.');
+$this->set('metaKeywords', STATIC_KEYWORDS . ', Shane Odom, Jeremy Odom, Archer Exteriors Specialist, Home Exterior Specialist Florida Alabama, exterior remodeling expert Emerald Coast, honest exterior advice, trusted home exterior consultant, 30 years exterior experience');
+$this->set('ogTitle', 'Shane Odom | Trusted Home Exterior Specialist – FL & AL');
+$this->set('ogDescription', 'Meet Shane Odom, your trusted Home Exterior Specialist with 30+ years’ experience. Serving the Emerald Coast across Florida and Alabama—honest advice, clear choices.');
+$this->set('ogImage', DOMAIN . '/img/salesmans/shane.png?' . time());
 $this->set('ogType', 'website'); // For general info pages
 $this->set('ogUrl', DOMAIN . '/shane'); // TODO: Change to the current page URL
 ?>
@@ -19,89 +19,104 @@ $this->set('ogUrl', DOMAIN . '/shane'); // TODO: Change to the current page URL
 <!-- Hero-section end -->
 
 <!-- Salesman Details Section Start  -->
-<section class="section light" style="padding-bottom: 255px;">
+<section class="section light">
   <div class="auto-container">
+    <div class="salesman_profile_box">
+      <div class="bio mb-4">
+        <div class="img">
+          <?= $this->Html->image('salesmans/shane.png', [
+            'class' => 'img-fluid',
+            'alt' => 'Shane Odom',
+            'title' => 'Shane Odom'
+          ]) ?>
+        </div>
+        <div class="contents">
+          <div class="desc">
+            <h2>Meet <br> <b>Shane Odom</b></h2>
+            <h5>Home Exterior Specialist</h5>
+            <div class="quote">I believe the best projects start with honest advice and clear choices.</div>
+          </div>
+
+          <div class="social_wrap">
+            <p>We're Social</p>
+            <ul class="social-links">
+              <li>
+                <a href="http://www.facebook.com/archerexteriors" target="_blank" title="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li><a href="https://www.instagram.com/archerexteriors/" target="_blank" title="Instagram"><i
+                    class="fab fa-instagram"></i></a></li>
+              <li><a href="https://www.tiktok.com/@archerexteriors" target="_blank" title="Tiktok"><i
+                    class="fab fa-tiktok"></i></a>
+              </li>
+              <li><a href="https://www.linkedin.com/company/archer-exteriors-inc/" target="_blank" title="Linkedin"><i
+                    class="fab fa-linkedin-in"></i></a></li>
+              <li><a href="https://www.youtube.com/@archerexteriors" target="_blank" title="YouTube"><i
+                    class="fab fa-youtube"></i></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="profile_share">
+            <span class="profile_share_btn" id="btn-share"
+              data-modal-title="We’d Love Your Recommendation"
+              data-modal-description="Your home means the world to you—and so does your opinion to us. If you’ve had a great experience with <b>Shane Odom</b> and the Archer Exteriors team, we’d be honored if you recommended us to your network. "
+              data-facebook-label="Share on Facebook"
+              data-twitter-label="Share on Twitter"
+              data-twitter-text="Twitter Text"
+              data-linkedin-label="Share on LinkedIn"
+              data-linkedin-title="LinkedIn Title"
+              data-linkedin-summary="LinkedIn Summary"
+              title="We’d Love Your Recommendation">
+              <i class="fi fi-rr-arrow-up-from-square"></i> Share
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="salesman_details_box">
       <div class="row gx-lg-4 gy-5">
         <div class="col-lg-7">
-          <div class="left">
-            <div class="bio mb-4">
-              <div class="img">
-                <?= $this->Html->image('salesmans/shane.png', [
+          <h3 class="title_2 mb-4"><b>Not Just a Quote—</b> <br>A Real Conversation About Your Home.</h3>
+
+          <p>Hi, I'm Shane, your local home exterior specialist at Archer Exteriors. With over 30 years of experience in the home exterior industry, I bring a wealth of knowledge, professionalism, and heart to every project. I've had the privilege of working my way up from the ground level to a management role at a major building materials company. That experience has equipped me with the tools to guide homeowners in choosing the right products and plans to protect what matters most — their home.</p>
+          <p class="mt-4">I'm a proud father of four, and my family means everything to me. One of my children is autistic, and advocating for autism awareness is a cause that's deeply personal to me. When I'm not working, you'll usually find me out fishing or spending quality time with my family. It's those moments that keep me grounded and motivated to do my best for every customer I serve.</p>
+
+          <div class="salesman_serving_area_box mt-4">
+            <h2 class="title_3"><b>Your Local Expert Along the Emerald Coast</b> — From Alabama to Florida:</h2>
+
+            <div class="location mt-4">
+              <h4>
+                <?= $this->Html->image('service-area/map-marker.svg', [
                   'class' => 'img-fluid',
-                  'alt' => 'Shane Odom',
-                  'title' => 'Shane Odom'
+                  'alt' => 'location',
+                  'width' => '20'
                 ]) ?>
-              </div>
-              <div class="desc">
-                <h2>Meet <br> <b>Shane Odom</b></h2>
-                <h5>Home Exterior Specialist</h5>
-                <p>I believe the best projects start with honest advice and clear choices.</p>
+                Serving Florida
+              </h4>
 
-                <ul class="social-links mt-3">
-                  <li>
-                    <?= $this->Html->link(
-                      '<i class="fab fa-facebook-f"></i>',
-                      'http://www.facebook.com/archerexteriors',
-                      [
-                        'target' => '_blank',
-                        'title' => 'Facebook',
-                        'escape' => false
-                      ]
-                    ) ?>
-                  </li>
-                  <li>
-                    <?= $this->Html->link(
-                      '<i class="fab fa-instagram"></i>',
-                      'https://www.instagram.com/archerexteriors/',
-                      [
-                        'target' => '_blank',
-                        'title' => 'Instagram',
-                        'escape' => false
-                      ]
-                    ) ?>
-                  </li>
-                  <li>
-                    <?= $this->Html->link(
-                      '<i class="fab fa-tiktok"></i>',
-                      'https://www.tiktok.com/@archerexteriors',
-                      [
-                        'target' => '_blank',
-                        'title' => 'Tiktok',
-                        'escape' => false
-                      ]
-                    ) ?>
-                  </li>
-                  <li>
-                    <?= $this->Html->link(
-                      '<i class="fab fa-linkedin-in"></i>',
-                      'https://www.linkedin.com/company/archer-exteriors-inc/',
-                      [
-                        'target' => '_blank',
-                        'title' => 'Linkedin',
-                        'escape' => false
-                      ]
-                    ) ?>
-                  </li>
-                  <li>
-                    <?= $this->Html->link(
-                      '<i class="fab fa-youtube"></i>',
-                      'https://www.youtube.com/@archerexteriors',
-                      [
-                        'target' => '_blank',
-                        'title' => 'YouTube',
-                        'escape' => false
-                      ]
-                    ) ?>
-                  </li>
-                </ul>
-              </div>
+              <ul>
+                <li>Escambia (FL)</li>
+                <li>Okaloosa (FL)</li>
+                <li>Santa Rosa (FL)</li>
+              </ul>
             </div>
+            <div class="location mt-4">
+              <h4>
+                <?= $this->Html->image('service-area/map-marker.svg', [
+                  'class' => 'img-fluid',
+                  'alt' => 'location',
+                  'width' => '20'
+                ]) ?>
+                Serving Alabama
+              </h4>
 
-            <h3 class="title_3 mb-4">Not Just a Quote— <br>A Real Conversation About Your Home.</h3>
-
-            <p>Hi, I'm Shane, your local home exterior specialist at Archer Exteriors. With over 30 years of experience in the home exterior industry, I bring a wealth of knowledge, professionalism, and heart to every project. I've had the privilege of working my way up from the ground level to a management role at a major building materials company. That experience has equipped me with the tools to guide homeowners in choosing the right products and plans to protect what matters most — their home.</p>
-            <p class="mt-4">I'm a proud father of four, and my family means everything to me. One of my children is autistic, and advocating for autism awareness is a cause that's deeply personal to me. When I'm not working, you'll usually find me out fishing or spending quality time with my family. It's those moments that keep me grounded and motivated to do my best for every customer I serve.</p>
+              <ul>
+                <li>Baldwin County (AL)</li>
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -113,57 +128,6 @@ $this->set('ogUrl', DOMAIN . '/shane'); // TODO: Change to the current page URL
   </div>
 </section>
 <!-- Salesman Details Section End  -->
-
-<!-- Statistics Section Start  -->
-<section class="funfact-section light">
-  <?= $this->element('company_statistics') ?>
-</section>
-<!-- Statistics Section End  -->
-
-<!-- Service Area Section Start  -->
-<section class="section" style="position: relative; margin-top: -120px; padding-top: 250px;">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 align-self-center">
-        <div class="about-image-block">
-          <div class="image-box pb-0">
-            <div class="pattern-layer" style="background-image: url('./img/shape-1.png');"></div>
-            <div class="image">
-              <?= $this->Html->image('salesmans/rooted-in-south-jersey.jpg', [
-                'alt' => 'Your Local Expert',
-                'title' => 'Your Local Expert'
-              ]) ?>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-6 align-self-center">
-        <div class="sec-title">
-          <h6><i class="flaticon-roof"></i>Service Area</h6>
-          <h2>Your Local Expert Along the Emerald Coast <span>— From Alabama to Florida:</span></h2>
-        </div>
-
-
-        <ul class="check_list serving_area_list mt-3">
-          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Baldwin County (AL)</li>
-          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Escambia (FL)</li>
-          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Okaloosa (FL)</li>
-          <li><?= $this->Html->image('check.svg', ['alt' => 'Check', 'width' => '20']) ?> Santa Rosa (FL)</li>
-        </ul>
-
-        <div class="mt-4">
-          <?= $this->Html->link(
-            'Check Other Locations<i class="flaticon-login"></i>',
-            ['controller' => 'ServiceAreas', 'action' => 'index'],
-            ['class' => 'theme-btn sm', 'escape' => false]
-          ) ?>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Service Area Section End  -->
 
 <!-- Working Process Section Start  -->
 <section class="section working-section text-center" style="padding-bottom: 90px;">

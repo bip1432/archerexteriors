@@ -276,6 +276,39 @@
     });
   }
 
+  // clients-carousel v2
+  if ($('.clients-carousel-v2').length) {
+    $('.clients-carousel-v2').owlCarousel({
+      loop: true,
+      margin: 30,
+      nav: false,
+      smartSpeed: 3000,
+      autoplay: true,
+      navText: ['<span class="flaticon-left"></span>', '<span class="flaticon-right"></span>'],
+      responsive: {
+        0: {
+          items: 1
+        },
+        480: {
+          items: 2
+        },
+        600: {
+          items: 3
+        },
+        800: {
+          items: 4
+        },
+        1200: {
+          items: 5
+        },
+        1400: {
+          items: 4
+        }
+
+      }
+    });
+  }
+
 
   //Jquery Spinner / Quantity Spinner
   if ($('.quantity-spinner').length) {
@@ -781,6 +814,36 @@ $(document).ready(function () {
   })
 });
 
+// Service Page key points
+$('#serviceKeyPoints').owlCarousel({
+  loop: true,
+  margin: 10,
+  dots: true,
+  nav: false,
+
+  autoplay: true,
+  autoplayTimeout: 3000,
+  autoplayHoverPause: true,
+
+
+  responsive: {
+    0: {
+      items: 1,
+    },
+    575: {
+      items: 2,
+    },
+    992: {
+      items: 3,
+    },
+    1400: {
+      items: 4,
+      loop: false,
+    }
+  }
+})
+
+
 
 // Visualize Tool
 
@@ -1099,14 +1162,77 @@ $(document).ready(function () {
 
 // Community Events Filter
 
-document.getElementById('yearFilter').addEventListener('change', function () {
-  const selectedYear = this.value;
-  document.querySelectorAll('.service_types_wrap.community_events').forEach(function (wrap) {
-    if (wrap.getAttribute('data-year') === selectedYear) {
-      wrap.classList.add('active');
-    } else {
-      wrap.classList.remove('active');
-    }
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const yearFilter = document.getElementById('yearFilter');
+  if (!yearFilter) return; // exit if element doesn't exist
+
+  yearFilter.addEventListener('change', function () {
+    const selectedYear = this.value;
+    document.querySelectorAll('.service_types_wrap.community_events').forEach(function (wrap) {
+      if (wrap.getAttribute('data-year') === selectedYear) {
+        wrap.classList.add('active');
+      } else {
+        wrap.classList.remove('active');
+      }
+    });
   });
 });
 
+
+
+
+// Profile share script
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const btnShare = document.getElementById("btn-share");
+    if (!btnShare) return; // stops if element doesn't exist
+
+    btnShare.addEventListener("click", function () {
+        // Remove old modal if it exists
+        const oldModal = document.getElementById("modal-share");
+        if (oldModal) oldModal.remove();
+
+        const el = this;
+        const pageUrl = encodeURIComponent(window.location.href);
+        const shareModalTitle = el.getAttribute("data-modal-title");
+        const shareModalDescription = el.getAttribute("data-modal-description");
+        const shareFacebookLabel = el.getAttribute("data-facebook-label");
+        const shareTwitterLabel = el.getAttribute("data-twitter-label");
+        const shareTwitterText = el.getAttribute("data-twitter-text");
+        const shareLinkedInLabel = el.getAttribute("data-linkedin-label");
+
+        // Build modal HTML
+        const shareHtml = `
+            <div class="modal fade" id="modal-share" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header border-0 pb-0">
+                            <h5 class="modal-title">${shareModalTitle}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body pt-0 text-center">
+                            ${shareModalDescription ? `<p>${shareModalDescription}</p>` : ""}
+                            <ul class="list-unstyled">
+                                ${shareFacebookLabel ? `<li><a href="https://www.facebook.com/sharer/sharer.php?u=${pageUrl}" target="_blank" class="btn btn-facebook">${shareFacebookLabel}</a></li>` : ""}
+                                ${shareTwitterLabel ? `<li><a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(shareTwitterText)}&url=${pageUrl}" target="_blank" class="btn btn-twitter">${shareTwitterLabel}</a></li>` : ""}
+                                ${shareLinkedInLabel ? `<li><a href="https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}" target="_blank" class="btn btn-linkedin">${shareLinkedInLabel}</a></li>` : ""}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Append modal to body
+        document.body.insertAdjacentHTML("beforeend", shareHtml);
+
+        // Show modal using Bootstrap 5
+        const modalEl = document.getElementById("modal-share");
+        const modal = new bootstrap.Modal(modalEl);
+        modal.show();
+    });
+});

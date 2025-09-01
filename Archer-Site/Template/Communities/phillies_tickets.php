@@ -2,7 +2,7 @@
 // Set Meta Tags
 $this->set('title', 'Phillies Tickets | Archer Exteriors');
 $this->set('metaDescription', 'Archer Exteriors - Phillies Tickets');
-$this->set('metaKeywords', STATIC_KEYWORDS . ', Phillies Tickets, Archer Exteriors');
+$this->set('metaKeywords', STATIC_KEYWORDS . ', Phillies Tickets');
 $this->set('ogTitle', 'Phillies Tickets | Archer Exteriors');
 $this->set('ogDescription', 'Archer Exteriors - Phillies Tickets');
 $this->set('ogImage', DOMAIN . '/img/archerexteriors-insignia.png?' . time());
@@ -109,15 +109,15 @@ $this->set('ogUrl', DOMAIN . '/phillies-tickets');
 <!-- Phillies Tickets Box Section Start  -->
 
 
-<section class="archie_section">
+<!-- <section class="archie_section">
   <div class="auto-container">
     <div class="inner_row">
       <div class="left" style="gap: 40px;">
         <?= $this->Html->image('phillies-ticket/lets-go-phillies.png', [
-            'class' => 'img-fluid',
-            'alt' => 'Lets go phillies',
-            'title' => 'Lets go phillies'
-          ]) ?>
+          'class' => 'img-fluid',
+          'alt' => 'Lets go phillies',
+          'title' => 'Lets go phillies'
+        ]) ?>
 
         <h4 class="title_3" style="font-size: 24px;">Stay tuned—more Phillies ticket giveaways are on deck! Follow us on Facebook so you don’t miss out. </h4>
       </div>
@@ -133,9 +133,9 @@ $this->set('ogUrl', DOMAIN . '/phillies-tickets');
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
-<!-- <section class="section bg_secondary">
+<section class="section bg_secondary">
   <div class="auto-container">
     <div class="box-style-three">
       <div class="single-item">
@@ -156,11 +156,11 @@ $this->set('ogUrl', DOMAIN . '/phillies-tickets');
           <div class="content-box">
             <div class="icon-box">
               <?= $this->Html->image('phillies-ticket/schedule.svg', [
-                'alt' => 'June 22nd, 2025',
-                'title' => 'June 22nd, 2025'
+                'alt' => 'September 12th, 2025',
+                'title' => 'September 12th, 2025'
               ]) ?>
             </div>
-            <h4>June 22nd, 2025</h4>
+            <h4>September 12th, 2025</h4>
           </div>
         </div>
       </div>
@@ -169,17 +169,17 @@ $this->set('ogUrl', DOMAIN . '/phillies-tickets');
           <div class="content-box">
             <div class="icon-box">
               <?= $this->Html->image('phillies-ticket/two-front-seats.svg', [
-                'alt' => 'Section 120, Seats 5–8',
-                'title' => 'Section 120, Seats 5–8'
+                'alt' => 'Section 120',
+                'title' => 'Section 120'
               ]) ?>
             </div>
-            <h4>Section 120, Seats 5–8</h4>
+            <h4>Section 120</h4>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section> -->
+</section>
 
 
 <!-- Activities Slider Section Start  -->
