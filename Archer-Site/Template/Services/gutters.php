@@ -2,7 +2,7 @@
 // Set Meta Tags
 $this->set('title', 'Gutters | Gutter Installation | Archer Exteriors');
 $this->set('metaDescription', 'Archer Exteriors - Your trusted partner for gutter installation services.');
-$this->set('metaKeywords', STATIC_KEYWORDS . ', Gutters, Gutter Installation, 8662724398, archerexteriors.com, Archer Exteriors');
+$this->set('metaKeywords', STATIC_KEYWORDS . ', Gutter Installation, Gutter Replacement');
 $this->set('ogTitle', 'Gutters | Gutter Installation | Archer Exteriors');
 $this->set('ogDescription', 'Archer Exteriors - Your trusted partner for gutter installation services.');
 $this->set('ogImage', DOMAIN . '/img/archerexteriors-insignia.png?' . time());
@@ -36,7 +36,7 @@ $this->set('ogUrl', DOMAIN . '/services/gutters'); // TODO: Change to the curren
           <div class="col-xl-8 col-lg-12 col-md-12 content-column">
             <div class="content-box">
               <h6>Small Detail, Big Protection</h6>
-              <h1>Gutter Installation and Repair You Can Trust</h1>
+              <h1>Gutter Installation You Can Trust</h1>
               <p>Protect your home from water damage with properly installed, low-maintenance gutter systems.</p>
             </div>
           </div>
@@ -87,14 +87,14 @@ $this->set('ogUrl', DOMAIN . '/services/gutters'); // TODO: Change to the curren
         </div>
 
         <p class="mb-4">Clogged or overflowing gutters can lead to costly damage to your roof, siding, and foundation.
-          With over 40 years of expertise, Archer Exteriors delivers top-quality gutter protection, installation, and
-          repair using premium materials and expert craftsmanship.</p>
+          With over 40 years of expertise, Archer Exteriors delivers top-quality gutter protection, installation using premium materials and expert craftsmanship.</p>
 
-        <div class="roof_badge mb-4">
+        <div class="our_strength my-4">
           <span class="img">
-            <?= $this->Html->image('home-white.svg', [
-              'class' => 'svg',
-              'alt' => 'Jobs Strength'
+            <?= $this->Html->image('roofing-service/archie-sm.png', [
+              'alt' => 'Archer Exteriors Jobs Strength',
+              'title' => 'Archer Exteriors Jobs Strength',
+              'class' => 'img-fluid'
             ]) ?>
           </span>
           <div class="content">
@@ -107,10 +107,101 @@ $this->set('ogUrl', DOMAIN . '/services/gutters'); // TODO: Change to the curren
         <div class="mt-4">
           <a class="theme-btn sm" href="<?= $this->Url->build(['controller' => 'Financings', 'action' => 'index']) ?>">Financing Options Available<i class="flaticon-login"></i></a>
         </div>
+
+        <div class="box-style-two for_window mt-5">
+          <div class="row justify-content-center gy-4">
+            <div class="col-xl-4 col-lg-4 col-sm-6">
+              <div class="single-item">
+                <div class="inner-box">
+                  <div class="content-box">
+                    <div class="icon-box">
+                      <div class="line" style="background-image: url(<?= $this->Url->image('line-2.png') ?>);"></div>
+                      <?= $this->Html->image('gutter-service/icons/seamless-protection.svg', [
+                        'alt' => 'Seamless Protection ',
+                        'title' => 'Seamless Protection '
+                      ]) ?>
+                    </div>
+                    <h3>Seamless Protection </h3>
+                  </div>
+                  <div class="overlay-box">
+                    <div class="icon-box">
+                      <div class="line" style="background-image: url(<?= $this->Url->image('line-1.png') ?>);"></div>
+                      <?= $this->Html->image('gutter-service/icons/white/seamless-protection.svg', [
+                        'alt' => 'Seamless Protection ',
+                        'title' => 'Seamless Protection '
+                      ]) ?>
+                    </div>
+                    <p>Custom-fit gutters designed to reduce leaks, clogs, and maintenance.</p>
+                    <h3>Seamless Protection </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-sm-6">
+              <div class="single-item">
+                <div class="inner-box">
+                  <div class="content-box">
+                    <div class="icon-box">
+                      <div class="line" style="background-image: url(<?= $this->Url->image('line-2.png') ?>);"></div>
+                      <?= $this->Html->image('gutter-service/icons/safeguard-your-home.svg', [
+                        'alt' => 'Safeguard Your Home',
+                        'title' => 'Safeguard Your Home'
+                      ]) ?>
+                    </div>
+                    <h3>Safeguard Your Home</h3>
+                  </div>
+                  <div class="overlay-box">
+                    <div class="icon-box">
+                      <div class="line" style="background-image: url(<?= $this->Url->image('line-1.png') ?>);"></div>
+                      <?= $this->Html->image('gutter-service/icons/white/safeguard-your-home.svg', [
+                        'alt' => 'Safeguard Your Home',
+                        'title' => 'Safeguard Your Home'
+                      ]) ?>
+                    </div>
+                    <p>Prevent costly water damage to your foundation, roof, and landscaping.</p>
+                    <h3>Safeguard Your Home</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-sm-6">
+              <div class="single-item">
+                <div class="inner-box">
+                  <div class="content-box">
+                    <div class="icon-box">
+                      <div class="line" style="background-image: url(<?= $this->Url->image('line-2.png') ?>);"></div>
+                      <?= $this->Html->image('gutter-service/icons/built-to-last.svg', [
+                        'alt' => 'Built to Last ',
+                        'title' => 'Built to Last '
+                      ]) ?>
+                    </div>
+                    <h3>Built to Last </h3>
+                  </div>
+                  <div class="overlay-box">
+                    <div class="icon-box">
+                      <div class="line" style="background-image: url(<?= $this->Url->image('line-1.png') ?>);"></div>
+                      <?= $this->Html->image('gutter-service/icons/white/built-to-last.svg', [
+                        'alt' => 'Built to Last ',
+                        'title' => 'Built to Last '
+                      ]) ?>
+                    </div>
+                    <p>Premium materials and expert installation backed by over 40 years of trusted service.</p>
+                    <h3>Built to Last </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
 
+
+
       <div class="col-xl-5">
-        <?= $this->element('forms/form_free_estimate') ?>
+        <?= $this->element('forms/form_free_estimate', ['formId' => '8', 'formKey' => 'gutter1fd05eb7207420619c15658a609e1687']) ?>
       </div>
     </div>
   </div>
@@ -122,7 +213,7 @@ $this->set('ogUrl', DOMAIN . '/services/gutters'); // TODO: Change to the curren
   <div class="large-container">
     <div class="sec-title text-center light">
       <h6><i class="flaticon-roof"></i>Gutter Issues</h6>
-      <h2>When to <span>repair or replace your gutters</span></h2>
+      <h2>When to <span> replace your gutters</span></h2>
     </div>
     <div class="row justify-content-center gy-5 mt-5">
       <div class="col-xl-3 col-md-6 col-sm-8">
@@ -136,7 +227,7 @@ $this->set('ogUrl', DOMAIN . '/services/gutters'); // TODO: Change to the curren
             </div>
             <div class="lower-content">
               <div class="icon-box">
-                <?= $this->Html->image('services/icons/gutter.svg', [
+                <?= $this->Html->image('gutter-service/icons/sagging-gutters.svg', [
                   'alt' => 'Sagging Gutters',
                   'class' => 'svg'
                 ]) ?>
@@ -160,7 +251,7 @@ $this->set('ogUrl', DOMAIN . '/services/gutters'); // TODO: Change to the curren
             </div>
             <div class="lower-content">
               <div class="icon-box">
-                <?= $this->Html->image('services/icons/gutter.svg', [
+                <?= $this->Html->image('gutter-service/icons/visible-cracks.svg', [
                   'alt' => 'Visible Cracks Or Holes',
                   'class' => 'svg'
                 ]) ?>
@@ -184,7 +275,7 @@ $this->set('ogUrl', DOMAIN . '/services/gutters'); // TODO: Change to the curren
             </div>
             <div class="lower-content">
               <div class="icon-box">
-                <?= $this->Html->image('services/icons/gutter.svg', [
+                <?= $this->Html->image('gutter-service/icons/peeling-paint.svg', [
                   'alt' => 'Peeling Paint Or Rust',
                   'class' => 'svg'
                 ]) ?>
@@ -208,7 +299,7 @@ $this->set('ogUrl', DOMAIN . '/services/gutters'); // TODO: Change to the curren
             </div>
             <div class="lower-content">
               <div class="icon-box">
-                <?= $this->Html->image('services/icons/gutter.svg', [
+                <?= $this->Html->image('gutter-service/icons/water-damage.svg', [
                   'alt' => 'Water Damage',
                   'class' => 'svg'
                 ]) ?>
@@ -483,7 +574,7 @@ $this->set('ogUrl', DOMAIN . '/services/gutters'); // TODO: Change to the curren
 <!-- Brochure Section End  -->
 
 <!-- FAQ Section Start  -->
-<section class="section">
+<!-- <section class="section">
   <div class="container">
     <div class="sec-title text-center">
       <h6><i class="flaticon-roof"></i>FAQ</h6>
@@ -494,7 +585,7 @@ $this->set('ogUrl', DOMAIN . '/services/gutters'); // TODO: Change to the curren
       <?= $this->element('faq/gutters') ?>
     </div>
   </div>
-</section>
+</section> -->
 <!-- FAQ Section End -->
 
 <!-- Activities section Start  -->

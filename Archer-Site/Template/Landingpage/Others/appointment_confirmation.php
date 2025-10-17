@@ -18,7 +18,7 @@ $this->set('ogUrl', DOMAIN . '/appointment-confirmation'); // TODO: Change to th
       <div class="col-xl-5">
         <div class="contents">
           <h1 class="title text-white mb-4">Archer Truck <br> is on your way</h1>
-          <p class="desc text-white mb-4">Excellence in Exterior, Home Remodelling Local to you, Family Owned</p>
+          <p class="desc text-white mb-4">Excellence in Exterior Home Remodeling. Local to You. Family Owned.</p>
           <?= $this->Html->image('e-book/forty-years-celebration.png', [
             'alt' => 'Forty Years Celebration',
             'title' => 'Forty Years Celebration'
@@ -43,7 +43,7 @@ $this->set('ogUrl', DOMAIN . '/appointment-confirmation'); // TODO: Change to th
 <!-- Hero-section end -->
 
 <!-- Why Choose Us Section Start  -->
-<section class="section light ebook_why_choose">
+<section class="section light ebook_why_choose" style="padding-bottom: 255px;">
   <div class="container">
     <div class="row gx-lg-5 gy-5">
       <div class="col-lg-5 text-center text-lg-start">
@@ -116,8 +116,58 @@ $this->set('ogUrl', DOMAIN . '/appointment-confirmation'); // TODO: Change to th
 </section>
 <!-- Why Choose Us Section End  -->
 
+<!-- Applause Carousel Div  -->
+<div class="position-relative">
+  <div class="container">
+    <div style="z-index: 1;margin-top: -135px;" id="carouselApplause" class="carousel slide offer_ad_carousel" data-bs-ride="carousel" data-bs-touch="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselApplause" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselApplause" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselApplause" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselApplause" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a class="d-none d-md-block" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/new-roof-zero-mess')">
+            <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-roofing-lg.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+          </a>
+          <a class="d-bock d-md-none" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/new-roof-zero-mess')">
+            <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-roofing-sm.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a class="d-none d-md-block" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/from-aluminum-to-amazing')">
+            <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-siding-lg.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+          </a>
+          <a class="d-bock d-md-none" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/from-aluminum-to-amazing')">
+            <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-siding-sm.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a class="d-none d-md-block" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/how-new-windows-transformed-our-home')">
+            <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-windows-lg.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+          </a>
+          <a class="d-bock d-md-none" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/how-new-windows-transformed-our-home')">
+            <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-windows-sm.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a class="d-none d-md-block" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/stunning-home-makeover-siding-door')">
+            <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-doors-lg.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+          </a>
+          <a class="d-bock d-md-none" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/stunning-home-makeover-siding-door')">
+            <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-doors-sm.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Appointment Process Section Start  -->
-<section class="section chooseus-section appoinment_process">
+<section class="section chooseus-section appoinment_process" style="margin-top: -105px; padding-top: 240px;">
   <div class="image-layer wow slideInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
     <?= $this->Html->image('tommy-archer-web-photo.png', [
       'alt' => 'Archer Exteriors Home Exterior Specialist',
@@ -590,3 +640,20 @@ $this->set('ogUrl', DOMAIN . '/appointment-confirmation'); // TODO: Change to th
   <?= $this->element('community_impact') ?>
 </section>
 <!-- Activities section End  -->
+
+
+<script>
+  function openDVInNewWindow(videoPageUrl) {
+    // Calculate 80% of the screen width and height
+    var w = Math.floor(window.screen.width * 0.8);
+    var h = Math.floor(window.screen.height * 0.8);
+    var left = Math.floor((window.screen.width - w) / 2);
+    var top = Math.floor((window.screen.height - h) / 2);
+
+    window.open(
+      videoPageUrl,
+      '_blank',
+      `toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=${w},height=${h},left=${left},top=${top}`
+    );
+  }
+</script>

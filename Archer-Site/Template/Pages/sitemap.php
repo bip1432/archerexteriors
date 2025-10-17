@@ -2,7 +2,7 @@
 // Set Meta Tags
 $this->set('title', 'Sitemap | Archer Exteriors');
 $this->set('metaDescription', 'Archer Exteriors - Sitemap');
-$this->set('metaKeywords', STATIC_KEYWORDS . ', Sitemap, archerexteriors.com, Archer Exteriors');
+$this->set('metaKeywords', STATIC_KEYWORDS . ', Sitemap');
 $this->set('ogTitle', 'Sitemap | Archer Exteriors');
 $this->set('ogDescription', 'Archer Exteriors - Sitemap');
 $this->set('ogImage', DOMAIN . '/img/archerexteriors-insignia.png?' . time());
@@ -14,7 +14,7 @@ $this->set('ogUrl', DOMAIN . '/sitemap'); // TODO: Change to the current page UR
     <div class="auto-container">
         <div class="contents text-center">
             <h1 class="title">Visual Sitemap</h1>
-            <p class="desc">Last Updated: 09 Jul 2025</p>
+            <p class="desc">Last Updated: 16 September 2025</p>
         </div>
     </div>
 </section>
@@ -52,6 +52,11 @@ $this->set('ogUrl', DOMAIN . '/sitemap'); // TODO: Change to the current page UR
         </div>
 
         <div class="mb-2">
+            <a href="https://www.archerexteriors.com/current-activities">Archer in Action - Archer Exteriors</a>
+            <p style="font-size: 14px; line-height: 1.4;margin-top: 2px;">Archer Exteriors Events & Offers</p>
+        </div>
+
+        <div class="mb-2">
             <a href="https://www.archerexteriors.com/new-construction">New Construction - Archer Exteriors</a>
             <p style="font-size: 14px; line-height: 1.4;margin-top: 2px;">Are you a builder working on a large-scale
                 construction project?</p>
@@ -64,8 +69,8 @@ $this->set('ogUrl', DOMAIN . '/sitemap'); // TODO: Change to the current page UR
         </div>
 
         <div class="mb-2">
-            <a href="https://www.archerexteriors.com/archie-the-giraffe">Archie, The Giraffe - Archer Exteriors</a>
-            <p style="font-size: 14px; line-height: 1.4;margin-top: 2px;">Acrchie is the symbol of reliability,
+            <a href="https://www.archerexteriors.com/archie-corner">Archie's Corner - Archer Exteriors</a>
+            <p style="font-size: 14px; line-height: 1.4;margin-top: 2px;">Archie is the symbol of reliability,
                 trustworthiness, and expertise that defines Archer Exteriors. With his friendly personality, Archie welcomes
                 customers into our world of exceptional home exterior services. </p>
         </div>
@@ -94,42 +99,18 @@ $this->set('ogUrl', DOMAIN . '/sitemap'); // TODO: Change to the current page UR
                 sets the tone for your home. Whether you're looking for classic elegance, modern design, or enhanced security,
                 we offer a variety of high-quality entry doors to suit your style and needs.</p>
         </div>
-        <div class="mb-2">
-            <a href="https://www.archerexteriors.com/services/decks">Decks - Archer Exteriors</a>
-            <p style="font-size: 14px;line-height: 1.4; margin-top: 2px;">At Archer Exteriors, we design and install custom
-                decks that fit your lifestyle and enhance your property. Our team brings the experience and attention to
-                detail your project deserves.</p>
-        </div>
+
         <div class="mb-2">
             <a href="https://www.archerexteriors.com/services/gutters">Gutters - Archer Exteriors</a>
             <p style="font-size: 14px;line-height: 1.4; margin-top: 2px;">Clogged or overflowing gutters can lead to costly
                 damage to your roof, siding, and foundation. With over 40 years of expertise, Archer Exteriors delivers
                 top-quality gutter protection, installation, and repair using premium materials and expert craftsmanship.</p>
         </div>
+
         <div class="mb-2">
-            <a href="https://www.archerexteriors.com/services/other-services">Fascia and Soffit Installation - Archer
+            <a href="https://www.archerexteriors.com/services/other-services">Other Services - Archer
                 Exteriors</a>
-            <p style="font-size: 14px;line-height: 1.4; margin-top: 2px;">The fascia is the board along the bottom edge of
-                your roof that holds the gutters in place.</p>
-        </div>
-        <div class="mb-2">
-            <a href="https://www.archerexteriors.com/services/other-services">Flashing and Trim Installation - Archer
-                Exteriors</a>
-            <p style="font-size: 14px;line-height: 1.4; margin-top: 2px;">We install flashing and trim to protect your roof
-                and make your home look great.</p>
-        </div>
-        <div class="mb-2">
-            <a href="https://www.archerexteriors.com/services/other-services">Skylight Installation and Repair - Archer
-                Exteriors</a>
-            <p style="font-size: 14px;line-height: 1.4; margin-top: 2px;">Skylights are a great way to bring in natural
-                light, reduce energy costs, and add a fresh look to your home.</p>
-        </div>
-        <div class="mb-2">
-            <a href="https://www.archerexteriors.com/services/repairs">Quick Repairs. Expert Replacements. - Archer
-                Exteriors</a>
-            <p style="font-size: 14px;line-height: 1.4; margin-top: 2px;">At Archer Exteriors, we provide prompt,
-                high-quality repairs and replacements for your roof, siding, gutters, and decks-ensuring long-lasting
-                durability and enhanced curb appeal.</p>
+            <p style="font-size: 14px;line-height: 1.4; margin-top: 2px;">Our services include installing and repairing fascia, soffit, flashing, trim, and skylights to keep your exterior secure, weather-resistant, and visually appealing. Trust our experienced team to ensure every part of your home’s exterior looks great and performs its best.</p>
         </div>
         <div class="mb-2">
             <a href="https://www.archerexteriors.com/services">Expert Exterior Services - Archer Exteriors</a>

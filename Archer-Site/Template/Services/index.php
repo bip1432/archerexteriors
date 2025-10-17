@@ -2,7 +2,7 @@
 // Set Meta Tags
 $this->set('title', 'Services | Roofing, Siding, Windows | Archer Exteriors');
 $this->set('metaDescription', 'Archer Exteriors - Your trusted partner for premium roofing, siding, and window solutions.');
-$this->set('metaKeywords', STATIC_KEYWORDS . ', Roofing, Siding, Windows, 8662724398, archerexteriors.com, Archer Exteriors');
+$this->set('metaKeywords', STATIC_KEYWORDS . ', Roofing Installation, Roofing Replacement, Siding Installation, Siding Replacement, Windows Installation, Windows Replacement');
 $this->set('ogTitle', 'Services | Roofing, Siding, Windows | Archer Exteriors');
 $this->set('ogDescription', 'Archer Exteriors - Your trusted partner for premium roofing, siding, and window solutions.');
 $this->set('ogImage', DOMAIN . '/img/archerexteriors-insignia.png?' . time());
@@ -21,7 +21,7 @@ $this->set('ogUrl', DOMAIN . '/services'); // TODO: Change to the current page U
           <div class="col-xl-8 col-lg-12 col-md-12 content-column">
             <div class="content-box">
               <h6>Built to Last</h6>
-              <h1>Roofing Done Right  <br> the First Time</h1>
+              <h1>Roofing Done Right <br> the First Time</h1>
               <p>Local experts with over <?= YEARS_OF_EXPERIENCE ?>+ years of family-run experience.</p>
               <div class="btn-box">
                 <a href="<?= $this->Url->build(['controller' => 'Services', 'action' => 'roofing']) ?>" class="theme-btn">Learn More<i class="flaticon-login"></i></a>
@@ -59,7 +59,7 @@ $this->set('ogUrl', DOMAIN . '/services'); // TODO: Change to the current page U
               <h6>Efficiency Meets Style</h6>
               <h1>Energy-Efficient Windows Installed Right</h1>
               <p>Choose from OKNA and ProVia windows, custom-fit for your home and expertly installed for lasting
-                  comfort.</p>
+                comfort.</p>
               <div class="btn-box">
                 <a href="<?= $this->Url->build(['controller' => 'Services', 'action' => 'windows']) ?>" class="theme-btn">Learn More<i class="flaticon-login"></i></a>
               </div>
@@ -340,7 +340,7 @@ $this->set('ogUrl', DOMAIN . '/services'); // TODO: Change to the current page U
   <div class="large-container">
     <div class="sec-title light">
       <h6><i class="flaticon-roof"></i>Our Process</h6>
-      <h2>From Start  <span>to Finish</span></h2>
+      <h2>From Start <span>to Finish</span></h2>
     </div>
     <div class="inner-content">
       <div class="row clearfix">

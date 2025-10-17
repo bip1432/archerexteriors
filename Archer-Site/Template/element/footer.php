@@ -78,9 +78,9 @@
                       <li>
                         <?= $this->Html->link('Gutters', ['controller' => 'Services', 'action' => 'gutters'], ['class' => 'link']) ?>
                       </li>
-                      <li><?= $this->Html->link('Fascia and Soffit', ['controller' => 'Services', 'action' => 'other-services']) ?></li>
-                      <li><?= $this->Html->link('Flashing and Trim', ['controller' => 'Services', 'action' => 'other-services']) ?></li>
-                      <li><?= $this->Html->link('Skylight', ['controller' => 'Services', 'action' => 'other-services']) ?></li>
+                      <!-- <li><?= $this->Html->link('Fascia and Soffit', ['controller' => 'Services', 'action' => 'other-services']) ?></li>
+                      <li><?= $this->Html->link('Flashing and Trim', ['controller' => 'Services', 'action' => 'other-services']) ?></li> -->
+                      <li><?= $this->Html->link('Other Services', ['controller' => 'Services', 'action' => 'other-services']) ?></li>
                       <li>
                         <?= $this->Html->link('All Services', ['controller' => 'Services', 'action' => 'index'], ['class' => 'link']) ?>
                       </li>

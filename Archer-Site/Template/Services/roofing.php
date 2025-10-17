@@ -78,9 +78,28 @@ $this->set('ogUrl', DOMAIN . '/services/roofing'); // TODO: Change to the curren
 <!-- Start Project Section Start -->
 <section class="section light get_estimate" id="getFreeEstimate">
   <div class="container">
-    <div class="row gx-lg-5 gy-5">
-      <div class="col-lg-7 text-md-start text-center">
-        <h2 class="title_2">A Solid Roof Starts with a Solid Team.</h2>
+    <div class="row gx-xl-5 gy-5">
+      <div class="col-xl-7 text-md-start text-center">
+        <div class="text-lg-end mb-3">
+          <?= $this->Html->link(
+            'Watch Next Round of Applause<i class="flaticon-login"></i>',
+            ['controller' => 'Reviews', 'action' => 'archerApplause'],
+            ['class' => 'theme-btn sm', 'target' => '_blank', 'escape' => false]
+          ) ?>
+        </div>
+        <div class="video-wrapper mx-auto mx-xl-0 mb-4">
+          <div class="responsive-video">
+            <?= $this->Html->tag('iframe', '', [
+              'src' => 'https://player.vimeo.com/video/1115474503?h=cf4764085c',
+              'frameborder' => '0',
+              'allowfullscreen' => true,
+              'webkitallowfullscreen' => true,
+              'mozallowfullscreen' => true
+            ]) ?>
+          </div>
+        </div>
+
+        <h2 class="title_2">A <b>Solid Roof</b> Starts with a Solid Team.</h2>
         <p>At Archer Exteriors, we bring <?= YEARS_OF_EXPERIENCE ?>+ years of experience to ensure your roof replacement is smooth,
           efficient, and built to last. From selecting the perfect roof to navigating financing, we're with you
           every step of the way.</p>
@@ -134,10 +153,11 @@ $this->set('ogUrl', DOMAIN . '/services/roofing'); // TODO: Change to the curren
           </div>
         </div>
 
-        <div class="our_strength my-5">
+        <div class="our_strength my-4">
           <span class="img">
             <?= $this->Html->image('roofing-service/archie-sm.png', [
-              'alt' => 'Jobs Strength',
+              'alt' => 'Archer Exteriors Jobs Strength',
+              'title' => 'Archer Exteriors Jobs Strength',
               'class' => 'img-fluid'
             ]) ?>
           </span>
@@ -147,57 +167,42 @@ $this->set('ogUrl', DOMAIN . '/services/roofing'); // TODO: Change to the curren
         </div>
 
 
-        <h3 class="title_3 mb-2">Replacing Your Roof Doesn’t Have to Be Overwhelming—We’ve Perfected It Over 40 Years and Thousands of Roofs.</h3>
-        <p>We understand that replacing your home's roof can feel daunting. With over <?= YEARS_OF_EXPERIENCE ?> years of experience, Archer
-          Exteriors is your trusted roofing contractor and roofing installer. We're here to support you every step of
-          the way, from choosing the right roof system to exploring budgeting and financing options. As a family-owned
-          roofing company, we prioritize building relationships with our customers. When you choose Archer Exteriors
-          for your roofing project, you become part of our family. Contact us today to learn more about how we can
-          handle your large roofing projects and large roofing jobs with expertise and care.</p>
 
-        <div class="mt-4">
+
+        <!-- <div class="mt-3">
           <?= $this->Html->link(
             'Financing Options Available <i class="flaticon-login"></i>',
             ['controller' => 'Financings', 'action' => 'index'],
             ['class' => 'theme-btn sm', 'escape' => false]
           ) ?>
-        </div>
+        </div> -->
+
       </div>
 
-      <div class="col-lg-5">
+      <div class="col-xl-5">
         <?= $this->element('forms/form_free_estimate', ['formId' => '3', 'formKey' => 'roofing9ae8612082376a3aed0eaf1b7b498d64']) ?>
       </div>
 
-      <div class="col-12" style="margin-top: 60px;">
-        <div class="row gy-4 text-center text-xxl-start">
-          <div class="col-xxl-6">
-            <div class="limited_offer_banner">
-              <?= $this->Html->image('roofing-service/archer-exteriors-offer-banner-roofing.jpg', [
-                'class' => 'img-fluid rad_4',
-                'alt' => 'Roof Replacement: 25% off your new roof',
-                'title' => 'Roof Replacement: 25% off your new roof'
-              ]) ?>
-            </div>
+      <div class="col-12 mt-4">
+        <h3 class="title_3 mb-2" style="line-height: 30px;">Replacing Your Roof Doesn’t Have to Be Overwhelming—We’ve Perfected It Over 40 Years and Thousands of Roofs.</h3>
+        <p>We understand that replacing your home's roof can feel daunting. With over 40 years of experience, Archer Exteriors is your trusted roofing contractor and roofing installer. At Archer Exteriors, we know that your house is more than just a building—it’s where life happens. That’s why we’re committed to providing top-tier craftsmanship, exceptional service, and long-lasting solutions for your home.</p>
+      </div>
+
+      <div class="col-12 mt-5">
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <?= $this->Html->image('roofing-service/archer-exteriors-metal-roof-banner.jpg', [
+              'class' => 'img-fluid rad_4 banner_hover',
+              'alt' => 'Strength you can see. A metal roof you can trust.',
+              'title' => 'Strength you can see. A metal roof you can trust.'
+            ]) ?>
           </div>
-
-          <div class="col-xxl-6">
-            <div class="parts_of_roof_box">
-              <div class="img">
-                <?= $this->Html->image('roofing-service/banner-parts-of-gaf-roofing-system.jpg', [
-                  'class' => 'img-fluid',
-                  'alt' => 'Parts of a GAF Roofing System',
-                  'title' => 'Parts of a GAF Roofing System'
-                ]) ?>
-              </div>
-              <div class="content">
-                <h3 class="title_3">Parts of a GAF Roofing System</h3>
-                <p>A residential roofing system has multiple layers that work together to create a durable system. Explore the key layers below.</p>
-                <div class="mt-3">
-                  <a style="padding: 6px 20px; font-size: 16px;" class="theme-btn" href="https://www.archerexteriors.com/parts-of-a-roof" target="_blank">How We Build Roofs - Step by Step <i class="flaticon-login"></i></a>
-                </div>
-              </div>
-            </div>
-
+          <div class="col-lg-6">
+            <?= $this->Html->image('roofing-service/archer-exteriors-flat-roof-banner.jpg', [
+              'class' => 'img-fluid rad_4 banner_hover',
+              'alt' => 'Commercial flat roofing solutions you can count on.',
+              'title' => 'Commercial flat roofing solutions you can count on.'
+            ]) ?>
           </div>
         </div>
       </div>
@@ -310,8 +315,44 @@ $this->set('ogUrl', DOMAIN . '/services/roofing'); // TODO: Change to the curren
 </section>
 <!-- Working Process Section End  -->
 
+<section class="section light" style="padding-top: 280px; position: relative;">
+  <div class="container">
+    <div class="row gy-4 text-center text-xxl-start">
+      <div class="col-xxl-6">
+        <div class="limited_offer_banner">
+          <?= $this->Html->image('roofing-service/archer-exteriors-offer-banner-roofing.jpg', [
+            'class' => 'img-fluid rad_4',
+            'alt' => 'Roof Replacement: 25% off your new roof',
+            'title' => 'Roof Replacement: 25% off your new roof'
+          ]) ?>
+        </div>
+      </div>
+
+      <div class="col-xxl-6">
+        <div class="parts_of_roof_box">
+          <div class="img">
+            <?= $this->Html->image('roofing-service/banner-parts-of-gaf-roofing-system.jpg', [
+              'class' => 'img-fluid',
+              'alt' => 'Parts of a GAF Roofing System',
+              'title' => 'Parts of a GAF Roofing System'
+            ]) ?>
+          </div>
+          <div class="content">
+            <h3 class="title_3">Parts of a GAF Roofing System</h3>
+            <p>A residential roofing system has multiple layers that work together to create a durable system. Explore the key layers below.</p>
+            <div class="mt-3">
+              <a style="padding: 6px 20px; font-size: 16px;" class="theme-btn" href="https://www.archerexteriors.com/parts-of-a-roof" target="_blank">How We Build Roofs - Step by Step <i class="flaticon-login"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Why Choose Us Section Start  -->
-<section class="chooseus-section" style="padding-top: 350px;">
+<section class="chooseus-section">
   <?= $this->element('why_choose_us') ?>
 </section>
 <!-- Why Choose Us Section End -->
@@ -425,17 +466,17 @@ $this->set('ogUrl', DOMAIN . '/services/roofing'); // TODO: Change to the curren
 
 <!-- Types Sec Start  -->
 <section class="section light">
-  <div class="large-container">
+  <div class="container">
     <div class="sec-title text-center">
       <h6><i class="flaticon-roof"></i>Roofing Types</h6>
       <h2>Types <span>of Roofing Material</span></span></h2>
       <p style="font-size: 18px; max-width: 1200px; margin-left: auto;margin-right: auto; color: var(--font);"
-        class="desc">We offers you a full line of roofing system solutions, including single-ply membrane, asphaltic coatings, and liquid-applied roofing, as well as waterproofing, polyiso insulation, and a complete line of innovative adhesives and accessories.</p>
+        class="desc">At Archer Exteriors, we believe your roof should combine strength, beauty, and lasting value. That’s why we proudly install premium GAF asphalt shingles, known for their durability, weather resistance, and wide range of styles. Our in-house metal roofing offers strength that lasts a lifetime.</p>
     </div>
 
     <div class="window_types roofing">
       <div class="row mt-4 gy-4 justify-content-center">
-        <div class="col-xl-3 col-lg-6 col-sm-6">
+        <div class="col-xl-4 col-lg-6 col-sm-6">
           <div class="item">
             <div class="item_inner">
               <?= $this->Html->image('roofing-service/roof-type/shingle-roof.jpg', [
@@ -452,7 +493,7 @@ $this->set('ogUrl', DOMAIN . '/services/roofing'); // TODO: Change to the curren
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-lg-6 col-sm-6">
+        <div class="col-xl-4 col-lg-6 col-sm-6">
           <div class="item">
             <div class="item_inner">
               <?= $this->Html->image('roofing-service/roof-type/metal-roof.jpg', [
@@ -469,33 +510,16 @@ $this->set('ogUrl', DOMAIN . '/services/roofing'); // TODO: Change to the curren
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-lg-6 col-sm-6">
-          <div class="item">
-            <div class="item_inner">
-              <?= $this->Html->image('roofing-service/roof-type/cedar-roof.jpg', [
-                'alt' => 'Cedar Roof',
-                'title' => 'Cedar Roof'
-              ]) ?>
-
-              <div class="captions">
-                <p class="desc">Cedar roofs are made from natural cedar wood, offering a classic, rustic appearance that enhances a home's curb appeal. They provide excellent insulation and can last for decades when properly maintained, though they require regular upkeep to prevent moisture and insect damage.</p>
-                <div class="heading">
-                  <h4 class="title_4">Cedar Roof</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-sm-6">
+        <div class="col-xl-4 col-lg-6 col-sm-6">
           <div class="item">
             <div class="item_inner">
               <?= $this->Html->image('roofing-service/roof-type/flat-roof.jpg', [
-                'alt' => 'Flat Roof',
-                'title' => 'Flat Roof'
+                'alt' => 'Metal Roof',
+                'title' => 'Metal Roof'
               ]) ?>
 
               <div class="captions">
-                <p class="desc">Galvanized Flat Sheet - the ultimate product for custom fittings and great for general needs. Make your own custom fittings using these galvanized sheets. The 30-gauge galvanized steel can easily be cut to size for any application.</p>
+                <p class="desc">Expert commercial flat roof installation. We specialize in TPO and EPDM systems designed for performance, efficiency, and long-term protection. We install flat roofing systems for warehouses, office buildings, and residential complexes — built to perform and made to last.</p>
                 <div class="heading">
                   <h4 class="title_4">Flat Roof</h4>
                 </div>

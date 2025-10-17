@@ -42,37 +42,36 @@ $this->set('ogUrl', DOMAIN . '/golden-ticket'); // TODO: Change to the current p
           <h2>Snag Your Golden Ticket <span>– Save Big on Home Upgrades!</span></h2>
         </div>
 
-        <p class="mb-4">The secret’s out — our Golden Ticket promotion is here and the savings are too good to miss.
+        <p>The secret’s out — our Golden Ticket promotion is here and the savings are too good to miss.
           For a limited time, you can lock in major discounts on roofing, siding, windows, and doors with Archer
-          Exteriors. </p>
+          Exteriors. Whether you’re fixing a worn-out roof, giving your home a fresh new look, or boosting your energy savings
+          with new windows — now’s the perfect time to get it done.</p>
 
-        <p>Whether you’re fixing a worn-out roof, giving your home a fresh new look, or boosting your energy savings
-          with new windows — now’s the perfect time to get it done. </p>
-        <p class="mt-4">Hurry! Golden Ticket savings are only available for new estimates during this special
+        <p class="mt-3">Hurry! Golden Ticket savings are only available for new estimates during this special
           promotion. When it’s
           gone, it’s gone!</p>
 
 
-        <div class="row my-5">
+        <div class="row mb-4">
           <div class="col-md-6" style="margin-top: 70px;">
             <div class="gt_offer_box">
               <?= $this->Html->image('golden-ticket/off-25-percent.png', [
                 'class' => 'img-fluid offer_img',
-                'alt' => '25% off roofing siding',
-                'title' => '25% off roofing siding'
+                'alt' => '25% off roofing & siding',
+                'title' => '25% off roofing & siding'
               ]) ?>
 
               <div class="text-end">
                 <div class="icon">
                   <?= $this->Html->image('services/icons/roof.svg', [
                     'class' => 'svg',
-                    'alt' => 'Roofing',
-                    'title' => 'Roofing'
+                    'alt' => 'Roofing & Siding',
+                    'title' => 'Roofing & Siding'
                   ]) ?>
                 </div>
               </div>
 
-              <h4>Roofing Siding</h4>
+              <h4>Roofing & Siding</h4>
             </div>
           </div>
           <div class="col-md-6" style="margin-top: 70px;">
@@ -87,19 +86,67 @@ $this->set('ogUrl', DOMAIN . '/golden-ticket'); // TODO: Change to the current p
                 <div class="icon">
                   <?= $this->Html->image('services/icons/window.svg', [
                     'class' => 'svg',
-                    'alt' => 'Door Window',
-                    'title' => 'Door Window'
+                    'alt' => 'Window & Door',
+                    'title' => 'Window & Door'
                   ]) ?>
                 </div>
               </div>
 
-              <h4><span>Per</span> Window & Door</h4>
+              <h4>Per Window & Door</h4>
             </div>
           </div>
         </div>
 
-        <p style="font-size: 14px; font-style: italic;">The Golden Ticket cannot be applied to previously quoted or
-          signed projects.</p>
+        <p style="font-size: 14px; font-style: italic; line-height: 1.4;">The Golden Ticket cannot be applied to previously quoted or
+          signed projects. Offer valid only on new replacement and installation projects. Excludes all repair jobs.</p>
+
+        <div class="col-12 mt-4">
+          <div class="fortyYrs_batch for_desktop">
+            <div class="inner">
+              <div class="img">
+                <?= $this->Html->image('40-years-badge/40-years.png', [
+                  'alt' => '40 Years of Excellence',
+                  'title' => '40 Years of Excellence'
+                ]) ?>
+              </div>
+              <div class="contents">
+                <div class="content_inner">
+                  <h4>Exteriors That Elevate <br> Service That Stands Out</h4>
+                  <p>Excellence in Exterior Home Remodeling. <br> Local to You. Family Owned.</p>
+                </div>
+              </div>
+            </div>
+            <div class="all_services">
+              <?= $this->Html->link(
+                '<span>Check all our services <i class="flaticon-login"></i></span>',
+                ['controller' => 'Services', 'action' => 'index'],
+                ['class' => 'theme-btn', 'escape' => false]
+              ) ?>
+            </div>
+          </div>
+
+          <div class="fortyYrs_batch for_mobile">
+            <div class="text-center">
+              <?= $this->Html->image('40-years-badge/40-years.png', [
+                'alt' => '40 Years of Excellence',
+                'title' => '40 Years of Excellence'
+              ]) ?>
+
+              <h4>Exteriors That Elevate <br> Service That Stands Out</h4>
+              <p>Excellence in Exterior Home Remodeling. <br> Local to You. Family Owned.</p>
+
+              <div class="mt-4">
+                <?= $this->Html->link(
+                  'Check all our services <i class="flaticon-login"></i>',
+                  ['controller' => 'Services', 'action' => 'index'],
+                  ['class' => 'theme-btn sm', 'escape' => false]
+                ) ?>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 
@@ -107,6 +154,7 @@ $this->set('ogUrl', DOMAIN . '/golden-ticket'); // TODO: Change to the current p
         <?= $this->element('forms/form_free_estimate', ['formId' => '13', 'formKey' => 'goldticf6dee4c8369e9fa3bec44e5cd1e741c7']) ?>
       </div>
     </div>
+
   </div>
 </section>
 <!-- Start Project Section End -->
@@ -217,7 +265,7 @@ $this->set('ogUrl', DOMAIN . '/golden-ticket'); // TODO: Change to the current p
       <div class="col-xl-6 col-md-12 align-self-center">
         <div class="sec-title mb-3">
           <h6><i class="flaticon-roof"></i>Siding</h6>
-          <h2>Built to <span>Protect and Impress</span></h2>
+          <h2>Built to Protect. <span>Designed to Impress.</span></h2>
         </div>
 
         <p>Siding is your home's first impression-make it last. Our durable, insulated options come in a wide range of
@@ -226,50 +274,53 @@ $this->set('ogUrl', DOMAIN . '/golden-ticket'); // TODO: Change to the current p
         <div class="row our_service golden_ticket justify-content-center justify-content-xl-start mt-5" style="gap: 20px 0;">
           <div class="col-md-5">
             <div class="item">
-              <div class="icon protects_your_home">
-                <?= $this->Html->image('golden-ticket/siding/protects-your-home.svg', [
-                  'class' => 'svg',
-                  'alt' => 'Protects Your Home, Rain or Shine',
-                  'title' => 'Protects Your Home, Rain or Shine'
-                ]) ?>
-              </div>
-              <h4>Protects Your Home, Rain or Shine</h4>
-            </div>
-          </div>
-          <div class="col-md-5">
-            <div class="item">
               <div class="icon">
                 <?= $this->Html->image('golden-ticket/siding/big-boost.svg', [
                   'class' => 'svg',
-                  'alt' => 'Big Boost in Curb Appeal',
-                  'title' => 'Big Boost in Curb Appeal'
+                  'alt' => 'Boost Your Home\'s Curb Appeal',
+                  'title' => 'Boost Your Home\'s Curb Appeal'
                 ]) ?>
               </div>
-              <h4>Big Boost in Curb Appeal</h4>
+              <h4>Boost Your Home’s Curb Appeal</h4>
             </div>
           </div>
+
           <div class="col-md-5">
             <div class="item">
-              <div class="icon">
-                <?= $this->Html->image('golden-ticket/siding/less-maintenance.svg', [
+              <div class="icon protects_your_home">
+                <?= $this->Html->image('golden-ticket/siding/protects-your-home.svg', [
                   'class' => 'svg',
-                  'alt' => 'Less Maintenance, More Free Time',
-                  'title' => 'Less Maintenance, More Free Time'
+                  'alt' => 'Protect What’s Inside',
+                  'title' => 'Protect What’s Inside'
                 ]) ?>
               </div>
-              <h4>Less Maintenance, More Free Time</h4>
+              <h4>Protect What’s Inside</h4>
             </div>
           </div>
+
           <div class="col-md-5">
             <div class="item">
               <div class="icon">
                 <?= $this->Html->image('golden-ticket/siding/better-energy.svg', [
                   'class' => 'svg',
-                  'alt' => 'Better Energy Efficiency',
-                  'title' => 'Better Energy Efficiency'
+                  'alt' => 'Improve Energy Efficiency',
+                  'title' => 'Improve Energy Efficiency'
                 ]) ?>
               </div>
-              <h4>Better Energy Efficiency</h4>
+              <h4>Improve Energy Efficiency</h4>
+            </div>
+          </div>
+
+          <div class="col-md-5">
+            <div class="item">
+              <div class="icon">
+                <?= $this->Html->image('golden-ticket/siding/less-maintenance.svg', [
+                  'class' => 'svg',
+                  'alt' => 'Increase Property Value',
+                  'title' => 'Increase Property Value'
+                ]) ?>
+              </div>
+              <h4>Increase Property Value</h4>
             </div>
           </div>
 
@@ -334,49 +385,49 @@ $this->set('ogUrl', DOMAIN . '/golden-ticket'); // TODO: Change to the current p
           <div class="col-md-5">
             <div class="item">
               <div class="icon">
-                <?= $this->Html->image('golden-ticket/window/save-on-energy.svg', [
+                <?= $this->Html->image('golden-ticket/window/style-that-elevates.svg', [
                   'class' => 'svg',
-                  'alt' => 'Save on Energy Bills',
-                  'title' => 'Save on Energy Bills'
+                  'alt' => 'Style That Elevates Every Room',
+                  'title' => 'Style That Elevates Every Room'
                 ]) ?>
               </div>
-              <h4>Save on Energy Bills</h4>
+              <h4>Style That Elevates Every Room</h4>
             </div>
           </div>
           <div class="col-md-5">
             <div class="item">
               <div class="icon">
-                <?= $this->Html->image('golden-ticket/window/boost-your-home.svg', [
+                <?= $this->Html->image('golden-ticket/window/energy-efficiency.svg', [
                   'class' => 'svg',
-                  'alt' => 'Big Boost in Curb Appeal',
-                  'title' => 'Big Boost in Curb Appeal'
+                  'alt' => 'Energy Efficiency You Can Feel',
+                  'title' => 'Energy Efficiency You Can Feel'
                 ]) ?>
               </div>
-              <h4>Big Boost in Curb Appeal</h4>
+              <h4>Energy Efficiency You Can Feel</h4>
             </div>
           </div>
           <div class="col-md-5">
             <div class="item">
               <div class="icon">
-                <?= $this->Html->image('golden-ticket/window/enjoy-a-quieter.svg', [
+                <?= $this->Html->image('golden-ticket/window/built-to-last.svg', [
                   'class' => 'svg',
-                  'alt' => 'Enjoy a Quieter, More Comfortable Home',
-                  'title' => 'Enjoy a Quieter, More Comfortable Home'
+                  'alt' => 'Built to Last. Designed for Quiet.',
+                  'title' => 'Built to Last. Designed for Quiet.'
                 ]) ?>
               </div>
-              <h4>Enjoy a Quieter, More Comfortable Home</h4>
+              <h4>Built to Last. Designed for Quiet.</h4>
             </div>
           </div>
           <div class="col-md-5">
             <div class="item">
               <div class="icon">
-                <?= $this->Html->image('golden-ticket/window/built-for-safety.svg', [
+                <?= $this->Html->image('golden-ticket/window/value-you-will-see.svg', [
                   'class' => 'svg',
-                  'alt' => 'Built for Safety and Protection',
-                  'title' => 'Built for Safety and Protection'
+                  'alt' => 'Value You’ll See Inside and Out',
+                  'title' => 'Value You’ll See Inside and Out'
                 ]) ?>
               </div>
-              <h4>Built for Safety and Protection</h4>
+              <h4>Value You’ll See Inside and Out</h4>
             </div>
           </div>
 
@@ -422,64 +473,62 @@ $this->set('ogUrl', DOMAIN . '/golden-ticket'); // TODO: Change to the current p
 <!-- Doors Section Start  -->
 <section class="section text-center text-xl-start">
   <div class="container">
-    <div class="row flex-xl-row-reverse gx-xl-5 gy-5">
+    <div class="row gx-xl-5 gy-5">
       <div class="col-xl-6 col-md-12 align-self-center">
         <div class="sec-title mb-3">
           <h6><i class="flaticon-roof"></i>Doors</h6>
-          <h2>Doors That Welcome <span>You with Style & Security.</span></h2>
+          <h2><span>Doors That Make a</span>  Strong First Impression</h2>
         </div>
 
-        <p>Your front door is more than just an entrywayit sets the tone for your home. Whether you're looking for
-          classic elegance, modern design, or enhanced security, we offer a variety of high-quality entry doors to
-          suit your style and needs.</p>
+        <p>Your front door is more than just an entryway - it sets the tone for your home. Whether you're looking for classic elegance, modern design, or enhanced security, we offer a variety of high-quality entry doors to suit your style and needs.</p>
 
         <div class="row our_service golden_ticket justify-content-center justify-content-xl-start mt-5" style="gap: 20px 0;">
           <div class="col-md-5">
             <div class="item">
               <div class="icon">
-                <?= $this->Html->image('golden-ticket/door/stronger-security.svg', [
+                <?= $this->Html->image('golden-ticket/door/style-secured-door.svg', [
                   'class' => 'svg',
-                  'alt' => 'Stronger Security for Your Home',
-                  'title' => 'Stronger Security for Your Home'
+                  'alt' => 'Style & Security in Every Door',
+                  'title' => 'Style & Security in Every Door'
                 ]) ?>
               </div>
-              <h4>Stronger Security for Your Home</h4>
+              <h4>Style & Security in Every Door</h4>
             </div>
           </div>
           <div class="col-md-5">
             <div class="item">
               <div class="icon">
-                <?= $this->Html->image('golden-ticket/door/lower-energy.svg', [
-                  'class' => 'svg',
-                  'alt' => 'Lower Energy Costs',
-                  'title' => 'Lower Energy Costs'
+                <?= $this->Html->image('golden-ticket/door/built-for-beauty.svg', [
+                  'class' => 'svg stroke_hover',
+                  'alt' => 'Built for Beauty and Performance',
+                  'title' => 'Built for Beauty and Performance'
                 ]) ?>
               </div>
-              <h4>Lower Energy Costs</h4>
+              <h4>Built for Beauty and Performance</h4>
             </div>
           </div>
           <div class="col-md-5">
             <div class="item">
               <div class="icon">
-                <?= $this->Html->image('golden-ticket/door/make-a-great.svg', [
+                <?= $this->Html->image('golden-ticket/door/custom-fit.svg', [
                   'class' => 'svg',
-                  'alt' => 'Make a Great First Impression',
-                  'title' => 'Make a Great First Impression'
+                  'alt' => 'Custom-Fit for Your Home',
+                  'title' => 'Custom-Fit for Your Home'
                 ]) ?>
               </div>
-              <h4>Make a Great First Impression</h4>
+              <h4>Custom-Fit for Your Home</h4>
             </div>
           </div>
           <div class="col-md-5">
             <div class="item">
               <div class="icon">
-                <?= $this->Html->image('golden-ticket/door/find-the-perfect.svg', [
+                <?= $this->Html->image('golden-ticket/door/expertly-installed.svg', [
                   'class' => 'svg',
-                  'alt' => 'Find the Perfect Fit',
-                  'title' => 'Find the Perfect Fit'
+                  'alt' => 'Expertly Installed. Archer Guaranteed.',
+                  'title' => 'Expertly Installed. Archer Guaranteed.'
                 ]) ?>
               </div>
-              <h4>Find the Perfect Fit</h4>
+              <h4>Expertly Installed. Archer Guaranteed.</h4>
             </div>
           </div>
 
@@ -489,8 +538,8 @@ $this->set('ogUrl', DOMAIN . '/golden-ticket'); // TODO: Change to the current p
       <div class="col-xl-6 col-md-12 align-self-center">
         <?= $this->Html->image('golden-ticket/archer-exteriors-door-banner.jpg', [
           'class' => 'rad_4',
-          'alt' => 'Doors That Welcome You with Style & Security.',
-          'title' => 'Doors That Welcome You with Style & Security.'
+          'alt' => 'Doors That Make a Strong First Impression',
+          'title' => 'Doors That Make a Strong First Impression'
         ]) ?>
 
         <div class="gt_partner_logos mt-4">

@@ -31,7 +31,14 @@
 .gm-style .gm-style-iw-c {
   width: auto !important;
   outline: none !important;
+  padding-top: 12px !important;
   -webkit-tap-highlight-color: transparent !important;
+}
+
+.gm-style-iw-chr{
+  position: absolute;
+  right: 4px;
+  top: -2px;
 }
 
 .gm-style .gm-style-iw-t::after {
@@ -79,6 +86,7 @@
   margin-bottom: 6px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  padding-right: 20px;
 }
 
 .info-window-address {
@@ -327,6 +335,7 @@
 @media screen and (max-width: 499px) {
   .gm-style .gm-style-iw-c{
     max-width: 320px !important;
+    padding-top: 35px !important;
   }
   .custom-info-window{
     flex-direction: column;
@@ -334,6 +343,15 @@
   .info-window-header-image{
     max-width: 100%;
   }
+
+  .info-window-title{
+    padding-right: 0;
+  }
+
+  .gm-style-iw-chr{
+    top: -5px;
+  }
+
 
 }
 

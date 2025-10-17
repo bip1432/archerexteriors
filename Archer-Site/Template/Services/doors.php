@@ -1,10 +1,10 @@
 <?php
 // Set Meta Tags
-$this->set('title', 'Doors | New Doors Installed | Archer Exteriors');
-$this->set('metaDescription', 'Archer Exteriors - Your trusted partner for premium doors solutions.');
-$this->set('metaKeywords', STATIC_KEYWORDS . ', Doors, Doors Installation, Door Replacement, 8662724398, archerexteriors.com, Archer Exteriors');
-$this->set('ogTitle', 'Doors | New Doors Installed | Archer Exteriors');
-$this->set('ogDescription', 'Archer Exteriors - Your trusted partner for premium doors solutions.');
+$this->set('title', 'Door Replacement & Installation Experts | Archer Exteriors');
+$this->set('metaDescription', 'Upgrade your home with durable, energy-efficient entry and patio doors. Expert installation and trusted quality — built to perform, backed by Archer.');
+$this->set('metaKeywords', STATIC_KEYWORDS . ', exterior door installation, Provia Entry Door, entry door replacement, patio door installation, sliding patio doors, French doors installation, front door installers near me, energy efficient doors, residential door replacement, home door installation services, storm doors and entry doors, custom doors for homes, door replacement company, durable exterior doors, professional door installation, Archer Exteriors doors');
+$this->set('ogTitle', 'Door Replacement & Installation Experts | Archer Exteriors');
+$this->set('ogDescription', 'Upgrade your home with durable, energy-efficient entry and patio doors. Expert installation and trusted quality — built to perform, backed by Archer.');
 $this->set('ogImage', DOMAIN . '/img/archerexteriors-insignia.png?' . time());
 $this->set('ogType', 'website'); // For general info pages
 $this->set('ogUrl', DOMAIN . '/services/doors'); // TODO: Change to the current page URL
@@ -81,124 +81,247 @@ $this->set('ogUrl', DOMAIN . '/services/doors'); // TODO: Change to the current 
   <div class="container">
     <div class="row gx-lg-5 gy-5">
       <div class="col-xl-7 text-md-start text-center">
-        <div class="sec-title mb-4">
-          <h2>Doors That Make <span>a Strong First Impression</span></h2>
+        <div class="text-lg-end mb-3">
+          <?= $this->Html->link(
+            'Watch Next Round of Applause<i class="flaticon-login"></i>',
+            ['controller' => 'Reviews', 'action' => 'archerApplause'],
+            ['class' => 'theme-btn sm', 'target' => '_blank', 'escape' => false]
+          ) ?>
+        </div>
+        <div class="video-wrapper mx-auto mx-xl-0 mb-4">
+          <div class="responsive-video">
+            <?= $this->Html->tag('iframe', '', [
+              'src' => 'https://player.vimeo.com/video/1124821265',
+              'frameborder' => '0',
+              'allowfullscreen' => true,
+              'webkitallowfullscreen' => true,
+              'mozallowfullscreen' => true
+            ]) ?>
+          </div>
         </div>
 
-        <p class="mb-4">Your front door is more than just an entryway - it sets the tone for your home. Whether you're
-          looking for classic elegance, modern design, or enhanced security, we offer a variety of high-quality entry
-          doors to suit your style and needs.</p>
+        <h2 class="title_2">Doors That Make a <b> Strong First Impression</b></h2>
 
-        <p>Explore our selection of high-quality entry doors, meticulously created for exceptional structural
-          integrity, security, and energy efficiency. Our doors provide peace of mind, ensuring your home remains safe
-          and comfortable while reducing energy costs. With a focus on sophistication and style, choose from a wide
-          variety of options to suit your preferences. Trust us to enhance your home's entryway with
-          professional-grade solutions.</p>
+        <p class="mb-4">Your front door is more than just an entryway - it sets the tone for your home. Whether you're looking for classic elegance, modern design, or enhanced security, we offer a variety of high-quality entry doors to suit your style and needs.</p>
 
-        <div class="mt-4">
-          <a class="theme-btn sm" href="<?= $this->Url->build(['controller' => 'Financings', 'action' => 'index']) ?>">Financing Options Available<i class="flaticon-login"></i></a>
+        <div class="service_key_points mt-4">
+          <div id="serviceKeyPoints" class="owl-carousel owl-theme our_service service_key_points_slider">
+            <div class="item">
+              <div class="icon">
+                <?= $this->Html->image('golden-ticket/door/style-secured-door.svg', [
+                  'class' => 'svg',
+                  'alt' => 'Style & Security in Every Door',
+                  'title' => 'Style & Security in Every Door'
+                ]) ?>
+              </div>
+              <h4 style="font-size: 15px;">Style & Security in Every Door</h4>
+            </div>
+
+            <div class="item">
+              <div class="icon">
+                <?= $this->Html->image('golden-ticket/door/built-for-beauty.svg', [
+                  'class' => 'svg stroke_hover',
+                  'alt' => 'Built for Beauty and Performance',
+                  'title' => 'Built for Beauty and Performance'
+                ]) ?>
+              </div>
+              <h4 style="font-size: 15px;">Built for Beauty and Performance</h4>
+            </div>
+
+            <div class="item">
+              <div class="icon">
+                <?= $this->Html->image('golden-ticket/door/custom-fit.svg', [
+                  'class' => 'svg',
+                  'alt' => 'Custom-Fit for Your Home',
+                  'title' => 'Custom-Fit for Your Home'
+                ]) ?>
+              </div>
+              <h4 style="font-size: 15px;">Custom-Fit for Your Home</h4>
+            </div>
+
+            <div class="item">
+              <div class="icon">
+                <?= $this->Html->image('golden-ticket/door/expertly-installed.svg', [
+                  'class' => 'svg',
+                  'alt' => 'Expertly Installed. Archer Guaranteed.',
+                  'title' => 'Expertly Installed. Archer Guaranteed.'
+                ]) ?>
+              </div>
+              <h4 style="font-size: 15px;">Expertly Installed. Archer Guaranteed.</h4>
+            </div>
+
+          </div>
         </div>
 
-        <h3 class="title_3 mt-4 mb-4">Why Replace Your Doors</h3>
-
-        <div class="box-style-two for_window mt-5">
-          <div class="row gy-4">
-            <div class="col-xl-4 col-lg-4 col-sm-6">
-              <div class="single-item">
-                <div class="inner-box">
-                  <div class="content-box">
-                    <div class="icon-box">
-                      <div class="line" style="background-image: url(<?= $this->Url->image('line-2.png') ?>);"></div>
-                      <?= $this->Html->image('door-service/why-replace/energy-efficient.svg', [
-                        'alt' => 'Energy efficiency',
-                        'title' => 'Energy efficiency'
-                      ]) ?>
-                    </div>
-                    <h3>Energy efficiency</h3>
-                  </div>
-                  <div class="overlay-box">
-                    <div class="icon-box">
-                      <div class="line" style="background-image: url(<?= $this->Url->image('line-1.png') ?>);"></div>
-                      <?= $this->Html->image('door-service/why-replace/white/energy-efficient.svg', [
-                        'alt' => 'Energy efficiency',
-                        'title' => 'Energy efficiency'
-                      ]) ?>
-                    </div>
-                    <p>Enjoy peace of mind with advanced locking mechanisms and sturdy materials.</p>
-                    <h3>Energy efficiency</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-sm-6">
-              <div class="single-item">
-                <div class="inner-box">
-                  <div class="content-box">
-                    <div class="icon-box">
-                      <div class="line" style="background-image: url(<?= $this->Url->image('line-2.png') ?>);"></div>
-                      <?= $this->Html->image('door-service/why-replace/enhance-security.svg', [
-                        'alt' => 'Enhanced Security',
-                        'title' => 'Enhanced Security'
-                      ]) ?>
-                    </div>
-                    <h3>Enhanced Security</h3>
-                  </div>
-                  <div class="overlay-box">
-                    <div class="icon-box">
-                      <div class="line" style="background-image: url(<?= $this->Url->image('line-1.png') ?>);"></div>
-                      <?= $this->Html->image('door-service/why-replace/white/enhance-security.svg', [
-                        'alt' => 'Enhanced Security',
-                        'title' => 'Enhanced Security'
-                      ]) ?>
-                    </div>
-                    <p>Replace your door to improve insulation, reduce energy consumption, and lower utility bills.</p>
-                    <h3>Enhanced Security</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-sm-6">
-              <div class="single-item">
-                <div class="inner-box">
-                  <div class="content-box">
-                    <div class="icon-box">
-                      <div class="line" style="background-image: url(<?= $this->Url->image('line-2.png') ?>);"></div>
-                      <?= $this->Html->image('door-service/why-replace/crub-appeal.svg', [
-                        'alt' => 'Increased Curb Appeal',
-                        'title' => 'Increased Curb Appeal'
-                      ]) ?>
-                    </div>
-                    <h3>Increased Curb Appeal</h3>
-                  </div>
-                  <div class="overlay-box">
-                    <div class="icon-box">
-                      <div class="line" style="background-image: url(<?= $this->Url->image('line-1.png') ?>);"></div>
-                      <?= $this->Html->image('door-service/why-replace/white/crub-appeal.svg', [
-                        'alt' => 'Increased Curb Appeal',
-                        'title' => 'Increased Curb Appeal'
-                      ]) ?>
-                    </div>
-                    <p>Choose from various styles, finishes, and decorative features to complement your home's architecture.</p>
-                    <h3>Increased Curb Appeal</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+        <div class="our_strength my-4">
+          <span class="img">
+            <?= $this->Html->image('roofing-service/archie-sm.png', [
+              'alt' => 'Archer Exteriors Jobs Strength',
+              'title' => 'Archer Exteriors Jobs Strength',
+              'class' => 'img-fluid'
+            ]) ?>
+          </span>
+          <div class="content">
+            <?= $this->element('jobs_strength') ?>
           </div>
         </div>
 
       </div>
 
       <div class="col-xl-5">
-        <?= $this->element('forms/form_free_estimate') ?>
+        <?= $this->element('forms/form_free_estimate', ['formId' => '6', 'formKey' => 'doorsf8240effedf5c5231d3199d2e26158c1']) ?>
+      </div>
+
+      <div class="col-12" style="margin-top: 60px;">
+        <div class="row gy-4 text-center text-xxl-start">
+          <div class="col-xxl-6">
+            <div class="limited_offer_banner">
+              <?= $this->Html->image('golden-ticket/banner-sm/archer-exteriors-offer-banner-door-sm.jpg', [
+                'class' => 'img-fluid rad_4',
+                'alt' => 'Open in style -  $250 off per door',
+                'title' => 'Open in style -  $250 off per door'
+              ]) ?>
+            </div>
+          </div>
+
+          <div class="col-xxl-6">
+            <div class="door_partner_box">
+              <div class="contents">
+                 <?= $this->Html->image('door-service/archer-exteriors-partners-door-sm.png', [
+                'class' => 'img-fluid mb-3 rad_4 d-md-none',
+                'width' => '200',
+                'alt' => 'Archer Exteriors Door Replacement',
+                'title' => 'Archer Exteriors Door Replacement'
+              ]) ?>
+                <h4>Partnering With The Best</h4>
+                <p>Archer Exteriors Door Replacement</p>
+
+                <?= $this->Html->link(
+                  $this->Html->image('door-service/logo-provia.png', [
+                    'class' => 'logo_img',
+                    'alt' => 'ProVia',
+                    'title' => 'ProVia'
+                  ]),
+                  'https://www.provia.com/',
+                  ['target' => '_blank', 'escape' => false]
+                ) ?>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 <!-- Start Project Section End -->
+
+<!-- Working Process Section Start  -->
+<section class="section working-section door text-center">
+  <div class="large-container">
+    <div class="sec-title light">
+      <h6><i class="flaticon-roof"></i>Door Replacement</h6>
+      <h2>Why Replace Door <span>Instead of Repair?</span></h2>
+    </div>
+    <div class="inner-content">
+      <div class="row clearfix">
+        <div class="col-xxl-3 col-md-6 col-sm-12 process-block">
+          <div class="process-block-item">
+            <div class="inner-box">
+              <div class="icon-box">
+                <span class="count-box counted">01</span>
+                <div class="icon">
+                  <?= $this->Html->image('door-service/style-secured-door.svg', [
+                  'class' => 'img-fluid',
+                  'alt' => 'Style & Security in Every Door',
+                  'title' => 'Style & Security in Every Door'
+                ]) ?>
+                </div>
+              </div>
+              <div class="lower-content">
+                <h3>Style & Security in Every Door</h3>
+                <div class="pattern-layer"></div>
+                <p>Your entryway sets the tone for your home. Archer’s expertly installed doors combine lasting craftsmanship, timeless design, and top-tier security — making every arrival feel inviting and every exit feel secure.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xxl-3 col-md-6 col-sm-12 process-block">
+          <div class="process-block-item">
+            <div class="inner-box">
+              <div class="icon-box">
+                <span class="count-box counted">02</span>
+                <div class="icon">
+                  <?= $this->Html->image('door-service/built-for-beauty.svg', [
+                  'class' => 'img-fluid',
+                  'alt' => 'Built for Beauty and Performance',
+                  'title' => 'Built for Beauty and Performance'
+                ]) ?>
+                </div>
+              </div>
+              <div class="lower-content">
+                <h3>Built for Beauty and Performance</h3>
+                <div class="pattern-layer"></div>
+                <p>From elegant entry doors to smooth-gliding patio systems, our doors are engineered to perform through every season. Enjoy superior insulation, quieter interiors, and energy efficiency that helps lower your utility costs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xxl-3 col-md-6 col-sm-12 process-block">
+          <div class="process-block-item">
+            <div class="inner-box">
+              <div class="icon-box">
+                <span class="count-box counted">03</span>
+                <div class="icon">
+                  <?= $this->Html->image('door-service/custom-fit.svg', [
+                  'class' => 'img-fluid',
+                  'alt' => 'Custom-Fit for Your Home',
+                  'title' => 'Custom-Fit for Your Home'
+                ]) ?>
+                </div>
+              </div>
+              <div class="lower-content">
+                <h3>Custom-Fit for Your Home</h3>
+                <div class="pattern-layer"></div>
+                <p>No two homes are alike — and your door shouldn’t be either. We offer a wide range of materials, finishes, and glass styles to complement your home’s architecture and reflect your personal taste.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xxl-3 col-md-6 col-sm-12 process-block">
+          <div class="process-block-item">
+            <div class="inner-box">
+              <div class="icon-box">
+                <span class="count-box counted">04</span>
+                <div class="icon">
+                  <?= $this->Html->image('door-service/expertly-installed.svg', [
+                  'class' => 'img-fluid',
+                  'alt' => 'Expertly Installed. Archer Guaranteed.',
+                  'title' => 'Expertly Installed. Archer Guaranteed.'
+                ]) ?>
+                </div>
+              </div>
+              <div class="lower-content">
+                <h3>Expertly Installed. Archer Guaranteed.</h3>
+                <div class="pattern-layer"></div>
+                <p>Our expert installers ensure a perfect fit every time, enhancing both appearance and performance. Backed by Archer’s commitment to quality and service, your new door is built to last for years to come.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Working Process Section End  -->
+
+
+
+<!-- Why Choose Us Section Start  -->
+<section class="chooseus-section" style="padding-top: 255px; position: relative;">
+  <?= $this->element('why_choose_us') ?>
+</section>
+<!-- Why Choose Us Section End -->
+
 
 <!-- Expertise Section Start  -->
 <section class="section bg_secondary ">
@@ -211,7 +334,7 @@ $this->set('ogUrl', DOMAIN . '/services/doors'); // TODO: Change to the current 
     <div class="row g-5 gy-5 text-center text-lg-start">
       <div class="col-lg-6 align-self-center">
         <div class="wow fadeInLeft animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-          <h3 class="title_3 mb-4 text-white">Explore secure options from entry doors to storm and sliding glass doors.</h3>
+          <h3 class="title_3 mb-4 text-white">Explore secure options from entry doors to patio sliding doors.</h3>
           <p style="color: var(--font-light);">We offer a wide range of doors to match your home’s style and needs. From elegant entry doors that make a statement to storm doors that add protection, our team helps you choose the perfect fit.</p>
           <p style="color: var(--font-light);" class="my-4">Our experts handle every detail of installation with care and precision. We ensure your doors operate smoothly, seal properly, and enhance your home’s energy efficiency and security.</p>
           <p style="color: var(--font-light);">At Archer Exteriors, we focus on quality service and clear communication. We’re here to answer your questions, share options, and make your door replacement project easy and stress-free.</p>
@@ -220,6 +343,7 @@ $this->set('ogUrl', DOMAIN . '/services/doors'); // TODO: Change to the current 
       <div class="col-lg-6">
         <div class="wow fadeInRight animated" data-wow-delay="300ms" data-wow-duration="1500ms">
           <?= $this->Html->image('door-service/archer-door-services.jpg', [
+            'class' => 'img-fluid rad_4',
             'alt' => 'Top-notch Door Services',
             'title' => 'Top-notch Door Services'
           ]) ?>
@@ -231,142 +355,6 @@ $this->set('ogUrl', DOMAIN . '/services/doors'); // TODO: Change to the current 
 </section>
 <!-- Types Section End  -->
 
-<!-- Why Choose Us Section Start  -->
-<section class="chooseus-section">
-  <?= $this->element('why_choose_us') ?>
-</section>
-<!-- Why Choose Us Section End -->
-
-<!-- Working Process Section Start  -->
-<section class="section working-section text-center">
-  <div class="large-container">
-    <div class="sec-title light">
-      <h6><i class="flaticon-roof"></i>How it’s Work</h6>
-      <h2>Standard <span>Working Process</span></h2>
-    </div>
-    <div class="inner-content">
-      <div class="row clearfix">
-        <div class="col-xxl-3 col-md-6 col-sm-12 process-block">
-          <div class="process-block-item">
-            <div class="inner-box">
-              <div class="icon-box">
-                <span class="count-box counted">01</span>
-                <div class="icon"><i class="flaticon-consulting"></i></div>
-              </div>
-              <div class="lower-content">
-                <h3>Initial Consultation</h3>
-                <div class="pattern-layer"></div>
-                <p>Your journey with Archer Exteriors begins with a call to our experienced Customer Service
-                  Representative. During this initial consultation, we will discuss your project goals and schedule a
-                  free estimate.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xxl-3 col-md-6 col-sm-12 process-block">
-          <div class="process-block-item">
-            <div class="inner-box">
-              <div class="icon-box">
-                <span class="count-box counted">02</span>
-                <div class="icon"><i class="flaticon-paper"></i></div>
-              </div>
-              <div class="lower-content">
-                <h3>On-Site Assessment</h3>
-                <div class="pattern-layer"></div>
-                <p>Our professionals visit your property to evaluate the project, take necessary measurements, and
-                  understand your specific needs. This detailed assessment allows us to go over product choices,
-                  colors, and more while providing an accurate estimate with an exact price while at your home. </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xxl-3 col-md-6 col-sm-12 process-block">
-          <div class="process-block-item">
-            <div class="inner-box">
-              <div class="icon-box">
-                <span class="count-box counted">03</span>
-                <div class="icon"><i class="flaticon-steel"></i></div>
-              </div>
-              <div class="lower-content">
-                <h3> Project Execution</h3>
-                <div class="pattern-layer"></div>
-                <p>Once the plan is set, our dedicated supervisor for your area oversees the entire project. From
-                  material procurement to installation, every detail is managed meticulously to ensure high-quality
-                  results.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xxl-3 col-md-6 col-sm-12 process-block">
-          <div class="process-block-item">
-            <div class="inner-box">
-              <div class="icon-box">
-                <span class="count-box counted">04</span>
-                <div class="icon"><i class="flaticon-parcel"></i></div>
-              </div>
-              <div class="lower-content">
-                <h3>Final Inspection and Approval</h3>
-                <div class="pattern-layer"></div>
-                <p>Upon completion, we conduct a thorough inspection to ensure the work meets our high standards and
-                  your expectations. We walk you through the finished project, ensuring you are completely satisfied
-                  with the results.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Working Process Section End  -->
-
-<!-- clients-section -->
-<section class="section partner-section" style="padding-top: 255px; position: relative;">
-  <div class="auto-container">
-    <div class="sec-title text-center">
-      <h6><i class="flaticon-roof"></i>Our Partners</h6>
-      <h2>Partnering <br> <span>With The Best</span></h2>
-    </div>
-
-    <div class="row gy-4 mt-5">
-      <div class="col-lg-6">
-        <div class="text-center text-lg-start">
-          <h3 class="title_3">Archer Door Replacement</h3>
-
-          <p class="mt-3">Elevate your home with high-quality entry doors designed for strength, security, and energy
-            efficiency. Crafted with sophistication and style, our selection offers the perfect blend of durability
-            and elegance to match your needs.</p>
-        </div>
-      </div>
-
-      <div class="col-lg-6 align-self-center">
-        <div class="partner-wrap align-items-center">
-          <div class="clients-logo-box">
-            <?= $this->Html->link(
-              $this->Html->image('window-service/partners/partner-logo-okna.png', [
-                'alt' => 'OKNA',
-                'title' => 'OKNA'
-              ]),
-              'https://www.oknawindows.com/',
-              ['target' => '_blank', 'escape' => false]
-            ) ?>
-          </div>
-          <div class="clients-logo-box">
-            <?= $this->Html->link(
-              $this->Html->image('window-service/partners/partner-logo-pro-via.png', [
-                'alt' => 'ProVia',
-                'title' => 'ProVia'
-              ]),
-              'https://www.provia.com/',
-              ['target' => '_blank', 'escape' => false]
-            ) ?>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- clients-section end -->
 
 <!-- Reviews section Start  -->
 <section class="section light reviews">

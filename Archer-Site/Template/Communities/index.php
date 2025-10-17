@@ -37,6 +37,19 @@ $this->set('ogUrl', DOMAIN . '/community-impact');
         </div>
       </div>
     </div>
+    <div class="slide-item six">
+      <div class="image-layer">
+      </div>
+      <div class="auto-container">
+        <div class="content-box">
+          <h4>Archer Exteriors & the Studer Family <br> Children’s Hospital Radiothon</h4>
+          <div class="btn-box">
+            <?= $this->Html->link('Learn More<i class="flaticon-login"></i>', ['controller' => 'Communities', 'action' => 'studerFamilyChildrenHospital'], ['class' => 'theme-btn', 'escape' => false]) ?>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="slide-item three">
       <div class="image-layer">
       </div>
@@ -107,6 +120,110 @@ $this->set('ogUrl', DOMAIN . '/community-impact');
 
       <div class="service_types_wrap community_events active" data-year="2025">
         <div class="row justify-content-center gy-5 mt-2">
+
+          <div class="col-xl-4 col-md-6 col-sm-8">
+            <div class="service-block-item wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+              <div class="inner-box">
+                <div class="image-box">
+                  <?= $this->Html->link(
+                    $this->Html->image('community-impact/v2/eagles-ticket.jpg', [
+                      'alt' => 'October Eagles Tickets',
+                      'title' => 'October Eagles Tickets'
+                    ]),
+                    ['controller' => 'Communities', 'action' => 'goBirds'],
+                    ['escape' => false]
+                  ) ?>
+                </div>
+                <div class="lower-content">
+                  <div class="shap-box"></div>
+                  <h3><?= $this->Html->link('October Eagles <br> Tickets', ['action' => 'goBirds'], ['escape' => false]) ?></h3>
+                  <p class="line_clamp_4">Archer Exteriors is giving you the chance to go see the birds this football season.</p>
+
+                  <div class="link">
+                    <?= $this->Html->link('Learn More<i class="flaticon-login"></i>', ['action' => 'goBirds'], ['escape' => false]) ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-4 col-md-6 col-sm-8">
+            <div class="service-block-item wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+              <div class="inner-box">
+                <div class="image-box">
+                  <?= $this->Html->link(
+                    $this->Html->image('community-impact/v2/national-art-content.jpg', [
+                      'alt' => 'Color the World with Archie',
+                      'title' => 'Color the World with Archie'
+                    ]),
+                    ['controller' => 'Communities', 'action' => 'artContest'],
+                    ['escape' => false]
+                  ) ?>
+                </div>
+                <div class="lower-content">
+                  <div class="shap-box"></div>
+                  <h3><?= $this->Html->link('Color the World with <br> Archie', ['action' => 'artContest'], ['escape' => false]) ?></h3>
+                  <p class="line_clamp_4">The imagination and talent blew us away this year. We can’t wait to see what next year’s artists will create!</p>
+
+                  <div class="link">
+                    <?= $this->Html->link('Learn More<i class="flaticon-login"></i>', ['action' => 'artContest'], ['escape' => false]) ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-4 col-md-6 col-sm-8">
+            <div class="service-block-item wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+              <div class="inner-box">
+                <div class="image-box">
+                  <?= $this->Html->link(
+                    $this->Html->image('community-impact/v2/studer-childrens-hospital.jpg', [
+                      'alt' => 'Archer Exteriors & the Studer Family Children’s Hospital Radiothon',
+                      'title' => 'Archer Exteriors & the Studer Family Children’s Hospital Radiothon'
+                    ]),
+                    ['controller' => 'Communities', 'action' => 'studerFamilyChildrenHospital'],
+                    ['escape' => false]
+                  ) ?>
+                </div>
+                <div class="lower-content">
+                  <div class="shap-box"></div>
+                  <h3><?= $this->Html->link('Archer Exteriors & the Studer Family Children’s Hospital Radiothon', ['action' => 'studer-family-children-hospital']) ?></h3>
+                  <p class="line_clamp_4">At Archer Exteriors, we believe our strength lies not just in the structures we build, but in the communities we serve. That’s why we are honored to partner with Cat Country 98.7’s annual Cat Country Cares for Kids Radiothon, supporting the Studer Family Children’s Hospital.</p>
+                  <div class="link">
+                    <?= $this->Html->link('Learn More<i class="flaticon-login"></i>', ['action' => 'studer-family-children-hospital'], ['escape' => false]) ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-4 col-md-6 col-sm-8">
+            <div class="service-block-item wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+              <div class="inner-box">
+                <div class="image-box">
+                  <?= $this->Html->link(
+                    $this->Html->image('community-impact/v2/lorson-ranch.jpg', [
+                      'alt' => 'Standing Strong with Operation Homefront',
+                      'title' => 'Standing Strong with Operation Homefront'
+                    ]),
+                    ['controller' => 'Communities', 'action' => 'operationHomefront'],
+                    ['escape' => false]
+                  ) ?>
+                </div>
+                <div class="lower-content">
+                  <div class="shap-box"></div>
+                  <h3><?= $this->Html->link('Standing Strong with Operation Homefront', ['action' => 'operation-homefront']) ?></h3>
+                  <p class="line_clamp_4">At Archer Exteriors, community impact is more than a mission—it’s a mindset. That’s why we’re honored to support Operation Homefront, a national nonprofit serving America’s military families in their times of need.</p>
+                  <div class="link">
+                    <?= $this->Html->link('Learn More<i class="flaticon-login"></i>', ['action' => 'operation-homefront'], ['escape' => false]) ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
           <div class="col-xl-4 col-md-6 col-sm-8">
             <div class="service-block-item wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
               <div class="inner-box">
@@ -132,31 +249,6 @@ $this->set('ogUrl', DOMAIN . '/community-impact');
             </div>
           </div>
 
-          <div class="col-xl-4 col-md-6 col-sm-8">
-            <div class="service-block-item wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-              <div class="inner-box">
-                <div class="image-box">
-                  <?= $this->Html->link(
-                    $this->Html->image('community-impact/v2/national-art-content.jpg', [
-                      'alt' => 'Color the World with Archie',
-                      'title' => 'Color the World with Archie'
-                    ]),
-                    ['controller' => 'Communities', 'action' => 'artContest'],
-                    ['escape' => false]
-                  ) ?>
-                </div>
-                <div class="lower-content">
-                  <div class="shap-box"></div>
-                  <h3><?= $this->Html->link('Color the World with <br> Archie', ['action' => 'artContest'], ['escape' => false]) ?></h3>
-                  <p class="line_clamp_4">An exciting national art contest for creative kids and teens, brought to you by Archer Exteriors.</p>
-
-                  <div class="link">
-                    <?= $this->Html->link('Learn More<i class="flaticon-login"></i>', ['action' => 'artContest'], ['escape' => false]) ?>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <div class="col-xl-4 col-md-6 col-sm-8">
             <div class="service-block-item wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">

@@ -60,17 +60,6 @@
                         rain or hail storms. Finally, consider that a roof made out of metal may dent or scratch easily
                         if not properly installed or maintained.</li>
 
-                    <li><b>Tile roofing:</b> Roofs made with tile can be from various materials, such as clay,
-                        concrete, or terracotta. Tile roofs have a unique and colorful appearance that can create a
-                        Mediterranean or Spanish look for any home style. Tile roofing are very durable and
-                        long-lasting, with a lifespan of 50 years or more. These roofs are resistant to fire, wind,
-                        hail, water damage, and insects. Tiled roofs have a high insulation value and can help reduce
-                        energy costs. They are environmentally friendly, as they are natural and recyclable. However,
-                        tile roofing can be very expensive compared to other roofing materials, both in terms of
-                        material and installation costs. They also require skilled labor and special tools to install
-                        and repair. Tiles are very heavy and may need additional structural support to hold them. Tiled
-                        roofing may break or crack if not properly installed or maintained.</li>
-
                 </ul>
             </div>
         </div>
@@ -121,9 +110,9 @@
 
                 At Archer Exteriors, we meet all these criteria and more. We are a licensed and insured roofing
                 contractor with over 30 years of experience in the industry. We have hundreds of satisfied customers
-                and <a href="https://www.google.com/maps/place/Archer+Exteriors/@39.5972984,-75.1439256,15z/data=!4m6!3m5!1s0x89c721b60ddc13d9:0x2664e69e5c387108!8m2!3d39.5974891!4d-75.1474324!16s%2Fg%2F1tdzbcpy?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">positive reviews on Google,</a> 
-                <a href="https://www.facebook.com/archerexteriors" target="_blank">Facebook</a>, 
-                <a href="https://www.angi.com/companylist/us/nj/pittsgrove/archer-exteriors-inc-reviews-1.htm?page=5&featuredReviewsLimit=18&featuredReviewsOffset=100" target="_blank">Angi</a>, and 
+                and <a href="https://www.google.com/maps/place/Archer+Exteriors/@39.5972984,-75.1439256,15z/data=!4m6!3m5!1s0x89c721b60ddc13d9:0x2664e69e5c387108!8m2!3d39.5974891!4d-75.1474324!16s%2Fg%2F1tdzbcpy?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">positive reviews on Google,</a>
+                <a href="https://www.facebook.com/archerexteriors" target="_blank">Facebook</a>,
+                <a href="https://www.angi.com/companylist/us/nj/pittsgrove/archer-exteriors-inc-reviews-1.htm?page=5&featuredReviewsLimit=18&featuredReviewsOffset=100" target="_blank">Angi</a>, and
                 <a href="https://www.homeadvisor.com/rated.ArcherExteriorsInc.18856060.html" target="_blank">Home Advisor</a>. We have completed
                 thousands of roofing projects of all sizes and types. We offer a written contract with industry
                 leading warranties for every project we do. We provide fair and transparent pricing with no hidden
@@ -178,7 +167,7 @@
                 learn more.
             </div>
         </div>
-    </div> 
+    </div>
 
     <div class="accordion-item">
         <h2 class="accordion-header" id="faqRoofingAccordionH7">

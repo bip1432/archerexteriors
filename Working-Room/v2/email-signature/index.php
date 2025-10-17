@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Archer Email Signature</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://www.archerexteriors.com/css/theme.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .signature_page_header {
+      background-color: #1d3557;
+      text-align: center;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 50px;
+    }
+
+    td img{
+      max-width: inherit;
+    }
+    .img_responsive{
+      width: 100%;
+    }
+
+    ol, li{
+      list-style: decimal;
+      margin-bottom: 0;
+    }
+
+    .preview-container {
+      background: white;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .signature-preview {
+      border: 2px dashed #dee2e6;
+      padding: 15px;
+      background: #fff;
+      border-radius: 4px;
+      font-family: Arial, sans-serif;
+    }
+
+    .instructions {
+      background: #e3f2fd;
+      border-left: 4px solid #2196f3;
+      padding: 15px;
+      border-radius: 4px;
+    }
+
+    .theme-btn{
+      font-size: 16px;
+      padding: 10px 25px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .theme-btn i{
+      font-size: 16px;
+    }
+
+    .form-control:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    .alert-success {
+      display: none;
+    }
+
+    .visual-copy-container {
+      border: 2px solid #007bff;
+      border-radius: 8px;
+      padding: 20px;
+      background: #ffffff;
+      margin: 15px 0;
+      position: relative;
+      padding-top: 40px;
+    }
+
+    .visual-copy-container::before {
+      content: "Visual Signature (Ready to Copy)";
+      position: absolute;
+      top: -12px;
+      left: 15px;
+      background: #007bff;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .visual-signature {
+      font-family: Arial, sans-serif;
+      line-height: 1.2;
+      max-width: 600px;
+      cursor: text;
+      user-select: text;
+      -webkit-user-select: text;
+      -moz-user-select: text;
+      -ms-user-select: text;
+      outline: none;
+      padding: 5px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .visual-signature:focus {
+      background: #f8f9fa;
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    }
+
+    .visual-signature.selected {
+      background: #e3f2fd;
+      outline: 2px solid #2196f3;
+      outline-offset: 2px;
+    }
+
+    .compatibility-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .compatibility-item {
+      background: white;
+      border: 1px solid #dee2e6;
+      border-radius: 4px;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .compatibility-item.supported {
+      border-color: #28a745;
+      background: #f8fff9;
+    }
+
+    .compatibility-item.partial {
+      border-color: #ffc107;
+      background: #fffbf0;
+    }
+
+    .mobile-preview {
+      max-width: 375px;
+      margin: 0 auto;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 10px;
+      background: #f8f9fa;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="signature_page_header mb-4">
+      <a href="https://www.archerexteriors.com/" target="_blank">
+        <img src="https://www.archerexteriors.com/img/Archer-Exteriors-Logo.png" alt="Archer Exteriors"
+          title="Archer Exteriors" width="200">
+      </a>
+    </div>
+
+    <div class="row">
+      <!-- Configuration Panel -->
+      <div class="col-lg-4">
+        <div class="preview-container">
+          <h3 class="mb-4">Update Information</h3>
+          <form id="signatureForm">
+            <div class="mb-3">
+              <label for="userName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="userName" value="Your Name" required
+                onchange="updateSignature()">
+            </div>
+
+            <div class="mb-3">
+              <label for="userTitle" class="form-label">Job Title</label>
+              <input type="text" class="form-control" id="userTitle" value="Your title goes here" required
+                onchange="updateSignature()">
+            </div>
+
+            <div class="mb-3">
+              <label for="userEmail" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="userEmail" value="youremail@archerexteriors.com" required
+                onchange="updateSignature()">
+            </div>
+
+            <div class="mb-3">
+              <label for="phone1" class="form-label">Personal Phone</label>
+              <input type="tel" class="form-control" id="phone1" value="(856) 000-0000" required
+                onchange="updateSignature()">
+            </div>
+
+            <div class="mb-3">
+              <div class="d-flex align-items-center mb-2">
+                <label for="phone2" class="form-label mb-0 me-3">Office Phone</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="showOfficePhone" checked
+                    onchange="updateSignature()">
+                  <label class="form-check-label" for="showOfficePhone">
+                    Show/Hide
+                  </label>
+                </div>
+              </div>
+              <input type="tel" class="form-control" id="phone2" value="(856) 363-7000" required
+                onchange="updateSignature()">
+            </div>
+
+            <div class="mb-3">
+              <label for="userAddress" class="form-label">Address</label>
+              <input type="text" class="form-control" id="userAddress" value="341 Harding Hwy, Pittsgrove, NJ 08318"
+                required onchange="updateSignature()">
+            </div>
+
+            <button type="button" class="theme-btn w-100" onclick="updateSignature()">
+              <i class="fi fi-rr-refresh"></i> Update Preview
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Preview Panel -->
+      <div class="col-lg-8">
+
+        <!-- Email Signature Generator -->
+        <div class="preview-container">
+          <h3 class="mb-4">Archer Email Signature</h3>
+
+          <div class="visual-copy-container" id="visualCopyContainer">
+            <div class="visual-signature" id="visualSignature" tabindex="0">
+              <!-- Visual signature will be loaded here -->
+            </div>
+          </div>
+
+          <div class="mt-3 d-flex flex-wrap gap-3">
+            <button class="theme-btn" onclick="copySignature()">
+              <i class="fi fi-rs-copy-alt"></i> Copy Signature
+            </button>
+
+            <button class="theme-btn" onclick="downloadSignature()">
+              <i class="fi fi-rr-download"></i> Download HTML
+            </button>
+          </div>
+
+          <div class="alert alert-success mt-3" id="copyAlert">
+            <i style="position: relative;top: 2px;margin-right: 2px;" class="fi fi-rr-checkbox"></i> Signature copied to clipboard! You can now paste it into your email client.
+          </div>
+
+          <div class="instructions mt-4">
+            <strong>Instructions:</strong>
+            <ol>
+              <li>Fill in your details in the form on the left</li>
+              <li>Click "Update Preview" to see your signature</li>
+              <li>Use the buttons below to copy or download your signature</li>
+              <li>Paste into your email client's signature settings</li>
+            </ol>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Load initial signature on page load
+    document.addEventListener('DOMContentLoaded', function () {
+      // Hide alert messages on page load
+      document.getElementById('copyAlert').style.display = 'none';
+
+      // Initialize signature
+      updateSignature();
+    });
+
+    function formatPhone(phone) {
+      const digits = phone.replace(/[^\d]/g, '');
+      if (digits.length === 10) {
+        return `(${digits.substr(0, 3)}) ${digits.substr(3, 3)}-${digits.substr(6, 4)}`;
+      }
+      return phone;
+    }
+
+    function formatPhoneHref(phone) {
+      const digits = phone.replace(/[^\d]/g, '');
+      return `+1${digits}`;
+    }
+
+    function updateSignature() {
+      const userName = document.getElementById('userName').value;
+      const userTitle = document.getElementById('userTitle').value;
+      const userEmail = document.getElementById('userEmail').value;
+      const phone1 = formatPhone(document.getElementById('phone1').value);
+      const phone2 = formatPhone(document.getElementById('phone2').value);
+      const userAddress = document.getElementById('userAddress').value;
+      const showOfficePhone = document.getElementById('showOfficePhone').checked;
+
+      // Build office phone section conditionally
+      const officePhoneSection = showOfficePhone ? `
+                <!-- SPACER -->
+                <td style="padding: 0; margin: 0; border: 0; vertical-align: middle; width: 20px; font-size: 1px; line-height: 1px;" width="20">&nbsp;</td>
+                <!-- OFFICE PHONE -->
+                <td style="padding: 0; margin: 0; border: 0; vertical-align: middle;">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                    <tr>
+                      <td style="padding: 0 6px 0 0; margin: 0; border: 0; vertical-align: middle; width: 14px;" width="14">
+                        <img src="https://www.archerexteriors.com/resources/email-signature/img/png/phone2.png"
+                             alt="Office"
+                             title="Office Phone"
+                             width="14"
+                             height="14"
+                             style="display: block; border: none; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;"
+                             border="0">
+                      </td>
+                      <td style="padding: 0; margin: 0; border: 0; vertical-align: middle;">
+                        <span style="font-family: 'Roboto', Arial, Helvetica, sans-serif; font-size: 15px; font-weight: 400; color: #5a5a68; line-height: 1.2; text-decoration: none; display: inline-block; margin: 0; padding: 0;">${phone2}</span>
+                      </td>
+                    </tr>
+                  </table>
+                </td>` : '';
+
+      const signatureHTML = `
+<!-- MAIN SIGNATURE TABLE -->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: Arial, sans-serif; line-height: 1.2; max-width: 600px;" width="100%">
+  <!-- LOGO AND NAME ROW -->
+  <tr>
+    <td style="padding: 0; margin: 0; border: 0; vertical-align: top;">
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
+        <tr>
+          <!-- LOGO CELL -->
+          <td style="padding: 0 10px 0 0; margin: 0; border: 0; vertical-align: middle; width: 110px;" width="110">
+            <img src="https://www.archerexteriors.com/resources/email-signature/img/archer-exteriors-logo.gif"
+                 alt="Archer Exteriors"
+                 title="Archer Exteriors"
+                 width="100"
+                 height="100"
+                 style="display: block; border: none; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; max-width: 100px; height: auto;"
+                 border="0">
+          </td>
+          <!-- NAME AND TITLE CELL -->
+          <td style="padding: 0; margin: 0; border: 0; vertical-align: middle;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
+              <tr>
+                <td style="padding: 0 0 6px 0; margin: 0; border: 0; vertical-align: top;">
+                  <span style="font-family: 'Roboto', Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 700; color: #09428a; line-height: 1.2; display: block; margin: 0; padding: 0;">${userName}</span>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 0; margin: 0; border: 0; vertical-align: top;">
+                  <span style="font-family: 'Roboto', Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 400; color: #23426a; line-height: 1.2; display: block; margin: 0; padding: 0;">${userTitle}</span>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <!-- BORDER IMAGE ROW -->
+  <tr>
+    <td style="padding: 8px 0 8px 0; margin: 0; border: 0; vertical-align: top;">
+      <img src="https://www.archerexteriors.com/resources/email-signature/img/line.jpg"
+           alt="Divider"
+           title="Divider"
+           class="img_responsive"
+           width="350"
+           height="4"
+           style="display: block; border: none; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; max-width: 350px; height: auto;"
+           border="0">
+    </td>
+  </tr>
+  <!-- CONTACT INFO ROW -->
+  <tr>
+    <td style="padding: 0; margin: 0; border: 0; vertical-align: top;">
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="100%">
+        <!-- PHONE NUMBERS ROW -->
+        <tr>
+          <td style="padding: 0 0 4px 0; margin: 0; border: 0; vertical-align: top;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+              <tr>
+                <!-- PERSONAL PHONE -->
+                <td style="padding: 0; margin: 0; border: 0; vertical-align: middle;">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                    <tr>
+                      <td style="padding: 0 6px 0 0; margin: 0; border: 0; vertical-align: middle; width: 14px;" width="14">
+                        <img src="https://www.archerexteriors.com/resources/email-signature/img/png/mobile.png"
+                             alt="Mobile"
+                             title="Mobile Phone"
+                             width="14"
+                             height="14"
+                             style="display: block; border: none; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;"
+                             border="0">
+                      </td>
+                      <td style="padding: 0; margin: 0; border: 0; vertical-align: middle;">
+                        <span style="font-family: 'Roboto', Arial, Helvetica, sans-serif; font-size: 15px; font-weight: 400; color: #5a5a68; line-height: 1.2; text-decoration: none; display: inline-block; margin: 0; padding: 0;">${phone1}</span>
+                      </td>
+                    </tr>
+                  </table>
+                </td>${officePhoneSection}
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- EMAIL ROW -->
+        <tr>
+          <td style="padding: 0 0 4px 0; margin: 0; border: 0; vertical-align: top;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+              <tr>
+                <td style="padding: 0 6px 0 0; margin: 0; border: 0; vertical-align: middle; width: 14px;" width="14">
+                  <img src="https://www.archerexteriors.com/resources/email-signature/img/png/envelope.png"
+                       alt="Email"
+                       title="Email"
+                       width="14"
+                       height="14"
+                       style="display: block; border: none; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;"
+                       border="0">
+                </td>
+                <td style="padding: 0; margin: 0; border: 0; vertical-align: middle;">
+                  <span style="font-family: 'Roboto', Arial, Helvetica, sans-serif; font-size: 15px; font-weight: 400; color: #5a5a68; line-height: 1.2; text-decoration: none; display: inline-block; margin: 0; padding: 0;">${userEmail}</span>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- WEBSITE ROW -->
+        <tr>
+          <td style="padding: 0 0 4px 0; margin: 0; border: 0; vertical-align: top;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+              <tr>
+                <td style="padding: 0 6px 0 0; margin: 0; border: 0; vertical-align: middle; width: 14px;" width="14">
+                  <img src="https://www.archerexteriors.com/resources/email-signature/img/png/globe.png"
+                       alt="Website"
+                       title="Website"
+                       width="14"
+                       height="14"
+                       style="display: block; border: none; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;"
+                       border="0">
+                </td>
+                <td style="padding: 0; margin: 0; border: 0; vertical-align: middle;">
+                  <span style="font-family: 'Roboto', Arial, Helvetica, sans-serif; font-size: 15px; font-weight: 400; color: #5a5a68; line-height: 1.2; text-decoration: none; display: inline-block; margin: 0; padding: 0;">www.archerexteriors.com</span>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- ADDRESS ROW -->
+        <tr>
+          <td style="padding: 0 0 10px 0; margin: 0; border: 0; vertical-align: top;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+              <tr>
+                <td style="padding: 0 6px 0 0; margin: 0; border: 0; vertical-align: middle; width: 14px;" width="14">
+                  <img src="https://www.archerexteriors.com/resources/email-signature/img/png/marker.png"
+                       alt="Location"
+                       title="Location"
+                       width="14"
+                       height="14"
+                       style="display: block; border: none; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;"
+                       border="0">
+                </td>
+                <td style="padding: 0; margin: 0; border: 0; vertical-align: middle;">
+                  <span style="font-family: 'Roboto', Arial, Helvetica, sans-serif; font-size: 15px; font-weight: 400; color: #5a5a68; line-height: 1.2; text-decoration: none; display: inline-block; margin: 0; padding: 0;">${userAddress}</span>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <!-- PROMOTIONAL BANNER ROW -->
+  <tr>
+    <td style="padding: 0 0 8px 0; margin: 0; border: 0; vertical-align: top;">
+      <img src="https://www.archerexteriors.com/resources/email-signature/img/forty-years.gif"
+           alt="No Order Too Tall!"
+           title="No Order Too Tall!"
+           class="img_responsive"
+           width="350"
+           height="42"
+           style="display: block; border: none; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; max-width: 350px; height: auto;"
+           border="0">
+    </td>
+  </tr>
+  <!-- SOCIAL MEDIA ICONS ROW -->
+  <tr>
+    <td style="padding: 0; margin: 0; border: 0; vertical-align: top;">
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+        <tr>
+          <!-- FACEBOOK -->
+          <td style="padding: 0 8px 0 0; margin: 0; border: 0; vertical-align: middle;">
+            <a href="http://www.facebook.com/archerexteriors" target="_blank" style="text-decoration: none; border: none;">
+              <img src="https://www.archerexteriors.com/resources/email-signature/img/png/facebook.png"
+                   alt="Facebook"
+                   title="Facebook"
+                   width="20"
+                   height="20"
+                   style="display: block; border: none; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;"
+                   border="0">
+            </a>
+          </td>
+          <!-- INSTAGRAM -->
+          <td style="padding: 0 8px 0 0; margin: 0; border: 0; vertical-align: middle;">
+            <a href="https://www.instagram.com/archerexteriors/" target="_blank" style="text-decoration: none; border: none;">
+              <img src="https://www.archerexteriors.com/resources/email-signature/img/png/instagram.png"
+                   alt="Instagram"
+                   title="Instagram"
+                   width="20"
+                   height="20"
+                   style="display: block; border: none; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;"
+                   border="0">
+            </a>
+          </td>
+          <!-- TIKTOK -->
+          <td style="padding: 0 8px 0 0; margin: 0; border: 0; vertical-align: middle;">
+            <a href="https://www.tiktok.com/@archerexteriors" target="_blank" style="text-decoration: none; border: none;">
+              <img src="https://www.archerexteriors.com/resources/email-signature/img/png/tiktok.png"
+                   alt="TikTok"
+                   title="TikTok"
+                   width="20"
+                   height="20"
+                   style="display: block; border: none; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;"
+                   border="0">
+            </a>
+          </td>
+          <!-- LINKEDIN -->
+          <td style="padding: 0 8px 0 0; margin: 0; border: 0; vertical-align: middle;">
+            <a href="https://www.linkedin.com/company/archer-exteriors-inc/" target="_blank" style="text-decoration: none; border: none;">
+              <img src="https://www.archerexteriors.com/resources/email-signature/img/png/linkedin.png"
+                   alt="LinkedIn"
+                   title="LinkedIn"
+                   width="20"
+                   height="20"
+                   style="display: block; border: none; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;"
+                   border="0">
+            </a>
+          </td>
+          <!-- YOUTUBE -->
+          <td style="padding: 0; margin: 0; border: 0; vertical-align: middle;">
+            <a href="https://www.youtube.com/@archerexteriors" target="_blank" style="text-decoration: none; border: none;">
+              <img src="https://www.archerexteriors.com/resources/email-signature/img/png/youtube.png"
+                   alt="YouTube"
+                   title="YouTube"
+                   width="20"
+                   height="20"
+                   style="display: block; border: none; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;"
+                   border="0">
+            </a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>`;
+
+      // Update visual signature preview
+      document.getElementById('visualSignature').innerHTML = signatureHTML;
+
+      // Store the HTML for copying
+      window.currentSignatureHTML = signatureHTML;
+    }
+
+    function copySignatureHTML() {
+      if (window.currentSignatureHTML) {
+        navigator.clipboard.writeText(window.currentSignatureHTML).then(function () {
+          const alert = document.getElementById('copyAlert');
+          alert.style.display = 'block';
+          setTimeout(() => {
+            alert.style.display = 'none';
+          }, 3000);
+        }).catch(function (err) {
+          console.error('Could not copy text: ', err);
+          // Fallback: create a text area and select it
+          const textArea = document.createElement('textarea');
+          textArea.value = window.currentSignatureHTML;
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textArea);
+
+          const alert = document.getElementById('copyAlert');
+          alert.style.display = 'block';
+          setTimeout(() => {
+            alert.style.display = 'none';
+          }, 3000);
+        });
+      }
+    }
+
+    function copySignature() {
+      // Copy rendered HTML from the visual signature block
+      const visualSignature = document.getElementById('visualSignature');
+
+      if (!visualSignature || !visualSignature.innerHTML.trim()) {
+        alert('No signature generated yet. Please fill in the form and click "Update Preview" first.');
+        return;
+      }
+
+      try {
+        // Get the rendered HTML from the visual signature element
+        const renderedHTML = visualSignature.innerHTML;
+
+        // Try using the modern Clipboard API with HTML content
+        if (navigator.clipboard && navigator.clipboard.write) {
+          // Create a ClipboardItem with both HTML and plain text
+          const textContent = visualSignature.innerText || visualSignature.textContent;
+
+          const clipboardItem = new ClipboardItem({
+            'text/html': new Blob([renderedHTML], { type: 'text/html' }),
+            'text/plain': new Blob([textContent], { type: 'text/plain' })
+          });
+
+          navigator.clipboard.write([clipboardItem]).then(function () {
+            const alert = document.getElementById('copyAlert');
+            alert.innerHTML = '<i style="position: relative;top: 2px;margin-right: 2px;" class="fi fi-rr-checkbox"></i> Signature copied with formatting! You can now paste it into your email client.';
+            alert.style.display = 'block';
+            setTimeout(() => {
+              alert.style.display = 'none';
+            }, 3000);
+          }).catch(function (err) {
+            console.error('Clipboard API failed:', err);
+            fallbackCopy(renderedHTML);
+          });
+
+        } else {
+          // Fallback for older browsers
+          fallbackCopy(renderedHTML);
+        }
+
+      } catch (error) {
+        console.error('Copy signature failed:', error);
+        fallbackCopy(visualSignature.innerHTML);
+      }
+
+      function fallbackCopy(htmlContent) {
+        // Fallback: copy as text
+        const textArea = document.createElement('textarea');
+        textArea.value = htmlContent;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+
+        const alert = document.getElementById('copyAlert');
+        alert.innerHTML = ' <i style="position: relative;top: 2px;margin-right: 2px;" class="fi fi-rr-checkbox"></i> Signature copied to clipboard! You can now paste it into your email client.';
+        alert.style.display = 'block';
+        setTimeout(() => {
+          alert.style.display = 'none';
+        }, 3000);
+      }
+    }
+
+
+
+    function downloadSignature() {
+      if (window.currentSignatureHTML) {
+        const userName = document.getElementById('userName').value.replace(/\s+/g, '-').toLowerCase();
+        const fullHTML = `<!DOCTYPE html>
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--[if gte mso 9]>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+  </xml>
+  <![endif]-->
+</head>
+<body style="margin: 0; padding: 0; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
+${window.currentSignatureHTML}
+<!--[if mso]>
+<style type="text/css">
+  table {border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;}
+  img {-ms-interpolation-mode: bicubic;}
+  a {text-decoration: none !important;}
+</style>
+<![endif]-->
+</body>
+</html>`;
+
+        const blob = new Blob([fullHTML], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${userName}-email-signature.html`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+    }
+
+    // Auto-format phone numbers as user types
+    document.getElementById('phone1').addEventListener('input', function (e) {
+      e.target.value = formatPhone(e.target.value);
+      updateSignature();
+    });
+
+    document.getElementById('phone2').addEventListener('input', function (e) {
+      e.target.value = formatPhone(e.target.value);
+      updateSignature();
+    });
+  </script>
+</body>
+
+</html>

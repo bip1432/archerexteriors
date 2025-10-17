@@ -107,8 +107,8 @@ $this->set('ogUrl', DOMAIN . '/about-us'); // TODO: Change to the current page U
       <div class="col-lg-6 col-md-12 align-self-center">
         <?= $this->Html->image('about-us/our-story-banner.jpg', [
           'class' => 'rad_4',
-          'alt' => 'Our Story',
-          'title' => 'Our Story'
+          'alt' => 'Improving Home Exteriors With Pride & Expertise',
+          'title' => 'Improving Home Exteriors With Pride & Expertise'
         ]) ?>
       </div>
 

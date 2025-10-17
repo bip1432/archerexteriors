@@ -83,7 +83,7 @@ $this->set('ogUrl', DOMAIN . '/contact'); // TODO: Change to the current page UR
                     'alt' => 'Headquarters Location'
                   ]) ?>
                 </div>
-                <h4 class="item_title">341 Harding Highway, <br> Pittsgrove, NJ 08318</h4>
+                <h4 class="item_title"><?= COMPANY_ADDRESS1 ?><br><?= COMPANY_ADDRESS2 ?></h4>
               </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-sm-6">

@@ -40,7 +40,7 @@ $this->set('ogUrl', DOMAIN . '/sales-team'); // TODO: Change to the current page
     </div>
 
     <div class="row justify-content-center">
-      <div class="col-xl-4 col-md-6 col-sm-12 salesman_profile" style="margin-top: 120px;">
+      <div class="col-xl-5 col-md-6 col-sm-12 salesman_profile" style="margin-top: 120px;">
         <div class="salesman_profile_item">
           <div class="inner-box">
             <div class="img_box">
@@ -70,7 +70,7 @@ $this->set('ogUrl', DOMAIN . '/sales-team'); // TODO: Change to the current page
           </div>
         </div>
       </div>
-      <div class="col-xl-4 col-md-6 col-sm-12 salesman_profile" style="margin-top: 120px;">
+      <div class="col-xl-5 col-md-6 col-sm-12 salesman_profile" style="margin-top: 120px;">
         <div class="salesman_profile_item">
           <div class="inner-box">
             <div class="img_box">
@@ -99,7 +99,7 @@ $this->set('ogUrl', DOMAIN . '/sales-team'); // TODO: Change to the current page
           </div>
         </div>
       </div>
-      <div class="col-xl-4 col-md-6 col-sm-12 salesman_profile" style="margin-top: 120px;">
+      <div class="col-xl-5 col-md-6 col-sm-12 salesman_profile" style="margin-top: 120px;">
         <div class="salesman_profile_item">
           <div class="inner-box">
             <div class="img_box">
@@ -128,7 +128,7 @@ $this->set('ogUrl', DOMAIN . '/sales-team'); // TODO: Change to the current page
           </div>
         </div>
       </div>
-      <div class="col-xl-4 col-md-6 col-sm-12 salesman_profile" style="margin-top: 120px;">
+      <div class="col-xl-5 col-md-6 col-sm-12 salesman_profile" style="margin-top: 120px;">
         <div class="salesman_profile_item">
           <div class="inner-box">
             <div class="img_box">
@@ -151,35 +151,6 @@ $this->set('ogUrl', DOMAIN . '/sales-team'); // TODO: Change to the current page
               <?= $this->Html->link(
                 'View Profile<i class="flaticon-login"></i>',
                 ['controller' => 'Teams', 'action' => 'shane'],
-                ['class' => 'theme-btn sm', 'escape' => false]
-              ) ?>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-4 col-md-6 col-sm-12 salesman_profile" style="margin-top: 120px;">
-        <div class="salesman_profile_item">
-          <div class="inner-box">
-            <div class="img_box">
-              <div class="img">
-                <?= $this->Html->image('salesmans/kenny-fowler.png', [
-                  'alt' => 'Kenny Fowler',
-                  'title' => 'Kenny Fowler'
-                ]) ?>
-              </div>
-            </div>
-            <div class="contents">
-              <div class="pattern-layer"></div>
-
-              <h4 class="name">Kenny Fowler</h4>
-              <h6 class="designation">Home Exterior Specialist</h6>
-              <h6 class="serving"><i class="fi fi-rr-hand-back-point-right"></i> Serving Florida</h6>
-              <p class="desc">Transparency That Builds More Than Homes — It Builds Trust.</p>
-            </div>
-            <div class="mt-auto">
-              <?= $this->Html->link(
-                'View Profile<i class="flaticon-login"></i>',
-                ['controller' => 'Teams', 'action' => 'kenny'],
                 ['class' => 'theme-btn sm', 'escape' => false]
               ) ?>
             </div>

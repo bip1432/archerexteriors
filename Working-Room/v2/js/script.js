@@ -226,7 +226,7 @@
       animateIn: 'fadeIn',
       active: true,
       smartSpeed: 2000,
-      autoplay: 6000,
+      autoplay: 10000,
       navText: ['<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>'],
       responsive: {
         0: {
@@ -830,7 +830,7 @@ $('#serviceKeyPoints').owlCarousel({
     0: {
       items: 1,
     },
-    575: {
+    399: {
       items: 2,
     },
     992: {
@@ -839,6 +839,61 @@ $('#serviceKeyPoints').owlCarousel({
     1400: {
       items: 4,
       loop: false,
+    }
+  }
+})
+
+
+// Service Page key points
+$('#appVideoSlider').owlCarousel({
+  loop: true,
+  margin: 10,
+  dots: true,
+  nav: false,
+
+  autoplay: true,
+  autoplayTimeout: 3000,
+  autoplayHoverPause: true,
+
+
+  responsive: {
+    0: {
+      items: 1,
+    },
+    575: {
+      items: 2,
+    },
+    767: {
+      items: 2,
+    }
+  }
+})
+
+
+// Service Page key points
+$('#partnerSlider').owlCarousel({
+  loop: true,
+  margin: 10,
+  dots: true,
+  nav: false,
+
+  autoplay: true,
+  autoplayTimeout: 3000,
+  autoplayHoverPause: true,
+
+
+  responsive: {
+    0: {
+      items: 1,
+    },
+    767: {
+      items: 2,
+    },
+    992: {
+      items: 3,
+    },
+    1400: {
+      items: 1,
     }
   }
 })
@@ -1023,7 +1078,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
+// New Contstruction Gallery
 jQuery(document).ready(function () {
   let owl = jQuery('#newConstructionGallery');
   owl.on('initialized.owl.carousel', function (event) {
@@ -1052,6 +1107,47 @@ jQuery(document).ready(function () {
       },
       992: {
         items: 2,
+      }
+    }
+  });
+});
+
+// Artcontest Inspiration Gallery
+
+jQuery(document).ready(function () {
+  let owl = jQuery('#artContestInspirationGallery');
+  owl.on('initialized.owl.carousel', function (event) {
+    const container = document.querySelector('.owl-stage');
+    lightGallery(container, {
+      thumbnail: true,
+      pager: true,
+      plugins: [],
+      hash: true,
+      preload: 0,
+      selector: '.owl-item:not(.cloned) .img_item',
+      licenseKey: '267782B7-5F41-4D8A-829A-E3902A493098' // License key
+    });
+  });
+  owl.owlCarousel({
+    items: 2,
+    margin: 20,
+    loop: true,
+    dots: true,
+    smartSpeed: 3000,
+    autoplay: 6000,
+
+    responsive: {
+      0: {
+        items: 1,
+      },
+      767: {
+        items: 2,
+      },
+      992: {
+        items: 2,
+      },
+      1400: {
+        items: 3,
       }
     }
   });
@@ -1188,25 +1284,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const btnShare = document.getElementById("btn-share");
-    if (!btnShare) return; // stops if element doesn't exist
+  const btnShare = document.getElementById("btn-share");
+  if (!btnShare) return; // stops if element doesn't exist
 
-    btnShare.addEventListener("click", function () {
-        // Remove old modal if it exists
-        const oldModal = document.getElementById("modal-share");
-        if (oldModal) oldModal.remove();
+  btnShare.addEventListener("click", function () {
+    // Remove old modal if it exists
+    const oldModal = document.getElementById("modal-share");
+    if (oldModal) oldModal.remove();
 
-        const el = this;
-        const pageUrl = encodeURIComponent(window.location.href);
-        const shareModalTitle = el.getAttribute("data-modal-title");
-        const shareModalDescription = el.getAttribute("data-modal-description");
-        const shareFacebookLabel = el.getAttribute("data-facebook-label");
-        const shareTwitterLabel = el.getAttribute("data-twitter-label");
-        const shareTwitterText = el.getAttribute("data-twitter-text");
-        const shareLinkedInLabel = el.getAttribute("data-linkedin-label");
+    const el = this;
+    const pageUrl = encodeURIComponent(window.location.href);
+    const shareModalTitle = el.getAttribute("data-modal-title");
+    const shareModalDescription = el.getAttribute("data-modal-description");
+    const shareFacebookLabel = el.getAttribute("data-facebook-label");
+    const shareTwitterLabel = el.getAttribute("data-twitter-label");
+    const shareTwitterText = el.getAttribute("data-twitter-text");
+    const shareLinkedInLabel = el.getAttribute("data-linkedin-label");
 
-        // Build modal HTML
-        const shareHtml = `
+    // Build modal HTML
+    const shareHtml = `
             <div class="modal fade" id="modal-share" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -1227,12 +1323,215 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         `;
 
-        // Append modal to body
-        document.body.insertAdjacentHTML("beforeend", shareHtml);
+    // Append modal to body
+    document.body.insertAdjacentHTML("beforeend", shareHtml);
 
-        // Show modal using Bootstrap 5
-        const modalEl = document.getElementById("modal-share");
-        const modal = new bootstrap.Modal(modalEl);
-        modal.show();
-    });
+    // Show modal using Bootstrap 5
+    const modalEl = document.getElementById("modal-share");
+    const modal = new bootstrap.Modal(modalEl);
+    modal.show();
+  });
 });
+
+
+// Blind Slider
+
+(function () {
+  // Exit early if no slider exists on the page
+  if (!$('.vb-slider').length) return;
+
+  const slices = Number(getComputedStyle(document.documentElement).getPropertyValue('--vb-slices')) || 8;
+  const animDuration = 0.85;
+  const staggerDelay = 0.07;
+  const autoplayDelay = 2800;
+
+  function buildTiles($item, frontUrl) {
+    const $wrap = $('<div class="vb-tile-wrapper" aria-hidden="true"></div>');
+    for (let i = 0; i < slices; i++) {
+      const pos = (i / (slices - 1)) * 100;
+      const $tile = $('<div class="vb-tile"><div class="vb-tile-inner"></div></div>');
+      const $inner = $tile.find('.vb-tile-inner');
+      const $front = $('<div class="vb-face vb-front"></div>').css({
+        'background-image': `url(${frontUrl})`,
+        'background-position': `${pos}% center`
+      });
+      const $back = $('<div class="vb-face vb-back"></div>').css({
+        'background-position': `${pos}% center`
+      });
+      $inner.append($front).append($back);
+      $wrap.append($tile);
+    }
+    $item.append($wrap);
+  }
+
+  $('.vb-slider').each(function () {
+    const $wrap = $(this);
+    const $carousel = $wrap.find('.vb-carousel');
+
+    const slides = [];
+    $carousel.find('.vb-item').each(function (i) {
+      slides.push({
+        front: $(this).data('front') || '',
+        idx: $(this).data('idx') != null ? Number($(this).data('idx')) : i
+      });
+    });
+    const slideCount = slides.length;
+
+    $carousel.find('.vb-item').each(function (itemIndex) {
+      buildTiles($(this), slides[itemIndex].front);
+    });
+
+    $carousel.owlCarousel({
+      items: 1,
+      loop: true,
+      nav: false,
+      dots: true,
+      mouseDrag: true,
+      touchDrag: true,
+      pullDrag: true,
+      autoplay: false,
+      smartSpeed: 0,
+      autoplayTimeout: autoplayDelay
+    });
+
+    let currentIndex = getActiveOriginalIndex();
+    let isAnimating = false;
+    let autoplayTimer = null;
+
+    function getActiveOriginalIndex() {
+      const $activeItem = $carousel.find('.owl-item.active .vb-item').first();
+      return Number($activeItem.data('idx') || 0);
+    }
+
+    function setVisibleBackFacesTo(url) {
+      const $visible = $carousel.find('.owl-item.active .vb-item');
+      $visible.find('.vb-back').each(function () {
+        $(this).css('background-image', `url(${url})`);
+      });
+    }
+
+    function prepareNewSlideFaces(originalIndex) {
+      const frontUrl = slides[originalIndex].front;
+      const $visible = $carousel.find('.owl-item.active .vb-item');
+      $visible.find('.vb-front').each(function () {
+        $(this).css('background-image', `url(${frontUrl})`);
+      });
+      const nextIdx = (originalIndex + 1) % slideCount;
+      $visible.find('.vb-back').each(function () {
+        $(this).css('background-image', `url(${slides[nextIdx].front})`);
+      });
+      gsap.set($visible.find('.vb-tile-inner'), {
+        rotationY: 0
+      });
+    }
+
+    function performTransition(dir) {
+      if (isAnimating) return;
+      isAnimating = true;
+      const targetIndex = (currentIndex + dir + slideCount) % slideCount;
+      const nextFrontUrl = slides[targetIndex].front;
+      setVisibleBackFacesTo(nextFrontUrl);
+
+      const $inners = $carousel.find('.owl-item.active .vb-tile-inner').toArray();
+      const deg = dir > 0 ? 180 : -180;
+
+      gsap.to($inners, {
+        rotationY: deg,
+        duration: animDuration,
+        stagger: {
+          each: staggerDelay,
+          from: dir > 0 ? "start" : "end"
+        },
+        ease: 'power3.inOut',
+        onComplete: () => {
+          gsap.set($inners, {
+            visibility: "hidden"
+          });
+          $carousel.trigger('to.owl.carousel', [targetIndex, 0, true]);
+          requestAnimationFrame(() => {
+            currentIndex = targetIndex;
+            prepareNewSlideFaces(currentIndex);
+            gsap.set($inners, {
+              rotationY: 0,
+              visibility: "visible"
+            });
+            isAnimating = false;
+          });
+        }
+      });
+    }
+
+    $wrap.find('.vb-next').on('click', function (e) {
+      e.preventDefault();
+      restartAutoplay();
+      performTransition(1);
+    });
+    $wrap.find('.vb-prev').on('click', function (e) {
+      e.preventDefault();
+      restartAutoplay();
+      performTransition(-1);
+    });
+
+    $carousel.on('click', '.owl-dot', function (e) {
+      e.preventDefault();
+      const dotIndex = $(this).index();
+      restartAutoplay();
+      if (dotIndex === currentIndex || isAnimating) return;
+      isAnimating = true;
+      const nextFrontUrl = slides[dotIndex].front;
+      setVisibleBackFacesTo(nextFrontUrl);
+      const $inners = $carousel.find('.owl-item.active .vb-tile-inner').toArray();
+      gsap.to($inners, {
+        rotationY: 180,
+        duration: animDuration,
+        stagger: {
+          each: staggerDelay,
+          from: "start"
+        },
+        ease: 'power3.inOut',
+        onComplete: () => {
+          gsap.set($inners, {
+            visibility: "hidden"
+          });
+          $carousel.trigger('to.owl.carousel', [dotIndex, 0, true]);
+          requestAnimationFrame(() => {
+            currentIndex = dotIndex;
+            prepareNewSlideFaces(currentIndex);
+            gsap.set($inners, {
+              rotationY: 0,
+              visibility: "visible"
+            });
+            isAnimating = false;
+          });
+        }
+      });
+    });
+
+    function startAutoplay() {
+      stopAutoplay();
+      autoplayTimer = setInterval(() => {
+        if (!isAnimating) performTransition(1);
+      }, autoplayDelay);
+    }
+
+    function stopAutoplay() {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    }
+
+    function restartAutoplay() {
+      stopAutoplay();
+      startAutoplay();
+    }
+
+    currentIndex = getActiveOriginalIndex();
+    prepareNewSlideFaces(currentIndex);
+    startAutoplay();
+
+    $wrap.on('mouseenter', stopAutoplay).on('mouseleave', startAutoplay);
+  });
+})();
+
+

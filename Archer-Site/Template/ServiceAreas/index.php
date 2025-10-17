@@ -25,7 +25,7 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
   <div class="legend-container">
     <div class="legend-items-wrapper">
 
-      <div class="marker-legend-item">
+      <div class="marker-legend-item" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Central operations hub for Archer Exteriors.">
         <?= $this->Html->image('map/marker/icon-archi-hq.png', [
           'alt' => 'Archer Headquarters Marker',
           'class' => 'marker-legend-icon'
@@ -33,7 +33,7 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
         <span class="marker-legend-label">Archer Headquarters</span>
       </div>
 
-      <div class="marker-legend-item">
+      <div class="marker-legend-item" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="This branch specializes exclusively in new construction projects.">
         <?= $this->Html->image('map/marker/icon-archer.png', [
           'alt' => 'New Construction Marker',
           'class' => 'marker-legend-icon'
@@ -41,15 +41,15 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
         <span class="marker-legend-label">New Construction</span>
       </div>
 
-      <div class="marker-legend-item">
+      <div class="marker-legend-item" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="This branch handles both new construction and remodeling projects.">
         <?= $this->Html->image('map/marker/icon-archer-remodeling.png', [
           'alt' => 'Remodeling Marker',
           'class' => 'marker-legend-icon'
         ]) ?>
-        <span class="marker-legend-label">Remodeling</span>
+        <span class="marker-legend-label">New Construction / Remodeling</span>
       </div>
 
-      <div class="marker-legend-item">
+      <div class="marker-legend-item" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="This branch is not yet open—operations will begin once construction is complete.">
         <?= $this->Html->image('map/marker/icon-archer-light.png', [
           'alt' => 'Coming Soon Marker',
           'class' => 'marker-legend-icon'
@@ -144,7 +144,7 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
           ]) ?>
         </video>
 
-        <div class="our_service service-area">
+        <div class="service_area_branch_location">
           <div class="row justify-content-center mt-4" style="gap: 20px 0;">
             <div class="col-lg-4 col-6">
               <div class="item">

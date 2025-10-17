@@ -75,7 +75,8 @@
         <div class="large-container">
           <div class="top-inner clearfix">
             <div class="top-left pull-left">
-              <p><i class="flaticon-home"></i>No Order Too Tall!</p>
+              <!-- <p><i class="flaticon-home"></i>No Order Too Tall!</p> -->
+              <?= $this->Html->image('celebrating-forty-years.png', ['class' => 'img-fluid', 'alt' => 'Celebrating 40 years', 'title' => 'Celebrating 40 years']) ?>
             </div>
             <div class="top-right pull-right">
               <ul class="social-links clearfix d-none d-lg-inline-block">
@@ -197,11 +198,25 @@
                               <div class="content_inner">
 
                                 <div class="subMenu_list">
-                                  <h4 class="title_4">A Solid Roof Starts with a Solid Team</h4>
-                                  <p>We provide professional roof replacements, installations, and repairs using high-quality materials. Our team is trained to handle everything from storm damage to aging shingles. Get peace of mind with a roof built to last.</p>
+                                  <h4 class="title_4">A Solid Roof Starts with a Solid Team.</h4>
+                                  <p>We provide professional roof replacements, installations using high-quality materials. Our team is trained to handle everything from storm damage to aging shingles. Get peace of mind with a roof built to last.</p>
+
                                   <div class="my-auto">
-                                    <?= $this->Html->image('menu/offers/archer-exteriors-offer-banner-menu-roofing.jpg', ['class' => 'img-fluid', 'alt' => '25% OFF for all roof installation and replacement', 'title' => '25% OFF for all roof installation and replacement']) ?>
+                                    <?= $this->Html->link(
+                                      $this->Html->image(
+                                        'golden-ticket/banner-menu/archer-exteriors-offer-banner-menu-roofing.jpg',
+                                        [
+                                          'class' => 'img-fluid',
+                                          'alt' => 'Nail it Down - 25% Off Your New Roof',
+                                          'title' => 'Nail it Down - 25% Off Your New Roof'
+                                        ]
+                                      ),
+                                      ['controller' => 'Offers', 'action' => 'goldenTicket'],
+                                      ['class' => '', 'escape' => false]
+                                    ) ?>
                                   </div>
+
+
                                   <div class="mt-auto">
                                     <?= $this->Html->link(
                                       $this->Html->image('check-specials.svg', [
@@ -215,7 +230,7 @@
                                 </div>
                                 <div class="mega_award_wrap">
                                   <div class="banner">
-                                    <?= $this->Html->image('menu/roofing-banner.jpg', ['class' => 'img-fluid', 'alt' => 'A Solid Roof Starts with a Solid Team', 'title' => 'A Solid Roof Starts with a Solid Team']) ?>
+                                    <?= $this->Html->image('menu/roofing-banner.jpg', ['class' => 'img-fluid', 'alt' => 'A Solid Roof Starts with a Solid Team.', 'title' => 'A Solid Roof Starts with a Solid Team.']) ?>
                                   </div>
                                 </div>
                               </div>
@@ -224,11 +239,24 @@
                             <div class="tab-pane fade tab-pane-siding" data-tab-content="siding">
                               <div class="content_inner">
                                 <div class="subMenu_list">
-                                  <h4 class="title_4">Built to Protect. Designed to Impress</h4>
+                                  <h4 class="title_4">Built to Protect. Designed to Impress.</h4>
                                   <p>Enhance your home’s curb appeal with durable, low-maintenance siding. We offer a wide selection of styles and colors to match your vision. Every siding job is installed with expert precision.</p>
+
                                   <div class="my-auto">
-                                    <?= $this->Html->image('menu/offers/archer-exteriors-offer-banner-menu-siding.jpg', ['class' => 'img-fluid', 'alt' => '25% OFF for all siding installation', 'title' => '25% OFF for all siding installation']) ?>
+                                    <?= $this->Html->link(
+                                      $this->Html->image(
+                                        'golden-ticket/banner-menu/archer-exteriors-offer-banner-menu-siding.jpg',
+                                        [
+                                          'class' => 'img-fluid',
+                                          'alt' => 'Wrap it Right - 25% Off Siding Today',
+                                          'title' => 'Wrap it Right - 25% Off Siding Today'
+                                        ]
+                                      ),
+                                      ['controller' => 'Offers', 'action' => 'goldenTicket'],
+                                      ['class' => '', 'escape' => false]
+                                    ) ?>
                                   </div>
+
                                   <div class="mt-auto">
                                     <?= $this->Html->link(
                                       $this->Html->image('check-specials.svg', [
@@ -242,7 +270,7 @@
                                 </div>
                                 <div class="mega_award_wrap">
                                   <div class="banner">
-                                    <?= $this->Html->image('menu/siding-banner.jpg', ['class' => 'img-fluid', 'alt' => 'Siding', 'title' => 'Siding']) ?>
+                                    <?= $this->Html->image('menu/siding-banner.jpg', ['class' => 'img-fluid', 'alt' => 'Built to Protect. Designed to Impress.', 'title' => 'Built to Protect. Designed to Impress.']) ?>
                                   </div>
                                 </div>
                               </div>
@@ -251,11 +279,24 @@
                             <div class="tab-pane fade tab-pane-windows" data-tab-content="windows">
                               <div class="content_inner">
                                 <div class="subMenu_list">
-                                  <h4 class="title_4">Energy-Efficient Windows, Stunning Results</h4>
+                                  <h4 class="title_4">Energy-Efficient Windows, Stunning Results.</h4>
                                   <p>Upgrade to energy-efficient windows that look great and help lower utility bills. We custom-fit each window for a seamless installation. Choose from trusted brands like OKNA and ProVia.</p>
+
                                   <div class="my-auto">
-                                    <?= $this->Html->image('menu/offers/archer-exteriors-offer-banner-menu-window.jpg', ['class' => 'img-fluid', 'alt' => '$250 OFF per window for installation and replacement', 'title' => '$250 OFF per window for installation and replacement']) ?>
+                                    <?= $this->Html->link(
+                                      $this->Html->image(
+                                        'golden-ticket/banner-menu/archer-exteriors-offer-banner-menu-window.jpg',
+                                        [
+                                          'class' => 'img-fluid',
+                                          'alt' => 'Brighten Your Home - $250 Off Per Window',
+                                          'title' => 'Brighten Your Home - $250 Off Per Window'
+                                        ]
+                                      ),
+                                      ['controller' => 'Offers', 'action' => 'goldenTicket'],
+                                      ['class' => '', 'escape' => false]
+                                    ) ?>
                                   </div>
+
                                   <div class="mt-auto">
                                     <?= $this->Html->link(
                                       $this->Html->image('check-specials.svg', [
@@ -269,7 +310,7 @@
                                 </div>
                                 <div class="mega_award_wrap">
                                   <div class="banner">
-                                    <?= $this->Html->image('menu/windows-banner.jpg', ['class' => 'img-fluid', 'alt' => 'Energy-Efficient Windows, Stunning Results', 'title' => 'Energy-Efficient Windows, Stunning Results']) ?>
+                                    <?= $this->Html->image('menu/windows-banner.jpg', ['class' => 'img-fluid', 'alt' => 'Energy-Efficient Windows, Stunning Results.', 'title' => 'Energy-Efficient Windows, Stunning Results.']) ?>
                                   </div>
                                 </div>
                               </div>
@@ -278,11 +319,24 @@
                             <div class="tab-pane fade tab-pane-doors" data-tab-content="doors">
                               <div class="content_inner">
                                 <div class="subMenu_list">
-                                  <h4 class="title_4">Doors That Welcome with Style & Security</h4>
-                                  <p>We install front, storm, and patio doors that combine style with security. Each door is made to withstand the elements and elevate your home’s entry. Our team ensures a clean and proper fit every time.</p>
+                                  <h4 class="title_4">Doors That Welcome with Style & Security.</h4>
+                                  <p>We install exterior front and patio sliding doors that combine style with security. Each door is made to withstand the elements and elevate your home’s entry. Our team ensures a clean and proper fit every time.</p>
+
                                   <div class="my-auto">
-                                    <?= $this->Html->image('menu/offers/archer-exteriors-offer-banner-menu-door.jpg', ['class' => 'img-fluid', 'alt' => '$250 OFF per door for installation and replacement', 'title' => '$250 OFF per door for installation and replacement']) ?>
+                                    <?= $this->Html->link(
+                                      $this->Html->image(
+                                        'golden-ticket/banner-menu/archer-exteriors-offer-banner-menu-door.jpg',
+                                        [
+                                          'class' => 'img-fluid',
+                                          'alt' => 'Open in Style - $250 Off Per Door',
+                                          'title' => 'Open in Style - $250 Off Per Door'
+                                        ]
+                                      ),
+                                      ['controller' => 'Offers', 'action' => 'goldenTicket'],
+                                      ['class' => '', 'escape' => false]
+                                    ) ?>
                                   </div>
+
                                   <div class="mt-auto">
                                     <?= $this->Html->link(
                                       $this->Html->image('check-specials.svg', [
@@ -296,7 +350,7 @@
                                 </div>
                                 <div class="mega_award_wrap">
                                   <div class="banner">
-                                    <?= $this->Html->image('menu/doors-banner.jpg', ['class' => 'img-fluid', 'alt' => 'Doors That Welcome with Style & Security', 'title' => 'Doors That Welcome with Style & Security']) ?>
+                                    <?= $this->Html->image('menu/doors-banner.jpg', ['class' => 'img-fluid', 'alt' => 'Doors That Welcome with Style & Security.', 'title' => 'Doors That Welcome with Style & Security.']) ?>
                                   </div>
                                 </div>
                               </div>
@@ -306,7 +360,7 @@
                             <div class="tab-pane fade tab-pane-gutter" data-tab-content="gutters">
                               <div class="content_inner">
                                 <div class="subMenu_list">
-                                  <h4 class="title_4">Seamless Gutters. Stress-Free Living</h4>
+                                  <h4 class="title_4">Seamless Gutters. Stress-Free Living.</h4>
                                   <p>Protect your home from water damage with seamless gutters and guards. We install systems that are built to perform and blend in. Keep water flowing and your foundation safe.</p>
                                   <div class="mt-auto">
                                     <?= $this->Html->link(
@@ -321,7 +375,7 @@
                                 </div>
                                 <div class="mega_award_wrap">
                                   <div class="banner">
-                                    <?= $this->Html->image('menu/gutters-banner.jpg', ['class' => 'img-fluid', 'alt' => 'Seamless Gutters. Stress-Free Living', 'title' => 'Seamless Gutters. Stress-Free Living']) ?>
+                                    <?= $this->Html->image('menu/gutters-banner.jpg', ['class' => 'img-fluid', 'alt' => 'Seamless Gutters. Stress-Free Living.', 'title' => 'Seamless Gutters. Stress-Free Living.']) ?>
                                   </div>
                                 </div>
                               </div>
@@ -330,7 +384,7 @@
                             <div class="tab-pane fade tab-pane-others" data-tab-content="otherServices">
                               <div class="content_inner">
                                 <div class="subMenu_list">
-                                  <h4 class="title_4">Fascia, Soffit, Flashing, Trim and Skylight Installation</h4>
+                                  <h4 class="title_4">Fascia, Soffit, Flashing, Trim, and Skylight Installation.</h4>
                                   <p>Our services include installing and repairing fascia, soffit, flashing, trim, and skylights to keep your exterior secure, weather-resistant, and visually appealing. Trust our experienced team to ensure every part of your home’s exterior looks great and performs its best.</p>
                                   <div class="mt-auto">
                                     <?= $this->Html->link(
@@ -345,7 +399,7 @@
                                 </div>
                                 <div class="mega_award_wrap">
                                   <div class="banner">
-                                    <?= $this->Html->image('menu/other-services-banner.jpg', ['class' => 'img-fluid', 'alt' => 'Fascia, Soffit, Flashing, Trim and Skylight Installation', 'title' => 'Fascia, Soffit, Flashing, Trim and Skylight Installation']) ?>
+                                    <?= $this->Html->image('menu/other-services-banner.jpg', ['class' => 'img-fluid', 'alt' => 'Fascia, Soffit, Flashing, Trim, and Skylight Installation.', 'title' => 'Fascia, Soffit, Flashing, Trim, and Skylight Installation.']) ?>
                                   </div>
                                 </div>
                               </div>
@@ -369,7 +423,7 @@
                                 </div>
                                 <div class="mega_award_wrap">
                                   <div class="banner">
-                                    <?= $this->Html->image('menu/all-services.jpg', ['class' => 'img-fluid', 'alt' => 'All Services', 'title' => 'All Services']) ?>
+                                    <?= $this->Html->image('menu/all-services.jpg', ['class' => 'img-fluid', 'alt' => 'Fascia, Soffit, Flashing, Trim, and Skylight Installation.', 'title' => 'Fascia, Soffit, Flashing, Trim, and Skylight Installation.']) ?>
                                   </div>
                                 </div>
                               </div>
@@ -391,7 +445,15 @@
 
                     <li><?= $this->Html->link('Financing', ['controller' => 'Financings', 'action' => 'index']) ?></li>
                     <li><?= $this->Html->link('Service Area', ['controller' => 'ServiceAreas', 'action' => 'index']) ?></li>
-                    <li><?= $this->Html->link('Community Impact', ['controller' => 'Communities', 'action' => 'index']) ?></li>
+                    <li class="dropdown">
+                      <?= $this->Html->link('Reviews', ['controller' => 'Reviews', 'action' => 'index']) ?>
+                      <ul>
+                        <li><?= $this->Html->link('Archer Applause', ['controller' => 'Reviews', 'action' => 'archerApplause']) ?></li>
+                        <li><?= $this->Html->link('See All Reviews', ['controller' => 'Reviews', 'action' => 'index']) ?></li>
+                      </ul>
+                    </li>
+
+                    <!-- <li><?= $this->Html->link('Community Impact', ['controller' => 'Communities', 'action' => 'index']) ?></li> -->
 
                     <li class="dropdown">
                       <?= $this->Html->link('Company', ['controller' => 'Companies', 'action' => 'aboutUs']) ?>
@@ -399,7 +461,7 @@
                         <li><?= $this->Html->link('About Us', ['controller' => 'Companies', 'action' => 'aboutUs']) ?></li>
                         <li><?= $this->Html->link('Our Process', ['controller' => 'Companies', 'action' => 'ourProcess']) ?></li>
                         <li><?= $this->Html->link('Why Choose Archer', ['controller' => 'Companies', 'action' => 'whyChooseUs']) ?></li>
-                        <li><?= $this->Html->link('Reviews', ['controller' => 'Reviews', 'action' => 'index']) ?></li>
+                        <li><?= $this->Html->link('Community Impact', ['controller' => 'Communities', 'action' => 'index']) ?></li>
                         <li><?= $this->Html->link('See Our Recent Work', ['controller' => 'Companies', 'action' => 'recentWork']) ?></li>
                         <li><?= $this->Html->link('Archer in Action', ['controller' => 'Offers', 'action' => 'index']) ?></li>
                         <li><?= $this->Html->link('New construction', ['controller' => 'Companies', 'action' => 'newConstruction']) ?></li>

@@ -1,29 +1,33 @@
 <?php
 // Set Meta Tags
-$this->set('title', 'Archie\'s Corner | Archer Exteriors');
-$this->set('metaDescription', 'Archer Exteriors - Archie\'s Corner');
-$this->set('metaKeywords', STATIC_KEYWORDS . ', Archie\'s Corner, Archer Exteriors, Archie the giraffe');
-$this->set('ogTitle', 'Archie\'s Corner | Archer Exteriors');
-$this->set('ogDescription', 'Archer Exteriors - Archie\'s Corner');
+$this->set('title', 'Archie\'s Corner | Archer Exteriors — Our Mascot, Mission & Gallery');
+$this->set('metaDescription', 'Welcome to Archie\'s Corner by Archer Exteriors — meet our giraffe mascot “Archie,” explore our gallery, and learn how we support giraffe conservation through our partnership with GCF. Discover the face behind our commitment to trust, craftsmanship, and community.');
+$this->set('metaKeywords', STATIC_KEYWORDS . ', Archie\'s Corner, Archer Exteriors mascot, Archie giraffe mascot, Archer Exteriors gallery, giraffe conservation partnership, GCF partnership, Archer Exteriors brand story, about Archie mascot, Archer Exteriors community impact, “Archie the giraffe” Archer, Archer Exteriors mascot page');
+$this->set('ogTitle', 'Archie\'s Corner | Archer Exteriors — Our Mascot, Mission & Gallery');
+$this->set('ogDescription', 'Welcome to Archie\'s Corner by Archer Exteriors — meet our giraffe mascot “Archie,” explore our gallery, and learn how we support giraffe conservation through our partnership with GCF. Discover the face behind our commitment to trust, craftsmanship, and community.');
 $this->set('ogImage', DOMAIN . '/img/archerexteriors-insignia.png?' . time());
 $this->set('ogType', 'website'); // For general info pages
 $this->set('ogUrl', DOMAIN . '/archie-the-giraffe'); // TODO: Change to the current page URL
 ?>
 
 <!-- Hero-section -->
-<section class="archie_hero">
-  <div class="container">
-    <div class="content_wrap">
-      <div class="archie_left">
-        <?= $this->Html->image('archie-page/images-archie-the-giraffe.png', [
-          'class' => 'img-fluid',
-          'alt' => 'Archie the giraffe',
-          'title' => 'Archie the giraffe'
-        ]) ?>
-      </div>
-      <div class="archie_right">
-        <h4>"No Order Too Tall!"</h4>
-        <h4>- Archie, <span>the giraffe</span></h4>
+<section class="archie_hero_v2">
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-lg-7 col-md-10 offset-lg-5 offset-md-2 align-self-center">
+        <div class="content_wrap">
+          <div class="archie_left">
+            <?= $this->Html->image('40-years-badge/40-years.png', [
+              'class' => 'img-fluid',
+              'alt' => '40 Years of Excellence',
+              'title' => '40 Years of Excellence'
+            ]) ?>
+          </div>
+          <div class="archie_right">
+            <h4>Celebrating 40 Years.</h4>
+            <h5>Local to You. Family Owned.</h5>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -126,10 +130,60 @@ $this->set('ogUrl', DOMAIN . '/archie-the-giraffe'); // TODO: Change to the curr
         '/img/archie-page/gallery/archer-archie-gallery6.jpg',
         ['class' => 'gallery-item', 'escape' => false]
       ) ?>
+
+      <?= $this->Html->link(
+        $this->Html->image('archie-page/gallery/thumb/archer-exteriors-archie-billboard-brigantine.jpg', [
+          'alt' => 'Archie\'s album',
+          'title' => 'Archie\'s album'
+        ]),
+        '/img/archie-page/gallery/archer-exteriors-archie-billboard-brigantine.jpg',
+        ['class' => 'gallery-item col_two', 'escape' => false]
+      ) ?>
+      <?= $this->Html->link(
+        $this->Html->image('archie-page/gallery/thumb/archer-exteriors-archie-billboard-elmer.jpg', [
+          'alt' => 'Archie\'s album',
+          'title' => 'Archie\'s album'
+        ]),
+        '/img/archie-page/gallery/archer-exteriors-archie-billboard-elmer.jpg',
+        ['class' => 'gallery-item col_two', 'escape' => false]
+      ) ?>
     </div>
   </div>
 </section>
 <!-- Project Gallery End -->
+
+
+<section>
+  <div class="container text-center">
+    <div>
+      <?= $this->Html->link(
+        $this->Html->image(
+          'archie-page/archie-corner-art-contest-banner.jpg',
+          [
+            'class' => 'img-fluid',
+            'alt' => 'Color the World with Archie!',
+            'title' => 'Color the World with Archie!'
+          ]
+        ),
+        ['controller' => 'Communities', 'action' => 'artContest'],
+        ['class' => 'd-none d-md-block banner_hover', 'style' => 'margin-bottom: 90px;', 'target' => '_blank', 'escape' => false]
+      ) ?>
+      <?= $this->Html->link(
+        $this->Html->image(
+          'archie-page/archie-corner-art-contest-banner-sm.jpg',
+          [
+            'class' => 'img-fluid',
+            'alt' => 'Color the World with Archie!',
+            'title' => 'Color the World with Archie!'
+          ]
+        ),
+        ['controller' => 'Communities', 'action' => 'artContest'],
+        ['class' => 'd-block d-md-none banner_hover', 'style' => 'margin-bottom: 90px;', 'target' => '_blank', 'escape' => false]
+      ) ?>
+    </div>
+  </div>
+</section>
+
 
 <!-- Why Choose Us Section Start  -->
 <section class="chooseus-section">

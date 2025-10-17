@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Hide /resources/ from URL
+    RewriteCond %{THE_REQUEST} /resources/([^\s]+) [NC]
+    RewriteRule ^resources/(.*)$ /$1? [R=301,L]
+
+    # Internally rewrite requests to /resources/
+    RewriteCond %{REQUEST_URI} !^/resources/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(archer-applause/.*)$ /resources/$1 [L]
+
+    # Remove .html extension from URLs
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.html -f
+    RewriteRule ^(archer-applause/[^/]+)$ /resources/$1.html [L]
+
+    # Default fallback
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.html [L]
+</IfModule>

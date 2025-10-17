@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonial Slider</title>
+
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      padding: 40px;
+    }
+
+    .owl-carousel .item {
+      padding: 15px;
+    }
+
+    /* Testimonial card */
+    .testimonial-card {
+      background: #95a5a6;
+      /* default grey bubble */
+      color: #111;
+      padding: 20px;
+      border-radius: 6px;
+      position: relative;
+      min-height: 160px;
+    }
+
+    .testimonial-card::after {
+      content: "";
+      position: absolute;
+      left: 40px;
+      /* adjust to align under avatar */
+      bottom: -11px;
+      /* half of height */
+      width: 44px;
+      height: 22px;
+      background: #95a5a6;
+      /* same as card bg */
+      -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      z-index: 0;
+    }
+
+    .testimonial-card::before {
+      content: "";
+      position: absolute;
+      left: 41px;
+      /* 1px offset for shadow */
+      bottom: -13px;
+      width: 42px;
+      height: 20px;
+      background: rgba(0, 0, 0, 0.04);
+      -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+      filter: blur(2px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+
+    .testimonial-card p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #fff;
+      /* white text like screenshot */
+    }
+
+    /* Client info block */
+    .client-info {
+      display: flex;
+      align-items: center;
+      margin-top: 40px;
+      /* space after bubble */
+    }
+
+    .client-info img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: contain;
+      margin-right: 12px;
+    }
+
+    .client-meta h4 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: bold;
+      color: #111;
+    }
+
+    .client-meta span {
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="owl-carousel owl-theme">
+    <!-- Slide 1 -->
+    <div class="item">
+      <div class="testimonial-card" style="background:#ecf0f1; color:#111;">
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s.
+        </p>
+      </div>
+      <div class="client-info">
+        <img src="https://via.placeholder.com/50" alt="Client Logo">
+        <div class="client-meta">
+          <h4>Client Name</h4>
+          <span>- Designation, Company</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="item">
+      <div class="testimonial-card" style="background:#bdc3c7;">
+        <p>
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
+          literature from 45 BC.
+        </p>
+      </div>
+      <div class="client-info">
+        <img src="https://via.placeholder.com/50" alt="Client Logo">
+        <div class="client-meta">
+          <h4>Client Name</h4>
+          <span>- Designation, Company</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="item">
+      <div class="testimonial-card" style="background:#7f8c8d;">
+        <p>
+          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+          some form by injected humour.
+        </p>
+      </div>
+      <div class="client-info">
+        <img src="https://via.placeholder.com/50" alt="Client Logo">
+        <div class="client-meta">
+          <h4>Client Name</h4>
+          <span>- Designation, Company</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery + Owl Carousel JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 20,
+        dots: true,
+        nav: false,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        responsive: {
+          0: { items: 1 },
+          768: { items: 2 },
+          1024: { items: 3 }
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

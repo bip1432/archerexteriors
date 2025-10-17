@@ -1,0 +1,18 @@
+# webroot/resources/email-signature/.htaccess
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Hide webroot from URL
+    RewriteCond %{THE_REQUEST} /webroot/(.+)\sHTTP [NC]
+    RewriteRule ^ /%1? [R=301,L]
+    
+    # Internal rewrite to webroot
+    RewriteCond %{REQUEST_URI} !^/webroot/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /webroot/$1 [L]
+    
+    # Default fallback
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.html [L]
+</IfModule>

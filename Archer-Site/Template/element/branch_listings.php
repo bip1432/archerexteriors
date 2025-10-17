@@ -7,20 +7,68 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
 <ul class="branches_wrap">
   <?php if (!empty($branchLocations)): ?>
     <?php foreach ($branchLocations as $branch):
+      // Get branch action using the BranchActions helper
+      $branchAction = $this->BranchActions->getActionByName($branch->branch_name);
+
       $map_location = $branch->address . ', ' . $branch->city . ', ' . $branch->state . ' ' . $branch->zip;
     ?>
       <li class="item">
         <div class="left">
           <div class="img">
             <?php if (!empty($branch->main_branch_flag) && $branch->main_branch_flag == 1): ?>
-              <?= $this->Html->image('service-area/archer-exteriors-hq.jpg', ['class' => 'img-fluid', 'alt' => h($branch->branch_name)]) ?>
+              <?php if ($branchAction): ?>
+                <?= $this->Html->link(
+                  $this->Html->image('service-area/archer-exteriors-hq.jpg', ['class' => 'img-fluid', 'alt' => h($branch->branch_name)]),
+                  [
+                    'controller' => 'ServiceAreas',
+                    'action' => $branchAction
+                  ],
+                  ['escape' => false, 'target' => '_blank']
+                ) ?>
+              <?php else: ?>
+                <?= $this->Html->link(
+                  $this->Html->image('service-area/archer-exteriors-hq.jpg', ['class' => 'img-fluid', 'alt' => h($branch->branch_name)]),
+                  ['controller' => 'Companies', 'action' => 'newConstruction'],
+                  ['escape' => false, 'target' => '_blank']
+                ) ?>
+              <?php endif; ?>
             <?php else: ?>
-              <?= $this->Html->image('service-area/archer-exteriors-archie.jpg', ['class' => 'img-fluid', 'alt' => h($branch->branch_name)]) ?>
+              <?php if ($branchAction): ?>
+                <?= $this->Html->link(
+                  $this->Html->image('service-area/archer-exteriors-archie.jpg', ['class' => 'img-fluid', 'alt' => h($branch->branch_name)]),
+                  [
+                    'controller' => 'ServiceAreas',
+                    'action' => $branchAction
+                  ],
+                  ['escape' => false, 'target' => '_blank']
+                ) ?>
+              <?php else: ?>
+                <?= $this->Html->link(
+                  $this->Html->image('service-area/archer-exteriors-archie.jpg', ['class' => 'img-fluid', 'alt' => h($branch->branch_name)]),
+                  ['controller' => 'Companies', 'action' => 'newConstruction'],
+                  ['escape' => false, 'target' => '_blank']
+                ) ?>
+              <?php endif; ?>
             <?php endif; ?>
           </div>
           <div class="details">
             <div>
-              <h2 class="name"><?= h($branch->branch_name) ?></h2>
+              <h2 class="name"><?php if ($branchAction): ?>
+                  <?= $this->Html->link(
+                                    strtoupper(html_entity_decode($branch->branch_name)),
+                                    [
+                                      'controller' => 'ServiceAreas',
+                                      'action' => $branchAction
+                                    ],
+                                    ['class' => 'font_link', 'target' => '_blank']
+                                  ) ?>
+                <?php else: ?>
+                  <?= $this->Html->link(
+                                    strtoupper(html_entity_decode($branch->branch_name)),
+                                    ['controller' => 'Companies', 'action' => 'newConstruction'],
+                                    ['class' => 'font_link', 'target' => '_blank']
+                                  ) ?>
+                <?php endif; ?></h2>
               <a class="location" href="https://www.google.com/maps/search/?api=1&query=<?= urlencode($map_location) ?>" target="_blank">
                 <?= $this->Html->image('map-marker.svg', ['class' => 'img-fluid svg', 'alt' => 'Location', 'title' => 'Location']) ?>
                 <?= h($branch->address) ?>
@@ -39,11 +87,11 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
                     <div class="type_btn">
                       <?php if (trim($serviceType) === '1'): ?>
                         <?= $this->Html->image('service-area/icon-construction.png', ['width' => '24', 'alt' => 'New Construction', 'title' => 'New Construction']) ?>
-                        New Construction
+                        <?= $this->Html->link('New Construction', ['controller' => 'Companies', 'action' => 'newConstruction'], ['class' => 'font_link', 'target' => '_blank']) ?>
                       <?php endif; ?>
                       <?php if (trim($serviceType) === '2'): ?>
                         <?= $this->Html->image('service-area/icon-remodelling.png', ['width' => '24', 'alt' => 'Remodeling', 'title' => 'Remodeling']) ?>
-                        Remodeling
+                        <?= $this->Html->link('Remodeling', ['controller' => 'Estimates', 'action' => 'index'], ['class' => 'font_link', 'target' => '_blank']) ?>
                       <?php endif; ?>
                     </div>
                   <?php endforeach; ?>
@@ -52,15 +100,15 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
               <div class="service_lists">
                 <?php if (!empty($branch->service_names)): ?>
                   <?php foreach ($branch->service_names as $serviceName): ?>
-                    <span class="list_item"><?= h($serviceName) ?></span>
+                    <a href="<?= $this->Url->build(['controller' => 'Services', 'action' => strtolower(h($serviceName))]) ?>" class="list_item font_link" target="_blank"><?= h($serviceName) ?></a>
                   <?php endforeach; ?>
                 <?php endif; ?>
               </div>
             </div>
 
-            <?php if (!empty($branch->licenses)): ?>
+            <?php /* if (!empty($branch->licenses)): ?>
               <h6 class="license"><?= h($branch->licenses) ?></h6>
-            <?php endif; ?>
+            <?php endif; */ ?>
           </div>
         </div>
 
@@ -72,7 +120,7 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
                 <?php
                 $countyCount = 0;
                 foreach ($branch->county_names as $countyNames):
-                  if ($countyCount >= 8) break;
+                  if ($countyCount >= 6) break;
 
                   $countyName = '';
                   $stateIso = '';
@@ -86,7 +134,27 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
                   }
                   $countyCount++;
                 ?>
-                  <a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Serving <?= h($countyName) ?> County in <?= h($stateName) ?>"><span class="state"><?= h($stateIso) ?></span><span class="county"><?= h($countyName) ?></span></a>
+                  <span class="county_lists_item" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Serving <?= h($countyName) ?> in <?= h($stateName) ?>">
+                    <?= $this->Html->link(
+                      h($stateIso),
+                      [
+                        'controller' => 'ServiceAreas',
+                        'action' => 'dynamicGeographicState',
+                        strtolower(str_replace(' ', '-', $stateName))
+                      ],
+                      ['class' => 'state', 'target' => '_blank']
+                    ) ?>
+                    <?= $this->Html->link(
+                      h($countyName),
+                      [
+                        'controller' => 'ServiceAreas',
+                        'action' => 'dynamicGeographicCounty',
+                        strtolower(str_replace(' ', '-', $stateName)),
+                        strtolower(str_replace(' ', '-', $countyName))
+                      ],
+                      ['class' => 'county', 'target' => '_blank']
+                    ) ?>
+                  </span>
                 <?php endforeach; ?>
               </div>
               <a class="see_more" data-bs-toggle="modal" data-bs-target="#countyModal<?= h($branch->id) ?>" href="javascript:void(0)"><i
@@ -134,10 +202,17 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
             </div>
 
             <div class="text-start text-xl-end">
-              <?php if (trim($serviceType) === '1'): ?>
+              <?php if ($branchAction): ?>
+                <?= $this->Html->link(
+                  'Contact<i class="flaticon-login"></i>',
+                  [
+                    'controller' => 'ServiceAreas',
+                    'action' => $branchAction
+                  ],
+                  ['class' => 'theme-btn sm mt-2', 'target' => '_blank', 'escape' => false]
+                ) ?>
+              <?php else: ?>
                 <?= $this->Html->link('Contact<i class="flaticon-login"></i>', ['controller' => 'Companies', 'action' => 'newConstruction'], ['class' => 'theme-btn sm mt-2', 'target' => '_blank', 'escape' => false]) ?>
-              <?php elseif (trim($serviceType) === '2'): ?>
-                <?= $this->Html->link('Contact<i class="flaticon-login"></i>', ['controller' => 'Estimates', 'action' => 'index'], ['class' => 'theme-btn sm mt-2', 'target' => '_blank', 'escape' => false]) ?>
               <?php endif; ?>
             </div>
 
@@ -185,10 +260,27 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
 
                   // Display counties grouped by state
                   foreach ($countiesByState as $stateName => $counties): ?>
-                    <h4 class="mb-2 mt-4"><?= h($stateName) ?></h4>
+                    <h4 class="mb-2 mt-4"><?= $this->Html->link(
+                                            h($stateName),
+                                            [
+                                              'controller' => 'ServiceAreas',
+                                              'action' => 'dynamicGeographicState',
+                                              strtolower(str_replace(' ', '-', $stateName))
+                                            ],
+                                            ['class' => 'header_link', 'target' => '_blank']
+                                          ) ?></h4>
                     <div class="county_lists m-0">
                       <?php foreach ($counties as $county): ?>
-                        <a href="javascript:void(0)"><?= h($county) ?></a>
+                        <?= $this->Html->link(
+                          h($county),
+                          [
+                            'controller' => 'ServiceAreas',
+                            'action' => 'dynamicGeographicCounty',
+                            strtolower(str_replace(' ', '-', $stateName)),
+                            strtolower(str_replace(' ', '-', $county))
+                          ],
+                          ['class' => 'county', 'target' => '_blank']
+                        ) ?>
                       <?php endforeach; ?>
                     </div>
                   <?php endforeach; ?>
@@ -236,8 +328,8 @@ $mapStatesTable = TableRegistry::getTableLocator()->get('MapStates');
       if (isset($filters) && !empty($filters['county'])) {
         $filterParams['county'] = $filters['county'];
       }
-      if (isset($filters) && !empty($filters['service'])) {
-        $filterParams['service'] = $filters['service'];
+      if (isset($filters) && !empty($filters['dept'])) {
+        $filterParams['dept'] = $filters['dept'];
       }
       ?>
       <ul class="pagination_list">

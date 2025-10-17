@@ -2,7 +2,7 @@
 // Set Meta Tags
 $this->set('title', 'Other Services | Fascia, Soffit, Skylight, Flashing and Trim | Archer Exteriors');
 $this->set('metaDescription', 'Archer Exteriors - Your trusted partner for premium roofing, siding, and window solutions. Fascia, Soffit, Skylight, Flashing and Trim.');
-$this->set('metaKeywords', STATIC_KEYWORDS . ', Fascia, Soffit, Skylight, Flashing and Trim, 8662724398, archerexteriors.com, Archer Exteriors');
+$this->set('metaKeywords', STATIC_KEYWORDS . ', Fascia, Soffit, Skylight, Flashing and Trim');
 $this->set('ogTitle', 'Other Services | Fascia, Soffit, Skylight, Flashing and Trim | Archer Exteriors');
 $this->set('ogDescription', 'Archer Exteriors - Your trusted partner for premium roofing, siding, and window solutions. Fascia, Soffit, Skylight, Flashing and Trim.');
 $this->set('ogImage', DOMAIN . '/img/archerexteriors-insignia.png?' . time());

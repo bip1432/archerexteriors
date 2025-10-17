@@ -12,36 +12,6 @@ $this->set('ogUrl', DOMAIN . '/current-activities'); // TODO: Change to the curr
 <!-- banner-section -->
 <section class="banner-section community_impact current_activities">
   <div class="banner-carousel owl-theme owl-carousel owl-nav-none">
-    <div class="slide-item one">
-      <div class="image-layer">
-      </div>
-      <div class="auto-container">
-        <div class="row flex-lg-row flex-column-reverse gx-lg-5 gy-4 text-center text-lg-start">
-          <div class="col-lg-6 align-self-center">
-            <div class="content-box">
-              <h1 style="color: var(--header);" class="title">Color the World <br> with Archie!</h1>
-              <p style="color: #0a5d8b;" class="desc mb-4">An exciting national art contest for creative kids and teens, brought to you by Archer Exteriors.</p>
-              <div class="btn-box mt-4">
-                <?= $this->Html->link(
-                  'Learn More<i class="flaticon-login"></i>',
-                  ['controller' => 'Communities', 'action' => 'artContest'],
-                  ['class' => 'theme-btn sm', 'escape' => false]
-                ) ?>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <?= $this->Html->image('current-activities/hero-banners/hero-art-contest.png', [
-              'class' => 'img-fluid position-relative',
-              'style' => 'width: 450px;margin: 0 auto;',
-              'alt' => 'Color the World with Archie!',
-              'title' => 'Color the World with Archie!'
-            ]) ?>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div class="slide-item two">
       <div class="image-layer">
@@ -79,24 +49,56 @@ $this->set('ogUrl', DOMAIN . '/current-activities'); // TODO: Change to the curr
         <div class="row flex-lg-row flex-column-reverse gx-lg-5 gy-4 text-center text-lg-start">
           <div class="col-lg-6 align-self-center">
             <div class="content-box">
-              <h1 class="title">Phillies Ticket Giveway</h1>
-              <p class="desc mb-4">Archer Exteriors is giving away Philadelphia Phillies tickets EVERY MONTH through September</p>
+              <h1 class="title">October Eagles Tickets</h1>
+              <p class="desc mb-4">Archer Exteriors is giving you the chance to go see the birds this football season.</p>
               <?= $this->Html->link(
-              'Learn More<i class="flaticon-login"></i>',
-              ['controller' => 'Communities', 'action' => 'philliesTickets'],
-              ['class' => 'theme-btn', 'escape' => false]
-            ) ?>
+                'Learn More<i class="flaticon-login"></i>',
+                ['controller' => 'Communities', 'action' => 'goBirds'],
+                ['class' => 'theme-btn', 'escape' => false]
+              ) ?>
             </div>
           </div>
 
           <div class="col-lg-6">
-            <?= $this->Html->image('current-activities/hero-banners/hero-phillies-ticket.png', [
-            'class' => 'img-fluid position-relative',
-            'style' => 'width: 450px;margin: 0 auto;',
-            'alt' => 'Catch a Game With Archer',
-            'title' => 'Catch a Game With Archer'
-          ]) ?>
+            <?= $this->Html->image('current-activities/hero-banners/hero-eagles-ticket.png', [
+              'class' => 'img-fluid position-relative',
+              'alt' => 'October Eagles Tickets',
+              'title' => 'October Eagles Tickets'
+            ]) ?>
           </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="slide-item one">
+      <div class="image-layer">
+      </div>
+      <div class="auto-container">
+        <div class="row flex-lg-row flex-column-reverse gx-lg-5 gy-4 text-center text-lg-start">
+          <div class="col-lg-6">
+            <?= $this->Html->image('current-activities/hero-banners/hero-art-contest.png', [
+              'class' => 'img-fluid position-relative',
+              'style' => 'width: 450px;margin: 0 auto;',
+              'alt' => 'Color the World with Archie!',
+              'title' => 'Color the World with Archie!'
+            ]) ?>
+          </div>
+
+          <div class="col-lg-6 align-self-center">
+            <div class="content-box">
+              <h1 style="color: var(--header);" class="title">Color the World <br> with Archie!</h1>
+              <p style="color: #0a5d8b;" class="desc mb-4">The imagination and talent blew us away this year. We can’t wait to see what next year’s artists will create!</p>
+              <div class="btn-box mt-4">
+                <?= $this->Html->link(
+                  'Learn More<i class="flaticon-login"></i>',
+                  ['controller' => 'Communities', 'action' => 'artContest'],
+                  ['class' => 'theme-btn sm', 'escape' => false]
+                ) ?>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -118,50 +120,22 @@ $this->set('ogUrl', DOMAIN . '/current-activities'); // TODO: Change to the curr
           <div class="inner-box bg-white">
             <div class="image-box">
               <?= $this->Html->link(
-                $this->Html->image('current-activities/national-art-content.jpg', [
-                  'alt' => 'National Art Contest',
-                  'title' => 'National Art Contest'
+                $this->Html->image('current-activities/eagles-ticket.jpg', [
+                  'alt' => 'October Eagles Tickets',
+                  'title' => 'October Eagles Tickets'
                 ]),
-                ['controller' => 'Communities', 'action' => 'artContest'],
+                ['controller' => 'Communities', 'action' => 'goBirds'],
                 ['escape' => false]
               ) ?>
             </div>
             <div class="lower-content">
               <div class="shap-box"></div>
-              <h3><?= $this->Html->link('National Art Contest', ['controller' => 'Communities', 'action' => 'artContest']) ?></h3>
-              <p>An exciting national art contest for creative kids and teens, brought to you by Archer Exteriors.</p>
+              <h3><?= $this->Html->link('October Eagles Tickets', ['controller' => 'Communities', 'action' => 'goBirds']) ?></h3>
+              <p>Archer Exteriors is giving you the chance to go see the birds this football season.</p>
               <div class="link">
                 <?= $this->Html->link(
                   'Learn More<i class="flaticon-login"></i>',
-                  ['controller' => 'Communities', 'action' => 'artContest'],
-                  ['escape' => false]
-                ) ?>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-4 col-md-6 col-sm-8">
-        <div class="service-block-item light wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-          <div class="inner-box bg-white">
-            <div class="image-box">
-              <?= $this->Html->link(
-                $this->Html->image('current-activities/helping-little-fighters.jpg', [
-                  'alt' => 'Helping Little Fighters',
-                  'title' => 'Helping Little Fighters'
-                ]),
-                ['controller' => 'Communities', 'action' => 'helpingLittleFighters'],
-                ['escape' => false]
-              ) ?>
-            </div>
-            <div class="lower-content">
-              <div class="shap-box"></div>
-              <h3><?= $this->Html->link('Helping Little Fighters', ['controller' => 'Communities', 'action' => 'helpingLittleFighters']) ?></h3>
-              <p>What an unforgettable day at Archer Exteriors! We were honored to host a fundraiser in support of the incredible kids at the Children's Hospital of Philadelphia (CHOP).</p>
-              <div class="link">
-                <?= $this->Html->link(
-                  'Learn More<i class="flaticon-login"></i>',
-                  ['controller' => 'Communities', 'action' => 'helpingLittleFighters'],
+                  ['controller' => 'Communities', 'action' => 'goBirds'],
                   ['escape' => false]
                 ) ?>
               </div>
@@ -204,6 +178,122 @@ $this->set('ogUrl', DOMAIN . '/current-activities'); // TODO: Change to the curr
           <div class="inner-box bg-white">
             <div class="image-box">
               <?= $this->Html->link(
+                $this->Html->image('current-activities/national-art-content.jpg', [
+                  'alt' => 'National Art Contest',
+                  'title' => 'National Art Contest'
+                ]),
+                ['controller' => 'Communities', 'action' => 'artContest'],
+                ['escape' => false]
+              ) ?>
+            </div>
+            <div class="lower-content">
+              <div class="shap-box"></div>
+              <h3><?= $this->Html->link('National Art Contest', ['controller' => 'Communities', 'action' => 'artContest']) ?></h3>
+              <p>The imagination and talent blew us away this year. We can’t wait to see what next year’s artists will create!</p>
+              <div class="link">
+                <?= $this->Html->link(
+                  'Learn More<i class="flaticon-login"></i>',
+                  ['controller' => 'Communities', 'action' => 'artContest'],
+                  ['escape' => false]
+                ) ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4 col-md-6 col-sm-8">
+        <div class="service-block-item light wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+          <div class="inner-box bg-white">
+            <div class="image-box">
+              <?= $this->Html->link(
+                $this->Html->image('current-activities/studer-childrens-hospital.jpg', [
+                  'alt' => 'Archer Exteriors & the Studer Family Children’s Hospital Radiothon',
+                  'title' => 'Archer Exteriors & the Studer Family Children’s Hospital Radiothon'
+                ]),
+                ['controller' => 'Communities', 'action' => 'studerFamilyChildrenHospital'],
+                ['escape' => false]
+              ) ?>
+            </div>
+            <div class="lower-content">
+              <div class="shap-box"></div>
+              <h3><?= $this->Html->link('Archer Exteriors & the Studer Family Children’s Hospital Radiothon', ['controller' => 'Communities', 'action' => 'studerFamilyChildrenHospital']) ?></h3>
+              <p>At Archer Exteriors, we believe our strength lies not just in the structures we build, but in the communities we serve. That’s why we are honored to partner with Cat Country 98.7’s annual Cat Country Cares for Kids Radiothon, supporting the Studer Family Children’s Hospital.</p>
+              <div class="link">
+                <?= $this->Html->link(
+                  'Learn More<i class="flaticon-login"></i>',
+                  ['controller' => 'Communities', 'action' => 'studerFamilyChildrenHospital'],
+                  ['escape' => false]
+                ) ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-4 col-md-6 col-sm-8">
+        <div class="service-block-item light wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+          <div class="inner-box bg-white">
+            <div class="image-box">
+              <?= $this->Html->link(
+                $this->Html->image('current-activities/lorson-ranch.jpg', [
+                  'alt' => 'Standing Strong with Operation Homefront',
+                  'title' => 'Standing Strong with Operation Homefront'
+                ]),
+                ['controller' => 'Communities', 'action' => 'operationHomefront'],
+                ['escape' => false]
+              ) ?>
+            </div>
+            <div class="lower-content">
+              <div class="shap-box"></div>
+              <h3><?= $this->Html->link('Standing Strong with Operation Homefront', ['controller' => 'Communities', 'action' => 'operationHomefront']) ?></h3>
+              <p>At Archer Exteriors, community impact is more than a mission—it’s a mindset. That’s why we’re honored to support Operation Homefront, a national nonprofit serving America’s military families in their times of need.</p>
+              <div class="link">
+                <?= $this->Html->link(
+                  'Learn More<i class="flaticon-login"></i>',
+                  ['controller' => 'Communities', 'action' => 'operationHomefront'],
+                  ['escape' => false]
+                ) ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-xl-4 col-md-6 col-sm-8">
+        <div class="service-block-item light wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+          <div class="inner-box bg-white">
+            <div class="image-box">
+              <?= $this->Html->link(
+                $this->Html->image('current-activities/helping-little-fighters.jpg', [
+                  'alt' => 'Helping Little Fighters',
+                  'title' => 'Helping Little Fighters'
+                ]),
+                ['controller' => 'Communities', 'action' => 'helpingLittleFighters'],
+                ['escape' => false]
+              ) ?>
+            </div>
+            <div class="lower-content">
+              <div class="shap-box"></div>
+              <h3><?= $this->Html->link('Helping Little Fighters', ['controller' => 'Communities', 'action' => 'helpingLittleFighters']) ?></h3>
+              <p>What an unforgettable day at Archer Exteriors! We were honored to host a fundraiser in support of the incredible kids at the Children's Hospital of Philadelphia (CHOP).</p>
+              <div class="link">
+                <?= $this->Html->link(
+                  'Learn More<i class="flaticon-login"></i>',
+                  ['controller' => 'Communities', 'action' => 'helpingLittleFighters'],
+                  ['escape' => false]
+                ) ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col-xl-4 col-md-6 col-sm-8">
+        <div class="service-block-item light wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+          <div class="inner-box bg-white">
+            <div class="image-box">
+              <?= $this->Html->link(
                 $this->Html->image('current-activities/phillis-ticket.jpg', [
                   'alt' => 'Phillies tickets',
                   'title' => 'Phillies tickets'
@@ -227,7 +317,7 @@ $this->set('ogUrl', DOMAIN . '/current-activities'); // TODO: Change to the curr
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="col-xl-4 col-md-6 col-sm-8">
         <div class="service-block-item light wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
           <div class="inner-box bg-white">

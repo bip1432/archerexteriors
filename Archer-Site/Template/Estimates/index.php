@@ -39,9 +39,13 @@ $this->set('ogUrl', DOMAIN . '/get-estimate');
 
         <p>With over <?= YEARS_OF_EXPERIENCE ?> years of experience, Archer Exteriors is a trusted name in home exterior services. As a family-owned company, we take pride in delivering expert craftsmanship, clear communication, and a five-star experience from start to finish. From residential upgrades to large-scale commercial projects, we treat every home like it's our own.</p>
 
-        <div class="roof_badge my-4">
+        <div class="our_strength my-4">
           <span class="img">
-            <?= $this->Html->image('home-white.svg', ['alt' => 'home-white', 'class' => 'svg']) ?>
+            <?= $this->Html->image('roofing-service/archie-sm.png', [
+              'alt' => 'Jobs Strength',
+              'title' => 'Jobs Strength',
+              'class' => 'img-fluid'
+            ]) ?>
           </span>
           <div class="content">
             <?= $this->element('jobs_strength') ?>
@@ -135,57 +139,109 @@ $this->set('ogUrl', DOMAIN . '/get-estimate');
           </div>
         </div>
 
-        <div class="mt-4">
-          <div class="fortyYrs_batch for_desktop">
-            <div class="inner">
-              <div class="img">
-                <?= $this->Html->image('40-years-badge/40-years.png', [
-                  'alt' => '40 Years of Excellence',
-                  'title' => '40 Years of Excellence'
-                ]) ?>
-              </div>
-              <div class="contents">
-                <div class="content_inner">
-                  <h4>Exteriors That Elevate <br> Service That Stands Out</h4>
-                  <p>Excellence in Exterior Home Remodeling. <br> Local to You. Family Owned.</p>
-                </div>
-              </div>
-            </div>
-            <div class="all_services">
-              <?= $this->Html->link(
-                '<span>Check all our services <i class="flaticon-login"></i></span>',
-                ['controller' => 'Services', 'action' => 'index'],
-                ['class' => 'theme-btn', 'escape' => false]
-              ) ?>
-            </div>
-          </div>
-
-          <div class="fortyYrs_batch for_mobile">
-            <div class="text-center">
-              <?= $this->Html->image('40-years-badge/40-years.png', [
-                'alt' => '40 Years of Excellence',
-                'title' => '40 Years of Excellence'
+        <div class="row mb-4">
+          <div class="col-md-6" style="margin-top: 70px;">
+            <div class="gt_offer_box">
+              <?= $this->Html->image('golden-ticket/off-25-percent.png', [
+                'class' => 'img-fluid offer_img',
+                'alt' => '25% off roofing & siding',
+                'title' => '25% off roofing & siding'
               ]) ?>
 
-              <h4>Exteriors That Elevate <br> Service That Stands Out</h4>
-              <p>Excellence in Exterior Home Remodeling. <br> Local to You. Family Owned.</p>
-
-              <div class="mt-4">
-                <?= $this->Html->link(
-                  'Check all our services <i class="flaticon-login"></i>',
-                  ['controller' => 'Services', 'action' => 'index'],
-                  ['class' => 'theme-btn sm', 'escape' => false]
-                ) ?>
+              <div class="text-end">
+                <div class="icon">
+                  <?= $this->Html->image('services/icons/roof.svg', [
+                    'class' => 'svg',
+                    'alt' => 'Roofing & Siding',
+                    'title' => 'Roofing & Siding'
+                  ]) ?>
+                </div>
               </div>
+
+              <h4>Roofing & Siding</h4>
             </div>
-
           </div>
+          <div class="col-md-6" style="margin-top: 70px;">
+            <div class="gt_offer_box">
+              <?= $this->Html->image('golden-ticket/off-250-dollar.png', [
+                'class' => 'img-fluid offer_img',
+                'alt' => '$250 off per window & door',
+                'title' => '$250 off per window & door'
+              ]) ?>
 
+              <div class="text-end">
+                <div class="icon">
+                  <?= $this->Html->image('services/icons/window.svg', [
+                    'class' => 'svg',
+                    'alt' => 'Window & Door',
+                    'title' => 'Window & Door'
+                  ]) ?>
+                </div>
+              </div>
+
+              <h4>Per Window & Door</h4>
+            </div>
+          </div>
         </div>
+
+        <p style="font-size: 14px; font-style: italic; line-height: 1.4;">Limited time offer. Offer valid only on new replacement and installation projects. Excludes all repair jobs.</p>
+
+
       </div>
 
       <div class="col-lg-5">
         <?= $this->element('forms/form_free_estimate', ['formId' => '2', 'formKey' => 'getest3cf769d867492d92ea787528ef2fa269']) ?>
+      </div>
+
+      <div class="col-lg-12" style="margin-top: 60px;">
+        <!-- Applause Carousel Div  -->
+        <div class="position-relative">
+          <div class="">
+            <div id="carouselApplause" class="carousel slide offer_ad_carousel" data-bs-ride="carousel" data-bs-touch="true">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselApplause" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselApplause" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselApplause" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselApplause" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              </div>
+
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <a class="d-none d-md-block" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/new-roof-zero-mess')">
+                    <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-roofing-lg.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+                  </a>
+                  <a class="d-bock d-md-none" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/new-roof-zero-mess')">
+                    <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-roofing-sm.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+                  </a>
+                </div>
+                <div class="carousel-item">
+                  <a class="d-none d-md-block" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/from-aluminum-to-amazing')">
+                    <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-siding-lg.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+                  </a>
+                  <a class="d-bock d-md-none" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/from-aluminum-to-amazing')">
+                    <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-siding-sm.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+                  </a>
+                </div>
+                <div class="carousel-item">
+                  <a class="d-none d-md-block" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/how-new-windows-transformed-our-home')">
+                    <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-windows-lg.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+                  </a>
+                  <a class="d-bock d-md-none" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/how-new-windows-transformed-our-home')">
+                    <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-windows-sm.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+                  </a>
+                </div>
+                <div class="carousel-item">
+                  <a class="d-none d-md-block" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/stunning-home-makeover-siding-door')">
+                    <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-doors-lg.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+                  </a>
+                  <a class="d-bock d-md-none" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/stunning-home-makeover-siding-door')">
+                    <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-doors-sm.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -532,3 +588,20 @@ $this->set('ogUrl', DOMAIN . '/get-estimate');
   <?= $this->element('finance_section') ?>
 </section>
 <!-- Finance Section End  -->
+
+
+<script>
+  function openDVInNewWindow(videoPageUrl) {
+    // Calculate 80% of the screen width and height
+    var w = Math.floor(window.screen.width * 0.8);
+    var h = Math.floor(window.screen.height * 0.8);
+    var left = Math.floor((window.screen.width - w) / 2);
+    var top = Math.floor((window.screen.height - h) / 2);
+
+    window.open(
+      videoPageUrl,
+      '_blank',
+      `toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=${w},height=${h},left=${left},top=${top}`
+    );
+  }
+</script>

@@ -124,23 +124,15 @@ $map_location = $branch->address . ', ' . $branch->city . ', ' . $branch->state 
 <!-- Map Section Start  -->
 <section class="section ">
     <div class="container">
+      <div class="sec-title text-center">
+      <h2>Transform Your Home <span>With Trusted Experts</span></h2>
+    </div>
+
         <div class="row gy-5 text-center text-lg-start">
-            <div class="col-lg-6 align-self-center">
+            <div class="col-lg-12 align-self-center">
                 <!-- Map Container: Southern Jersey & Delaware Valley Counties -->
-                <div class="mapapi-app" data-map-slug="southern-jersey-counties" data-map-domain="<?= h(DOMAIN) ?>" data-mapapi-app-lazy data-height="400px"></div>
+                <div class="mapapi-app" data-map-slug="southern-jersey-counties" data-map-domain="<?= h(DOMAIN) ?>" data-mapapi-app-lazy data-height="500px"></div>
             </div>
-
-            <div class="col-lg-6 align-self-center">
-                <div class="sec-title">
-                    <h2>Transform Your Home <span>With Trusted Experts</span></h2>
-                </div>
-                <p class="mb-4">Discover the best roofing, siding, and window replacement services in New Jersey. Archer
-                    Exteriors provides expert solutions tailored to your needs.</p>
-                <p>At Archer Exteriors, we take pride in providing our expert services to a wide range of communities near New
-                    Jersey. Whether you reside in a bustling city or a quaint town, our team is dedicated to delivering
-                    top-notch services to enhance your home.</p>
-            </div>
-
         </div>
     </div>
 </section>
@@ -148,9 +140,15 @@ $map_location = $branch->address . ', ' . $branch->city . ', ' . $branch->state 
 
 <!-- Serving Areas Section Start  -->
 <section class="section light">
-    <?= $this->element('serving_areas_accordion', ['branchLocations' => $branchLocations]) ?>
+    <?= $this->element('ServiceAreas/serving_areas_accordion', ['branchLocations' => $branchLocations]) ?>
 </section>
 <!-- Serving Areas Section End  -->
+
+<!-- New Construction Gallery Start -->
+<section class="section gallery_light">
+   <?= $this->element('new_construction_gallery') ?>
+</section>
+<!-- New Construction Gallery End -->
 
 <!-- Why Choose Us Section Start  -->
 <section class="chooseus-section">

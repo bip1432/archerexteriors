@@ -109,7 +109,7 @@ $this->set('ogUrl', DOMAIN . '/phillies-tickets');
 <!-- Phillies Tickets Box Section Start  -->
 
 
-<!-- <section class="archie_section">
+<section class="archie_section">
   <div class="auto-container">
     <div class="inner_row">
       <div class="left" style="gap: 40px;">
@@ -133,9 +133,9 @@ $this->set('ogUrl', DOMAIN . '/phillies-tickets');
       </div>
     </div>
   </div>
-</section> -->
+</section>
 
-<section class="section bg_secondary">
+<!-- <section class="section bg_secondary">
   <div class="auto-container">
     <div class="box-style-three">
       <div class="single-item">
@@ -179,7 +179,7 @@ $this->set('ogUrl', DOMAIN . '/phillies-tickets');
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <!-- Activities Slider Section Start  -->

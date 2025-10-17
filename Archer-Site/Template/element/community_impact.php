@@ -22,6 +22,27 @@
         <div id="activitiesCarousel" class="owl-carousel owl-theme activities_slider">
           <div class="item">
             <div class="item_img">
+              <?= $this->Html->image('community-impact/eagles-ticket.jpg', [
+                'alt' => 'October Eagles Tickets',
+                'title' => 'October Eagles Tickets'
+              ]) ?>
+            </div>
+
+            <div class="item_layer">
+              <div class="contents">
+                <h4>October Eagles Tickets</h4>
+                <p>Archer Exteriors is giving you the chance to go see the birds this football season.</p>
+                <?= $this->Html->link(
+                  '<i class="flaticon-login"></i>',
+                  ['controller' => 'Communities', 'action' => 'goBirds'],
+                  ['class' => 'link', 'escape' => false]
+                ) ?>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="item_img">
               <?= $this->Html->image('community-impact/national-art-contest.jpg', [
                 'alt' => 'National Art Contest',
                 'title' => 'National Art Contest'
@@ -31,7 +52,7 @@
             <div class="item_layer">
               <div class="contents">
                 <h4>National Art Contest</h4>
-                <p>An exciting national art contest for creative kids and teens, brought to you by Archer Exteriors.</p>
+                <p>The imagination and talent blew us away this year. We can’t wait to see what next year’s artists will create!</p>
                 <?= $this->Html->link(
                   '<i class="flaticon-login"></i>',
                   ['controller' => 'Communities', 'action' => 'artContest'],
@@ -62,7 +83,7 @@
             </div>
           </div> -->
 
-          <div class="item">
+          <!-- <div class="item">
             <div class="item_img">
               <?= $this->Html->image('community-impact/phillies-ticket.jpg', [
                 'alt' => 'Phillies tickets',
@@ -77,6 +98,48 @@
                 <?= $this->Html->link(
                   '<i class="flaticon-login"></i>',
                   ['controller' => 'Communities', 'action' => 'philliesTickets'],
+                  ['class' => 'link', 'escape' => false]
+                ) ?>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="item">
+            <div class="item_img">
+              <?= $this->Html->image('community-impact/studer-childrens-hospital.jpg', [
+                'alt' => 'Archer Exteriors & the Studer Family Children’s Hospital Radiothon',
+                'title' => 'Archer Exteriors & the Studer Family Children’s Hospital Radiothon'
+              ]) ?>
+            </div>
+
+            <div class="item_layer">
+              <div class="contents">
+                <h4>Archer Exteriors & the Studer Family Children’s Hospital Radiothon</h4>
+                <p>At Archer Exteriors, we believe our strength lies not just in the structures we build, but in the communities we serve. That’s why we are honored to partner with Cat Country 98.7’s annual Cat Country Cares for Kids Radiothon, supporting the Studer Family Children’s Hospital.</p>
+                <?= $this->Html->link(
+                  '<i class="flaticon-login"></i>',
+                  ['controller' => 'Communities', 'action' => 'studer-family-children-hospital'],
+                  ['class' => 'link', 'escape' => false]
+                ) ?>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="item_img">
+              <?= $this->Html->image('community-impact/lorson-ranch.jpg', [
+                'alt' => 'Standing Strong with Operation Homefront',
+                'title' => 'Standing Strong with Operation Homefront'
+              ]) ?>
+            </div>
+
+            <div class="item_layer">
+              <div class="contents">
+                <h4>Standing Strong with Operation Homefront</h4>
+                <p>At Archer Exteriors, community impact is more than a mission—it’s a mindset. That’s why we’re honored to support Operation Homefront, a national nonprofit serving America’s military families in their times of need.</p>
+                <?= $this->Html->link(
+                  '<i class="flaticon-login"></i>',
+                  ['controller' => 'Communities', 'action' => 'operation-homefront'],
                   ['class' => 'link', 'escape' => false]
                 ) ?>
               </div>

@@ -3,86 +3,233 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Share Modal Test</title>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <style>
-    .btn-facebook { background: #3b5998; color: #fff; margin: 5px; }
-    .btn-twitter { background: #1da1f2; color: #fff; margin: 5px; }
-    .btn-linkedin { background: #0077b5; color: #fff; margin: 5px; }
-  </style>
+  <title>Document</title>
 </head>
 <body>
+  <!-- Add these stylesheet tweaks in your <head> or inside a page-specific stylesheet -->
+<style>
+  /* Isotope item transition (smooth show/hide & position) */
+  .applause_items_wrap .applause-grid {
+    /* ensure container will be masonry-friendly */
+    margin: 0;
+  }
 
-<div class="container mt-5">
-  <div class="profile_share">
-    <span class="profile_share_btn btn btn-primary" id="btn-share"
-      data-modal-title="Share Erick Perez profile on social media"
-      data-modal-description="Recommended Erick Perez to your network.<br>A genuine, personal endorsement can carry a lot of weight <br> and be far more impactful."
-      data-facebook-label="Share on Facebook"
-      data-twitter-label="Share on Twitter"
-      data-twitter-text="Twitter Text"
-      data-linkedin-label="Share on LinkedIn"
-      title="Share Erick Perez profile on social media">
-      <i class="fi fi-rr-arrow-up-from-square"></i> Share
-    </span>
-  </div>
-</div>
+  .applause_items_wrap .applause-item {
+    opacity: 1;
+  }
 
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<!-- Bootstrap Bundle (with Popper) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  .applause_items_wrap .applause-item.is-hidden {
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.98);
+  }
 
-<script>
-(function ($) {
-  "use strict";
+  /* make images responsive inside thumbnails */
+  .applause_items_wrap .thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 
-  $(document).ready(function () {
-    const pageUrl = encodeURIComponent(window.location.href);
+  /* small visual polish */
+  .applause_items_wrap .item {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
 
-    $("#btn-share").on("click", function () {
-      $("#modal-share").remove();
+  .applause_items_wrap .contents .title {
+    font-size: 1rem;
+    line-height: 1.3;
+    margin: 0.5rem 0 0;
+  }
+</style>
 
-      const el = $(this);
-      const shareModalTitle = el.data("modal-title");
-      const shareModalDescription = el.data("modal-description");
-      const shareFacebookLabel = el.data("facebook-label");
-      const shareTwitterLabel = el.data("twitter-label");
-      const shareTwitterText = el.data("twitter-text");
-      const shareLinkedInLabel = el.data("linkedin-label");
+<!-- ======= Your section (updated) ======= -->
+<section class="section">
+  <div class="container">
+    <div class="row gy-5">
+      <div class="col-lg-8 text-center text-lg-start">
+        <div class="sec-title mb-0">
+          <h6><i class="flaticon-roof"></i>Archer Applause</h6>
+          <h2>Build on Trust, <span>Proven by Stories</span></h2>
+          <p class="section_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque consequatur delectus aliquid obcaecati autem officiis libero nesciunt velit dolorum laudantium fugit assumenda minima ullam nisi, sunt enim at sed ipsa.</p>
+        </div>
+      </div>
 
-      const shareHtml = `
-        <div class="modal fade" id="modal-share" tabindex="-1" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header border-0 pb-0">
-                <h5 class="modal-title">${shareModalTitle}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-              </div>
-              <div class="modal-body pt-0 text-center">
-                ${shareModalDescription ? `<p>${shareModalDescription}</p>` : ""}
-                <ul class="list-unstyled">
-                  ${shareFacebookLabel ? `<li><a href="https://www.facebook.com/sharer/sharer.php?u=${pageUrl}" target="_blank" class="btn btn-facebook"><i class="icon-facebook"></i> ${shareFacebookLabel}</a></li>` : ""}
-                  ${shareTwitterLabel ? `<li><a href="https://twitter.com/intent/tweet?text=${shareTwitterText}&url=${pageUrl}" target="_blank" class="btn btn-twitter"><i class="icon-twitter"></i> ${shareTwitterLabel}</a></li>` : ""}
-                  ${shareLinkedInLabel ? `<li><a href="https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}" target="_blank" class="btn btn-linkedin"><i class="icon-linkedin"></i> ${shareLinkedInLabel}</a></li>` : ""}
-                </ul>
+      <div class="col-lg-4 mt-lg-auto text-end">
+        <p class="mb-2">Select service based applause</p>
+        <!-- use meaningful values (lowercase) matching data-service attributes below -->
+        <select style="max-width: 220px;" name="applause" class="form-select ms-auto" id="applause"
+          aria-describedby="applause" aria-invalid="false" data-validation-type="select">
+          <option value="*">All Services</option>
+          <option value=".roofing">Roofing</option>
+          <option value=".siding">Siding</option>
+          <option value=".door">Door</option>
+          <option value=".window">Window</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="applause_items_wrap mt-5">
+      <!-- grid will be the isotope container -->
+      <div class="row justify-content-center gx-lg-4 gy-4 applause-grid">
+        <!-- IMPORTANT: add a class on the column wrapper and a service class (match values above) -->
+        <div class="col-xl-4 col-md-6 applause-item siding">
+          <a class="item" href="#">
+            <div class="thumbnail">
+              <?= $this->Html->image('archer-applause/thumbnails/siding-window-bridgeton.png', [
+                'alt' => 'Archer Applause',
+                'title' => 'Archer Applause'
+              ]) ?>
+            </div>
+            <div class="contents">
+              <h4 class="title">Stunning Home Makeover: New Siding, Windows & Entry Door | Archer Applause</h4>
+              <div class="mt-4 service_details">
+                <h5>Siding & Windows</h5>
+                <p>Bridgeton, NJ</p>
               </div>
             </div>
-          </div>
+          </a>
         </div>
-      `;
 
-      $("body").append(shareHtml);
+        <div class="col-xl-4 col-md-6 applause-item window">
+          <a class="item" href="#">
+            <div class="thumbnail">
+              <?= $this->Html->image('archer-applause/thumbnails/siding-window-bridgeton.png', [
+                'alt' => 'Archer Applause',
+                'title' => 'Archer Applause'
+              ]) ?>
+            </div>
+            <div class="contents">
+              <h4 class="title">Stunning Home Makeover: New Siding, Windows & Entry Door | Archer Applause</h4>
+              <div class="mt-4 service_details">
+                <h5>Siding & Windows</h5>
+                <p>Bridgeton, NJ</p>
+              </div>
+            </div>
+          </a>
+        </div>
 
-      const modal = new bootstrap.Modal(document.getElementById("modal-share"));
-      modal.show();
+        <div class="col-xl-4 col-md-6 applause-item siding window">
+          <a class="item" href="#">
+            <div class="thumbnail">
+              <?= $this->Html->image('archer-applause/thumbnails/siding-window-bridgeton.png', [
+                'alt' => 'Archer Applause',
+                'title' => 'Archer Applause'
+              ]) ?>
+            </div>
+            <div class="contents">
+              <h4 class="title">Stunning Home Makeover: New Siding, Windows & Entry Door | Archer Applause</h4>
+              <div class="mt-4 service_details">
+                <h5>Siding & Windows</h5>
+                <p>Bridgeton, NJ</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-xl-4 col-md-6 applause-item roofing">
+          <a class="item" href="#">
+            <div class="thumbnail">
+              <?= $this->Html->image('archer-applause/thumbnails/siding-window-bridgeton.png', [
+                'alt' => 'Archer Applause',
+                'title' => 'Archer Applause'
+              ]) ?>
+            </div>
+            <div class="contents">
+              <h4 class="title">Stunning Home Makeover: New Siding, Windows & Entry Door | Archer Applause</h4>
+              <div class="mt-4 service_details">
+                <h5>Roofing</h5>
+                <p>Bridgeton, NJ</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-xl-4 col-md-6 applause-item door">
+          <a class="item" href="#">
+            <div class="thumbnail">
+              <?= $this->Html->image('archer-applause/thumbnails/siding-window-bridgeton.png', [
+                'alt' => 'Archer Applause',
+                'title' => 'Archer Applause'
+              ]) ?>
+            </div>
+            <div class="contents">
+              <h4 class="title">Stunning Home Makeover: New Siding, Windows & Entry Door | Archer Applause</h4>
+              <div class="mt-4 service_details">
+                <h5>Door</h5>
+                <p>Bridgeton, NJ</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- add more items (ensure appropriate service classes like "roofing", "siding", etc.) -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= Scripts: Isotope + imagesLoaded + filter wiring =======
+     Place these just before </body> (or where your other scripts are loaded).
+-->
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var gridElem = document.querySelector('.applause-grid');
+    if (!gridElem) return;
+
+    // initialize Isotope after images loaded to avoid jumpy layout
+    imagesLoaded(gridElem, function () {
+      // create Isotope instance
+      var iso = new Isotope(gridElem, {
+        itemSelector: '.applause-item',
+        percentPosition: true,
+        masonry: {
+          // use the Bootstrap column width for sizing; choose a column element as columnWidth if desired.
+          columnWidth: '.applause-item',
+          gutter: 16
+        },
+        transitionDuration: '550ms'
+      });
+
+      // Filter select handler
+      var select = document.getElementById('applause');
+      if (select) {
+        select.addEventListener('change', function (e) {
+          var val = e.target.value;
+          // If user selected '*' (All) -> show all
+          var filterValue = val === '*' ? '*' : val;
+          iso.arrange({ filter: filterValue });
+
+          // After arranging, re-layout to ensure smooth transitions
+          imagesLoaded(gridElem, function () {
+            iso.layout();
+          });
+        });
+
+        // Optional: support keyboard change (accessibility)
+        select.addEventListener('keyup', function (e) {
+          if (e.key === 'Enter') {
+            select.dispatchEvent(new Event('change'));
+          }
+        });
+      }
+
+      // when window resizes, trigger layout for Isotope
+      var resizeDebounce;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeDebounce);
+        resizeDebounce = setTimeout(function () {
+          iso.layout();
+        }, 150);
+      });
     });
   });
-
-})(jQuery);
 </script>
+
 </body>
 </html>

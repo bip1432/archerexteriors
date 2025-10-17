@@ -130,7 +130,7 @@
               <div class="col-xl-7 col-lg-12 col-md-12 offset-xl-6 content-column">
                 <div class="content-box">
                   <h6>Small Detail, Big Protection</h6>
-                  <h1>Gutter Installation and Repair You Can Trust</h1>
+                  <h1>Gutter Installation You Can Trust</h1>
                   <p>Protect your home from water damage with properly installed, low-maintenance gutter systems.</p>
                   <div class="btn-box">
                     <?= $this->Html->link(
@@ -169,7 +169,7 @@
             </div>
           </div>
           <div class="feature-block-one">
-            <div class="inner-box">
+            <div class="inner-box ms-xxl-auto">
               <div class="icon-box">
                 <i class="flaticon-commercial"></i>
                 <h3>Commercial</h3>
@@ -184,6 +184,56 @@
                 ) ?>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="position-relative" style="background: var(--bg-light);">
+      <div class="container">
+        <div id="carouselApplause" class="carousel slide offer_ad_carousel" data-bs-ride="carousel" data-bs-touch="true">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselApplause" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselApplause" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselApplause" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselApplause" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          </div>
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <a class="d-none d-md-block" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/new-roof-zero-mess')">
+                <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-roofing-lg.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+              </a>
+              <a class="d-bock d-md-none" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/new-roof-zero-mess')">
+                <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-roofing-sm.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a class="d-none d-md-block" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/from-aluminum-to-amazing')">
+                <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-siding-lg.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+              </a>
+              <a class="d-bock d-md-none" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/from-aluminum-to-amazing')">
+                <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-siding-sm.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a class="d-none d-md-block" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/how-new-windows-transformed-our-home')">
+                <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-windows-lg.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+              </a>
+              <a class="d-bock d-md-none" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/how-new-windows-transformed-our-home')">
+                <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-windows-sm.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a class="d-none d-md-block" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/stunning-home-makeover-siding-door')">
+                <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-doors-lg.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+              </a>
+              <a class="d-bock d-md-none" href="javascript:void(0)" onclick="openDVInNewWindow('https://www.archerexteriors.com/archer-applause/stunning-home-makeover-siding-door')">
+                <img src="https://www.archerexteriors.com/img/archer-applause/promote-banners/archer-exteriors-applause-banner-doors-sm.jpg" class="img-fluid" alt="Real Homes. Real Results. Real Stories." title="Real Homes. Real Results. Real Stories.">
+              </a>
+            </div>
+
           </div>
         </div>
       </div>
@@ -293,49 +343,123 @@
               </div>
 
               <div class="col-12">
-                <div class="fortyYrs_batch for_desktop">
-                  <div class="inner">
-                    <div class="img">
-                      <?= $this->Html->image('40-years-badge/40-years.png', [
-                        'alt' => '40 Years of Excellence',
-                        'title' => '40 Years of Excellence'
-                      ]) ?>
-                    </div>
-                    <div class="contents">
-                      <div class="content_inner">
-                        <h4>Exteriors That Elevate <br> Service That Stands Out</h4>
-                        <p>Excellence in Exterior Home Remodeling. <br> Local to You. Family Owned.</p>
-                      </div>
-                    </div>
+                <div id="carouselOffers" class="carousel slide offer_ad_carousel" data-bs-ride="carousel" data-bs-touch="true">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselOffers" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselOffers" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselOffers" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselOffers" data-bs-slide-to="3" aria-label="Slide 4"></button>
                   </div>
-                  <div class="all_services">
-                    <?= $this->Html->link(
-                      '<span>Check all our services <i class="flaticon-login"></i></span>',
-                      ['controller' => 'Services', 'action' => 'index'],
-                      ['class' => 'theme-btn', 'escape' => false]
-                    ) ?>
-                  </div>
-                </div>
 
-                <div class="fortyYrs_batch for_mobile">
-                  <div class="text-center">
-                    <?= $this->Html->image('40-years-badge/40-years.png', [
-                      'alt' => '40 Years of Excellence',
-                      'title' => '40 Years of Excellence'
-                    ]) ?>
-
-                    <h4>Exteriors That Elevate <br> Service That Stands Out</h4>
-                    <p>Excellence in Exterior Home Remodeling. <br> Local to You. Family Owned.</p>
-
-                    <div class="mt-4">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
                       <?= $this->Html->link(
-                        'Check all our services <i class="flaticon-login"></i>',
-                        ['controller' => 'Services', 'action' => 'index'],
-                        ['class' => 'theme-btn sm', 'escape' => false]
+                        $this->Html->image(
+                          'golden-ticket/banner-md/archer-exteriors-offer-banner-roofing-md.jpg',
+                          [
+                            'class' => 'img-fluid',
+                            'alt' => 'Nail it down - 25% off your new roof!',
+                            'title' => 'Nail it down - 25% off your new roof!'
+                          ]
+                        ),
+                        ['controller' => 'Services', 'action' => 'roofing'],
+                        ['class' => 'd-none d-md-block', 'target' => '_blank', 'escape' => false]
+                      ) ?>
+                      <?= $this->Html->link(
+                        $this->Html->image(
+                          'golden-ticket/banner-sm/archer-exteriors-offer-banner-roofing-sm.jpg',
+                          [
+                            'class' => 'img-fluid',
+                            'alt' => 'Nail it down - 25% off your new roof!',
+                            'title' => 'Nail it down - 25% off your new roof!'
+                          ]
+                        ),
+                        ['controller' => 'Services', 'action' => 'roofing'],
+                        ['class' => 'd-block d-md-none', 'target' => '_blank', 'escape' => false]
+                      ) ?>
+                    </div>
+                    <!-- slide 2 -->
+                    <div class="carousel-item">
+                      <?= $this->Html->link(
+                        $this->Html->image(
+                          'golden-ticket/banner-md/archer-exteriors-offer-banner-siding-md.jpg',
+                          [
+                            'class' => 'img-fluid',
+                            'alt' => 'Wrap it right - 25% off siding today!',
+                            'title' => 'Wrap it right - 25% off siding today!'
+                          ]
+                        ),
+                        ['controller' => 'Services', 'action' => 'siding'],
+                        ['class' => 'd-none d-md-block', 'target' => '_blank', 'escape' => false]
+                      ) ?>
+                      <?= $this->Html->link(
+                        $this->Html->image(
+                          'golden-ticket/banner-sm/archer-exteriors-offer-banner-siding-sm.jpg',
+                          [
+                            'class' => 'img-fluid',
+                            'alt' => 'Wrap it right - 25% off siding today!',
+                            'title' => 'Wrap it right - 25% off siding today!'
+                          ]
+                        ),
+                        ['controller' => 'Services', 'action' => 'siding'],
+                        ['class' => 'd-block d-md-none', 'target' => '_blank', 'escape' => false]
+                      ) ?>
+                    </div>
+                    <!-- slide 3 -->
+                    <div class="carousel-item">
+                      <?= $this->Html->link(
+                        $this->Html->image(
+                          'golden-ticket/banner-md/archer-exteriors-offer-banner-window-md.jpg',
+                          [
+                            'class' => 'img-fluid',
+                            'alt' => 'Brighten your home - $250 off per window!',
+                            'title' => 'Brighten your home - $250 off per window!'
+                          ]
+                        ),
+                        ['controller' => 'Services', 'action' => 'windows'],
+                        ['class' => 'd-none d-md-block', 'target' => '_blank', 'escape' => false]
+                      ) ?>
+                      <?= $this->Html->link(
+                        $this->Html->image(
+                          'golden-ticket/banner-sm/archer-exteriors-offer-banner-window-sm.jpg',
+                          [
+                            'class' => 'img-fluid',
+                            'alt' => 'Brighten your home - $250 off per window!',
+                            'title' => 'Brighten your home - $250 off per window!'
+                          ]
+                        ),
+                        ['controller' => 'Services', 'action' => 'windows'],
+                        ['class' => 'd-block d-md-none', 'target' => '_blank', 'escape' => false]
+                      ) ?>
+                    </div>
+                    <!-- slide 4 -->
+                    <div class="carousel-item">
+                      <?= $this->Html->link(
+                        $this->Html->image(
+                          'golden-ticket/banner-md/archer-exteriors-offer-banner-door-md.jpg',
+                          [
+                            'class' => 'img-fluid',
+                            'alt' => 'Open in style -  $250 off per door!',
+                            'title' => 'Open in style -  $250 off per door!'
+                          ]
+                        ),
+                        ['controller' => 'Services', 'action' => 'doors'],
+                        ['class' => 'd-none d-md-block', 'target' => '_blank', 'escape' => false]
+                      ) ?>
+                      <?= $this->Html->link(
+                        $this->Html->image(
+                          'golden-ticket/banner-sm/archer-exteriors-offer-banner-door-sm.jpg',
+                          [
+                            'class' => 'img-fluid',
+                            'alt' => 'Open in style -  $250 off per door!',
+                            'title' => 'Open in style -  $250 off per door!'
+                          ]
+                        ),
+                        ['controller' => 'Services', 'action' => 'doors'],
+                        ['class' => 'd-block d-md-none', 'target' => '_blank', 'escape' => false]
                       ) ?>
                     </div>
                   </div>
-
                 </div>
 
               </div>
@@ -350,6 +474,7 @@
       </div>
     </section>
     <!-- Start Project Section End -->
+
 
     <!-- About Company Section Start  -->
     <section class="about-section section">
@@ -831,3 +956,19 @@
     <div style="margin-bottom: 0; border-radius: 0;" class="mapapi-app" data-map-slug="all-branches" data-map-domain="<?= h(DOMAIN) ?>" data-mapapi-app-lazy data-height="500px"></div>
     <!-- Map Script - Load once at the bottom -->
     <script src="<?= $this->Url->build('/mapapi/platform.js', ['fullBase' => true]) ?>" async></script>
+
+    <script>
+      function openDVInNewWindow(videoPageUrl) {
+        // Calculate 80% of the screen width and height
+        var w = Math.floor(window.screen.width * 0.8);
+        var h = Math.floor(window.screen.height * 0.8);
+        var left = Math.floor((window.screen.width - w) / 2);
+        var top = Math.floor((window.screen.height - h) / 2);
+
+        window.open(
+          videoPageUrl,
+          '_blank',
+          `toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=${w},height=${h},left=${left},top=${top}`
+        );
+      }
+    </script>

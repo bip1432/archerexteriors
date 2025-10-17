@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabyasachi Kundu</title>
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/animate.min.css">
+
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+  <section class="menu_wrap menu_sticky">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg bg-white navbar-light p-0">
+        <a href="./index.html" class="navbar-brand d-none d-lg-inline-block p-0">
+          <img class="logo img-fluid" src="./assets/images/logo.png" alt="Sabyasachi Kundu" title="Sabyasachi Kundu">
+        </a>
+
+        <!-- Sidebar Toggler -->
+        <button type="button" class="navbar-toggler me-3" id="sidebarToggle">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <!-- Normal Navbar (desktop) -->
+        <div class="collapse navbar-collapse justify-content-center d-none d-lg-block">
+          <div class="navbar-nav">
+            <a href="#about" class="nav-item nav-link">About Me</a>
+            <a href="#services" class="nav-item nav-link">Services</a>
+            <a href="#article" class="nav-item nav-link">Articles</a>
+            <a href="#contact" class="nav-item nav-link">Contact</a>
+          </div>
+        </div>
+
+        <a class="btn_one call" href="tel:+1 (207) 939-1222">
+          <span><i class="fa-solid fa-phone"></i></span> +1 (207) 939-1222
+        </a>
+      </nav>
+
+      <!-- Sidebar Menu -->
+      <div class="sidebar" id="mobileSidebar">
+        <button class="close-btn" id="closeSidebar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-nav flex-column">
+          <div class="mb-4">
+            <a href="./index.html" class="navbar-brand p-0">
+              <img class="logo img-fluid" src="./assets/images/logo.png" alt="Sabyasachi Kundu"
+                title="Sabyasachi Kundu">
+            </a>
+          </div>
+
+          <a href="#about" class="nav-item nav-link">About Me</a>
+          <a href="#services" class="nav-item nav-link">Services</a>
+          <a href="#article" class="nav-item nav-link">Articles</a>
+          <a href="#contact" class="nav-item nav-link">Contact</a>
+        </div>
+      </div>
+
+      <!-- Overlay -->
+      <div class="overlay" id="sidebarOverlay"></div>
+
+    </div>
+  </section>
+
+
+  <section class="hero_section">
+    <div class="container">
+      <div class="row" style="gap: 30px 0;">
+        <div class="col-lg-6 my-auto">
+          <div class="details">
+            <h1 class="hero_title">Shaping stories, <br> Building reputations</h1>
+            <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel quibusdam ab necessitatibus
+              laboriosam dolores asperiores sapiente, veniam nostrum minima molestias.</p>
+
+            <div class="mt-4">
+              <a class="btn_two" href="#">Schedule a Consultation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section light why_me_sec">
+    <div class="container">
+      <div class="title_block text-center">
+        <h6 class="subheader">// Why Me</h6>
+        <h2 class="sec_title">I help people tackle their business issues</h2>
+        <p class="title_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nobis eum, expedita
+          adipisci similique accusamus quam, qui tenetur cumque ducimus, iste vitae dolorem et quidem ea dignissimos vel
+          pariatur dicta!</p>
+      </div>
+
+      <div class="row justify-content-center gy-4 mt-2">
+        <div class="col-lg-4 col-md-6">
+          <div class="box_item">
+            <img class="icon" src="./assets/images/why-me.svg" alt="Personal Branding" title="Personal Branding">
+            <h4>Personal Branding</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis quam ab harum? Obcaecati delectus vero
+              quam ipsa dolores magni eos rerum inventore porro in natus magnam reiciendis, odit ipsam minima?</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="box_item">
+            <img class="icon" src="./assets/images/why-me.svg" alt="Brand Strategy" title="Brand Strategy">
+            <h4>Brand Strategy</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis quam ab harum? Obcaecati delectus vero
+              quam ipsa dolores magni eos?</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="box_item">
+            <img class="icon" src="./assets/images/why-me.svg" alt="Marketing Automation" title="Marketing Automation">
+            <h4>Marketing Automation</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis quam ab harum? Obcaecati delectus vero
+              quam ipsa dolores magni eos rerum inventore porro in natus magnam reiciendis, odit ipsam minima?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about page_section" id="about" style="scroll-margin-top: 100px;">
+    <div class="container">
+      <div class="row gy-5 gx-lg-5">
+        <div class="col-lg-6">
+          <div class="image_wrap">
+            <img class="img-fluid banner" src="./assets/images/sabyasachi-kundu--banner.jpg" alt="Sabyasachi Kundu"
+              title="Sabyasachi Kundu">
+            <div class="experience_box wow slideInUp animated " data-wow-delay="00ms" data-wow-duration="1500ms">
+              <img class="icon" src="./assets/images/about-me-white.svg" alt="Experience" title="Experience">
+              <div>
+                <span class="number"><span class="counter">25</span>+</span>
+                <p>Years of experience</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 align-self-center text-center text-lg-start">
+          <div class="title_block">
+            <h6 class="subheader">// About Me</h6>
+            <h2 class="sec_title">Helping millions of owners create a business that works.</h2>
+          </div>
+          <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, asperiores vitae! Magni
+            odio esse quam blanditiis nihil, iure quas corrupti unde in incidunt similique modi. Fugiat modi possimus
+            esse voluptas.</p>
+          <p class="desc mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, asperiores vitae!
+            Magni odio esse quam blanditiis nihil, iure quas corrupti unde in incidunt similique modi. Fugiat modi
+            possimus esse voluptas.</p>
+
+          <div class="about_boxes">
+            <div class="item">
+              <span class="number"><span class="counter">85</span>%</span>
+              <p>Dealing with <br> Marketing Strategies</p>
+            </div>
+            <div class="item">
+              <span class="number"><span class="counter">100</span>+</span>
+              <p>Dealing with <br> Marketing Strategies</p>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <a class="btn_two" href="#">Schedule a Consultation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section light services page_section" id="services" style="scroll-margin-top: 100px;">
+    <div class="container">
+      <div class="row gy-4 text-center text-lg-start mb-5">
+        <div class="col-lg-8">
+          <div class="title_block mb-0">
+            <h6 class="subheader">// Services</h6>
+            <h2 class="sec_title">I am here for you and your business — <br> every step of the way.</h2>
+            <p class="title_desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam perferendis, quidem
+              fugit obcaecati suscipit incidunt beatae? Qui facere sit dolorum!</p>
+          </div>
+        </div>
+        <div class="col-lg-4 my-lg-auto text-lg-end">
+          <a class="btn_one" href="#">Schedule a Consultation</a>
+        </div>
+      </div>
+
+      <div class="row gy-4 gx-lg-4">
+        <div class="col-xl-4 col-md-6">
+          <div class="item wow fadeInUp animated " data-wow-delay="300ms" data-wow-duration="1500ms">
+            <div class="icon">
+              <img class="svg" src="./assets/images/service.svg" alt="Personal Branding" title="Personal Branding">
+            </div>
+            <div class="contents">
+              <h4>Personal Branding</h4>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat eligendi dolorum maiores nobis ducimus
+                cumque recusandae perspiciatis delectus consequuntur eum veritatis</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <div class="item wow fadeInUp animated " data-wow-delay="300ms" data-wow-duration="1500ms">
+            <div class="icon">
+              <img class="svg" src="./assets/images/service.svg" alt="Startup Branding" title="Startup Branding">
+            </div>
+            <div class="contents">
+              <h4>Startup Branding</h4>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat eligendi dolorum maiores nobis ducimus
+                cumque recusandae perspiciatis </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <div class="item wow fadeInUp animated " data-wow-delay="300ms" data-wow-duration="1500ms">
+            <div class="icon">
+              <img class="svg" src="./assets/images/service.svg" alt="Marketing & Advertising "
+                title="Marketing & Advertising ">
+            </div>
+            <div class="contents">
+              <h4>Marketing & Advertising </h4>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat eligendi dolorum maiores nobis ducimus
+                cumque recusandae perspiciatis delectus consequuntur eum veritatis</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <div class="item wow fadeInUp animated " data-wow-delay="300ms" data-wow-duration="1500ms">
+            <div class="icon">
+              <img class="svg" src="./assets/images/service.svg" alt="Industry Expertise" title="Industry Expertise">
+            </div>
+            <div class="contents">
+              <h4>Industry Expertise</h4>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat eligendi dolorum maiores nobis ducimus
+                cumque recusandae perspiciatis delectus consequuntur eum veritatis</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <div class="item wow fadeInUp animated " data-wow-delay="300ms" data-wow-duration="1500ms">
+            <div class="icon">
+              <img class="svg" src="./assets/images/service.svg" alt="Mentorship Program" title="Mentorship Program">
+            </div>
+            <div class="contents">
+              <h4>Mentorship Program</h4>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat eligendi dolorum maiores nobis ducimus
+                cumque recusandae perspiciatis delectus consequuntur eum veritatis</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <div class="item wow fadeInUp animated " data-wow-delay="300ms" data-wow-duration="1500ms">
+            <div class="icon">
+              <img class="svg" src="./assets/images/service.svg" alt="Business Consultancy"
+                title="Business Consultancy">
+            </div>
+            <div class="contents">
+              <h4>Business Consultancy</h4>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat eligendi dolorum maiores nobis ducimus
+                cumque recusandae perspiciatis delectus consequuntur eum veritatis</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section clients">
+    <div class="title_block text-center">
+      <h6 class="subheader">// Happy Clients</h6>
+      <h2 class="sec_title">I help hundreds of owners create <br> a business that works flawlessly</h2>
+    </div>
+
+    <div class="logo_slider">
+      <div class="logo_slider_inner">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/progressive.png" class="img-fluid"
+          alt="Progressive" title="Progressive">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/travelers.png" class="img-fluid"
+          alt="Travelers" title="Travelers">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/transamerica.png" class="img-fluid"
+          alt="Transamerica" title="Transamerica">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/protective.png" class="img-fluid"
+          alt="Protective Life" title="Protective Life">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/corebridge.png" class="img-fluid"
+          alt="Corebridge Financial" title="Corebridge Financial">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/new-york-life.png" class="img-fluid"
+          alt="New York Life" title="New York Life">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/chubb.png" class="img-fluid" alt="Chubb"
+          title="Chubb">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/prudential.png" class="img-fluid"
+          alt="Prudential" title="Prudential">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/athene.png" class="img-fluid" alt="Athene"
+          title="Athene">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/equitable.png" class="img-fluid"
+          alt="AXA Equitable Life Insurance Company" title="AXA Equitable Life Insurance Company">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/allianz.png" class="img-fluid" alt="Allianz"
+          title="Allianz">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/banner.png" class="img-fluid"
+          alt="Banner Life" title="Banner Life">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/cincinnati.png" class="img-fluid"
+          alt="Cincinnati Life" title="Cincinnati Life">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/omaha.png" class="img-fluid"
+          alt="Mutual of Omaha" title="Mutual of Omaha">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/oneamerica.png" class="img-fluid"
+          alt="OneAmerica" title="OneAmerica">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/national-life.png" class="img-fluid"
+          alt="National Life Group (NLG)" title="National Life Group (NLG)">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/lafayette.png" class="img-fluid"
+          alt="Lafayette Life Insurance Company" title="Lafayette Life Insurance Company">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/aflac.png" class="img-fluid" alt="Aflac"
+          title="Aflac">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/ameritas.png" class="img-fluid"
+          alt="Ameritas" title="Ameritas">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/silac.png" class="img-fluid"
+          alt="SILAC Insurance Company" title="SILAC Insurance Company">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/kaiser.png" class="img-fluid"
+          alt="Kaiser Permanente" title="Kaiser Permanente">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/anthem.png" class="img-fluid" alt="Anthem"
+          title="Anthem">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/molina.png" class="img-fluid"
+          alt="Molina Healthcare" title="Molina Healthcare">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/aetna.png" class="img-fluid" alt="Aetna"
+          title="Aetna">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/cigna.png" class="img-fluid" alt="Cigna"
+          title="Cigna">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/massmutual.png" class="img-fluid"
+          alt="MassMutual" title="MassMutual">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/guardian.png" class="img-fluid"
+          alt="Guardian" title="Guardian">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/blue-cross.png" class="img-fluid"
+          alt="Blue Cross Blue Shield" title="Blue Cross Blue Shield">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/humana.png" class="img-fluid" alt="Humana"
+          title="Humana">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/pacific.png" class="img-fluid"
+          alt="Pacific Life" title="Pacific Life">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/primeamerica.png" class="img-fluid"
+          alt="Primeamerica" title="Primeamerica">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/united-healthcare.png" class="img-fluid"
+          alt="United Healthcare" title="United Healthcare">
+
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/progressive.png" class="img-fluid"
+          alt="Progressive" title="Progressive">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/travelers.png" class="img-fluid"
+          alt="Travelers" title="Travelers">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/transamerica.png" class="img-fluid"
+          alt="Transamerica" title="Transamerica">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/protective.png" class="img-fluid"
+          alt="Protective Life" title="Protective Life">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/corebridge.png" class="img-fluid"
+          alt="Corebridge Financial" title="Corebridge Financial">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/new-york-life.png" class="img-fluid"
+          alt="New York Life" title="New York Life">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/chubb.png" class="img-fluid" alt="Chubb"
+          title="Chubb">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/prudential.png" class="img-fluid"
+          alt="Prudential" title="Prudential">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/athene.png" class="img-fluid" alt="Athene"
+          title="Athene">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/equitable.png" class="img-fluid"
+          alt="AXA Equitable Life Insurance Company" title="AXA Equitable Life Insurance Company">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/allianz.png" class="img-fluid" alt="Allianz"
+          title="Allianz">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/banner.png" class="img-fluid"
+          alt="Banner Life" title="Banner Life">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/cincinnati.png" class="img-fluid"
+          alt="Cincinnati Life" title="Cincinnati Life">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/omaha.png" class="img-fluid"
+          alt="Mutual of Omaha" title="Mutual of Omaha">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/oneamerica.png" class="img-fluid"
+          alt="OneAmerica" title="OneAmerica">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/national-life.png" class="img-fluid"
+          alt="National Life Group (NLG)" title="National Life Group (NLG)">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/lafayette.png" class="img-fluid"
+          alt="Lafayette Life Insurance Company" title="Lafayette Life Insurance Company">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/aflac.png" class="img-fluid" alt="Aflac"
+          title="Aflac">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/ameritas.png" class="img-fluid"
+          alt="Ameritas" title="Ameritas">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/silac.png" class="img-fluid"
+          alt="SILAC Insurance Company" title="SILAC Insurance Company">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/kaiser.png" class="img-fluid"
+          alt="Kaiser Permanente" title="Kaiser Permanente">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/anthem.png" class="img-fluid" alt="Anthem"
+          title="Anthem">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/molina.png" class="img-fluid"
+          alt="Molina Healthcare" title="Molina Healthcare">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/aetna.png" class="img-fluid" alt="Aetna"
+          title="Aetna">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/cigna.png" class="img-fluid" alt="Cigna"
+          title="Cigna">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/massmutual.png" class="img-fluid"
+          alt="MassMutual" title="MassMutual">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/guardian.png" class="img-fluid"
+          alt="Guardian" title="Guardian">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/blue-cross.png" class="img-fluid"
+          alt="Blue Cross Blue Shield" title="Blue Cross Blue Shield">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/humana.png" class="img-fluid" alt="Humana"
+          title="Humana">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/pacific.png" class="img-fluid"
+          alt="Pacific Life" title="Pacific Life">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/primeamerica.png" class="img-fluid"
+          alt="Primeamerica" title="Primeamerica">
+        <img src="https://www.advisornavigator.com/assets/company-logos/img/united-healthcare.png" class="img-fluid"
+          alt="United Healthcare" title="United Healthcare">
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section light blog_post page_section" id="article" style="scroll-margin-top: 100px;">
+    <div class="container">
+      <div class="row gy-4 text-center text-lg-start mb-5">
+        <div class="col-lg-8">
+          <div class="title_block mb-0">
+            <h6 class="subheader">// Insights</h6>
+            <h2 class="sec_title">Knowledge Base</h2>
+            <p class="title_desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam perferendis, quidem
+              fugit obcaecati suscipit incidunt beatae? Qui facere sit dolorum!</p>
+          </div>
+        </div>
+        <div class="col-lg-4 my-lg-auto text-lg-end">
+          <a class="btn_one" href="#">Explore All Insights</a>
+        </div>
+      </div>
+
+      <div class="row gy-4 justify-content-center">
+        <div class="col-lg-4 col-md-6 wow fadeInUp animated " data-wow-delay="300ms" data-wow-duration="1500ms">
+          <div class="blog_item">
+            <div class="img">
+              <img class="img-fluid" src="./assets/images/blog1.jpg" alt="" title="">
+            </div>
+            <div class="contents">
+              <span class="tag">Branding</span>
+              <h4 class="title">Lorem ipsum dolor sit, amet consectetur adipisicing.</h4>
+              <p class="blog_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ea tenetur non modi est
+                fuga quaerat facilis, nihil ullam ex ipsa reprehenderit cumque optio? Illum ex ipsum soluta voluptates
+                at.</p>
+              <a class="read_more" href="#" target="_blank">Continue Reading <i class="fa-solid fa-arrow-right"
+                  aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp animated " data-wow-delay="300ms" data-wow-duration="1500ms">
+          <div class="blog_item">
+            <div class="img">
+              <img class="img-fluid" src="./assets/images/blog2.jpg" alt="" title="">
+            </div>
+            <div class="contents">
+              <span class="tag">Marketing</span>
+              <h4 class="title">Lorem ipsum dolor sit, amet consectetur adipisicing.</h4>
+              <p class="blog_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ea tenetur non modi est
+                fuga quaerat facilis, nihil ullam ex ipsa reprehenderit cumque optio? Illum ex ipsum soluta voluptates
+                at.</p>
+              <a class="read_more" href="#" target="_blank">Continue Reading <i class="fa-solid fa-arrow-right"
+                  aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp animated " data-wow-delay="300ms" data-wow-duration="1500ms">
+          <div class="blog_item">
+            <div class="img">
+              <img class="img-fluid" src="./assets/images/blog3.jpg" alt="" title="">
+            </div>
+            <div class="contents">
+              <span class="tag">Branding</span>
+              <h4 class="title">Lorem ipsum dolor sit, amet consectetur adipisicing.</h4>
+              <p class="blog_desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ea tenetur non modi est
+                fuga quaerat facilis, nihil ullam ex ipsa reprehenderit cumque optio? Illum ex ipsum soluta voluptates
+                at.</p>
+              <a class="read_more" href="#" target="_blank">Continue Reading <i class="fa-solid fa-arrow-right"
+                  aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section testimonial">
+    <div class="container">
+      <div class="row gy-4 text-center text-lg-start mb-2 mb-lg-5">
+        <div class="col-lg-8">
+          <div class="title_block mb-0">
+            <h6 class="subheader">// Testimonials</h6>
+            <h2 class="sec_title">Kind words from my happy clients</h2>
+            <p class="title_desc">My clients appreciate the provided guidance and assistance I offer along the way to
+              help them become stronger leaders and unlock the full potential of their businesses. Read their latest
+              testimonials below.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 my-lg-auto text-lg-end wow slideInRight animated" data-wow-delay="00ms"
+          data-wow-duration="1500ms">
+          <img class="img-fluid" src="./assets/images/right-quote1.svg" width="60" alt="Testimonials"
+            title="Testimonials">
+        </div>
+      </div>
+
+      <div class="testimonialSlider owl-carousel owl-theme">
+        <!-- Slide 1 -->
+        <div class="item">
+          <div class="testimonial-card">
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the 1500s.
+            </p>
+          </div>
+          <div class="client-info">
+            <img src="./assets/images/logo-advisor-navigator.png" alt="Client Logo">
+            <div class="client-meta">
+              <h4>Client Name</h4>
+              <span>- Designation, Company</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="item">
+          <div class="testimonial-card">
+            <p>
+              Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
+              Latin literature from 45 BC.
+            </p>
+          </div>
+          <div class="client-info">
+            <img src="./assets/images/logo-advisor-navigator.png" alt="Client Logo">
+            <div class="client-meta">
+              <h4>Client Name</h4>
+              <span>- Designation, Company</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="item">
+          <div class="testimonial-card">
+            <p>
+              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+              in some form by injected humour.
+            </p>
+          </div>
+          <div class="client-info">
+            <img src="./assets/images/logo-advisor-navigator.png" alt="Client Logo">
+            <div class="client-meta">
+              <h4>Client Name</h4>
+              <span>- Designation, Company</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section light contact page_section" id="contact" style="scroll-margin-top: 100px;">
+    <div class="container">
+      <div class="title_block text-center">
+        <h6 class="subheader">// Contact</h6>
+        <h2 class="sec_title">Get in touch with me</h2>
+        <p class="title_desc" style="max-width: 800px;">As a seasoned and visionary marketing executive, I excel in
+          driving innovative growth strategies within the marketing, advertising and tech industry.</p>
+      </div>
+
+      <div class="form_wrap mt-5">
+        <div class="form_left">
+          <h4>We're Just a Message Away!</h4>
+          <div class="item wow slideInLeft animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+            <span class="icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </span>
+            <span class="text">Vineland, NJ 08362-2218</span>
+          </div>
+          <div class="item wow slideInLeft animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+            <span class="icon">
+              <i class="fa-solid fa-envelope"></i>
+            </span>
+            <span class="text">babunyc@gmail.com</span>
+          </div>
+          <div class="item wow slideInLeft animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+            <span class="icon">
+              <i class="fa-solid fa-phone"></i>
+            </span>
+            <span class="text"> +1 (207) 939-1222</span>
+          </div>
+        </div>
+
+        <div class="form_right">
+          <div class="contact_form">
+            <form action="">
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="input-container">
+                    <input type="text" name="fname" class="input">
+                    <label for="">First Name</label>
+                    <span>First Name</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-container">
+                    <input type="text" name="lname" class="input">
+                    <label for="">Last Name</label>
+                    <span>Last Name</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-container">
+                    <input type="email" name="email" class="input">
+                    <label for="">Email</label>
+                    <span>Email</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-container">
+                    <input type="text" name="phone" class="input">
+                    <label for="">Phone</label>
+                    <span>Phone</span>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="input-container textarea">
+                    <textarea name="message" class="input"></textarea>
+                    <label for="">Message</label>
+                    <span>Message</span>
+                  </div>
+                </div>
+
+
+              </div>
+
+              <div class="text-center mt-4">
+                <a style="min-width: 160px;" class="btn_two submit" href="#"><i class="fa-solid fa-paper-plane"></i>
+                  Send</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer text-center">
+    <div class="contaier">
+      <div class="title_block">
+        <h3 class="title_3 text-white">Follow Me</h3>
+        <div class="social">
+          <ul>
+            <li>
+              <a href="#" target="_blank">
+                <i class="fa-brands fa-facebook-f"></i>
+                <!-- <img src="./assets/images/facebook.svg" alt=""> -->
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/babukundu/" target="_blank"><i
+                  class="fa-brands fa-linkedin-in"></i></a>
+            </li>
+            <li>
+              <a href="https://twitter.com/sabyasachik1" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            </li>
+          </ul>
+        </div>
+        <span class="title_divider"></span>
+
+        <p style="color: #fff;margin: 0;font-size: 15px;">Copyright @2025, Sabyasachi Kundu. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <a id="backToTop" class="show"><i class="fa-solid fa-arrow-up"></i></a>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="./assets/js/bootstrap.min.js"></script>
+  <script src="./assets/js/wow.min.js"></script>
+  <script src="./assets/js/custom.js"></script>
+</body>
+
+</html>

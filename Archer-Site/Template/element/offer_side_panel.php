@@ -4,6 +4,27 @@
   <div class="panel_wrap mt-5">
     <div class="item">
       <div class="img">
+        <?= $this->Html->image('current-activities/eagles-ticket.jpg', [
+          'class' => 'img-fluid rad_4',
+          'alt' => 'October Eagles Tickets',
+          'title' => 'October Eagles Tickets'
+        ]) ?>
+      </div>
+      <div class="contents">
+        <h3>October Eagles Tickets</h3>
+        <p>Archer Exteriors is giving you the chance to go see the birds this football season.</p>
+        <div class="mt-3">
+          <?= $this->Html->link(
+            'Learn More<i class="flaticon-login"></i>',
+            ['controller' => 'Communities', 'action' => 'goBirds'],
+            ['class' => 'theme-btn sm', 'target' => '_blank', 'escape' => false]
+          ) ?>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="img">
         <?= $this->Html->image('current-activities/national-art-content.jpg', [
           'class' => 'img-fluid rad_4',
           'alt' => 'National Art Contest',
@@ -12,7 +33,7 @@
       </div>
       <div class="contents">
         <h3>National Art Contest</h3>
-        <p>An exciting national art contest for creative kids and teens, brought to you by Archer Exteriors.</p>
+        <p>The imagination and talent blew us away this year. We can’t wait to see what next year’s artists will create!</p>
         <div class="mt-3">
           <?= $this->Html->link(
             'Learn More<i class="flaticon-login"></i>',
@@ -38,27 +59,6 @@
           <?= $this->Html->link(
             'Learn More<i class="flaticon-login"></i>',
             ['controller' => 'Offers', 'action' => 'goldenTicket'],
-            ['class' => 'theme-btn sm', 'target' => '_blank', 'escape' => false]
-          ) ?>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="img">
-        <?= $this->Html->image('current-activities/phillis-ticket.jpg', [
-          'class' => 'img-fluid rad_4',
-          'alt' => 'Phillies tickets',
-          'title' => 'Phillies tickets'
-        ]) ?>
-      </div>
-      <div class="contents">
-        <h3>Phillies tickets</h3>
-        <p>Archer Exteriors is giving away Philadelphia Phillies tickets EVERY MONTH through September, and it starts NOW!</p>
-        <div class="mt-3">
-          <?= $this->Html->link(
-            'Learn More<i class="flaticon-login"></i>',
-            ['controller' => 'Communities', 'action' => 'philliesTickets'],
             ['class' => 'theme-btn sm', 'target' => '_blank', 'escape' => false]
           ) ?>
         </div>
